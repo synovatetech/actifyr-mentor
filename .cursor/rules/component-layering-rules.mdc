@@ -1,0 +1,12 @@
+---
+description: UI component layering and styling responsibilities.
+globs:
+  - "src/components/**/*.{ts,tsx,css}"
+alwaysApply: true
+---
+
+- `components/ui`: primitives only; no feature-specific business behavior.
+- `components/common`: shared composites used across features.
+- `components/features/*`: domain-specific composition and presentation.
+- Keep styling refactors local to the component layer; do not move route/data logic.
+- Prefer CSS modules and tokenized Tailwind utilities; keep inline styles only when behavior-preserving and structurally required.

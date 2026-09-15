@@ -1,0 +1,382 @@
+/* ============================================
+   Learn Plans Page Styles
+   Breakpoints: Mobile (<640px), Tablet (640-1023px), Desktop (1024px+)
+   Designed to work within DashboardLayout
+   ============================================ */
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+/* ----------------------------------------
+   Background Gradients - Desktop Only
+   ---------------------------------------- */
+.gradientContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.gradient1 {
+  position: absolute;
+  width: 424px;
+  height: 386px;
+  left: 291px;
+  top: -11px;
+  background: radial-gradient(44.51% 48.92% at 50% 51.08%, rgba(238, 71, 35, 0.25) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.gradient2 {
+  position: absolute;
+  width: 504px;
+  height: 459px;
+  left: 1029px;
+  top: 38px;
+  background: radial-gradient(44.51% 48.92% at 50% 51.08%, rgba(238, 71, 35, 0.25) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.gradient3 {
+  position: absolute;
+  width: 682px;
+  height: 621px;
+  left: 829px;
+  top: 562px;
+  background: radial-gradient(44.51% 48.92% at 50% 51.08%, rgba(238, 71, 35, 0.25) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.gradient4 {
+  position: absolute;
+  width: 1308px;
+  height: 1190px;
+  left: 88px;
+  top: 73px;
+  background: radial-gradient(44.51% 48.92% at 50% 51.08%, rgba(238, 71, 35, 0.25) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.gradient5 {
+  position: absolute;
+  width: 1627px;
+  height: 899px;
+  left: 0px;
+  top: 73px;
+  background: linear-gradient(180deg, rgba(252, 232, 226, 0.5) 2.17%, rgba(255, 255, 255, 0) 100%);
+}
+
+.gradientMobile {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(252, 232, 226, 0.4) 0%, rgba(255, 255, 255, 0) 40%);
+  pointer-events: none;
+}
+
+/* ----------------------------------------
+   Main Content
+   ---------------------------------------- */
+.mainContent {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: 100%;
+}
+
+.contentDesktop {
+  width: 100%;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contentMobile {
+  width: 100%;
+  padding-top: 0;
+  padding-bottom: 32px;
+}
+
+/* ----------------------------------------
+   Title
+   ---------------------------------------- */
+.title {
+  text-align: center;
+  font-weight: 700;
+  color: #1E1E1E;
+}
+
+/* Mobile */
+.title {
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 16px;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .title {
+    font-size: 34px;
+    line-height: 41px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+/* ----------------------------------------
+   Subtitle
+   ---------------------------------------- */
+.subtitle {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: rgba(30, 30, 30, 0.7);
+}
+
+/* Mobile */
+.subtitle {
+  max-width: 100%;
+  margin-top: 16px;
+  font-size: 14px;
+  line-height: 22px;
+  margin-bottom: 0;
+}
+
+/* Tablet */
+@media (min-width: 640px) {
+  .subtitle {
+    max-width: 600px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .subtitle {
+    width: 954px;
+    max-width: 954px;
+    margin-top: 22px;
+    margin-bottom: 0;
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+
+/* ----------------------------------------
+   Cards Container
+   ---------------------------------------- */
+.cardsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Mobile */
+.cardsContainer {
+  margin-top: 32px;
+}
+
+/* Tablet: 2 columns */
+@media (min-width: 640px) {
+  .cardsContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 20px;
+  }
+}
+
+/* Desktop: Flex row with centered alignment */
+@media (min-width: 1024px) {
+  .cardsContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 27px;
+    margin-top: 50px;
+    max-width: none;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ----------------------------------------
+   Bottom CTA
+   ---------------------------------------- */
+.ctaContainer {
+  background: #FFFFFF;
+  border-radius: 12px;
+}
+
+/* Mobile */
+.ctaContainer {
+  margin-top: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Tablet - Span 2-3 cards */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .ctaContainer {
+    max-width: 940px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Desktop - Aligned with first 3 cards (3 cards + 2 gaps = 954px) */
+@media (min-width: 1024px) {
+  .ctaContainer {
+    width: 954px;
+    height: 80px;
+    margin-top: 45px;
+    margin-bottom: 0 !important;
+    margin-left: 0;
+    margin-right: auto;
+    padding: 0;
+    padding-bottom: 0 !important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    flex-shrink: 0;
+  }
+}
+
+.ctaTextContainer {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'SF Pro', 'Segoe UI', Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Mobile */
+.ctaTextContainer {
+  text-align: center;
+  gap: 4px;
+}
+
+/* Desktop - Exact Figma positioning */
+@media (min-width: 1024px) {
+  .ctaTextContainer {
+    position: absolute;
+    left: 21px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 674px;
+    height: auto;
+    text-align: left;
+    gap: 0;
+  }
+}
+
+.ctaHeadline {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #EE4723;
+  margin: 0;
+  padding: 0;
+}
+
+/* Mobile */
+.ctaHeadline {
+  font-size: 15px;
+  line-height: 22px;
+  margin-bottom: 4px;
+}
+
+/* Desktop - Exact Figma values */
+@media (min-width: 1024px) {
+  .ctaHeadline {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 0;
+  }
+}
+
+.ctaDescription {
+  font-weight: 400;
+  color: #1E1E1E;
+  margin: 0;
+  padding: 0;
+}
+
+/* Mobile */
+.ctaDescription {
+  font-size: 13px;
+  line-height: 20px;
+}
+
+/* Desktop - Exact Figma values */
+@media (min-width: 1024px) {
+  .ctaDescription {
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 4px;
+  }
+}
+
+.ctaButton {
+  background: #FFFFFF;
+  border: 1px solid rgba(238, 71, 35, 0.8);
+  border-radius: 6px;
+  font-weight: 510;
+  color: #EE4723;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'SF Pro', 'Segoe UI', Roboto, sans-serif;
+  transition: all 0.2s ease;
+}
+
+.ctaButton:hover {
+  background: rgba(238, 71, 35, 0.05);
+}
+
+/* Mobile */
+.ctaButton {
+  width: 100%;
+  max-width: 200px;
+  height: 46px;
+  font-size: 15px;
+  line-height: 19px;
+}
+
+/* Desktop - Exact Figma positioning */
+@media (min-width: 1024px) {
+  .ctaButton {
+    position: absolute;
+    right: 19px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 203.76px;
+    height: 50px;
+    font-size: 16px;
+    line-height: 19px;
+  }
+}

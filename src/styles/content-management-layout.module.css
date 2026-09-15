@@ -1,0 +1,8 @@
+.trialAlert {
+  background: var(--color-trial-bg);
+  border-bottom: 1px solid var(--color-trial-border);
+  padding: 10px 24px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-trial-border);
+}

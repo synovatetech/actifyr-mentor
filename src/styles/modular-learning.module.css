@@ -1,0 +1,775 @@
+.container {
+    background: #F4F7FE;
+    min-height: 100vh;
+    padding-bottom: 40px;
+}
+
+/* Program info bar styling - Matching existing designs */
+.programBar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0 19.8px;
+    height: 68px;
+    background: #FCE8E2;
+    border-bottom: 1px solid rgba(238, 70, 33, 0.1);
+    font-family: var(--font-sf-pro);
+    font-size: 13px;
+    color: #1E1E1E;
+}
+
+.programName {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.separator {
+    color: rgba(30, 30, 30, 0.3);
+}
+
+.programDates,
+.programType {
+    font-weight: 400;
+    color: #4B5563;
+}
+
+.programDates strong,
+.programType strong {
+    font-weight: 500;
+    color: #1E1E1E;
+}
+
+/* Main Content Wrapper */
+.contentWrapper {
+    height: calc(100vh - 68px);
+    width: 100%;
+}
+
+/* Empty State - Centered */
+.emptyStateContainer {
+    padding: 24px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* List View - Refined Margins */
+.listViewContainer {
+    padding: 32px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.actionRow {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    width: 100%;
+}
+
+.emptyStateCard {
+    background: #FFFFFF;
+    border-radius: 8px;
+    /* Slightly sharper radius than before */
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.03);
+    /* Very subtle shadow */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.emptyStateText {
+    font-family: var(--font-sf-pro);
+    font-size: 15px;
+    line-height: 1.6;
+    color: #4B5563;
+    /* Darker gray for better contrast */
+    max-width: 600px;
+    margin-bottom: 32px;
+}
+
+/* Button matching exact design */
+.createButton {
+    min-width: 160px;
+    /* Reduced width to match design button */
+    height: 44px;
+    background: #EE4621;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+    font-family: var(--font-sf-pro);
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0px 2px 6px rgba(238, 70, 33, 0.1);
+}
+
+.createButton:hover {
+    background: #D93D1A;
+    transform: translateY(-1px);
+    box-shadow: 0px 4px 12px rgba(238, 70, 33, 0.2);
+}
+
+
+/* Content List Styles */
+.contentList {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-bottom: 40px;
+}
+
+/* ── Reorderable group highlight ── */
+.reorderableGroup {
+    border: 1.5px dashed transparent;
+    border-radius: 12px;
+    padding: 0;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.reorderableGroupActive {
+    border-color: rgba(238, 70, 33, 0.35);
+    background: rgba(238, 70, 33, 0.03);
+    padding: 14px;
+}
+
+.groupBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #EE4621;
+    background: rgba(238, 70, 33, 0.08);
+    border: 1px solid rgba(238, 70, 33, 0.2);
+    border-radius: 20px;
+    padding: 4px 10px;
+    width: fit-content;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+/* ── Drag handle ── */
+.dragHandle {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    color: #D1D5DB;
+    cursor: grab;
+    border-radius: 4px;
+    transition: color 0.15s, background 0.15s;
+}
+
+.dragHandle:hover {
+    color: #EE4621;
+    background: rgba(238, 70, 33, 0.07);
+}
+
+.dragHandle:active {
+    cursor: grabbing;
+    color: #EE4621;
+}
+
+/* ── Card dragging state ── */
+.cardDragging {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.14) !important;
+    border-color: rgba(238, 70, 33, 0.3) !important;
+    z-index: 10;
+    opacity: 0.92;
+}
+
+.contentCard {
+    position: relative;
+    background: #FFFFFF;
+    border: 1px solid #F3F4F6;
+    border-radius: 8px;
+    padding: 24px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    transition: box-shadow 0.18s, border-color 0.18s;
+    user-select: none;
+}
+
+.contentCard:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+}
+
+.cardLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.cardLeftWithHandle {
+    padding-left: 18px;
+}
+
+.cardHeaderRow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.indexLabel {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1E1E1E;
+}
+
+.cardTitle {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1E1E1E;
+}
+
+.missingTranslationBadge {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.ratingBadge {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+    color: #FACC15;
+    font-weight: 600;
+}
+
+.ratingCount {
+    color: #9CA3AF;
+    font-weight: 400;
+}
+
+.noRatings {
+    font-size: 13px;
+    color: #9CA3AF;
+}
+
+.cardDetails {
+    display: flex;
+    align-items: center;
+}
+
+.inclusions {
+    font-size: 12px;
+    color: #6B7280;
+    line-height: 1;
+}
+
+.inclusions span {
+    color: #3B82F6;
+    font-weight: 500;
+}
+
+.breakdown {
+    font-size: 12px;
+    color: #9CA3AF;
+}
+
+.cardRight {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    min-width: fit-content;
+}
+
+.unlockInfo {
+    font-size: 12px;
+    color: #9CA3AF;
+}
+
+.unlockInfo strong {
+    color: #000000;
+    font-weight: 600;
+}
+
+.inclusionSeparator {
+    color: color-mix(in srgb, var(--color-foreground) 25%, transparent) !important;
+    font-weight: 400;
+}
+
+.linkStatus {
+    font-size: 12px;
+    font-weight: 350;
+    color: #3B82F6;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.independentStatus {
+    font-size: 12px;
+    font-weight: 350;
+    color: #9CA3AF;
+}
+
+.cardActions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.actionButton {
+    padding: 10px 24px;
+    border: 1.5px solid #E5E7EB;
+    border-radius: 6px;
+    background: #FFFFFF;
+    font-size: 13px;
+    font-weight: 600;
+    color: #4B5563;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.actionButton:hover {
+    background: #F9FAFB;
+    border-color: #EE4621;
+    color: #EE4621;
+}
+
+/* Modal Styles */
+/* Reusing/Adapting from planner for consistency but scoped here */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    backdrop-filter: blur(2px);
+}
+
+.modalContainer {
+    background: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.15);
+    width: 1000px;
+    max-width: 95vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-sf-pro);
+    position: relative;
+    overflow: hidden;
+}
+
+.modalBody {
+    padding: 32px;
+    overflow-y: auto;
+    flex: 1;
+    position: relative;
+}
+
+.trialBodyOverlay {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    cursor: not-allowed;
+}
+
+.modalHeader {
+    padding: 24px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #F3F4F6;
+}
+
+.modalTitle {
+    font-size: 18px;
+    font-weight: 600;
+    color: #EE4621;
+}
+
+.closeIcon {
+    cursor: pointer;
+    color: #9CA3AF;
+    font-size: 20px;
+    padding: 4px;
+}
+
+.closeIcon:hover {
+    color: #1E1E1E;
+}
+
+.sectionTitle {
+    font-size: 15px;
+    font-weight: 600;
+    color: #EE4621;
+    margin-bottom: 24px;
+}
+
+/* Form Elements */
+.row {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1E1E1E;
+}
+
+.label span {
+    color: #DC2626;
+    margin-left: 2px;
+}
+
+.input,
+.select,
+.textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    font-family: var(--font-sf-pro);
+    font-size: 14px;
+    outline: none;
+    background: #fff;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+    border-color: #EE4621;
+}
+
+.textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Option Inputs (A, B, C, D) */
+.optionRow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.optionLabel {
+    width: 40px;
+    height: 40px;
+    background: #FCE8E2;
+    color: #1E1E1E;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Micro Actions Dropdown */
+.microActionDropdown {
+    position: relative;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    padding: 12px 16px;
+    cursor: pointer;
+    background: #fff;
+}
+
+.dropdownList {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: 4px;
+    background: #fff;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    padding: 8px;
+}
+
+.dropdownItem {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.dropdownItem:hover {
+    background: #F3F4F6;
+}
+
+.checkbox {
+    width: 16px;
+    height: 16px;
+    accent-color: #EE4621;
+}
+
+/* Footer */
+.trialNotice {
+    background: var(--color-trial-bg);
+    border-top: 1px solid var(--color-trial-border);
+    padding: 10px 32px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-trial-border);
+}
+
+.modalFooter {
+    padding: 24px 32px;
+    border-top: 1px solid #F3F4F6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.deleteLink {
+    color: #6B7280;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.deleteLink:hover {
+    color: #DC2626;
+}
+
+.rightButtons {
+    display: flex;
+    gap: 12px;
+}
+
+.cancelBtn {
+    padding: 10px 24px;
+    background: #B0B0B0;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.outlineBtn {
+    padding: 10px 24px;
+    background: #FFFFFF;
+    color: #EE4621;
+    border: 1px solid #EE4621;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.saveBtn {
+    padding: 10px 24px;
+    background: #EE4621;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.saveBtn:hover:not(:disabled) {
+    background: #D93D1A;
+}
+
+.saveBtn:disabled {
+    background: #c5c5c5;
+    cursor: not-allowed;
+}
+
+/* Attach File */
+.removeFileBtn {
+    color: #DC2626;
+    background: none;
+    border: 1px solid #E5E7EB;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+/* Date & Time Inputs */
+.dateRow {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.dateInput {
+    padding: 10px 12px;
+    border: 1px solid #E5E7EB;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #6B7280;
+    min-width: 140px;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23EE4621' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3e%3c/rect%3e%3cline x1='16' y1='2' x2='16' y2='6'%3e%3c/line%3e%3cline x1='8' y1='2' x2='8' y2='6'%3e%3c/line%3e%3cline x1='3' y1='10' x2='21' y2='10'%3e%3c/line%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 16px;
+    position: relative;
+}
+
+.dateInput::-webkit-calendar-picker-indicator {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.timeSelect {
+    padding: 10px 8px;
+    border: 1px solid #E5E7EB;
+    border-radius: 6px;
+    font-size: 14px;
+    background: #fff;
+    min-width: 60px;
+}
+
+/* Enable Toggle Switch */
+.toggleWrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 22px;
+}
+
+.toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #E5E7EB;
+    transition: .4s;
+    border-radius: 22px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: #10B981;
+}
+
+input:checked+.slider:before {
+    transform: translateX(22px);
+}
+
+.toggleLabel {
+    font-size: 14px;
+    color: #4B5563;
+}
+
+/* Status badge on content list cards */
+.statusBadge {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 999px;
+    text-transform: capitalize;
+    letter-spacing: 0.02em;
+}
+
+.status_draft {
+    background: #F3F4F6;
+    color: #6B7280;
+}
+
+.status_published {
+    background: #DCFCE7;
+    color: #16A34A;
+}
+
+.status_scheduled {
+    background: #FEF9C3;
+    color: #CA8A04;
+}
+
+/* ── Reschedule ─────────────────────────────────────────────────────────── */
+
+.rescheduleButton {
+    background: #ffffff;
+    border: 1px solid #EE4621;
+    border-radius: 6px;
+    color: #EE4621;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 0 20px;
+    height: 44px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.rescheduleButton:hover {
+    background: #fff5f2;
+}
+

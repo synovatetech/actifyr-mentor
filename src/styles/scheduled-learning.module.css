@@ -1,0 +1,766 @@
+/* ===========================================
+   Scheduled Learning Page Styles
+   =========================================== */
+
+.pageWrapper {
+    margin-left: 210px;
+    min-height: 100vh;
+    background: #F9FAFB;
+    padding: 0;
+}
+
+.topBar {
+    background: #FFFFFF;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.programInfo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.programName {
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 590;
+    font-size: 16px;
+    line-height: 19px;
+    color: #1E1E1E;
+}
+
+.programMeta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: rgba(30, 30, 30, 0.6);
+}
+
+.separator {
+    color: rgba(0, 0, 0, 0.2);
+}
+
+.rescheduleButton {
+    padding: 10px 20px;
+    background: #FFFFFF;
+    border: 1px solid #EE4621;
+    border-radius: 6px;
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 510;
+    font-size: 14px;
+    line-height: 17px;
+    color: #EE4621;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.rescheduleButton:hover {
+    background: rgba(238, 70, 33, 0.05);
+}
+
+.content {
+    padding: 32px;
+}
+
+.calendarHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.monthNav {
+    background: none;
+    border: none;
+    color: #EE4621;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s ease;
+}
+
+.monthNav:hover {
+    opacity: 0.7;
+}
+
+.monthNav:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.monthTitle {
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 590;
+    font-size: 18px;
+    line-height: 22px;
+    color: #EE4621;
+    min-width: 160px;
+    text-align: center;
+}
+
+.calendar {
+    background: #FFFFFF;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.calendarGrid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.dayHeader {
+    padding: 16px;
+    text-align: center;
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 510;
+    font-size: 12px;
+    line-height: 14px;
+    color: rgba(30, 30, 30, 0.5);
+    text-transform: uppercase;
+    background: #F9FAFB;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dayCell {
+    min-height: 100px;
+    padding: 12px;
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    background: #FFFFFF;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.dayCell:nth-child(7n) {
+    border-right: none;
+}
+
+.dayCell.otherMonth {
+    background: #F9FAFB;
+    opacity: 0.5;
+}
+
+.dayCell.programDay {
+    background: #2E4A7C;
+    color: #FFFFFF;
+}
+
+.dayCell.programDay:hover {
+    background: #3A5A94;
+}
+
+.dayCell:not(.programDay):hover {
+    background: #F9FAFB;
+}
+
+.dayNumber {
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom: 8px;
+}
+
+.dayCell.programDay .dayNumber {
+    color: #FFFFFF;
+}
+
+.dayCell.hasContent .dayNumber {
+    color: #4ADE80;
+    font-weight: 590;
+}
+
+.contentIndicator {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    color: #FFFFFF;
+}
+
+.contentIcon {
+    width: 16px;
+    height: 16px;
+}
+
+/* Empty State */
+.emptyState {
+    text-align: center;
+    padding: 80px 32px;
+}
+
+.emptyTitle {
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 590;
+    font-size: 18px;
+    line-height: 22px;
+    color: #EE4621;
+    margin-bottom: 32px;
+}
+
+.createOptions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.createCard {
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 32px;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.createCard:hover {
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.createCard.ai {
+    background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+}
+
+.createIconWrapper {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+}
+
+.createCard.manual .createIconWrapper {
+    background: rgba(238, 70, 33, 0.1);
+}
+
+.createCard.ai .createIconWrapper {
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.createTitle {
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 590;
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 8px;
+}
+
+.createCard.manual .createTitle {
+    color: #EE4621;
+}
+
+.createCard.ai .createTitle {
+    color: #3B82F6;
+}
+
+.createDescription {
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    color: rgba(30, 30, 30, 0.7);
+    margin-bottom: 20px;
+}
+
+.createButton {
+    width: 100%;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 510;
+    font-size: 14px;
+    line-height: 17px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.createCard.manual .createButton {
+    background: #EE4621;
+    color: #FFFFFF;
+}
+
+.createCard.manual .createButton:hover {
+    background: #D63D1A;
+}
+
+.createCard.ai .createButton {
+    background: #3B82F6;
+    color: #FFFFFF;
+}
+
+.createCard.ai .createButton:hover {
+    background: #2563EB;
+}
+
+/* Modal Overlay */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    padding: 20px;
+}
+
+/* Reschedule Modal */
+.rescheduleModal {
+    background: #FFFFFF;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.modalHeader {
+    padding: 24px 24px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.modalTitle {
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 590;
+    font-size: 18px;
+    line-height: 22px;
+    color: #EE4621;
+    margin: 0;
+}
+
+.closeButton {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    color: rgba(30, 30, 30, 0.5);
+    transition: color 0.2s ease;
+}
+
+.closeButton:hover {
+    color: #1E1E1E;
+}
+
+.modalBody {
+    padding: 24px;
+}
+
+.sectionTitle {
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 510;
+    font-size: 14px;
+    line-height: 17px;
+    color: #1E1E1E;
+    margin-bottom: 12px;
+}
+
+.sectionDescription {
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: rgba(30, 30, 30, 0.6);
+    margin-bottom: 16px;
+}
+
+.weekDays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.dayButton {
+    padding: 12px;
+    background: #F9FAFB;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: #1E1E1E;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.dayButton:hover {
+    background: rgba(238, 70, 33, 0.05);
+    border-color: #EE4621;
+}
+
+.dayButton.selected {
+    background: #EE4621;
+    border-color: #EE4621;
+    color: #FFFFFF;
+}
+
+.holidaySection {
+    margin-top: 24px;
+}
+
+.holidayPicker {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.calendarIconButton {
+    width: 48px;
+    height: 48px;
+    background: rgba(238, 70, 33, 0.1);
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.calendarIconButton:hover {
+    background: rgba(238, 70, 33, 0.15);
+}
+
+.modalFooter {
+    padding: 20px 24px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+.cancelButton {
+    padding: 12px 24px;
+    background: #E5E7EB;
+    border: none;
+    border-radius: 6px;
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 510;
+    font-size: 14px;
+    line-height: 17px;
+    color: #1E1E1E;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.cancelButton:hover {
+    background: #D1D5DB;
+}
+
+.saveButton {
+    padding: 12px 24px;
+    background: #EE4621;
+    border: none;
+    border-radius: 6px;
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 510;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.saveButton:hover {
+    background: #D63D1A;
+}
+
+/* Add Content Modal */
+.addContentModal {
+    background: #FFFFFF;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.contentModalHeader {
+    padding: 24px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contentModalTitle {
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 590;
+    font-size: 18px;
+    line-height: 22px;
+    color: #EE4621;
+    margin: 0;
+}
+
+.learnLink {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: #EE4621;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.learnLink:hover {
+    opacity: 0.7;
+}
+
+.formSection {
+    padding: 24px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.formSectionTitle {
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 590;
+    font-size: 14px;
+    line-height: 17px;
+    color: #EE4621;
+    margin-bottom: 16px;
+}
+
+.formRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.formGroup {
+    margin-bottom: 16px;
+}
+
+.label {
+    display: block;
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: #1E1E1E;
+    margin-bottom: 8px;
+}
+
+.required {
+    color: #EE4621;
+}
+
+.helpText {
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 14px;
+    color: rgba(30, 30, 30, 0.5);
+    margin-bottom: 8px;
+}
+
+.select {
+    width: 100%;
+    padding: 10px 12px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: #1E1E1E;
+    cursor: pointer;
+}
+
+.select:focus {
+    outline: none;
+    border-color: #EE4621;
+}
+
+.toggleGroup {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.toggleLabel {
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: rgba(30, 30, 30, 0.6);
+}
+
+.toggle {
+    position: relative;
+    width: 44px;
+    height: 24px;
+    background: #E5E7EB;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.toggle.active {
+    background: #4ADE80;
+}
+
+.toggleThumb {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background: #FFFFFF;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.toggle.active .toggleThumb {
+    transform: translateX(20px);
+}
+
+.input {
+    width: 100%;
+    padding: 10px 12px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: #1E1E1E;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #EE4621;
+}
+
+.input::placeholder {
+    color: rgba(30, 30, 30, 0.3);
+}
+
+.editorToolbar {
+    display: flex;
+    gap: 4px;
+    padding: 8px;
+    background: #F9FAFB;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: none;
+    border-radius: 6px 6px 0 0;
+}
+
+.toolButton {
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: rgba(30, 30, 30, 0.6);
+    transition: all 0.2s ease;
+}
+
+.toolButton:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: #1E1E1E;
+}
+
+.contentEditor {
+    min-height: 200px;
+    padding: 12px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 6px 6px;
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    color: #1E1E1E;
+    resize: vertical;
+}
+
+.contentEditor:focus {
+    outline: none;
+    border-color: #EE4621;
+}
+
+.deleteLink {
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: #EE4621;
+    text-decoration: underline;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.deleteLink:hover {
+    opacity: 0.7;
+}
+
+.contentModalFooter {
+    padding: 20px 24px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+.previewButton {
+    padding: 12px 24px;
+    background: #FFFFFF;
+    border: 1px solid #EE4621;
+    border-radius: 6px;
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 510;
+    font-size: 14px;
+    line-height: 17px;
+    color: #EE4621;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.previewButton:hover {
+    background: rgba(238, 70, 33, 0.05);
+}

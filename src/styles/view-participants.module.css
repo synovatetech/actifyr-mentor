@@ -1,0 +1,741 @@
+/* ===========================================
+   Manage Participants Page Styles
+   =========================================== */
+
+.pageWrapper {
+  width: 100%;
+  padding: 0px;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 10.8px;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28.8px;
+  height: 28.8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: var(--color-foreground);
+}
+
+.backButton:hover {
+  color: var(--color-primary);
+}
+
+.pageTitle {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 510;
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.generateButton {
+  padding: 12.6px 28.8px;
+  background: var(--color-primary);
+  border: none;
+  border-radius: 5.4px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 14.4px;
+  line-height: 17.1px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.generateButton:hover {
+  background: color-mix(in srgb, var(--color-primary) 80%, #000);
+}
+
+/* Main Container */
+.container {
+  background: #ffffff;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.04);
+  border-radius: 8px;
+  padding: 24px 32px 32px 32px;
+  border: 1px solid color-mix(in srgb, var(--color-foreground) 10%, transparent);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 160px);
+}
+
+/* Stats Row */
+.statsRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 21.6px;
+}
+
+.statsPills {
+  display: flex;
+  gap: 14.4px;
+}
+
+.statPill {
+  display: flex;
+  align-items: center;
+  gap: 14.4px;
+  padding: 10.8px 21.6px;
+  border: 0.9px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5.4px;
+}
+
+.statLabel {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 12.6px;
+  line-height: 15.3px;
+  color: var(--color-foreground);
+}
+
+.statValueBlue {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 590;
+  font-size: 16.2px;
+  line-height: 18.9px;
+  color: var(--color-info);
+}
+
+.statValueOrange {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 590;
+  font-size: 16.2px;
+  line-height: 18.9px;
+  color: var(--color-primary);
+}
+
+.statValueRed {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 590;
+  font-size: 16.2px;
+  line-height: 18.9px;
+  color: var(--color-error);
+}
+
+.removeUnusedLink {
+  background: transparent;
+  border: none;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 12.6px;
+  line-height: 15.3px;
+  color: var(--color-primary);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.removeUnusedLink:hover {
+  color: color-mix(in srgb, var(--color-primary) 80%, #000);
+}
+
+/* List Header */
+.listHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14.4px;
+}
+
+.listTitle {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 590;
+  font-size: 14.4px;
+  line-height: 17.1px;
+  color: var(--color-foreground);
+  margin: 0;
+}
+
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 21.6px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 7.2px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 12.6px;
+  line-height: 15.3px;
+  color: var(--color-foreground);
+}
+
+.legendDotBlue {
+  width: 10.8px;
+  height: 10.8px;
+  border-radius: 50%;
+  background: var(--color-info);
+}
+
+.legendDotYellow {
+  width: 10.8px;
+  height: 10.8px;
+  border-radius: 50%;
+  background: #FEB50E;
+}
+
+/* Filter Row */
+.filterRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 21.6px;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex: 1;
+  max-width: 450px;
+}
+
+.searchInput {
+  flex: 1;
+  height: 45px;
+  padding: 0 12.6px;
+  background: #ffffff;
+  border: 0.9px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5.4px 0 0 5.4px;
+  border-right: none;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 12.6px;
+  line-height: 15.3px;
+  color: var(--color-foreground);
+}
+
+.searchInput::placeholder {
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.searchButton {
+  height: 45px;
+  padding: 0 21.6px;
+  background: #ffffff;
+  border: 0.9px solid var(--color-primary);
+  border-radius: 0 5.4px 5.4px 0;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 12.6px;
+  line-height: 15.3px;
+  color: var(--color-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.searchButton:hover {
+  background: rgba(238, 71, 35, 0.05);
+}
+
+.filterContainer {
+  display: flex;
+  align-items: center;
+  gap: 14.4px;
+}
+
+.filterDropdownWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.filterDropdown {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14.4px;
+  height: 45px;
+  padding: 0 14.4px;
+  min-width: 144px;
+  background: #ffffff;
+  border: 0.9px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5.4px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 12.6px;
+  line-height: 15.3px;
+  color: var(--color-foreground);
+  cursor: pointer;
+}
+
+.hiddenSelect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.exportButton {
+  height: 45px;
+  padding: 0 21.6px;
+  background: #ffffff;
+  border: 0.9px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5.4px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 12.6px;
+  line-height: 15.3px;
+  color: var(--color-foreground);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.exportButton:hover {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Table */
+.tableWrapper {
+  overflow-x: auto;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 14.4px 10.8px;
+  text-align: left;
+  border-bottom: 0.9px solid rgba(0, 0, 0, 0.05);
+}
+
+.table th {
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  z-index: 10;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 12.6px;
+  line-height: 15.3px;
+  color: rgba(30, 30, 30, 0.5);
+}
+
+.table td {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 12.6px;
+  line-height: 15.3px;
+  color: var(--color-foreground);
+}
+
+.licenseIdCell {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  outline: none;
+}
+
+.licenseIdCell:focus-visible {
+  box-shadow: 0px 0px 0px 2px rgba(238, 71, 35, 0.25);
+  border-radius: 4px;
+}
+
+.licenseIdTruncated {
+  max-width: 72px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--color-foreground);
+}
+
+.licenseIdPopover {
+  position: fixed;
+  left: 0;
+  top: 0;
+  margin-top: 0;
+  z-index: 1000;
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+
+  background: #ffffff;
+  border: 0.9px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 10px 28px rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+  padding: 8px 10px;
+
+  /* Keep it "toast-sized" while still showing full UUIDs */
+  max-width: 240px;
+}
+
+.licenseIdPopover::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 14px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid rgba(0, 0, 0, 0.08);
+}
+
+.licenseIdPopoverTop::before {
+  top: auto;
+  bottom: -6px;
+  border-bottom: none;
+  border-top: 6px solid rgba(0, 0, 0, 0.08);
+}
+
+.licenseIdPopoverBottom {
+}
+
+.licenseIdPopoverRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.licenseIdFull {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-weight: 510;
+  font-size: 11.7px;
+  line-height: 14.4px;
+  color: var(--color-foreground);
+  word-break: break-all;
+}
+
+.licenseIdCopyButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.55;
+  transition: opacity 0.2s ease;
+  flex: 0 0 auto;
+  border-radius: 4px;
+}
+
+.licenseIdCopyButton:hover {
+  opacity: 1;
+  background: rgba(238, 71, 35, 0.05);
+}
+
+.table tbody tr:hover {
+  background: rgba(0, 0, 0, 0.01);
+}
+
+.userRemovedRow td {
+  color: rgba(30, 30, 30, 0.45);
+  background: rgba(0, 0, 0, 0.015);
+}
+
+.userRemovedRow:hover td {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+/* Access Code Link */
+.accessCodeIndividual {
+  color: var(--color-info);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.accessCodeIndividual:hover {
+  text-decoration: underline;
+}
+
+.accessCodeGroup {
+  color: #FEB50E;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.accessCodeGroup:hover {
+  text-decoration: underline;
+}
+
+/* Import Button */
+.importButton {
+  height: 45px;
+  padding: 0 21.6px;
+  background: #ffffff;
+  border: 0.9px solid var(--color-primary);
+  border-radius: 5.4px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 12.6px;
+  line-height: 15.3px;
+  color: var(--color-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.importButton:hover {
+  background: color-mix(in srgb, var(--color-primary) 6%, transparent);
+}
+
+/* Inline Table Inputs */
+.nameInput,
+.emailInput,
+.phoneInput {
+  height: 32.4px;
+  padding: 0 10.8px;
+  background: #ffffff;
+  border: 0.9px solid color-mix(in srgb, var(--color-foreground) 12%, transparent);
+  border-radius: 3.6px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 11.7px;
+  line-height: 14.4px;
+  color: var(--color-foreground);
+}
+
+.nameInput {
+  width: 140px;
+}
+
+.emailInput {
+  width: 180px;
+}
+
+.phoneInput {
+  width: 140px;
+}
+
+.nameInput::placeholder,
+.emailInput::placeholder,
+.phoneInput::placeholder {
+  color: color-mix(in srgb, var(--color-foreground) 35%, transparent);
+}
+
+.nameInput:focus,
+.emailInput:focus,
+.phoneInput:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.inputError {
+  border-color: var(--color-error) !important;
+}
+
+.inputError:focus {
+  border-color: var(--color-error) !important;
+}
+
+/* Status Badges */
+.status {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 12.6px;
+  line-height: 15.3px;
+}
+
+.statusInvited {
+  color: var(--color-primary);
+}
+
+.statusJoined {
+  color: var(--color-success);
+}
+
+.statusRemoved {
+  color: color-mix(in srgb, var(--color-foreground) 30%, transparent);
+}
+
+/* Status column */
+.statusCell {
+  white-space: nowrap;
+}
+
+/* Button column */
+.buttonCell {
+  white-space: nowrap;
+}
+
+/* Shared action button — same width for all variants */
+.actionButton {
+  width: 110px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 1px solid var(--color-primary);
+  border-radius: 4px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--color-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.actionButton:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--color-primary) 6%, transparent);
+}
+
+.actionButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Primary variant — Invite button */
+.actionButtonPrimary {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.actionButtonPrimary:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--color-primary) 80%, #000);
+}
+
+/* Infinite scroll indicators */
+.loadingMore {
+  padding: 14px;
+  text-align: center;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 12.6px;
+  color: rgba(30, 30, 30, 0.4);
+}
+
+.allLoaded {
+  padding: 12px;
+  text-align: center;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 12px;
+  color: rgba(30, 30, 30, 0.3);
+  border-top: 0.9px solid rgba(0, 0, 0, 0.04);
+}
+
+/* ===================================
+   Responsive Styles
+   =================================== */
+
+@media (max-width: 1080px) {
+  .statsRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14.4px;
+  }
+
+  .statsPills {
+    flex-wrap: wrap;
+  }
+
+  .filterRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .searchContainer {
+    max-width: 100%;
+  }
+
+  .filterContainer {
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 921.6px) {
+  .pageWrapper {
+    padding: 18px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14.4px;
+  }
+
+  .listHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10.8px;
+  }
+}
+
+/* Skeleton loading */
+.skeletonPulse {
+  height: 13px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e4e4e4 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: skeletonShimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes skeletonShimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@media (max-width: 691.2px) {
+  .pageWrapper {
+    padding: 14.4px;
+  }
+
+  .container {
+    padding: 14.4px;
+  }
+
+  .table th,
+  .table td {
+    padding: 10.8px 7.2px;
+    font-size: 10.8px;
+  }
+
+  .statPill {
+    padding: 7.2px 14.4px;
+    gap: 7.2px;
+  }
+
+  .filterContainer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filterDropdown,
+  .exportButton {
+    width: 100%;
+    justify-content: center;
+  }
+}

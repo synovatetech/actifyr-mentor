@@ -1,0 +1,423 @@
+.container {
+    background: #F4F7FE;
+    min-height: 100vh;
+    padding-bottom: 40px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+/* Mentees tab switcher */
+.tabContainer {
+    background: var(--color-card-bg);
+    border-radius: 8px;
+    padding: 8px;
+    display: flex;
+    width: fit-content;
+    gap: 8px;
+    margin-bottom: 24px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.tab {
+    padding: 10px 40px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    background: transparent;
+    color: var(--color-text-secondary);
+}
+
+.activeTab {
+    background: var(--color-primary);
+    color: #ffffff;
+}
+
+.programBar {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 0 40px;
+    height: 68px;
+    background: #FCE8E2;
+    border-bottom: 1px solid rgba(238, 70, 33, 0.1);
+    font-size: 14px;
+    color: #1E1E1E;
+}
+
+.programName {
+    font-weight: 590;
+}
+
+.programDate,
+.programType {
+    color: #4B5563;
+    font-weight: 400;
+}
+
+.programDate span,
+.programType span {
+    color: #1E1E1E;
+    font-weight: 600;
+    margin: 0 4px;
+}
+
+.separator {
+    color: rgba(0, 0, 0, 0.1);
+}
+
+.contentWrapper {
+    padding: 32px 40px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Stats Cards */
+.statsGrid {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.statCard {
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding: 16px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 140px;
+    border: 1px solid #F3F4F6;
+}
+
+.statLabel {
+    font-size: 13px;
+    color: #6B7280;
+}
+
+.statValue {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1E1E1E;
+}
+
+.participantsCount .statValue {
+    color: #EE4621;
+}
+
+.tasksCount .statValue {
+    color: #EE4621;
+}
+
+.multiStats {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.subStat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.subStatLabel {
+    font-size: 13px;
+    color: #6B7280;
+}
+
+.subStatValue {
+    font-size: 16px;
+    font-weight: 600;
+    color: #EE4621;
+}
+
+/* Controls Row */
+.controlsRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.bulkActionRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.bulkActionText {
+    font-size: 14px;
+    color: #4B5563;
+}
+
+.bulkActionCount {
+    color: #EE4621;
+    font-weight: 700;
+}
+
+.bulkActionButtons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.whatsappBulkBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #22C55E;
+    background: #FFFFFF;
+    color: #22C55E;
+    border-radius: 8px;
+    height: 40px;
+    padding: 0 16px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.emailBulkBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #EE4621;
+    background: #FFFFFF;
+    color: #EE4621;
+    border-radius: 8px;
+    height: 40px;
+    padding: 0 16px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.whatsappBulkBtn:disabled,
+.emailBulkBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.searchBox {
+    display: flex;
+    width: 600px;
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.searchInput {
+    flex: 1;
+    padding: 12px 16px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.searchBtn {
+    padding: 0 32px;
+    background: #FFFFFF;
+    border: none;
+    border-left: 1px solid #E5E7EB;
+    color: #EE4621;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.exportBtn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 24px;
+    background: #FFFFFF;
+    border: 1px solid #22C55E;
+    border-radius: 8px;
+    color: #22C55E;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Table Card */
+.tableCard {
+    background: #FFFFFF;
+    border-radius: 12px;
+    border: 1px solid #F3F4F6;
+    overflow-x: auto;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    min-width: 1200px;
+}
+
+.table th {
+    background: #FFFFFF;
+    padding: 18px 20px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+    border-bottom: 2px solid #F9FAFB;
+    white-space: nowrap;
+}
+
+.table td {
+    padding: 16px 20px;
+    font-size: 13px;
+    color: #1E1E1E;
+    border-bottom: 1px solid #F3F4F6;
+    white-space: nowrap;
+}
+
+.checkboxInput {
+    width: 16px;
+    height: 16px;
+    accent-color: #EE4621;
+    cursor: pointer;
+}
+
+.table tr:hover td {
+    background: #F9FAFB;
+}
+
+.slNo {
+    color: #6B7280;
+    width: 60px;
+}
+
+.studentName {
+    font-weight: 500;
+}
+
+.badgeCell {
+    font-weight: 500;
+}
+
+.stickyActionTh {
+    position: sticky;
+    right: 0;
+    background: #FFFFFF;
+    z-index: 3;
+    border-left: 1px solid color-mix(in srgb, var(--color-foreground) 16%, transparent);
+    box-shadow: -4px 0 10px 0 color-mix(in srgb, var(--color-foreground) 20%, transparent);
+}
+
+.stickyActionTd {
+    position: sticky;
+    right: 0;
+    background: #FFFFFF;
+    z-index: 1;
+    border-left: 1px solid color-mix(in srgb, var(--color-foreground) 16%, transparent);
+    box-shadow: -4px 0 10px 0 color-mix(in srgb, var(--color-foreground) 20%, transparent);
+}
+
+.table tr:hover .stickyActionTd {
+    background: #F9FAFB;
+}
+
+.actionCell {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    position: relative;
+    padding-left: 16px;
+    padding-right: 12px;
+}
+
+.gmailIcon {
+    cursor: pointer;
+}
+
+.whatsappIconBtn {
+    border: none;
+    background: transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 9999px;
+}
+
+.whatsappIconBtn:focus-visible {
+    outline: 2px solid rgba(31, 175, 56, 0.35);
+    outline-offset: 2px;
+}
+
+.actionBtn {
+    cursor: pointer;
+    color: #D1D5DB;
+    display: inline-flex;
+    padding: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdownMenu {
+    position: absolute;
+    right: 28px;
+    top: 36px;
+    background: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.15);
+    width: 150px;
+    z-index: 9999;
+    padding: 8px 0;
+}
+
+.dropdownMenuFloating {
+    position: fixed;
+    right: auto;
+    top: auto;
+}
+
+.dropdownItem {
+    padding: 10px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #4B5563;
+    transition: background-color 0.2s, color 0.2s;
+    text-align: left;
+}
+
+.dropdownItem:hover {
+    background-color: #F9FAFB;
+    color: #111827;
+}
+
+.pills {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+/* Notification dot for Submissions in Sidebar (if needed here) */
+.dot {
+    width: 8px;
+    height: 8px;
+    background-color: #EE4621;
+    border-radius: 50%;
+    display: inline-block;
+}

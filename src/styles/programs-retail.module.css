@@ -1,0 +1,450 @@
+/* ============================================
+   Programs Retail Page Styles
+   Based on Programs page with extra features
+   ============================================ */
+
+/* Extra Header Section */
+.extraHeader {
+  background: linear-gradient(135deg, #FCE8E2 0%, #FFF5F2 100%);
+  border-radius: 5.4px;
+  padding: 21.6px 23.4px;
+  margin-bottom: 25.2px;
+}
+
+.extraHeaderContent {
+  display: flex;
+  flex-direction: column;
+  gap: 7.2px;
+}
+
+.extraHeaderTitle {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 19.8px;
+  line-height: 23.4px;
+  font-weight: 700;
+  color: #1E1E1E;
+  margin: 0;
+}
+
+.extraHeaderSubtitle {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14.4px;
+  line-height: 17.1px;
+  font-weight: 400;
+  color: rgba(30, 30, 30, 0.7);
+  margin: 0;
+}
+
+/* Header Section */
+.header {
+  margin-bottom: 31.5px;
+  position: relative;
+  width: 100%;
+}
+
+.title {
+  font-family: var(--font-sf-pro);
+  font-size: 16.2px;
+  line-height: 18.9px;
+  font-weight: 590;
+  color: #1E1E1E;
+  margin: 0 0 31.5px 0;
+  width: 181.8px;
+  height: 18.9px;
+}
+
+.actions {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  width: 1041.3px;
+  flex-wrap: nowrap;
+}
+
+.searchContainer {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  height: 45px;
+}
+
+.searchInput {
+  flex: 1;
+  width: 719.1px;
+  height: 45px;
+  padding: 0 17.1px;
+  background: #FFFFFF;
+  border: 0.9px solid rgba(0, 0, 0, 0.35);
+  box-shadow: inset 0px 0px 3.6px rgba(111, 111, 111, 0.1);
+  border-radius: 5.4px 0 0 5.4px;
+  font-family: var(--font-sf-pro);
+  font-size: 14.4px;
+  line-height: 17.1px;
+  color: #1E1E1E;
+  outline: none;
+}
+
+.searchInput::placeholder {
+  color: rgba(0, 0, 0, 0.25);
+}
+
+.searchInput:focus {
+  border-color: #EE4723;
+}
+
+/* Active Search Button */
+.searchButton {
+  width: 117px;
+  height: 45px;
+  background: #FFFFFF;
+  border: 0.9px solid rgba(0, 0, 0, 0.35);
+  border-left: none;
+  border-radius: 0 5.4px 5.4px 0;
+  font-family: var(--font-sf-pro);
+  font-size: 14.4px;
+  line-height: 17.1px;
+  font-weight: 510;
+  color: #EE4621;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.searchButtonActive {
+  background: #EE4723;
+  color: #FFFFFF;
+  border-color: #EE4723;
+}
+
+.searchButtonActive:hover {
+  background: #EE4621;
+}
+
+.searchButton:hover:not(.searchButtonActive) {
+  background: rgba(238, 71, 35, 0.05);
+}
+
+/* Filter Dropdown */
+.filterContainer {
+  display: flex;
+  align-items: center;
+}
+
+.filterDropdown {
+  width: 162px;
+  height: 45px;
+  padding: 0 17.1px;
+  background: #FFFFFF;
+  border: 0.9px solid rgba(0, 0, 0, 0.35);
+  box-shadow: inset 0px 0px 3.6px rgba(111, 111, 111, 0.1);
+  border-radius: 5.4px;
+  font-family: var(--font-sf-pro);
+  font-size: 14.4px;
+  line-height: 17.1px;
+  color: #1E1E1E;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%231E1E1E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14.4px center;
+  padding-right: 36px;
+}
+
+.filterDropdown:focus {
+  border-color: #EE4723;
+}
+
+.filterDropdown:hover {
+  border-color: rgba(238, 71, 35, 0.5);
+}
+
+.createButton {
+  width: 181.8px;
+  height: 45px;
+  background: #EE4723;
+  border: none;
+  border-radius: 5.4px;
+  font-family: var(--font-sf-pro);
+  font-size: 14.4px;
+  line-height: 17.1px;
+  font-weight: 510;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.createButton:hover {
+  background: #EE4621;
+}
+
+.programsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 508.5px));
+  gap: 24.3px;
+  align-items: start;
+  justify-content: flex-start;
+}
+
+.programsGrid > * {
+  width: 100%;
+  min-width: 0;
+}
+
+/* Bottom Icon Container - Fixed Position */
+.bottomIconContainer {
+  position: fixed;
+  bottom: 36px;
+  right: 36px;
+  z-index: 100;
+}
+
+.bottomIconButton {
+  width: 50.4px;
+  height: 50.4px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 3.6px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0px 3.6px 10.8px rgba(238, 71, 35, 0.3);
+}
+
+.bottomIconButton:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 5.4px 14.4px rgba(238, 71, 35, 0.4);
+}
+
+.bottomIconButton:active {
+  transform: scale(0.95);
+}
+
+/* Modal Styles */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal {
+  background: #FFFFFF;
+  border-radius: 10.8px;
+  box-shadow: 0px 7.2px 28.8px rgba(0, 0, 0, 0.15);
+  max-width: 540px;
+  width: 90%;
+  max-height: 80vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  z-index: 1001;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(18px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 21.6px 23.4px;
+  border-bottom: 0.9px solid rgba(0, 0, 0, 0.1);
+}
+
+.modalTitle {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 18px;
+  line-height: 21.6px;
+  font-weight: 700;
+  color: #1E1E1E;
+  margin: 0;
+}
+
+.modalCloseButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 3.6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+  border-radius: 3.6px;
+}
+
+.modalCloseButton:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.modalContent {
+  padding: 23.4px;
+  overflow-y: auto;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14.4px;
+  line-height: 21.6px;
+  color: #1E1E1E;
+}
+
+.modalContent p {
+  margin: 0 0 14.4px 0;
+}
+
+.modalContent p:last-child {
+  margin-bottom: 0;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 54px 18px;
+  color: rgba(30, 30, 30, 0.7);
+  font-family: var(--font-sf-pro);
+  font-size: 14.4px;
+}
+
+.loadingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 54px 18px;
+  font-family: var(--font-sf-pro);
+  color: rgba(30, 30, 30, 0.7);
+  font-size: 14.4px;
+}
+
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 54px 18px;
+  gap: 14.4px;
+  font-family: var(--font-sf-pro);
+  color: #EE4723;
+  font-size: 14.4px;
+}
+
+.retryButton {
+  padding: 9px 18px;
+  background: #EE4723;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 5.4px;
+  font-family: var(--font-sf-pro);
+  font-size: 14.4px;
+  font-weight: 510;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.retryButton:hover {
+  background: #EE4621;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1080px) {
+  .programsGrid {
+    grid-template-columns: minmax(0, 1fr);
+    justify-content: center;
+  }
+  
+  .programsGrid > * {
+    width: 100%;
+    max-width: 508.5px;
+  }
+
+  .searchContainer {
+    width: 100%;
+    max-width: 836.1px;
+  }
+}
+
+@media (max-width: 921.6px) {
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14.4px;
+  }
+
+  .searchContainer {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .searchInput {
+    width: 100%;
+  }
+
+  .filterDropdown {
+    width: 100%;
+  }
+
+  .createButton {
+    width: 100%;
+  }
+
+  .programsGrid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .programsGrid > * {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .bottomIconContainer {
+    bottom: 18px;
+    right: 18px;
+  }
+}
+
+@media (max-width: 691.2px) {
+  .header {
+    margin-bottom: 21.6px;
+  }
+
+  .title {
+    margin-bottom: 18px;
+  }
+
+  .extraHeader {
+    padding: 18px;
+    margin-bottom: 18px;
+  }
+
+  .modal {
+    width: 95%;
+    max-height: 90vh;
+  }
+
+  .modalHeader,
+  .modalContent {
+    padding: 18px;
+  }
+}

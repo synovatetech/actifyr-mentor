@@ -1,0 +1,327 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    backdrop-filter: blur(2px);
+}
+
+.modal {
+    background: #F9FAFB;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+    width: 800px;
+    max-width: 95vw;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-sf-pro);
+    position: relative;
+}
+
+.header {
+    padding: 24px 32px 16px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #EE4621;
+}
+
+.innerCard {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 24px;
+    margin: 0 32px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    border: 1px solid #F3F4F6;
+    position: relative;
+}
+
+.sectionTitle {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1E1E1E;
+    margin-bottom: 6px;
+}
+
+.sectionDesc {
+    font-size: 13px;
+    color: #9CA3AF;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+/* Day chips */
+.daysRow {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+    padding-top: 12px;
+}
+
+.dayChip {
+    position: relative;
+    flex: 1;
+    min-width: 52px;
+    height: 62px;
+    border: 1.5px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    color: #1E1E1E;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 6px;
+    transition: border-color 0.15s;
+}
+
+.dayChip:hover {
+    border-color: rgba(238, 70, 33, 0.35);
+}
+
+.dayChipSelected {
+    border-color: #EE4621;
+    border-width: 1.5px;
+}
+
+.dayChipBadge {
+    position: absolute;
+    top: -11px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #EE4621;
+    box-shadow: 0 0 0 2px #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+/* Holiday date input */
+.excludeDateWrapper {
+    position: relative;
+    width: 100%;
+    max-width: 340px;
+    margin-top: 28px;
+}
+
+.excludeDateWrapper input[type='date'] {
+    width: 100%;
+    padding: 10px 45px 10px 12px;
+    border: 1px solid #E5E7EB;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #6B7280;
+}
+
+.excludeDateWrapper input[type='date']::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+.excludeDateIcon {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    pointer-events: none;
+}
+
+/* Holiday chips */
+.excludedRow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+}
+
+.excludedLabel {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(30, 30, 30, 0.55);
+    white-space: nowrap;
+}
+
+.excludedChips {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.excludedChip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 32px;
+    padding: 0 12px 0 14px;
+    background: rgba(238, 70, 33, 0.07);
+    border: 1.5px solid #EE4621;
+    border-radius: 10px;
+    font-size: 13px;
+    color: #1E1E1E;
+}
+
+.excludedChipRemove {
+    background: none;
+    border: none;
+    color: #EE4621;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Footer */
+.footer {
+    padding: 24px 32px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+}
+
+.cancelBtn {
+    background: #B0B0B0;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 12px 0;
+    width: 160px;
+    text-align: center;
+    transition: background 0.2s;
+}
+
+.cancelBtn:hover {
+    background: #9CA3AF;
+}
+
+.saveBtn {
+    background: #EE4621;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 12px 0;
+    width: 160px;
+    text-align: center;
+    transition: background 0.2s;
+    position: relative;
+}
+
+.saveBtn:hover {
+    background: #D93D1A;
+}
+
+.btnLoading {
+    opacity: 0.8;
+    cursor: not-allowed !important;
+    padding-left: 36px !important;
+}
+
+.btnLoading::before {
+    content: '';
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    width: 14px;
+    height: 14px;
+    margin-top: -7px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Confirmation dialog */
+.confirmOverlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    z-index: 10;
+    backdrop-filter: blur(2px);
+}
+
+.confirmDialog {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 32px 28px 24px;
+    width: 360px;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+}
+
+.confirmIconWrap {
+    margin-bottom: 16px;
+}
+
+.confirmTitle {
+    font-size: 17px;
+    font-weight: 600;
+    color: #1E1E1E;
+    margin-bottom: 10px;
+}
+
+.confirmMessage {
+    font-size: 13px;
+    color: #6B7280;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.confirmActions {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    justify-content: center;
+}
+
+.confirmActions .cancelBtn,
+.confirmActions .saveBtn {
+    width: 130px;
+}
+
+.loadingOverlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.75);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #EE4621;
+    backdrop-filter: blur(2px);
+}

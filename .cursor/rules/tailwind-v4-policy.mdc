@@ -1,0 +1,14 @@
+---
+description: Tailwind v4 CSS-first token policy.
+globs:
+  - "src/styles/globals.css"
+  - "src/**/*.{ts,tsx,css}"
+  - "tailwind.config.ts"
+alwaysApply: true
+---
+
+- Tailwind v4 tokens are defined in `@theme` within `src/styles/globals.css`.
+- Keep `tailwind.config.ts` minimal; do not reintroduce `theme.extend` token definitions already present in `@theme`.
+- Add/modify tokens in `@theme` first, then use matching utility classes in components.
+- Preserve existing utility semantics and responsive behavior; avoid utility renames that cause visual drift.
+- Do not change business logic while performing style/token migrations.

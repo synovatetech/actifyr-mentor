@@ -1,0 +1,459 @@
+/* ============================================
+   Manage License - Retail & Corporate
+   Based on Actifyr_Client_Manage License_Retail & _Corporate
+   ============================================ */
+
+/* ----------------------------------------
+   Stats pill (Licenses, Credit, Tokens)
+   ---------------------------------------- */
+.statsPill {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 21.6px;
+  padding: 0 21.6px;
+  height: 40.5px;
+  border: 0.9px solid rgba(111, 111, 111, 0.1);
+  border-radius: 27.9px;
+  background: #ffffff;
+  margin-bottom: 21.6px;
+  width: fit-content;
+}
+
+.statItem {
+  display: flex;
+  align-items: center;
+  gap: 7.2px;
+}
+
+.statNumber {
+  font-family:
+    "SF Pro",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  font-weight: 590;
+  font-size: 14.4px;
+  line-height: 17.1px;
+  letter-spacing: -0.04em;
+  color: #1e1e1e;
+}
+
+.statLabel {
+  font-family:
+    "SF Pro",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  font-weight: 274;
+  font-size: 14.4px;
+  line-height: 17.1px;
+  letter-spacing: -0.01em;
+  color: #1e1e1e;
+}
+
+.statIcon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* ----------------------------------------
+   Page title
+   ---------------------------------------- */
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 14.4px;
+  flex-wrap: wrap;
+  margin-bottom: 21.6px;
+}
+
+.pageTitle {
+  font-family:
+    "SF Pro",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21.6px;
+  color: #1e1e1e;
+  margin: 0;
+}
+
+.tabLink {
+  font-family:
+    "SF Pro",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  font-weight: 510;
+  font-size: 14.4px;
+  line-height: 17.1px;
+  color: #1e1e1e;
+  text-decoration: none;
+  padding: 5.4px 10.8px;
+  border-radius: 5.4px;
+}
+
+.tabLink:hover {
+  background: rgba(238, 71, 35, 0.08);
+  color: #ee4621;
+}
+
+.tabLinkActive {
+  background: #fce8e2;
+  color: #ee4621;
+}
+
+/* ----------------------------------------
+   Cards
+   ---------------------------------------- */
+.card {
+  background: #ffffff;
+  box-shadow: 0px 1.8px 3.6px rgba(111, 111, 111, 0.1);
+  border-radius: 5.4px;
+  padding: 24.3px 23.4px;
+  box-sizing: border-box;
+}
+
+.cardTitle {
+  font-family:
+    "SF Pro",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  font-weight: 590;
+  font-size: 16.2px;
+  line-height: 18.9px;
+  color: #ee4621;
+  margin: 0 0 24.3px 0;
+}
+
+/* ----------------------------------------
+   Detail rows (label + value)
+   ---------------------------------------- */
+.detailRow {
+  display: flex;
+  margin-bottom: 18.9px;
+}
+
+.detailRow:last-child {
+  margin-bottom: 0;
+}
+
+.detailLabel {
+  width: 179.1px;
+  flex-shrink: 0;
+  font-family:
+    "SF Pro",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  font-weight: 400;
+  font-size: 14.4px;
+  line-height: 17.1px;
+  color: #1e1e1e;
+}
+
+.detailValue {
+  font-family:
+    "SF Pro",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  font-weight: 400;
+  font-size: 14.4px;
+  line-height: 17.1px;
+  color: #1e1e1e;
+}
+
+.detailValueBold {
+  font-weight: 590;
+}
+
+.detailValueGreen {
+  color: #00b625;
+}
+
+/* ----------------------------------------
+   Add More Licenses button
+   ---------------------------------------- */
+.addMoreButton {
+  box-sizing: border-box;
+  height: 45px;
+  padding: 0 21.6px;
+  background: #ffffff;
+  border: 0.9px solid #ee4723;
+  border-radius: 5.4px;
+  font-family:
+    "SF Pro",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  font-weight: 500;
+  font-size: 14.4px;
+  line-height: 17.1px;
+  text-align: center;
+  color: #ee4723;
+  cursor: pointer;
+  margin-top: 21.6px;
+}
+
+.addMoreButton:hover {
+  background: #fce8e2;
+}
+
+/* ----------------------------------------
+   Top section grid - Retail (1 col) / Corporate (2 cols)
+   ---------------------------------------- */
+.topSection {
+  display: grid;
+  gap: 21.6px;
+  margin-bottom: 21.6px;
+}
+
+.topSectionRetail {
+  grid-template-columns: 1fr;
+  max-width: 407.7px;
+}
+
+.topSectionCorporate {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Corporate: right column - two stacked cards */
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Corporate: left column stretches to the grid row's height (matching the right
+   column's two stacked cards) so its card's bottom edge lines up with Auto Renewal's. */
+.leftColumn {
+  display: flex;
+}
+
+.leftColumnCard {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Corporate: License stats card (Total, Utilized, Suspended, Expired) —
+   sits inline in the Expired row, pushed to the row's end. */
+.renewLink {
+  font-family:
+    "SF Pro",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  font-weight: 400;
+  font-size: 14.4px;
+  line-height: 17.1px;
+  text-decoration: underline;
+  color: #ee4723;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.renewLink:hover {
+  color: #ee4621;
+}
+
+/* Corporate: Auto Renewal card */
+.autoRenewalRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10.8px;
+}
+
+.autoRenewalText {
+  font-family:
+    "SF Pro",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  font-weight: 400;
+  font-size: 14.4px;
+  line-height: 17.1px;
+  color: #1e1e1e;
+}
+
+.autoRenewalStatusOn {
+  font-weight: 700;
+  color: var(--color-success);
+}
+
+.autoRenewalStatusOff {
+  font-weight: 700;
+  color: var(--color-error);
+}
+
+.disableLink {
+  font-family:
+    "SF Pro",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  font-weight: 400;
+  font-size: 14.4px;
+  line-height: 17.1px;
+  text-align: right;
+  text-decoration: underline;
+  color: rgba(30, 30, 30, 0.8);
+  cursor: pointer;
+}
+
+.learnLink {
+  font-family:
+    "SF Pro",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  font-weight: 400;
+  font-size: 14.4px;
+  line-height: 17.1px;
+  text-align: right;
+  color: #007ac3;
+  cursor: pointer;
+}
+
+.learnLink:hover {
+  text-decoration: underline;
+}
+
+/* ----------------------------------------
+   Purchase History
+   ---------------------------------------- */
+.purchaseSection {
+  background: #ffffff;
+  box-shadow: 0px 1.8px 3.6px rgba(111, 111, 111, 0.1);
+  border-radius: 5.4px 5.4px 0 0;
+  padding: 18.9px 23.4px 21.6px;
+  overflow: hidden;
+}
+
+.purchaseTitle {
+  font-family:
+    "SF Pro",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  font-weight: 590;
+  font-size: 16.2px;
+  line-height: 18.9px;
+  color: #ee4621;
+  margin: 0 0 18.9px 0;
+}
+
+.tableWrap {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family:
+    "SF Pro",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  font-size: 14.4px;
+  line-height: 17.1px;
+}
+
+.th {
+  font-weight: 510;
+  color: #1e1e1e;
+  text-align: left;
+  padding: 10.8px 14.4px;
+  border-bottom: 0.9px solid rgba(111, 111, 111, 0.1);
+}
+
+.thRight {
+  text-align: right;
+}
+
+.thCenter {
+  text-align: center;
+}
+
+.td {
+  font-weight: 400;
+  color: #1e1e1e;
+  padding: 10.8px 14.4px;
+  border-bottom: 0.9px solid rgba(111, 111, 111, 0.1);
+}
+
+.tdRight {
+  text-align: right;
+}
+
+.tdCenter {
+  text-align: center;
+}
+
+.viewInvoiceLink {
+  font-weight: 400;
+  color: #ee4723;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.viewInvoiceLink:hover {
+  text-decoration: underline;
+}
+
+.amountGreen {
+  color: #22a149;
+}
+
+/* ----------------------------------------
+   Corporate: Add More button + Auto Renewal row
+   ---------------------------------------- */
+.addMoreRow {
+  margin-top: 21.6px;
+}
+
+/* ----------------------------------------
+   Responsive
+   ---------------------------------------- */
+@media (max-width: 921.6px) {
+  .topSectionCorporate {
+    grid-template-columns: 1fr;
+  }
+
+  .statsPill {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+}
+
+@media (max-width: 691.2px) {
+  .detailRow {
+    flex-direction: column;
+    gap: 3.6px;
+    margin-bottom: 14.4px;
+  }
+
+  .detailLabel {
+    width: 100%;
+  }
+
+  .tableWrap {
+    font-size: 12.6px;
+  }
+
+  .th,
+  .td {
+    padding: 9px 10.8px;
+  }
+}

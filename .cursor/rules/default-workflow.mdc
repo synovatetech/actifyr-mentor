@@ -1,0 +1,44 @@
+---
+description: Default safe workflow for production changes.
+globs:
+  - "**/*.{ts,tsx,js,jsx,css,md,mdx,json}"
+alwaysApply: true
+---
+
+- Use this default sequence for all non-trivial tasks:
+
+  1. Audit current behavior and constraints.
+  2. Propose minimal, scoped change plan.
+  3. Implement smallest safe diff first.
+  4. Validate with project checks before finalizing.
+
+- Non-breaking policy:
+
+  - Do not change business logic, API contracts, route behavior, validation rules, state transitions, or event-handler behavior unless explicitly requested.
+  - Do not rename public props, exported symbols, route paths, or runtime import paths unless explicitly requested.
+
+- Styling and design-system policy:
+
+  - Treat `src/styles/globals.css` `@theme` as token source of truth.
+  - Preserve existing UI output (spacing, typography, color, shadow, radius, responsive behavior, interaction states) unless a visual change is explicitly requested.
+  - Prefer tokenized classes/variables over new raw style literals.
+
+- Validation policy:
+
+  - After substantive changes, run `npm run type-check` from repository root (and `npm run lint` when non-interactive and already configured for CI/non-prompt usage).
+  - Do **not** run `npm run build` unless the user explicitly asks for a production build or says to run build.
+
+- Delivery policy:
+
+  - Provide changed-file list with intent.
+  - Call out regression risk explicitly (UI/flows/functionality).
+  - If any requested edit risks drift or breakage, stop and ask before proceeding.
+
+- Skill auto-load policy:
+  - Automatically load these must-have skills at the start of relevant tasks:
+    - `/next-best-practices`
+    - `/vercel-react-best-practices`
+    - `/frontend-design`
+    - `/ui-ux-pro-max`
+    - `/web-design-guidelines`
+    - `/folder-structure-blueprint-generator `

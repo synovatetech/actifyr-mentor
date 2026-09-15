@@ -1,0 +1,1717 @@
+{
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/.changeset/config.json": {
+    "mtime": 1775044941.6385336,
+    "ast_hash": "b3dcaaa821ccb94e1dfe50de69246458",
+    "semantic_hash": "b3dcaaa821ccb94e1dfe50de69246458"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/.claude/settings.local.json": {
+    "mtime": 1780561860.6645188,
+    "ast_hash": "a9259968afe6c413f88287fe824bd879",
+    "semantic_hash": "a9259968afe6c413f88287fe824bd879"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/.eslintrc.json": {
+    "mtime": 1776083136.828609,
+    "ast_hash": "603d4ff2751954679d9d15d7f5432afe",
+    "semantic_hash": "603d4ff2751954679d9d15d7f5432afe"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/.husky/_/applypatch-msg": {
+    "mtime": 1775105219.9294062,
+    "ast_hash": "0b71c2e7d39daa010985d529f1320b37",
+    "semantic_hash": "0b71c2e7d39daa010985d529f1320b37"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/.husky/_/commit-msg": {
+    "mtime": 1775105219.9292586,
+    "ast_hash": "0b71c2e7d39daa010985d529f1320b37",
+    "semantic_hash": "0b71c2e7d39daa010985d529f1320b37"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/.husky/_/h": {
+    "mtime": 1775105219.9289737,
+    "ast_hash": "15239a01c5554e56ff745570fb583a91",
+    "semantic_hash": "15239a01c5554e56ff745570fb583a91"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/.husky/_/husky.sh": {
+    "mtime": 1775105219.9302185,
+    "ast_hash": "13871d2ab13e8423790ecb2c01c78c18",
+    "semantic_hash": "13871d2ab13e8423790ecb2c01c78c18"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/.husky/_/post-applypatch": {
+    "mtime": 1775105219.9295583,
+    "ast_hash": "0b71c2e7d39daa010985d529f1320b37",
+    "semantic_hash": "0b71c2e7d39daa010985d529f1320b37"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/.husky/_/post-checkout": {
+    "mtime": 1775105219.9298677,
+    "ast_hash": "0b71c2e7d39daa010985d529f1320b37",
+    "semantic_hash": "0b71c2e7d39daa010985d529f1320b37"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/.husky/_/post-commit": {
+    "mtime": 1775105219.9293091,
+    "ast_hash": "0b71c2e7d39daa010985d529f1320b37",
+    "semantic_hash": "0b71c2e7d39daa010985d529f1320b37"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/.husky/_/post-merge": {
+    "mtime": 1775105219.9299445,
+    "ast_hash": "0b71c2e7d39daa010985d529f1320b37",
+    "semantic_hash": "0b71c2e7d39daa010985d529f1320b37"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/.husky/_/post-rewrite": {
+    "mtime": 1775105219.9297252,
+    "ast_hash": "0b71c2e7d39daa010985d529f1320b37",
+    "semantic_hash": "0b71c2e7d39daa010985d529f1320b37"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/.husky/_/pre-applypatch": {
+    "mtime": 1775105219.9294631,
+    "ast_hash": "0b71c2e7d39daa010985d529f1320b37",
+    "semantic_hash": "0b71c2e7d39daa010985d529f1320b37"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/.husky/_/pre-auto-gc": {
+    "mtime": 1775105219.9301305,
+    "ast_hash": "0b71c2e7d39daa010985d529f1320b37",
+    "semantic_hash": "0b71c2e7d39daa010985d529f1320b37"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/.husky/_/pre-commit": {
+    "mtime": 1775105219.929051,
+    "ast_hash": "0b71c2e7d39daa010985d529f1320b37",
+    "semantic_hash": "0b71c2e7d39daa010985d529f1320b37"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/.husky/_/pre-merge-commit": {
+    "mtime": 1775105219.9291072,
+    "ast_hash": "0b71c2e7d39daa010985d529f1320b37",
+    "semantic_hash": "0b71c2e7d39daa010985d529f1320b37"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/.husky/_/pre-push": {
+    "mtime": 1775105219.9300036,
+    "ast_hash": "0b71c2e7d39daa010985d529f1320b37",
+    "semantic_hash": "0b71c2e7d39daa010985d529f1320b37"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/.husky/_/pre-rebase": {
+    "mtime": 1775105219.9296608,
+    "ast_hash": "0b71c2e7d39daa010985d529f1320b37",
+    "semantic_hash": "0b71c2e7d39daa010985d529f1320b37"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/.husky/_/prepare-commit-msg": {
+    "mtime": 1775105219.9291604,
+    "ast_hash": "0b71c2e7d39daa010985d529f1320b37",
+    "semantic_hash": "0b71c2e7d39daa010985d529f1320b37"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/docs/actifyr_client_postman_collection_new.json": {
+    "mtime": 1775044941.6423588,
+    "ast_hash": "b7808818cc3b06ba2cf57fb5cf0908b4",
+    "semantic_hash": "b7808818cc3b06ba2cf57fb5cf0908b4"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/next.config.ts": {
+    "mtime": 1775044941.6426144,
+    "ast_hash": "eec30a5f214a6b18e1a26f371e3c5f31",
+    "semantic_hash": "eec30a5f214a6b18e1a26f371e3c5f31"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/package.json": {
+    "mtime": 1779879146.0995812,
+    "ast_hash": "0d68da49f5b636fdd8f1d670d90f5177",
+    "semantic_hash": "0d68da49f5b636fdd8f1d670d90f5177"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/postcss.config.mjs": {
+    "mtime": 1775044941.643536,
+    "ast_hash": "d327ff607af26f2a0dedeaeb9ddf9f6b",
+    "semantic_hash": "d327ff607af26f2a0dedeaeb9ddf9f6b"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/scripts/git/create-branch-interactive.mjs": {
+    "mtime": 1775044941.6528797,
+    "ast_hash": "36668e611e0b8dd1f0ce031da8ddc0c0",
+    "semantic_hash": "36668e611e0b8dd1f0ce031da8ddc0c0"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/scripts/git/create-branch.mjs": {
+    "mtime": 1775044941.6529746,
+    "ast_hash": "caa0a2ef59e2d8d211a6a85bd155fa50",
+    "semantic_hash": "caa0a2ef59e2d8d211a6a85bd155fa50"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/scripts/git/sync-to-llj.sh": {
+    "mtime": 1779446637.5472758,
+    "ast_hash": "bb52f3865db75a85d248a4bb85398451",
+    "semantic_hash": "bb52f3865db75a85d248a4bb85398451"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/scripts/git/validate-branch-name.mjs": {
+    "mtime": 1775044941.6530695,
+    "ast_hash": "16de16b06ce32dcd58575e973860f51c",
+    "semantic_hash": "16de16b06ce32dcd58575e973860f51c"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/scripts/refactor-program-id.js": {
+    "mtime": 1775044941.6531224,
+    "ast_hash": "9961aad79149aa7ca0c31127012b4134",
+    "semantic_hash": "9961aad79149aa7ca0c31127012b4134"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/admins/page.tsx": {
+    "mtime": 1778849284.1830096,
+    "ast_hash": "22ddcaa717b2f79147ab05084889ea0e",
+    "semantic_hash": "22ddcaa717b2f79147ab05084889ea0e"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/contentManagement/badgesPoints/page.tsx": {
+    "mtime": 1779450750.4416966,
+    "ast_hash": "bbd12deafdb7dae50b7d7e80090c3a91",
+    "semantic_hash": "bbd12deafdb7dae50b7d7e80090c3a91"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/contentManagement/certificate/page.tsx": {
+    "mtime": 1778496607.3608828,
+    "ast_hash": "b6de6a4f3ac39b7d5efaca1b1f410589",
+    "semantic_hash": "b6de6a4f3ac39b7d5efaca1b1f410589"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/contentManagement/dailyContent/journeyLearning/page.tsx": {
+    "mtime": 1780289548.8085024,
+    "ast_hash": "57892c4b30af8a8a5337ac3164121dc8",
+    "semantic_hash": "57892c4b30af8a8a5337ac3164121dc8"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/contentManagement/dailyContent/modularLearning/page.tsx": {
+    "mtime": 1780289564.127455,
+    "ast_hash": "895c15710ff4d8196b1799e862af11d9",
+    "semantic_hash": "895c15710ff4d8196b1799e862af11d9"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/contentManagement/generalContent/goals/page.tsx": {
+    "mtime": 1778066937.26416,
+    "ast_hash": "90a58a0bf00ac1b01b2cd502300c289a",
+    "semantic_hash": "90a58a0bf00ac1b01b2cd502300c289a"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/contentManagement/generalContent/habits/page.tsx": {
+    "mtime": 1778066952.7538145,
+    "ast_hash": "8af8ead51b2ba0847ef0d1679a74b21c",
+    "semantic_hash": "8af8ead51b2ba0847ef0d1679a74b21c"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/contentManagement/generalContent/knowledgeCards/page.tsx": {
+    "mtime": 1776083136.830635,
+    "ast_hash": "4caa7801648d8e945d884bcbb7923384",
+    "semantic_hash": "4caa7801648d8e945d884bcbb7923384"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/contentManagement/generalContent/page.tsx": {
+    "mtime": 1775044941.6547077,
+    "ast_hash": "bae9e1ea938f0754a562caa94a2a61d8",
+    "semantic_hash": "bae9e1ea938f0754a562caa94a2a61d8"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/contentManagement/generalContent/quotes/page.tsx": {
+    "mtime": 1775044941.6548767,
+    "ast_hash": "79a36879e7eb59ff5d378a3c99929c91",
+    "semantic_hash": "79a36879e7eb59ff5d378a3c99929c91"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/contentManagement/generalContent/resources/page.tsx": {
+    "mtime": 1776083136.8307889,
+    "ast_hash": "88c3902f36ed3fc2a317c3adb141b58a",
+    "semantic_hash": "88c3902f36ed3fc2a317c3adb141b58a"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/contentManagement/generalContent/workbook/page.tsx": {
+    "mtime": 1776083136.8309493,
+    "ast_hash": "e8a235b67310dccb9f76d335385eee09",
+    "semantic_hash": "e8a235b67310dccb9f76d335385eee09"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/contentManagement/layout.tsx": {
+    "mtime": 1779874081.3686883,
+    "ast_hash": "4b507d1adaf3413d2a202cf45a7412ff",
+    "semantic_hash": "4b507d1adaf3413d2a202cf45a7412ff"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/contentManagement/mentors/page.tsx": {
+    "mtime": 1776837207.919433,
+    "ast_hash": "e8a9f4783878ccce900929b386e9af8e",
+    "semantic_hash": "e8a9f4783878ccce900929b386e9af8e"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/contentManagement/notifications/page.tsx": {
+    "mtime": 1777538588.1340108,
+    "ast_hash": "9dbd7050f3a6415a2cad449d0ea96260",
+    "semantic_hash": "9dbd7050f3a6415a2cad449d0ea96260"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/contentManagement/privacy/page.tsx": {
+    "mtime": 1775044941.6560547,
+    "ast_hash": "bbfcbcb9103bd5177c107ee60ccd9748",
+    "semantic_hash": "bbfcbcb9103bd5177c107ee60ccd9748"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/contentManagement/scheduledLearning/aiContent/page.tsx": {
+    "mtime": 1775044941.6563103,
+    "ast_hash": "bae4bd7f6b091a9d66da015ce840d532",
+    "semantic_hash": "bae4bd7f6b091a9d66da015ce840d532"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/contentManagement/scheduledLearning/page.tsx": {
+    "mtime": 1775044941.6565392,
+    "ast_hash": "0efda912afa17a05a4e71742b9377343",
+    "semantic_hash": "0efda912afa17a05a4e71742b9377343"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/contentManagement/scheduledLearning/planner/page.tsx": {
+    "mtime": 1779874057.2369378,
+    "ast_hash": "976f6cff473056eaf19c14426ca69b39",
+    "semantic_hash": "976f6cff473056eaf19c14426ca69b39"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/dashboard/layout.tsx": {
+    "mtime": 1779798641.3804655,
+    "ast_hash": "c1ca527f2834250cc9aff6e60d409aea",
+    "semantic_hash": "c1ca527f2834250cc9aff6e60d409aea"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/dashboard/page.tsx": {
+    "mtime": 1780033571.8020203,
+    "ast_hash": "2764913931f62814a2eb1f760d3fc5ad",
+    "semantic_hash": "2764913931f62814a2eb1f760d3fc5ad"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/feedbacks/page.tsx": {
+    "mtime": 1780300188.1111996,
+    "ast_hash": "28df356c12e76df42618b04d9255b21e",
+    "semantic_hash": "28df356c12e76df42618b04d9255b21e"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/forgot-password/page.tsx": {
+    "mtime": 1776322864.5116491,
+    "ast_hash": "04faec1ee512f799fde82f6f7ed78b21",
+    "semantic_hash": "04faec1ee512f799fde82f6f7ed78b21"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/layout.tsx": {
+    "mtime": 1779365664.673918,
+    "ast_hash": "a80fc4ab9af6c76b121a500a0038700b",
+    "semantic_hash": "a80fc4ab9af6c76b121a500a0038700b"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/login/page.tsx": {
+    "mtime": 1776083136.8318996,
+    "ast_hash": "60e8e55b688367520bdd9e17982cec58",
+    "semantic_hash": "60e8e55b688367520bdd9e17982cec58"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/maintenance/page.tsx": {
+    "mtime": 1776083136.8320558,
+    "ast_hash": "ad821985421a796480c072c0cf5a492f",
+    "semantic_hash": "ad821985421a796480c072c0cf5a492f"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/manage-license/corporate/page.tsx": {
+    "mtime": 1775044941.6580026,
+    "ast_hash": "be51ba010ebdfa5a27bfc43bc8df2b7b",
+    "semantic_hash": "be51ba010ebdfa5a27bfc43bc8df2b7b"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/manage-license/layout.tsx": {
+    "mtime": 1775044941.6580994,
+    "ast_hash": "23375d48f98b3069bc55b083672ea934",
+    "semantic_hash": "23375d48f98b3069bc55b083672ea934"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/manage-license/page.tsx": {
+    "mtime": 1775044941.6581557,
+    "ast_hash": "2b4f6eb53d50dd32090e5568cad7b7a6",
+    "semantic_hash": "2b4f6eb53d50dd32090e5568cad7b7a6"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/manage-license/retail/page.tsx": {
+    "mtime": 1775044941.6583037,
+    "ast_hash": "3d61d922caf9abed28a4edcf86fc3d22",
+    "semantic_hash": "3d61d922caf9abed28a4edcf86fc3d22"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/manage-token-credit/layout.tsx": {
+    "mtime": 1775044941.6584275,
+    "ast_hash": "23375d48f98b3069bc55b083672ea934",
+    "semantic_hash": "23375d48f98b3069bc55b083672ea934"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/manage-token-credit/page.tsx": {
+    "mtime": 1775044941.6585426,
+    "ast_hash": "1f1fcb3f8cb636c6f4a2f4ce95ccb900",
+    "semantic_hash": "1f1fcb3f8cb636c6f4a2f4ce95ccb900"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/manage-whatsapp-credit/layout.tsx": {
+    "mtime": 1775044941.6586597,
+    "ast_hash": "23375d48f98b3069bc55b083672ea934",
+    "semantic_hash": "23375d48f98b3069bc55b083672ea934"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/manage-whatsapp-credit/page.tsx": {
+    "mtime": 1775044941.658773,
+    "ast_hash": "a8dc6e509b89784eb22a78107fc354e0",
+    "semantic_hash": "a8dc6e509b89784eb22a78107fc354e0"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/mentors/page.tsx": {
+    "mtime": 1780034019.9815512,
+    "ast_hash": "051b985736639d31521d101be2d4c9ee",
+    "semantic_hash": "051b985736639d31521d101be2d4c9ee"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/page.tsx": {
+    "mtime": 1775044941.6589875,
+    "ast_hash": "4f75981544e512a2c0bf9f91100b07d9",
+    "semantic_hash": "4f75981544e512a2c0bf9f91100b07d9"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/plans/checkout/layout.tsx": {
+    "mtime": 1775044941.659146,
+    "ast_hash": "30d8e8c65d6c7ce06b49427cb70d6f72",
+    "semantic_hash": "30d8e8c65d6c7ce06b49427cb70d6f72"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/plans/checkout/page.tsx": {
+    "mtime": 1780302580.0087872,
+    "ast_hash": "6028c21750ac256108dcdeed3d81402a",
+    "semantic_hash": "6028c21750ac256108dcdeed3d81402a"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/plans/page.tsx": {
+    "mtime": 1780302275.7661362,
+    "ast_hash": "988ff3ff924cace7f9aca9a4d71acf29",
+    "semantic_hash": "988ff3ff924cace7f9aca9a4d71acf29"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/plans/payment-success/layout.tsx": {
+    "mtime": 1775044941.659494,
+    "ast_hash": "eb7f9f58fa9b86fb87907e039cf723a0",
+    "semantic_hash": "eb7f9f58fa9b86fb87907e039cf723a0"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/plans/payment-success/page.tsx": {
+    "mtime": 1776083136.8323944,
+    "ast_hash": "2b54422837dfa80d15bb5f9cdbf9a320",
+    "semantic_hash": "2b54422837dfa80d15bb5f9cdbf9a320"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/plans/retail-6months/layout.tsx": {
+    "mtime": 1775044941.6597102,
+    "ast_hash": "06ece89d1223070d7d434494301fadce",
+    "semantic_hash": "06ece89d1223070d7d434494301fadce"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/plans/retail-6months/page.tsx": {
+    "mtime": 1775044941.659818,
+    "ast_hash": "d134efba880a2efb9c1f4edae578d32e",
+    "semantic_hash": "d134efba880a2efb9c1f4edae578d32e"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/plans/trialplan/layout.tsx": {
+    "mtime": 1775044941.6599526,
+    "ast_hash": "aafbed9125784636f952e073bb01354b",
+    "semantic_hash": "aafbed9125784636f952e073bb01354b"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/plans/trialplan/page.tsx": {
+    "mtime": 1779873403.1509116,
+    "ast_hash": "a89fd5e3294912bd22feb6ece49dc3f4",
+    "semantic_hash": "a89fd5e3294912bd22feb6ece49dc3f4"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/programAdmin/goals/GoalsContent.tsx": {
+    "mtime": 1778576166.1044796,
+    "ast_hash": "c02de747b4bd2e6e4ef5d267ac0fa4b2",
+    "semantic_hash": "c02de747b4bd2e6e4ef5d267ac0fa4b2"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/programAdmin/goals/page.tsx": {
+    "mtime": 1775044941.6602762,
+    "ast_hash": "1de648cf9134e001e4bc8a9005109d70",
+    "semantic_hash": "1de648cf9134e001e4bc8a9005109d70"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/programAdmin/layout.tsx": {
+    "mtime": 1779873467.9615004,
+    "ast_hash": "343a6affd01527023d88835957f41728",
+    "semantic_hash": "343a6affd01527023d88835957f41728"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/programAdmin/participants/ParticipantsContent.tsx": {
+    "mtime": 1779873526.8164308,
+    "ast_hash": "3b0a7ed96267c5a6f9f9673ebbdee641",
+    "semantic_hash": "3b0a7ed96267c5a6f9f9673ebbdee641"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/programAdmin/participants/page.tsx": {
+    "mtime": 1775044941.6605663,
+    "ast_hash": "e8c7fd37c9e1c522899cfda4d62de95e",
+    "semantic_hash": "e8c7fd37c9e1c522899cfda4d62de95e"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/programAdmin/reports/ReportsContent.tsx": {
+    "mtime": 1779873540.6121664,
+    "ast_hash": "5368d3974ffb0f870b2ebf3d0911697c",
+    "semantic_hash": "5368d3974ffb0f870b2ebf3d0911697c"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/programAdmin/reports/page.tsx": {
+    "mtime": 1775044941.6607728,
+    "ast_hash": "3d039ea88eaaf297764655597a23fe07",
+    "semantic_hash": "3d039ea88eaaf297764655597a23fe07"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/programAdmin/submissions/SubmissionsContent.tsx": {
+    "mtime": 1778150298.9198267,
+    "ast_hash": "d6d1af549b0b2890d9585d78797d9e28",
+    "semantic_hash": "d6d1af549b0b2890d9585d78797d9e28"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/programAdmin/submissions/page.tsx": {
+    "mtime": 1775044941.660961,
+    "ast_hash": "fa70d820ecd8b74daeb3a016168dbf8d",
+    "semantic_hash": "fa70d820ecd8b74daeb3a016168dbf8d"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/programAdmin/teams/TeamsContent.tsx": {
+    "mtime": 1775044941.661101,
+    "ast_hash": "487d5799961d91d9ba282f663635a4aa",
+    "semantic_hash": "487d5799961d91d9ba282f663635a4aa"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/programAdmin/teams/page.tsx": {
+    "mtime": 1775044941.6611571,
+    "ast_hash": "4e6802695d05d6d66bdd20b97811ce8d",
+    "semantic_hash": "4e6802695d05d6d66bdd20b97811ce8d"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/programs/create/access-code-generated/page.tsx": {
+    "mtime": 1776083136.8326094,
+    "ast_hash": "28d18427e7be1a7f6beca3da816a9512",
+    "semantic_hash": "28d18427e7be1a7f6beca3da816a9512"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/programs/create/invite-participants-retail/InviteParticipantsRetailContent.tsx": {
+    "mtime": 1775044941.6614223,
+    "ast_hash": "daa20f18796769732cbe8783c8caf48b",
+    "semantic_hash": "daa20f18796769732cbe8783c8caf48b"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/programs/create/invite-participants-retail/page.tsx": {
+    "mtime": 1775044941.6614764,
+    "ast_hash": "c62b8a54dc54360e91129080a006bf03",
+    "semantic_hash": "c62b8a54dc54360e91129080a006bf03"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/programs/create/invite-participants/InviteParticipantsContent.tsx": {
+    "mtime": 1776083136.8328204,
+    "ast_hash": "f35e3736c73b6c74cc212dddcc30c7fc",
+    "semantic_hash": "f35e3736c73b6c74cc212dddcc30c7fc"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/programs/create/invite-participants/page.tsx": {
+    "mtime": 1775044941.6616762,
+    "ast_hash": "dd4a64ea07121903aacf4b2b27ffa67a",
+    "semantic_hash": "dd4a64ea07121903aacf4b2b27ffa67a"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/programs/create/page.tsx": {
+    "mtime": 1780043686.8356192,
+    "ast_hash": "2848e6eee6ee3bbf6bb44a4c011cd735",
+    "semantic_hash": "2848e6eee6ee3bbf6bb44a4c011cd735"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/programs/create/view-participants/page.tsx": {
+    "mtime": 1776938918.7030985,
+    "ast_hash": "c1f7c41a81ee5ffe49038dceb8bc0384",
+    "semantic_hash": "c1f7c41a81ee5ffe49038dceb8bc0384"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/programs/duplicate/page.tsx": {
+    "mtime": 1778139795.2709699,
+    "ast_hash": "1f74196e75e82ca24118adef47f95ef6",
+    "semantic_hash": "1f74196e75e82ca24118adef47f95ef6"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/programs/edit/[id]/page.tsx": {
+    "mtime": 1780298322.7484636,
+    "ast_hash": "209530ee967a59ef78ce821817579555",
+    "semantic_hash": "209530ee967a59ef78ce821817579555"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/programs/layout.tsx": {
+    "mtime": 1775044941.6622708,
+    "ast_hash": "c5da8c89c3fd24750bd4957279ae6db0",
+    "semantic_hash": "c5da8c89c3fd24750bd4957279ae6db0"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/programs/page.tsx": {
+    "mtime": 1779873429.1153708,
+    "ast_hash": "63440f4003b5c1d86ed109f4af966a62",
+    "semantic_hash": "63440f4003b5c1d86ed109f4af966a62"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/programs/retail/page.tsx": {
+    "mtime": 1775044941.6625206,
+    "ast_hash": "780c349a6470824fb4ff632e331f36c0",
+    "semantic_hash": "780c349a6470824fb4ff632e331f36c0"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/reset-password/page.tsx": {
+    "mtime": 1776419815.1004121,
+    "ast_hash": "0df016f62bf4cdb847b1221a6f9033d3",
+    "semantic_hash": "0df016f62bf4cdb847b1221a6f9033d3"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/signup/page.tsx": {
+    "mtime": 1780302194.9815521,
+    "ast_hash": "cb40f69ab49c6f8133dc4c530ca8db95",
+    "semantic_hash": "cb40f69ab49c6f8133dc4c530ca8db95"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/support/page.tsx": {
+    "mtime": 1778239697.938422,
+    "ast_hash": "0f2b32881a4b9b8b9ed3dad20b4d9ae8",
+    "semantic_hash": "0f2b32881a4b9b8b9ed3dad20b4d9ae8"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/app/users/page.tsx": {
+    "mtime": 1776083136.8338692,
+    "ast_hash": "6c538230c9201c23a970a02702967350",
+    "semantic_hash": "6c538230c9201c23a970a02702967350"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/common/ConfirmCloseModal.tsx": {
+    "mtime": 1775044941.6632388,
+    "ast_hash": "82b1fe796e7d44c968d7f8b4111f414a",
+    "semantic_hash": "82b1fe796e7d44c968d7f8b4111f414a"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/common/ConfirmDeleteModal.tsx": {
+    "mtime": 1775044941.663309,
+    "ast_hash": "e517c185c4eb3f46e42ffb0e3eeb6df5",
+    "semantic_hash": "e517c185c4eb3f46e42ffb0e3eeb6df5"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/common/ConfirmPublishModal.tsx": {
+    "mtime": 1775044941.663362,
+    "ast_hash": "f08ad95ccb8ced214ce41e8aab866fc7",
+    "semantic_hash": "f08ad95ccb8ced214ce41e8aab866fc7"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/common/FieldError.tsx": {
+    "mtime": 1775044941.6634545,
+    "ast_hash": "04a89d7eb0976db771e430ffdc8f42df",
+    "semantic_hash": "04a89d7eb0976db771e430ffdc8f42df"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/common/GenerateAccessCodeModal.tsx": {
+    "mtime": 1775044941.6635215,
+    "ast_hash": "ffda5efeccf3960f98f824da986b43f9",
+    "semantic_hash": "ffda5efeccf3960f98f824da986b43f9"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/common/GlobalLoader.tsx": {
+    "mtime": 1775044941.6636121,
+    "ast_hash": "341d609bbfc6dac9565ef7eafeb8ca65",
+    "semantic_hash": "341d609bbfc6dac9565ef7eafeb8ca65"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/common/ListSkeletonLoader.tsx": {
+    "mtime": 1775044941.663696,
+    "ast_hash": "789fabb0cf813a487ac0e78c7ee33f78",
+    "semantic_hash": "789fabb0cf813a487ac0e78c7ee33f78"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/common/RescheduleContentModal.tsx": {
+    "mtime": 1778824789.7277904,
+    "ast_hash": "08c12a09115709a2014e25bd53dbb1a5",
+    "semantic_hash": "08c12a09115709a2014e25bd53dbb1a5"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/common/RichTextEditor.tsx": {
+    "mtime": 1779100793.7847664,
+    "ast_hash": "da227d734ca92d45a1c57375dcf8ae9b",
+    "semantic_hash": "da227d734ca92d45a1c57375dcf8ae9b"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/common/icons/ContentManagementIcons.tsx": {
+    "mtime": 1775044941.663876,
+    "ast_hash": "8aaf61695939f7bfa497eaa4b54a8d0b",
+    "semantic_hash": "8aaf61695939f7bfa497eaa4b54a8d0b"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/common/icons/InviteParticipantsIcons.tsx": {
+    "mtime": 1775044941.6639297,
+    "ast_hash": "6e5ce6ad54e679630ba5d8c0f2953e49",
+    "semantic_hash": "6e5ce6ad54e679630ba5d8c0f2953e49"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/common/icons/ProgramAdminIcons.tsx": {
+    "mtime": 1775044941.6639888,
+    "ast_hash": "a20181a9fb01d8f90eefd23684e6adc6",
+    "semantic_hash": "a20181a9fb01d8f90eefd23684e6adc6"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/common/icons/SidebarIcons.tsx": {
+    "mtime": 1775044941.6640475,
+    "ast_hash": "c25b62ee58178b360fbda67ea23dcfe4",
+    "semantic_hash": "c25b62ee58178b360fbda67ea23dcfe4"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/common/index.ts": {
+    "mtime": 1775044941.664155,
+    "ast_hash": "0fcd5de1755219c5a1fdcea9cb1d53ea",
+    "semantic_hash": "0fcd5de1755219c5a1fdcea9cb1d53ea"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/auth/AuthLayout.tsx": {
+    "mtime": 1775044941.6642818,
+    "ast_hash": "65f8e0b6a07bc7dd48e3b7664badfae1",
+    "semantic_hash": "65f8e0b6a07bc7dd48e3b7664badfae1"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/auth/index.ts": {
+    "mtime": 1775044941.6643348,
+    "ast_hash": "b12228ed9aeeadc3cd6de24718995c99",
+    "semantic_hash": "b12228ed9aeeadc3cd6de24718995c99"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/badges-points/BadgeModal.tsx": {
+    "mtime": 1775044941.6644986,
+    "ast_hash": "77626a2fb1ba433c1a719af4fb4b3acb",
+    "semantic_hash": "77626a2fb1ba433c1a719af4fb4b3acb"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/badges-points/BadgesTable.tsx": {
+    "mtime": 1775044941.6646075,
+    "ast_hash": "83000bd3c0967206d164e79368049fbf",
+    "semantic_hash": "83000bd3c0967206d164e79368049fbf"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/badges-points/CustomPointsModal.tsx": {
+    "mtime": 1775044941.6647084,
+    "ast_hash": "8f37e5387db2ab74dae5df2ede56f953",
+    "semantic_hash": "8f37e5387db2ab74dae5df2ede56f953"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/badges-points/CustomPointsTable.tsx": {
+    "mtime": 1775044941.6648355,
+    "ast_hash": "2808864b14cfb9da504df7f91890085f",
+    "semantic_hash": "2808864b14cfb9da504df7f91890085f"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/badges-points/PointsConfig.tsx": {
+    "mtime": 1779451757.4768455,
+    "ast_hash": "6deecbc7c80f83418ff42f115ccc19b1",
+    "semantic_hash": "6deecbc7c80f83418ff42f115ccc19b1"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/badges-points/RewardModal.tsx": {
+    "mtime": 1775044941.665055,
+    "ast_hash": "9c915e2ef97aad330608e64f493abba3",
+    "semantic_hash": "9c915e2ef97aad330608e64f493abba3"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/content/AIStepper.tsx": {
+    "mtime": 1775044941.6651442,
+    "ast_hash": "1a9ae6db6cf02984e8353e81d4ec6b20",
+    "semantic_hash": "1a9ae6db6cf02984e8353e81d4ec6b20"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/content/AddContentModal.tsx": {
+    "mtime": 1779875986.5322623,
+    "ast_hash": "685ccb17a72eedb709f85aba72f10afc",
+    "semantic_hash": "685ccb17a72eedb709f85aba72f10afc"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/content/AddProgramDetailsForm.tsx": {
+    "mtime": 1775044941.6654127,
+    "ast_hash": "05e25f606f334ce7152f83f866f83c14",
+    "semantic_hash": "05e25f606f334ce7152f83f866f83c14"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/content/ApproveTokens.tsx": {
+    "mtime": 1775044941.6655562,
+    "ast_hash": "368ab256d2feb661cf2c32976572a09d",
+    "semantic_hash": "368ab256d2feb661cf2c32976572a09d"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/content/GenerateContentStatus.tsx": {
+    "mtime": 1775044941.6656654,
+    "ast_hash": "0e62e5b1bb0585a99150702f015d94ef",
+    "semantic_hash": "0e62e5b1bb0585a99150702f015d94ef"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/content/MediaPreviewModal.tsx": {
+    "mtime": 1779099197.6940398,
+    "ast_hash": "ed4cb8f8aebdc8d2150f06554a50c701",
+    "semantic_hash": "ed4cb8f8aebdc8d2150f06554a50c701"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/content/QuestionModal.tsx": {
+    "mtime": 1775044941.6658785,
+    "ast_hash": "0533daa41246425a520b41f7f04f664e",
+    "semantic_hash": "0533daa41246425a520b41f7f04f664e"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/content/RatingReviewModal.tsx": {
+    "mtime": 1776083136.834871,
+    "ast_hash": "075a56df66353a24bcfd50814fdabfe2",
+    "semantic_hash": "075a56df66353a24bcfd50814fdabfe2"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/content/ReviewScriptModal.tsx": {
+    "mtime": 1779374572.974103,
+    "ast_hash": "123dcc15fed1f8cd02261c31dac41ea3",
+    "semantic_hash": "123dcc15fed1f8cd02261c31dac41ea3"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/content/SharedContentForm.tsx": {
+    "mtime": 1779168461.5635865,
+    "ast_hash": "bfc1d32d478b5094b53bb550b3a203fc",
+    "semantic_hash": "bfc1d32d478b5094b53bb550b3a203fc"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/content/TableOfContent.tsx": {
+    "mtime": 1775044941.6661532,
+    "ast_hash": "6a3d34709e6f4dab15a258a9b0b223ea",
+    "semantic_hash": "6a3d34709e6f4dab15a258a9b0b223ea"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/content/TaskModal.tsx": {
+    "mtime": 1775044941.6662745,
+    "ast_hash": "64c7b9d4f19b13b5caa8a49faf29cebb",
+    "semantic_hash": "64c7b9d4f19b13b5caa8a49faf29cebb"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/content/content.types.ts": {
+    "mtime": 1779169697.8388426,
+    "ast_hash": "35092e057380e3cd07e90a06f14227be",
+    "semantic_hash": "35092e057380e3cd07e90a06f14227be"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/dashboard/DashboardSkeleton.tsx": {
+    "mtime": 1780033372.549304,
+    "ast_hash": "8ef5c311b8cce3f773a3bb6c38059b5b",
+    "semantic_hash": "8ef5c311b8cce3f773a3bb6c38059b5b"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/general-content/AddKnowledgeCardModal.tsx": {
+    "mtime": 1777543626.927579,
+    "ast_hash": "81218fd9854962a343a5fd2385bc9bbf",
+    "semantic_hash": "81218fd9854962a343a5fd2385bc9bbf"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/general-content/GeneralContentTabs.tsx": {
+    "mtime": 1775044941.6665807,
+    "ast_hash": "9a01daa178ed0f493aabe19364e6b448",
+    "semantic_hash": "9a01daa178ed0f493aabe19364e6b448"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/general-content/GoalCard.tsx": {
+    "mtime": 1776083136.8352458,
+    "ast_hash": "e51eb57682ba7ed9ed8ae617feba9333",
+    "semantic_hash": "e51eb57682ba7ed9ed8ae617feba9333"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/general-content/GoalModal.tsx": {
+    "mtime": 1776083136.8353922,
+    "ast_hash": "369ac92449fe57faa2cbddf8aa7f8bf8",
+    "semantic_hash": "369ac92449fe57faa2cbddf8aa7f8bf8"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/general-content/HabitCard.tsx": {
+    "mtime": 1776083136.835548,
+    "ast_hash": "c99fe8e0199a0e10708348e1b1be3deb",
+    "semantic_hash": "c99fe8e0199a0e10708348e1b1be3deb"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/general-content/HabitModal.tsx": {
+    "mtime": 1776083136.8356888,
+    "ast_hash": "593fc92edb426a935229f99b28126e5c",
+    "semantic_hash": "593fc92edb426a935229f99b28126e5c"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/general-content/HelpContentModal.tsx": {
+    "mtime": 1778066921.8561594,
+    "ast_hash": "e6fb90e588d9fcacb2da4be71506fece",
+    "semantic_hash": "e6fb90e588d9fcacb2da4be71506fece"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/general-content/KnowledgeCardGrid.tsx": {
+    "mtime": 1775044941.666966,
+    "ast_hash": "93ea22340350d204262278eabff701be",
+    "semantic_hash": "93ea22340350d204262278eabff701be"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/general-content/ResourceModal.tsx": {
+    "mtime": 1776083136.835869,
+    "ast_hash": "c5cdcf58eb8401862a984161af204d5c",
+    "semantic_hash": "c5cdcf58eb8401862a984161af204d5c"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/general-content/ResourceTable.tsx": {
+    "mtime": 1776083136.836025,
+    "ast_hash": "2470b658919124cefa7217680bce7bd4",
+    "semantic_hash": "2470b658919124cefa7217680bce7bd4"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/general-content/WorkbookModal.tsx": {
+    "mtime": 1775044941.6671712,
+    "ast_hash": "96526c1daa2bc5c0fcddeb99172a6f42",
+    "semantic_hash": "96526c1daa2bc5c0fcddeb99172a6f42"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/general-content/WorkbookTable.tsx": {
+    "mtime": 1775044941.6672454,
+    "ast_hash": "bd5174e28388fc130802ccf273399217",
+    "semantic_hash": "bd5174e28388fc130802ccf273399217"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/journey-learning/AddJourneyContentModal.tsx": {
+    "mtime": 1780287248.9358625,
+    "ast_hash": "4b1c958eccf0f259cce5a4fc564f9e3f",
+    "semantic_hash": "4b1c958eccf0f259cce5a4fc564f9e3f"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/journey-learning/JourneyContentList.tsx": {
+    "mtime": 1775044941.6674554,
+    "ast_hash": "e33b5caacb1364e0e84e360c03ea2989",
+    "semantic_hash": "e33b5caacb1364e0e84e360c03ea2989"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/license/AddPurchaseModal.tsx": {
+    "mtime": 1775044941.6675875,
+    "ast_hash": "4b63bc503eb9f61babbbab65d8796a87",
+    "semantic_hash": "4b63bc503eb9f61babbbab65d8796a87"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/manage-license/StatsPills.tsx": {
+    "mtime": 1775044941.667677,
+    "ast_hash": "defc1a0537e8c16951045de841990b9c",
+    "semantic_hash": "defc1a0537e8c16951045de841990b9c"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/manage-license/index.ts": {
+    "mtime": 1775044941.6677253,
+    "ast_hash": "ceef6346ee1523689b1c7acb6a99c9f7",
+    "semantic_hash": "ceef6346ee1523689b1c7acb6a99c9f7"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/mentors/MentorsSkeleton.tsx": {
+    "mtime": 1780033920.1054394,
+    "ast_hash": "88ff4ef6d5bb0189af3b165a5246c8ce",
+    "semantic_hash": "88ff4ef6d5bb0189af3b165a5246c8ce"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/modular-learning/AddContentModal.tsx": {
+    "mtime": 1780289430.1538696,
+    "ast_hash": "55e581f6515aba72255a36f6911f0b38",
+    "semantic_hash": "55e581f6515aba72255a36f6911f0b38"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/modular-learning/ContentList.tsx": {
+    "mtime": 1779260888.9922063,
+    "ast_hash": "3b9466e19583bb7cdcace4b9becfc1db",
+    "semantic_hash": "3b9466e19583bb7cdcace4b9becfc1db"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/notifications/DeleteConfirmationModal.tsx": {
+    "mtime": 1775044941.6680355,
+    "ast_hash": "75efd870f64a9136ac2f168b4596000e",
+    "semantic_hash": "75efd870f64a9136ac2f168b4596000e"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/notifications/EmailCard.tsx": {
+    "mtime": 1775044941.668095,
+    "ast_hash": "2bc86c23146a8353a29dca8a488b4b41",
+    "semantic_hash": "2bc86c23146a8353a29dca8a488b4b41"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/notifications/EmailModal.tsx": {
+    "mtime": 1775044941.6681614,
+    "ast_hash": "47105a02d74c3e7b38ec1ae820b6d3ef",
+    "semantic_hash": "47105a02d74c3e7b38ec1ae820b6d3ef"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/notifications/NotificationCard.tsx": {
+    "mtime": 1775044941.668248,
+    "ast_hash": "69a9133d6bad4db33f1bb88b32f29a9d",
+    "semantic_hash": "69a9133d6bad4db33f1bb88b32f29a9d"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/notifications/NotificationModal.tsx": {
+    "mtime": 1775044941.6683283,
+    "ast_hash": "289915ebb79decb56127bac0fb3178ed",
+    "semantic_hash": "289915ebb79decb56127bac0fb3178ed"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/notifications/NotificationPopover.tsx": {
+    "mtime": 1776156793.687088,
+    "ast_hash": "fd837845eb31d2cce6b7a735e0bdb2fe",
+    "semantic_hash": "fd837845eb31d2cce6b7a735e0bdb2fe"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/notifications/NotificationTabs.tsx": {
+    "mtime": 1777976082.3674319,
+    "ast_hash": "8bc8ca46598ccc03dc9409e95f35d7af",
+    "semantic_hash": "8bc8ca46598ccc03dc9409e95f35d7af"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/notifications/PopupCard.tsx": {
+    "mtime": 1775044941.6684718,
+    "ast_hash": "cc658952ea98831fe2f1ece49d45b1d9",
+    "semantic_hash": "cc658952ea98831fe2f1ece49d45b1d9"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/notifications/PopupModal.tsx": {
+    "mtime": 1777976079.3072608,
+    "ast_hash": "2bdf8b467873145458960d5db4520207",
+    "semantic_hash": "2bdf8b467873145458960d5db4520207"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/plans/components/CheckoutPlanSelector.tsx": {
+    "mtime": 1780298901.4728858,
+    "ast_hash": "0bc36b319a54179a4e45c69ae172ecdf",
+    "semantic_hash": "0bc36b319a54179a4e45c69ae172ecdf"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/plans/components/PricingCard.tsx": {
+    "mtime": 1775044941.668766,
+    "ast_hash": "2a2a74ec0c168ad11595f760c9553eb8",
+    "semantic_hash": "2a2a74ec0c168ad11595f760c9553eb8"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/plans/components/index.ts": {
+    "mtime": 1779691291.0322278,
+    "ast_hash": "1efc896a841e432d4957453a1f1b22d1",
+    "semantic_hash": "1efc896a841e432d4957453a1f1b22d1"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/plans/index.ts": {
+    "mtime": 1775044941.668864,
+    "ast_hash": "6a9cbc32cd3da697653ffa0d93001877",
+    "semantic_hash": "6a9cbc32cd3da697653ffa0d93001877"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/profile/ProfileModal.tsx": {
+    "mtime": 1780298948.6083782,
+    "ast_hash": "5ed81e39fe11b90892ed3cea44716848",
+    "semantic_hash": "5ed81e39fe11b90892ed3cea44716848"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/program-admin/AddGoalHabitModal.tsx": {
+    "mtime": 1775044941.6689818,
+    "ast_hash": "0e1e0cb97365c7f4e8748ec844e0a4aa",
+    "semantic_hash": "0e1e0cb97365c7f4e8748ec844e0a4aa"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/program-admin/AddTeamModal.tsx": {
+    "mtime": 1775044941.6690547,
+    "ast_hash": "22aeb7ac272edeb4ee8d716e65933ae9",
+    "semantic_hash": "22aeb7ac272edeb4ee8d716e65933ae9"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/program-admin/AssignParticipantsModal.tsx": {
+    "mtime": 1778070096.1281989,
+    "ast_hash": "43cf929f3be1af1210bf0e5b6b1e81aa",
+    "semantic_hash": "43cf929f3be1af1210bf0e5b6b1e81aa"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/program-admin/ConfirmModal.tsx": {
+    "mtime": 1775044941.6692352,
+    "ast_hash": "8352fdef3dfec62486ef28e527d098ae",
+    "semantic_hash": "8352fdef3dfec62486ef28e527d098ae"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/program-admin/GeneralSubmissionsTable.tsx": {
+    "mtime": 1775044941.6693182,
+    "ast_hash": "ac5b3dd97f322d2fee75f51e1b72f7a6",
+    "semantic_hash": "ac5b3dd97f322d2fee75f51e1b72f7a6"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/program-admin/GoalDetailsModal.tsx": {
+    "mtime": 1775044941.6694062,
+    "ast_hash": "ffd74ed9d69f5fc806cd1f13e541c290",
+    "semantic_hash": "ffd74ed9d69f5fc806cd1f13e541c290"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/program-admin/GoalHabitTable.types.ts": {
+    "mtime": 1778049181.4550257,
+    "ast_hash": "3759bd8286df4d271b160ffbd29ab026",
+    "semantic_hash": "3759bd8286df4d271b160ffbd29ab026"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/program-admin/GoalsTable.tsx": {
+    "mtime": 1778046344.3206484,
+    "ast_hash": "976762b74d4d5300e6cffde17db2353d",
+    "semantic_hash": "976762b74d4d5300e6cffde17db2353d"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/program-admin/HabitDetailsModal.tsx": {
+    "mtime": 1775044941.669711,
+    "ast_hash": "0af4674f3f1a5bd7c4bfb93e0b0920bf",
+    "semantic_hash": "0af4674f3f1a5bd7c4bfb93e0b0920bf"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/program-admin/HabitProgressModal.tsx": {
+    "mtime": 1775044941.669827,
+    "ast_hash": "18aded3ed368103a7a3d845bc951e0f2",
+    "semantic_hash": "18aded3ed368103a7a3d845bc951e0f2"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/program-admin/HabitsTable.tsx": {
+    "mtime": 1778046421.0790102,
+    "ast_hash": "ff4b8e5e5ab14c312537684c871e63f3",
+    "semantic_hash": "ff4b8e5e5ab14c312537684c871e63f3"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/program-admin/ModifyCriteriaModal.tsx": {
+    "mtime": 1779186565.252604,
+    "ast_hash": "9a6f7e9475c6f0e40d5bd0ec7e4214a9",
+    "semantic_hash": "9a6f7e9475c6f0e40d5bd0ec7e4214a9"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/program-admin/ModifyHeadersModal.tsx": {
+    "mtime": 1775044941.6701589,
+    "ast_hash": "1e7f74f40d84685f2058b13a8c884aa7",
+    "semantic_hash": "1e7f74f40d84685f2058b13a8c884aa7"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/program-admin/ProgramInfoBar.tsx": {
+    "mtime": 1775044941.6702173,
+    "ast_hash": "1018256b8538d8eafbb1fec86c528954",
+    "semantic_hash": "1018256b8538d8eafbb1fec86c528954"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/program-admin/RewardCustomPointsModal.tsx": {
+    "mtime": 1775044941.67033,
+    "ast_hash": "55c11749cf13efc2abde356c24d242f1",
+    "semantic_hash": "55c11749cf13efc2abde356c24d242f1"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/program-admin/SendEmailModal.tsx": {
+    "mtime": 1775044941.6704564,
+    "ast_hash": "79732d5b8e5dc40662dc39b6b817b5a8",
+    "semantic_hash": "79732d5b8e5dc40662dc39b6b817b5a8"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/program-admin/SendWhatsappModal.tsx": {
+    "mtime": 1779873481.7672262,
+    "ast_hash": "2d5383eb3b659fdb56f03ee7b99183a6",
+    "semantic_hash": "2d5383eb3b659fdb56f03ee7b99183a6"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/program-admin/SubmissionDetailsModal.tsx": {
+    "mtime": 1775044941.670704,
+    "ast_hash": "d20d2b1a5cc0a2c6395bac53562945a9",
+    "semantic_hash": "d20d2b1a5cc0a2c6395bac53562945a9"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/program-admin/TaskSubmissionsTable.tsx": {
+    "mtime": 1775044941.6710207,
+    "ast_hash": "c9da07aa82d5a04ab49f7808d08be0e5",
+    "semantic_hash": "c9da07aa82d5a04ab49f7808d08be0e5"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/program-admin/TeamMembersModal.tsx": {
+    "mtime": 1775044941.6711087,
+    "ast_hash": "0e008a8830d967d8029c9f6448404e34",
+    "semantic_hash": "0e008a8830d967d8029c9f6448404e34"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/program-admin/reports/AssessmentReportTab.tsx": {
+    "mtime": 1778149828.3075078,
+    "ast_hash": "4f12c7e681702c5142fd48fb7436f39c",
+    "semantic_hash": "4f12c7e681702c5142fd48fb7436f39c"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/program-admin/reports/CheckboxMultiSelect.tsx": {
+    "mtime": 1779186490.2627568,
+    "ast_hash": "f3c2be5ccad68d7e56fdebfa160dde87",
+    "semantic_hash": "f3c2be5ccad68d7e56fdebfa160dde87"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/program-admin/reports/IndividualReportTab.tsx": {
+    "mtime": 1775044941.6713498,
+    "ast_hash": "c4f70ad6db0e4865af1c51b8eb801a6b",
+    "semantic_hash": "c4f70ad6db0e4865af1c51b8eb801a6b"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/program-admin/reports/PerformanceReportTab.tsx": {
+    "mtime": 1775044941.671449,
+    "ast_hash": "e72074090e31aa5d0fac5f06b2cc0990",
+    "semantic_hash": "e72074090e31aa5d0fac5f06b2cc0990"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/program-admin/reports/TaskReportTab.tsx": {
+    "mtime": 1779187641.980285,
+    "ast_hash": "85832cc215f32c78dd306a8e597c5caa",
+    "semantic_hash": "85832cc215f32c78dd306a8e597c5caa"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/program-admin/reports/reportTabs.types.ts": {
+    "mtime": 1779187611.5831409,
+    "ast_hash": "0094b62593e6bd7e8d9fa236076ae42e",
+    "semantic_hash": "0094b62593e6bd7e8d9fa236076ae42e"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/programs/components/ProgramCard.tsx": {
+    "mtime": 1779873560.7264774,
+    "ast_hash": "f6bcbb9875c3c48f829c4c180cf025e0",
+    "semantic_hash": "f6bcbb9875c3c48f829c4c180cf025e0"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/programs/components/ProgramCardSkeleton.tsx": {
+    "mtime": 1779183348.7201774,
+    "ast_hash": "4c663442dfb685d1936cf498e184bfbd",
+    "semantic_hash": "4c663442dfb685d1936cf498e184bfbd"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/programs/components/index.ts": {
+    "mtime": 1779183352.9422927,
+    "ast_hash": "5c95c87b55f5c6519f4f49d0638d45ce",
+    "semantic_hash": "5c95c87b55f5c6519f4f49d0638d45ce"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/programs/duplicate/ContentScheduleSection.tsx": {
+    "mtime": 1778823803.4649916,
+    "ast_hash": "62854ee522b5cf33640c5f1910751eaa",
+    "semantic_hash": "62854ee522b5cf33640c5f1910751eaa"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/programs/duplicate/CopyProgramContentSection.tsx": {
+    "mtime": 1778143574.068833,
+    "ast_hash": "9a4e062971153f7448a298bb7b60d44e",
+    "semantic_hash": "9a4e062971153f7448a298bb7b60d44e"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/programs/duplicate/DuplicateProgramForm.tsx": {
+    "mtime": 1780043700.7853386,
+    "ast_hash": "be3a25666af5071c599b15c7e0e94038",
+    "semantic_hash": "be3a25666af5071c599b15c7e0e94038"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/programs/duplicate/DuplicateProgramSkeleton.tsx": {
+    "mtime": 1778141321.280573,
+    "ast_hash": "1b08045e565d87744975a2fdb54d9e43",
+    "semantic_hash": "1b08045e565d87744975a2fdb54d9e43"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/programs/edit/EditProgramSkeleton.tsx": {
+    "mtime": 1780298032.3792403,
+    "ast_hash": "eddf97711401d42ebec4dc432b7d0272",
+    "semantic_hash": "eddf97711401d42ebec4dc432b7d0272"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/features/programs/index.ts": {
+    "mtime": 1775044941.671929,
+    "ast_hash": "7f2b488c7b869289dfd87e6965789cb8",
+    "semantic_hash": "7f2b488c7b869289dfd87e6965789cb8"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/index.ts": {
+    "mtime": 1775044941.672028,
+    "ast_hash": "008944de2cb66567364203866850eacb",
+    "semantic_hash": "008944de2cb66567364203866850eacb"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/layout/ContentManagementSidebar.tsx": {
+    "mtime": 1776841061.1932154,
+    "ast_hash": "cfefa1e11fc84b07ceace0b2b02418d7",
+    "semantic_hash": "cfefa1e11fc84b07ceace0b2b02418d7"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/layout/DashboardLayout.tsx": {
+    "mtime": 1780300430.961539,
+    "ast_hash": "460b677ad0f59b7d36fb3a83cfc1f453",
+    "semantic_hash": "460b677ad0f59b7d36fb3a83cfc1f453"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/layout/DashboardNavbar.tsx": {
+    "mtime": 1780300206.3141844,
+    "ast_hash": "552eb1f1b3e28e63cfbc6fc85ebf746b",
+    "semantic_hash": "552eb1f1b3e28e63cfbc6fc85ebf746b"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/layout/Footer.tsx": {
+    "mtime": 1775044941.6726267,
+    "ast_hash": "b8f1a2941dda47dbadb78d281d44c654",
+    "semantic_hash": "b8f1a2941dda47dbadb78d281d44c654"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/layout/Navbar.tsx": {
+    "mtime": 1775044941.67276,
+    "ast_hash": "d5307bfe89a1043672c1413527fdc29c",
+    "semantic_hash": "d5307bfe89a1043672c1413527fdc29c"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/layout/PageWrapper.tsx": {
+    "mtime": 1775044941.6728344,
+    "ast_hash": "f33b769f331e6e3be4e9e9812cf73bb3",
+    "semantic_hash": "f33b769f331e6e3be4e9e9812cf73bb3"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/layout/ProgramAdminSidebar.tsx": {
+    "mtime": 1775044941.6729574,
+    "ast_hash": "afe8fca729bdf8e449af19185ad40729",
+    "semantic_hash": "afe8fca729bdf8e449af19185ad40729"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/layout/ProgramDetailsHeader.tsx": {
+    "mtime": 1775044941.673032,
+    "ast_hash": "839840707720fb3af4ff4ab58cae0ff2",
+    "semantic_hash": "839840707720fb3af4ff4ab58cae0ff2"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/layout/Sidebar.tsx": {
+    "mtime": 1780032521.4379249,
+    "ast_hash": "b5df14ad43db19f7cef7c32e89dd5b8d",
+    "semantic_hash": "b5df14ad43db19f7cef7c32e89dd5b8d"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/layout/guard/AuthGuard.tsx": {
+    "mtime": 1780032511.1964343,
+    "ast_hash": "a66b7ba8c2fe51ec48657555e76bf4a8",
+    "semantic_hash": "a66b7ba8c2fe51ec48657555e76bf4a8"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/layout/index.ts": {
+    "mtime": 1775044941.6734664,
+    "ast_hash": "50f585ee23925f64d46a2d2b60457c70",
+    "semantic_hash": "50f585ee23925f64d46a2d2b60457c70"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/providers/QueryProvider.tsx": {
+    "mtime": 1779365664.673934,
+    "ast_hash": "13bf6ff8b6ce2ed641fb2fb58513a0d9",
+    "semantic_hash": "13bf6ff8b6ce2ed641fb2fb58513a0d9"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/ui/Button.tsx": {
+    "mtime": 1775044941.6736112,
+    "ast_hash": "06373a34300dba290dafc8a6a5c7d70f",
+    "semantic_hash": "06373a34300dba290dafc8a6a5c7d70f"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/ui/Icons.tsx": {
+    "mtime": 1775044941.6736732,
+    "ast_hash": "d1a3b52090307a9674613818bc3fb5a4",
+    "semantic_hash": "d1a3b52090307a9674613818bc3fb5a4"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/ui/Loader.tsx": {
+    "mtime": 1775044941.673794,
+    "ast_hash": "db0705f7d618dcc9a356987a997656e5",
+    "semantic_hash": "db0705f7d618dcc9a356987a997656e5"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/ui/ModalPortal.tsx": {
+    "mtime": 1775044941.6738899,
+    "ast_hash": "f71a7d4410fe48d6672c46960405a0f4",
+    "semantic_hash": "f71a7d4410fe48d6672c46960405a0f4"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/ui/Toast.tsx": {
+    "mtime": 1775044941.6739492,
+    "ast_hash": "496954467dc8031e1c5b3bd7ff208034",
+    "semantic_hash": "496954467dc8031e1c5b3bd7ff208034"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/ui/index.ts": {
+    "mtime": 1775044941.6740522,
+    "ast_hash": "45e3c8a79b1263218860dfce84770988",
+    "semantic_hash": "45e3c8a79b1263218860dfce84770988"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/constants/index.ts": {
+    "mtime": 1775044941.6741529,
+    "ast_hash": "a529c3e300d808a4145c84122f5b6bf8",
+    "semantic_hash": "a529c3e300d808a4145c84122f5b6bf8"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/context/ToastContext.tsx": {
+    "mtime": 1775044941.6742795,
+    "ast_hash": "4d0d390f5fd229da7680b009c6c55d0a",
+    "semantic_hash": "4d0d390f5fd229da7680b009c6c55d0a"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/hooks/index.ts": {
+    "mtime": 1775044941.6743686,
+    "ast_hash": "1e25c7028fa970f5bc834160e6a68fc1",
+    "semantic_hash": "1e25c7028fa970f5bc834160e6a68fc1"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/hooks/useClientAdmin.ts": {
+    "mtime": 1779794032.262725,
+    "ast_hash": "32ae8210ba038889036c82c42333c112",
+    "semantic_hash": "32ae8210ba038889036c82c42333c112"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/hooks/useContentGeneration.ts": {
+    "mtime": 1779374268.62361,
+    "ast_hash": "d0bf4f5532c3c4e6aa6b7fcaab04bdab",
+    "semantic_hash": "d0bf4f5532c3c4e6aa6b7fcaab04bdab"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/hooks/useDashboard.ts": {
+    "mtime": 1780033562.7946494,
+    "ast_hash": "4e2ba76391e305722a5d54c8683022c3",
+    "semantic_hash": "4e2ba76391e305722a5d54c8683022c3"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/hooks/useDuplicateProgram.ts": {
+    "mtime": 1780043627.9972036,
+    "ast_hash": "42c389e3c859edf77ebd72d8db9a7086",
+    "semantic_hash": "42c389e3c859edf77ebd72d8db9a7086"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/hooks/useEditProgram.ts": {
+    "mtime": 1780298278.0681937,
+    "ast_hash": "ba4e7244ca6ae624363953d07268b8c2",
+    "semantic_hash": "ba4e7244ca6ae624363953d07268b8c2"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/hooks/useJourneyImages.ts": {
+    "mtime": 1780042308.3195302,
+    "ast_hash": "5fc205d63b1d9eeedb347cded6f7ad06",
+    "semantic_hash": "5fc205d63b1d9eeedb347cded6f7ad06"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/hooks/useMentors.ts": {
+    "mtime": 1780033908.6962016,
+    "ast_hash": "6f687cd8b56d9e655c27b1e8cefed6ba",
+    "semantic_hash": "6f687cd8b56d9e655c27b1e8cefed6ba"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/hooks/useNavigation.ts": {
+    "mtime": 1775044941.6745226,
+    "ast_hash": "ec8420b67be29dfdb511a7cada8b6642",
+    "semantic_hash": "ec8420b67be29dfdb511a7cada8b6642"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/hooks/useNotifications.ts": {
+    "mtime": 1776155980.4304385,
+    "ast_hash": "8ec2d3e89f7b727995c6846977ed6587",
+    "semantic_hash": "8ec2d3e89f7b727995c6846977ed6587"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/hooks/usePersistedScroll.ts": {
+    "mtime": 1779260523.2989771,
+    "ast_hash": "5f0fb91d4e94fadfbfc3ff2d1955a23c",
+    "semantic_hash": "5f0fb91d4e94fadfbfc3ff2d1955a23c"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/hooks/usePlans.ts": {
+    "mtime": 1779691236.814689,
+    "ast_hash": "7df29ebe934c511c8fbd415cc76e3b65",
+    "semantic_hash": "7df29ebe934c511c8fbd415cc76e3b65"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/hooks/usePointsConfig.ts": {
+    "mtime": 1779450676.9018376,
+    "ast_hash": "4bdbaef9ca23663054f93734f40dd88f",
+    "semantic_hash": "4bdbaef9ca23663054f93734f40dd88f"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/hooks/useProgramDetails.ts": {
+    "mtime": 1780290281.3504236,
+    "ast_hash": "5d8fc853188d7ff64b3f56a1c1b424d2",
+    "semantic_hash": "5d8fc853188d7ff64b3f56a1c1b424d2"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/hooks/useProgramId.ts": {
+    "mtime": 1775044941.6746843,
+    "ast_hash": "98fb242b772836430acb2f1939ec831e",
+    "semantic_hash": "98fb242b772836430acb2f1939ec831e"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/hooks/usePrograms.ts": {
+    "mtime": 1776083136.837416,
+    "ast_hash": "53f175af0ec18e1308b15e302d924f3e",
+    "semantic_hash": "53f175af0ec18e1308b15e302d924f3e"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/hooks/useVideoApi.ts": {
+    "mtime": 1779368172.1322467,
+    "ast_hash": "669082304901dd184af1edd982dbe56f",
+    "semantic_hash": "669082304901dd184af1edd982dbe56f"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/hooks/useVideoGenerationPolling.ts": {
+    "mtime": 1779179906.7048154,
+    "ast_hash": "5d1b35f2278df59b9a75227f54711615",
+    "semantic_hash": "5d1b35f2278df59b9a75227f54711615"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/lib/auth.ts": {
+    "mtime": 1775044941.6749103,
+    "ast_hash": "5b6e30f2d478a0ecb7429931ccdc54b4",
+    "semantic_hash": "5b6e30f2d478a0ecb7429931ccdc54b4"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/lib/poll-generate-video-status.ts": {
+    "mtime": 1776083136.837642,
+    "ast_hash": "7c4dd111c22a6dadacb4bd7965b2990f",
+    "semantic_hash": "7c4dd111c22a6dadacb4bd7965b2990f"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/lib/routeAccess.ts": {
+    "mtime": 1780032796.0523732,
+    "ast_hash": "74a886bd85a101431f168f6805aa00fc",
+    "semantic_hash": "74a886bd85a101431f168f6805aa00fc"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/lib/utils.ts": {
+    "mtime": 1775044941.6749666,
+    "ast_hash": "0570d1066eba80d8326ce43e2dcffdce",
+    "semantic_hash": "0570d1066eba80d8326ce43e2dcffdce"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/lib/video-generation.ts": {
+    "mtime": 1776083136.8377562,
+    "ast_hash": "b48698f69a6ac73fda648b05c41358b0",
+    "semantic_hash": "b48698f69a6ac73fda648b05c41358b0"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/middleware.ts": {
+    "mtime": 1780032495.2057507,
+    "ast_hash": "0a93fdd21f55fbaa14b7aa00e3aded19",
+    "semantic_hash": "0a93fdd21f55fbaa14b7aa00e3aded19"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/services/api/ai.service.ts": {
+    "mtime": 1779374272.5390296,
+    "ast_hash": "353111b3d76612aafc34d09801096f7f",
+    "semantic_hash": "353111b3d76612aafc34d09801096f7f"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/services/api/aiToken.service.ts": {
+    "mtime": 1775044941.6753526,
+    "ast_hash": "8480a3a8992bce64d73821419a48636a",
+    "semantic_hash": "8480a3a8992bce64d73821419a48636a"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/services/api/auth.service.ts": {
+    "mtime": 1778583549.6676724,
+    "ast_hash": "08424f5cc961b02b5a765e9bd72d5e02",
+    "semantic_hash": "08424f5cc961b02b5a765e9bd72d5e02"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/services/api/certificate.service.ts": {
+    "mtime": 1778496243.7057116,
+    "ast_hash": "059a8613575e1512310e2e846e94cfbf",
+    "semantic_hash": "059a8613575e1512310e2e846e94cfbf"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/services/api/client.ts": {
+    "mtime": 1779094784.003368,
+    "ast_hash": "9a9bb4fff3a72bbc0cde9bba257def0f",
+    "semantic_hash": "9a9bb4fff3a72bbc0cde9bba257def0f"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/services/api/clientAdmin.service.ts": {
+    "mtime": 1778849252.384483,
+    "ast_hash": "bc41d2844514bbb81f7b3f383cb647f9",
+    "semantic_hash": "bc41d2844514bbb81f7b3f383cb647f9"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/services/api/content.service.ts": {
+    "mtime": 1778660272.0067418,
+    "ast_hash": "4726b81a46759edce276eb1e59b1eb3c",
+    "semantic_hash": "4726b81a46759edce276eb1e59b1eb3c"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/services/api/dashboard.service.ts": {
+    "mtime": 1775044941.6758807,
+    "ast_hash": "fb4308865d2c5cfe97065ecc83180fe6",
+    "semantic_hash": "fb4308865d2c5cfe97065ecc83180fe6"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/services/api/feedback.service.ts": {
+    "mtime": 1775044941.6759357,
+    "ast_hash": "07bfc5baa2cab519a78acef37e669abd",
+    "semantic_hash": "07bfc5baa2cab519a78acef37e669abd"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/services/api/goals.service.ts": {
+    "mtime": 1778576100.6962504,
+    "ast_hash": "f8b4a7568a52e5e6d8824d27728503fd",
+    "semantic_hash": "f8b4a7568a52e5e6d8824d27728503fd"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/services/api/habits.service.ts": {
+    "mtime": 1778576136.887926,
+    "ast_hash": "ef39ec0c6f922c4730c16c345cdcabf0",
+    "semantic_hash": "ef39ec0c6f922c4730c16c345cdcabf0"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/services/api/knowledgeCard.service.ts": {
+    "mtime": 1775044941.6761882,
+    "ast_hash": "d0efef3eb176143938cc5c93ef1d628e",
+    "semantic_hash": "d0efef3eb176143938cc5c93ef1d628e"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/services/api/license.service.ts": {
+    "mtime": 1775044941.6762824,
+    "ast_hash": "0da1b44b8826981c1f9038c8f9efadbb",
+    "semantic_hash": "0da1b44b8826981c1f9038c8f9efadbb"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/services/api/mentors.service.ts": {
+    "mtime": 1776836355.0866914,
+    "ast_hash": "510bd86a2cf987f1cb0b0f0fca5b70d3",
+    "semantic_hash": "510bd86a2cf987f1cb0b0f0fca5b70d3"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/services/api/navigation.service.ts": {
+    "mtime": 1775044941.6763916,
+    "ast_hash": "9afa382b99e32a2ab8604a714319872c",
+    "semantic_hash": "9afa382b99e32a2ab8604a714319872c"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/services/api/notifications.service.ts": {
+    "mtime": 1775044941.6764877,
+    "ast_hash": "dfa32114e05be44f2bd474316fd20751",
+    "semantic_hash": "dfa32114e05be44f2bd474316fd20751"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/services/api/participants.service.ts": {
+    "mtime": 1778489365.4245167,
+    "ast_hash": "e8306a82ce4261a361e7724b07f85f94",
+    "semantic_hash": "e8306a82ce4261a361e7724b07f85f94"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/services/api/plans.service.ts": {
+    "mtime": 1779788864.9793553,
+    "ast_hash": "52bbe5e894f0741c54ce4b78c5f10f18",
+    "semantic_hash": "52bbe5e894f0741c54ce4b78c5f10f18"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/services/api/programs.service.ts": {
+    "mtime": 1780043614.314246,
+    "ast_hash": "66558e48de94af7a55b133ff63770648",
+    "semantic_hash": "66558e48de94af7a55b133ff63770648"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/services/api/quotes.service.ts": {
+    "mtime": 1775044941.676867,
+    "ast_hash": "b10943be0ab36465aec6c1743ecfa80b",
+    "semantic_hash": "b10943be0ab36465aec6c1743ecfa80b"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/services/api/reports.service.ts": {
+    "mtime": 1779184648.9188173,
+    "ast_hash": "1f880bf9d1d73e8254275ed66d48aa5a",
+    "semantic_hash": "1f880bf9d1d73e8254275ed66d48aa5a"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/services/api/resources.service.ts": {
+    "mtime": 1775044941.6770186,
+    "ast_hash": "2daca54948792ee36253cd8908663c5e",
+    "semantic_hash": "2daca54948792ee36253cd8908663c5e"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/services/api/scoring.service.ts": {
+    "mtime": 1775044941.6771436,
+    "ast_hash": "e9ea140f2da00b91d7ebfbc135e0a410",
+    "semantic_hash": "e9ea140f2da00b91d7ebfbc135e0a410"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/services/api/submissions.service.ts": {
+    "mtime": 1775044941.677237,
+    "ast_hash": "59c8f11b85a4b467cc780ad851e1b1a3",
+    "semantic_hash": "59c8f11b85a4b467cc780ad851e1b1a3"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/services/api/support.service.ts": {
+    "mtime": 1775044941.6772938,
+    "ast_hash": "b37dd0059a624cef273a1b58d2204e10",
+    "semantic_hash": "b37dd0059a624cef273a1b58d2204e10"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/services/api/teams.service.ts": {
+    "mtime": 1775044941.6773865,
+    "ast_hash": "838136c517934cec6e91314a31adb2bd",
+    "semantic_hash": "838136c517934cec6e91314a31adb2bd"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/services/api/userNotifications.service.ts": {
+    "mtime": 1776155826.1002414,
+    "ast_hash": "5f8940f7a090251a3f90e470cb322e87",
+    "semantic_hash": "5f8940f7a090251a3f90e470cb322e87"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/services/api/whatsappCredit.service.ts": {
+    "mtime": 1775044941.6775115,
+    "ast_hash": "298ec26a3cf01a442ec5c57e2819f710",
+    "semantic_hash": "298ec26a3cf01a442ec5c57e2819f710"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/services/api/whatsappMessage.service.ts": {
+    "mtime": 1775044941.6776059,
+    "ast_hash": "79857e815b10a817b971211e76d92fd1",
+    "semantic_hash": "79857e815b10a817b971211e76d92fd1"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/services/api/workbook.service.ts": {
+    "mtime": 1775044941.6776628,
+    "ast_hash": "0b80d28f53096b55bf68bfbe59b7c1ed",
+    "semantic_hash": "0b80d28f53096b55bf68bfbe59b7c1ed"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/services/index.ts": {
+    "mtime": 1775044941.6777542,
+    "ast_hash": "72156ec65496d5bed4acb88339847943",
+    "semantic_hash": "72156ec65496d5bed4acb88339847943"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/store/authStore.ts": {
+    "mtime": 1775044941.6778865,
+    "ast_hash": "c01c2086d73a5bd6ffb6d3f2cf5b41a8",
+    "semantic_hash": "c01c2086d73a5bd6ffb6d3f2cf5b41a8"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/store/clientStore.ts": {
+    "mtime": 1779798568.2039568,
+    "ast_hash": "ea351b2f109c57e8493cb5abf688e61e",
+    "semantic_hash": "ea351b2f109c57e8493cb5abf688e61e"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/store/loaderStore.ts": {
+    "mtime": 1775044941.6780214,
+    "ast_hash": "39e7efd92ce63348f552d24a690b4be1",
+    "semantic_hash": "39e7efd92ce63348f552d24a690b4be1"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/store/programStore.ts": {
+    "mtime": 1775044941.678069,
+    "ast_hash": "dc4a41ff0ff03936dd0cc6ef9aeba63a",
+    "semantic_hash": "dc4a41ff0ff03936dd0cc6ef9aeba63a"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/types/auth.ts": {
+    "mtime": 1778584297.8928182,
+    "ast_hash": "6d89c60f9b5258a7a9a7b66eac85e439",
+    "semantic_hash": "6d89c60f9b5258a7a9a7b66eac85e439"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/types/index.ts": {
+    "mtime": 1780043607.0689158,
+    "ast_hash": "3d7f0781edad5f32f4abc8958640fb61",
+    "semantic_hash": "3d7f0781edad5f32f4abc8958640fb61"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/utils/content-helper.ts": {
+    "mtime": 1777526989.173362,
+    "ast_hash": "cb129a5fc9d3250c0376d18c90d87d4e",
+    "semantic_hash": "cb129a5fc9d3250c0376d18c90d87d4e"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/utils/content-upload-template.ts": {
+    "mtime": 1776748108.902355,
+    "ast_hash": "164282cc9fa60fda796f8153940516c8",
+    "semantic_hash": "164282cc9fa60fda796f8153940516c8"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/utils/date-time.ts": {
+    "mtime": 1778762548.8993816,
+    "ast_hash": "bb01c1747d0e7e353d99601cb6c0ba57",
+    "semantic_hash": "bb01c1747d0e7e353d99601cb6c0ba57"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/utils/generate-video-thumbnail.ts": {
+    "mtime": 1776083136.8398933,
+    "ast_hash": "102c23986890719d25debdc3169ab0dc",
+    "semantic_hash": "102c23986890719d25debdc3169ab0dc"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/utils/razorpay.ts": {
+    "mtime": 1775044941.6839333,
+    "ast_hash": "2d3df85ef37d8a4918abf5da82d1472b",
+    "semantic_hash": "2d3df85ef37d8a4918abf5da82d1472b"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/utils/toast.ts": {
+    "mtime": 1775044941.68403,
+    "ast_hash": "22f66ee653b4f5d7c93fc429532277fa",
+    "semantic_hash": "22f66ee653b4f5d7c93fc429532277fa"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/start-server.sh": {
+    "mtime": 1775044941.6840873,
+    "ast_hash": "adf5dcc6be833ffe39ab9a1a0aaa0e5a",
+    "semantic_hash": "adf5dcc6be833ffe39ab9a1a0aaa0e5a"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/tailwind.config.ts": {
+    "mtime": 1775044941.6841881,
+    "ast_hash": "47ac4cdfd2fdaccc68d2ed04df91939c",
+    "semantic_hash": "47ac4cdfd2fdaccc68d2ed04df91939c"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/tsconfig.json": {
+    "mtime": 1775044941.6842902,
+    "ast_hash": "a96467de60254aa784a3ee048e9ac77d",
+    "semantic_hash": "a96467de60254aa784a3ee048e9ac77d"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/.changeset/README.md": {
+    "mtime": 1775044941.638408,
+    "ast_hash": "ee7f8da8dbf1e56238d932d47bed7ab5",
+    "semantic_hash": "ee7f8da8dbf1e56238d932d47bed7ab5"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/.claude/skills/check-colors.md": {
+    "mtime": 1778829409.2684886,
+    "ast_hash": "cfc9f9b856b54fb5a9909842e8f13933",
+    "semantic_hash": "cfc9f9b856b54fb5a9909842e8f13933"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/.github/ISSUE_TEMPLATE/bug_report.yml": {
+    "mtime": 1775044941.6401615,
+    "ast_hash": "ac85a3e93ea0bafc2c8f053e0e28fc1f",
+    "semantic_hash": "ac85a3e93ea0bafc2c8f053e0e28fc1f"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/.github/ISSUE_TEMPLATE/feature_request.yml": {
+    "mtime": 1775044941.6402698,
+    "ast_hash": "a494fd49f90fe0aef5d34b22f6400ebe",
+    "semantic_hash": "a494fd49f90fe0aef5d34b22f6400ebe"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/.github/pull_request_template.md": {
+    "mtime": 1775044941.640381,
+    "ast_hash": "f31e64a259f5e238c2fb47af86db7e1c",
+    "semantic_hash": "f31e64a259f5e238c2fb47af86db7e1c"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/.github/workflows/pr-checks.yml": {
+    "mtime": 1775044941.640528,
+    "ast_hash": "7edf62f19a7129a36183b7b9c187407a",
+    "semantic_hash": "7edf62f19a7129a36183b7b9c187407a"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/CLAUDE.md": {
+    "mtime": 1779793624.9071906,
+    "ast_hash": "32cf5212c0281a98a057a63662862ddc",
+    "semantic_hash": "32cf5212c0281a98a057a63662862ddc"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/CONTRIBUTING.md": {
+    "mtime": 1775044941.6412644,
+    "ast_hash": "0e5dae90fbb3e3c6313c0d5c6f69772e",
+    "semantic_hash": "0e5dae90fbb3e3c6313c0d5c6f69772e"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/README.md": {
+    "mtime": 1775044941.6414073,
+    "ast_hash": "4969e22320fd81c686586cd0413838c1",
+    "semantic_hash": "4969e22320fd81c686586cd0413838c1"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/docs/AI_WRAPPER_API_DOCUMENTATION.md": {
+    "mtime": 1775044941.641623,
+    "ast_hash": "a21cc8cf68983dc0aef2261ba505d0a0",
+    "semantic_hash": "a21cc8cf68983dc0aef2261ba505d0a0"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/docs/API_INTEGRATION_TODO.md": {
+    "mtime": 1775044941.6417565,
+    "ast_hash": "43f82ce0633d698071d6f2e3af39eab3",
+    "semantic_hash": "43f82ce0633d698071d6f2e3af39eab3"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/docs/DEPLOYMENT.md": {
+    "mtime": 1775044941.6418264,
+    "ast_hash": "2f9f092d4942ac2f2fbe465d48d0a34e",
+    "semantic_hash": "2f9f092d4942ac2f2fbe465d48d0a34e"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/docs/IMPLEMENTATION_REPORT.md": {
+    "mtime": 1775044941.6418889,
+    "ast_hash": "00ce81900d8028746ca43f6f448d0f28",
+    "semantic_hash": "00ce81900d8028746ca43f6f448d0f28"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/docs/IMPLEMENTATION_STATUS.md": {
+    "mtime": 1775044941.6419508,
+    "ast_hash": "70f780a81083b56c1755cb0908288268",
+    "semantic_hash": "70f780a81083b56c1755cb0908288268"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/docs/README.md": {
+    "mtime": 1775044941.6420574,
+    "ast_hash": "7d5070904c4ef06af2bfbbf431b4dd2b",
+    "semantic_hash": "7d5070904c4ef06af2bfbbf431b4dd2b"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/docs/TESTING_GUIDE.md": {
+    "mtime": 1775044941.6421597,
+    "ast_hash": "4e25474cdafbc5d46083a4f7011811dc",
+    "semantic_hash": "4e25474cdafbc5d46083a4f7011811dc"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/docs/reference/page_structure.txt": {
+    "mtime": 1775044941.6424859,
+    "ast_hash": "d84cf3ca45c6e74963e5e8c4fec5c3df",
+    "semantic_hash": "d84cf3ca45c6e74963e5e8c4fec5c3df"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/docs/reference/update-content.md": {
+    "mtime": 1775044941.6425574,
+    "ast_hash": "5739e18f560434b95d1e7cd161faa74a",
+    "semantic_hash": "5739e18f560434b95d1e7cd161faa74a"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/scripts/README.md": {
+    "mtime": 1775044941.6527538,
+    "ast_hash": "d86677a9cda17e84380851512fec9cc2",
+    "semantic_hash": "d86677a9cda17e84380851512fec9cc2"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/README.md": {
+    "mtime": 1775044941.6532516,
+    "ast_hash": "475b186e1ef6454ef509d7bbe88d2a99",
+    "semantic_hash": "475b186e1ef6454ef509d7bbe88d2a99"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/src/components/README.md": {
+    "mtime": 1775044941.6631246,
+    "ast_hash": "b3ac71bec6f4fc9cf6a73f940ff00178",
+    "semantic_hash": "b3ac71bec6f4fc9cf6a73f940ff00178"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/public/Group_code_icon.svg": {
+    "mtime": 1775044941.6436613,
+    "ast_hash": "e4b1a7351cb65956fbc5807ccb141206",
+    "semantic_hash": "e4b1a7351cb65956fbc5807ccb141206"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/public/Individual_code_icon.svg": {
+    "mtime": 1775044941.6437516,
+    "ast_hash": "021646a66fba7d299047d33ef2e6cded",
+    "semantic_hash": "021646a66fba7d299047d33ef2e6cded"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/public/assets/ai/loader.gif": {
+    "mtime": 1775044941.6459646,
+    "ast_hash": "88d56a2d06ad3ea5e2de1343762b4aa3",
+    "semantic_hash": "88d56a2d06ad3ea5e2de1343762b4aa3"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/public/assets/danger 1.svg": {
+    "mtime": 1775044941.6461627,
+    "ast_hash": "0c96d06f344447481662b889363505de",
+    "semantic_hash": "0c96d06f344447481662b889363505de"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/public/assets/danger.gif": {
+    "mtime": 1775044941.6485574,
+    "ast_hash": "e70a69037e697085e7dd3991fdae3aea",
+    "semantic_hash": "e70a69037e697085e7dd3991fdae3aea"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/public/content_management/building_icon.svg": {
+    "mtime": 1775044941.6486907,
+    "ast_hash": "bfc150779dc010d1985e6d3ec92c180a",
+    "semantic_hash": "bfc150779dc010d1985e6d3ec92c180a"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/public/content_management/pricetag_alt_icon.svg": {
+    "mtime": 1775044941.6487439,
+    "ast_hash": "72cd1e625fbb6ef16ffa7e64d4cda161",
+    "semantic_hash": "72cd1e625fbb6ef16ffa7e64d4cda161"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/public/content_management/rupee_sign_icon.svg": {
+    "mtime": 1775044941.648798,
+    "ast_hash": "417ac31c5f7e4bfb689098fd0ae347aa",
+    "semantic_hash": "417ac31c5f7e4bfb689098fd0ae347aa"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/public/content_management/user_icon.svg": {
+    "mtime": 1775044941.6488476,
+    "ast_hash": "6c71055e09b537261034b578779975f5",
+    "semantic_hash": "6c71055e09b537261034b578779975f5"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/public/cred_page_side_img.svg": {
+    "mtime": 1775044941.648918,
+    "ast_hash": "9e12520719b86059000f68c8d9555826",
+    "semantic_hash": "9e12520719b86059000f68c8d9555826"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/public/designs/plans-design.svg": {
+    "mtime": 1775044941.650456,
+    "ast_hash": "4364c7186878557dc69cb768f25741a0",
+    "semantic_hash": "4364c7186878557dc69cb768f25741a0"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/public/excel-icon.svg": {
+    "mtime": 1775044941.6508262,
+    "ast_hash": "3993d96fc5016d29200315d03ebe7de2",
+    "semantic_hash": "3993d96fc5016d29200315d03ebe7de2"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/public/gmail-icon.svg": {
+    "mtime": 1775044941.650878,
+    "ast_hash": "a0b81d396bc4a3f77c036d51b3941250",
+    "semantic_hash": "a0b81d396bc4a3f77c036d51b3941250"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/public/gmail_icon.svg": {
+    "mtime": 1775044941.6509318,
+    "ast_hash": "38c90a89ac95ae84c2a70f02efd84f17",
+    "semantic_hash": "38c90a89ac95ae84c2a70f02efd84f17"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/public/icon.svg": {
+    "mtime": 1775044941.651066,
+    "ast_hash": "ee74484d48cfc5f265a3055cc5e39ba1",
+    "semantic_hash": "ee74484d48cfc5f265a3055cc5e39ba1"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/public/icons/Licenses_icon.svg": {
+    "mtime": 1775044941.6511855,
+    "ast_hash": "d91014ae19e73a5f2ea4f13161e2d6e7",
+    "semantic_hash": "d91014ae19e73a5f2ea4f13161e2d6e7"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/public/icons/access_code.png": {
+    "mtime": 1775044941.651268,
+    "ast_hash": "311512c8e4c2fe0848fc109013c15702",
+    "semantic_hash": "311512c8e4c2fe0848fc109013c15702"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/public/icons/ai_generate.svg": {
+    "mtime": 1775044941.6513426,
+    "ast_hash": "68bd02a06e83716b1a849837d8963461",
+    "semantic_hash": "68bd02a06e83716b1a849837d8963461"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/public/icons/coin_icon.svg": {
+    "mtime": 1775044941.652078,
+    "ast_hash": "8c4c9c6c62ef2d312cfdc250b5d7aaa3",
+    "semantic_hash": "8c4c9c6c62ef2d312cfdc250b5d7aaa3"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/public/icons/license.png": {
+    "mtime": 1775044941.6521375,
+    "ast_hash": "67c7ac296d6683ea3370d09f7805a4dd",
+    "semantic_hash": "67c7ac296d6683ea3370d09f7805a4dd"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/public/icons/logos_whatsapp-icon.svg": {
+    "mtime": 1775044941.6521952,
+    "ast_hash": "7121245bb0252cdd19a3797ad233ee4d",
+    "semantic_hash": "7121245bb0252cdd19a3797ad233ee4d"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/public/icons/notification-bell.png": {
+    "mtime": 1775044941.652245,
+    "ast_hash": "ee765e6d0a928bd3264d0e30b07473f0",
+    "semantic_hash": "ee765e6d0a928bd3264d0e30b07473f0"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/public/icons/user_list.png": {
+    "mtime": 1775044941.6523833,
+    "ast_hash": "fcb6078ea3255e4595b462b0251227d3",
+    "semantic_hash": "fcb6078ea3255e4595b462b0251227d3"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/public/icons/whatsapp-credit.png": {
+    "mtime": 1775044941.652438,
+    "ast_hash": "b7b453f46758c3a5ee0d851e56d0e75f",
+    "semantic_hash": "b7b453f46758c3a5ee0d851e56d0e75f"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/public/icons/write_get_start.svg": {
+    "mtime": 1775044941.652525,
+    "ast_hash": "96c478505f13bed7d590969bdcc702f4",
+    "semantic_hash": "96c478505f13bed7d590969bdcc702f4"
+  },
+  "/Users/itsmevizz/Freelance/actifyr-client-platform/public/logo.svg": {
+    "mtime": 1775044941.6526248,
+    "ast_hash": "da00d19ef04ed42d3101e87a1e7ba664",
+    "semantic_hash": "da00d19ef04ed42d3101e87a1e7ba664"
+  }
+}

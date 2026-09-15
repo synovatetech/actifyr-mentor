@@ -1,0 +1,13 @@
+# Replace with actual GitHub usernames/teams.
+* @itsmevizz
+
+# Frontend routes and pages
+/src/app/ @itsmevizz
+
+# Shared components
+/src/components/ @itsmevizz
+
+# Business logic and APIs
+/src/services/ @itsmevizz
+/src/hooks/ @itsmevizz
+

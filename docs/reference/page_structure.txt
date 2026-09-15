@@ -1,0 +1,194 @@
+================================================================================
+ACTIFYR CLIENT - ROUTES DOCUMENTATION
+================================================================================
+
+This document lists all available pages and routes in the Actifyr Client application.
+
+================================================================================
+PUBLIC ROUTES
+================================================================================
+
+Route: /
+- File: src/app/page.tsx
+- Description: Home/Landing page that redirects to /plans
+- Layout: None (redirects immediately)
+- Status: Implemented
+
+
+Route: /plans
+- File: src/app/plans/page.tsx
+- Description: License plan selection page - "Choose your License Plan" with pricing cards
+- Layout: Standalone (has its own navbar)
+- Features:
+  * Displays pricing plans (Trial, Retail, Corporate)
+  * Responsive design (Mobile/Tablet/Desktop)
+  * Background gradients
+  * "Get in touch" CTA section
+- Status: Implemented
+
+
+Route: /learn-plans
+- File: src/app/learn-plans/page.tsx
+- Description: Plans page for expired trial users - Shows pricing within dashboard layout
+- Layout: DashboardLayout (with sidebar and navbar)
+- Features:
+  * Shows only paid plans (Retail and Corporate) for expired trial users
+  * Includes dashboard sidebar and navbar
+- Status: Implemented
+
+
+================================================================================
+DASHBOARD ROUTES
+================================================================================
+
+Route: /dashboard
+- File: src/app/dashboard/page.tsx (Not yet created)
+- Description: Main dashboard page
+- Layout: DashboardLayout
+- Features:
+  * Main dashboard view
+- Status: Not implemented (route defined in Sidebar navigation)
+
+
+Route: /programs
+- File: src/app/programs/page.tsx
+- Description: Program list page with search and create program functionality
+- Layout: DashboardLayout (via programs/layout.tsx)
+- Features:
+  * List all programs
+  * Search by Program ID/Title/Facilitator
+  * Create Program button (routes to /programs/create)
+  * Program cards display
+  * Loading and error states
+- Status: Implemented
+
+
+Route: /programs/create
+- File: src/app/programs/create/page.tsx (Not yet created)
+- Description: Create new program page
+- Layout: DashboardLayout (via programs/layout.tsx)
+- Features:
+  * Form to create a new program
+- Status: Not implemented (referenced in /programs page)
+
+
+Route: /users
+- File: src/app/users/page.tsx (Not yet created)
+- Description: Users management page
+- Layout: DashboardLayout
+- Features:
+  * User list and management
+- Status: Not implemented (route defined in Sidebar navigation)
+
+
+Route: /admins
+- File: src/app/admins/page.tsx (Not yet created)
+- Description: Admin users management page
+- Layout: DashboardLayout
+- Features:
+  * Admin user list and management
+- Status: Not implemented (route defined in Sidebar navigation)
+
+
+Route: /mentors
+- File: src/app/mentors/page.tsx (Not yet created)
+- Description: Mentors management page
+- Layout: DashboardLayout
+- Features:
+  * Mentor list and management
+- Status: Not implemented (route defined in Sidebar navigation)
+
+
+Route: /feedbacks
+- File: src/app/feedbacks/page.tsx (Not yet created)
+- Description: Feedbacks management page
+- Layout: DashboardLayout
+- Features:
+  * Feedback list and management
+- Status: Not implemented (route defined in Sidebar navigation)
+
+
+Route: /support
+- File: src/app/support/page.tsx (Not yet created)
+- Description: Support page
+- Layout: DashboardLayout
+- Features:
+  * Support interface
+- Status: Not implemented (route defined in Sidebar navigation)
+
+
+================================================================================
+LAYOUT FILES
+================================================================================
+
+File: src/app/layout.tsx
+- Description: Root layout for the entire application
+- Contains: Root HTML structure, global providers
+
+File: src/app/programs/layout.tsx
+- Description: Layout wrapper for all /programs routes
+- Contains: DashboardLayout wrapper for programs section
+
+
+================================================================================
+ROUTE SUMMARY
+================================================================================
+
+Total Routes: 11
+- Public Routes: 3
+  * / (Home - redirects)
+  * /plans
+  * /learn-plans
+
+- Dashboard Routes: 8
+  * /dashboard
+  * /programs
+  * /programs/create
+  * /users
+  * /admins
+  * /mentors
+  * /feedbacks
+  * /support
+
+Implemented: 3 routes
+Not Implemented: 8 routes (but routes are defined in navigation)
+
+
+================================================================================
+NAVIGATION STRUCTURE
+================================================================================
+
+Sidebar Navigation (DashboardLayout):
+1. Dashboard (/dashboard)
+2. Programs (/programs) - Active by default
+3. Users (/users)
+4. Admins (/admins)
+5. Mentors (/mentors)
+6. Feedbacks (/feedbacks)
+7. Support (/support)
+
+Public Navigation:
+- Logo links to home (/)
+- Direct access to /plans page
+
+
+================================================================================
+COMPONENT DEPENDENCIES
+================================================================================
+
+Shared Components:
+- DashboardLayout: Used by dashboard routes
+- DashboardNavbar: Included in DashboardLayout
+- Sidebar: Included in DashboardLayout
+- Navbar: Used by standalone pages (/plans)
+
+Features:
+- PricingCard: Used in /plans and /learn-plans
+- ProgramCard: Used in /programs
+
+
+================================================================================
+END OF DOCUMENTATION
+================================================================================
+
+Last Updated: [Auto-generated]

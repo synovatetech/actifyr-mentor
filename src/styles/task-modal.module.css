@@ -1,0 +1,32 @@
+.modalFooterCentered {
+    padding: 24px 32px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    background: #fff;
+    border-top: none; 
+}
+
+.cancelBtnCentered {
+    flex: 1;
+    padding: 12px;
+    background: #D1D5DB;
+    color: #4B5563;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.saveBtnCentered {
+    flex: 1;
+    padding: 12px;
+    background: #EE4621;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+}

@@ -1,0 +1,12 @@
+---
+description: Enforce typography and color token usage.
+globs:
+  - "src/**/*.{ts,tsx,css}"
+alwaysApply: true
+---
+
+- Source of truth for design tokens is `src/styles/globals.css` under `@theme`.
+- Prefer Tailwind token classes (for example `bg-background`, `text-foreground`, `text-text-secondary`, `font-shadows`) over raw literals.
+- For CSS modules, prefer `var(--color-*)`, `var(--font-*)`, `var(--text-*)`, `var(--shadow-*)`, and `var(--radius-*)` when modifying styles.
+- Do not introduce new raw hex/rgba values in TSX unless unavoidable (SVG brand assets and external-library constraints are acceptable).
+- Preserve visual output exactly when refactoring style tokens.

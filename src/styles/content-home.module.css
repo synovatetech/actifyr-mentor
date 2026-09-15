@@ -1,0 +1,163 @@
+/* ============================================
+   Content Management Home Page Styles
+   Matching design image exactly
+   ============================================ */
+
+.container {
+    background: #F4F7FE;
+    /* Light blue background */
+    min-height: 100vh;
+}
+
+/* Program Info Bar stays peach */
+.programBar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0 19.8px;
+    height: 68px;
+    background: #FCE8E2;
+    border-bottom: 1px solid rgba(238, 70, 33, 0.1);
+    font-family: var(--font-sf-pro);
+    font-size: 14px;
+    color: #1E1E1E;
+}
+
+.programName {
+    font-weight: 590;
+}
+
+.separator {
+    color: rgba(30, 30, 30, 0.3);
+}
+
+.programDates {
+    font-weight: 400;
+}
+
+.programDates strong {
+    font-weight: 700;
+}
+
+.programType {
+    font-weight: 400;
+}
+
+.programType strong {
+    font-weight: 700;
+}
+
+/* Main Content - This will be the white container from the image */
+.landingWrapper {
+    padding: 20px 0 50px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content {
+    background: #FFFFFF;
+    /* White background covering cards */
+    padding: 40px;
+    /* Balanced compact padding */
+    width: fit-content;
+    max-width: 1100px;
+    border-radius: 16px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.title {
+    font-family: var(--font-sf-pro);
+    font-weight: 590;
+    font-size: 18px;
+    line-height: 20px;
+    color: #EE4621;
+    margin-top: 0;
+    margin-bottom: 24px;
+    width: 100%;
+    max-width: 1080px;
+    /* (500px * 2) + 24px gap + padding from card container if any */
+    /* content is fit-content, cards are 500*2 + 24 = 1024. content padding 40*2=80. 1024+80=1104. */
+    max-width: 1104px;
+    text-align: left;
+}
+
+/* Cards Container */
+.cardsContainer {
+    display: flex;
+    gap: 24px;
+    width: 100%;
+}
+
+/* Card Styles - Precise Figma dimensions */
+.card,
+.cardSide {
+    width: 500px;
+    height: 323px;
+    border: 1px solid #FCE8E2;
+    border-radius: 12px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Specific background for Create Yourself */
+.card {
+    background: #FFFFFF;
+}
+
+/* Specific background for AI card */
+.cardSide {
+    background: #FFFFFF;
+    border-color: rgba(156, 184, 245, 0.3);
+}
+
+.cardIcon {
+    margin-bottom: 24px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardTitle {
+    font-family: var(--font-sf-pro);
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.cardDescription {
+    font-family: var(--font-sf-pro);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #1E1E1E;
+    opacity: 0.8;
+    margin-bottom: 24px;
+    max-width: 420px;
+}
+
+.cardButton {
+    width: 420px;
+    height: 50px;
+    border: none;
+    border-radius: 8px;
+    font-family: var(--font-sf-pro);
+    font-weight: 700;
+    font-size: 16px;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: auto;
+    /* Push to bottom */
+}
+
+.cardButton:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+}

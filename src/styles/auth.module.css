@@ -1,0 +1,336 @@
+/* ============================================
+   Auth Pages - Login, Forgot Password, Reset Password
+   Based on Actifyr_Client_Login, PasswordReset, ResetMessage
+   ============================================ */
+
+.pageWrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: #F9FAFB;
+  display: flex;
+  overflow: hidden;
+}
+
+/* ----------------------------------------
+   Left Panel - Peach / FCE8E2
+   ---------------------------------------- */
+.leftPanel {
+  width: 50%;
+  min-height: 100vh;
+  background: #FCE8E2;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ----------------------------------------
+   Right Panel - White
+   ---------------------------------------- */
+.rightPanel {
+  width: 50%;
+  min-height: 100vh;
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 87.3px 63px 45px;
+  box-sizing: border-box;
+}
+
+.rightPanelCompact {
+  padding-top: 36px !important;
+  justify-content: center !important;
+}
+
+/* Logo in right panel */
+.logo {
+  display: block;
+  width: 162px;
+  height: 74.7px;
+  margin-bottom: 50.4px;
+  flex-shrink: 0;
+}
+
+.logo img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.logoCompact {
+  height: 58px !important;
+  width: 125px !important;
+  margin-bottom: 20px !important;
+}
+
+/* ----------------------------------------
+   Card
+   ---------------------------------------- */
+.card {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 486px;
+  background: #FFFFFF;
+  border: 0.9px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20.7px;
+  padding: 36px 63px 45px;
+}
+
+.cardCompact {
+  padding: 24px 63px 36px !important;
+}
+
+/* ----------------------------------------
+   Typography
+   ---------------------------------------- */
+.title {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25.2px;
+  line-height: 29.7px;
+  letter-spacing: 0.01em;
+  color: #1E1E1E;
+  margin: 0 0 26.1px 0;
+}
+
+.label {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 510;
+  font-size: 14.4px;
+  line-height: 17.1px;
+  color: #1E1E1E;
+  display: block;
+  margin-bottom: 9.9px;
+}
+
+/* ----------------------------------------
+   Form Elements
+   ---------------------------------------- */
+.input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 45px;
+  background: #FFFFFF;
+  border: 0.9px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5.4px;
+  padding: 0 12.6px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14.4px;
+  line-height: 17.1px;
+  color: #1E1E1E;
+  outline: none;
+  margin-bottom: 18px;
+}
+
+.input::placeholder {
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.input:focus {
+  border-color: rgba(238, 71, 35, 0.5);
+}
+
+.formGroup {
+  margin-bottom: 18px;
+}
+
+.formGroup:last-of-type {
+  margin-bottom: 0;
+}
+
+.errorText {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 12.6px;
+  line-height: 18px;
+  color: #ef4444;
+  margin: -9px 0 0 0;
+}
+
+/* ----------------------------------------
+   Forgot Password link (Login page)
+   ---------------------------------------- */
+.forgotRow {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 9px;
+}
+
+.forgotLink {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14.4px;
+  line-height: 17.1px;
+  text-align: right;
+  color: #1E1E1E;
+  text-decoration: none;
+}
+
+.forgotLink:hover {
+  color: #EE4621;
+}
+
+/* ----------------------------------------
+   Primary Button
+   ---------------------------------------- */
+.primaryButton {
+  width: 100%;
+  height: 45px;
+  background: #EE4621;
+  border: none;
+  border-radius: 5.4px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 510;
+  font-size: 14.4px;
+  line-height: 17.1px;
+  text-align: center;
+  color: #FFFFFF;
+  cursor: pointer;
+  margin-top: 9px;
+}
+
+.primaryButton:hover {
+  background: #EE4723;
+}
+
+.primaryButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Password wrapper and toggle */
+.passwordWrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+.passwordWrapper .input {
+  margin-bottom: 0;
+}
+
+.passwordToggle {
+  position: absolute;
+  right: 12.6px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  color: rgba(30, 30, 30, 0.7);
+}
+
+/* Signup Row */
+.signupRow {
+  text-align: center;
+  margin-top: 36px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14.4px;
+  color: rgba(30, 30, 30, 0.8);
+}
+
+.signupLink {
+  color: #EE4621;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 4px;
+}
+
+.signupLink:hover {
+  text-decoration: underline;
+}
+
+/* ----------------------------------------
+   Hint text (Reset Password page)
+   ---------------------------------------- */
+.hint {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 274;
+  font-size: 12.6px;
+  line-height: 18px;
+  color: rgba(30, 30, 30, 0.7);
+  margin: 14.4px 0 0 0;
+}
+
+/* ----------------------------------------
+   Back to Login link (Forgot Password page)
+   ---------------------------------------- */
+.backLinkWrap {
+  text-align: center;
+  margin-top: 36px;
+}
+
+.backLink {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 274;
+  font-size: 14.4px;
+  line-height: 17.1px;
+  text-align: center;
+  color: #1E1E1E;
+  text-decoration: none;
+}
+
+.backLink:hover {
+  color: #EE4621;
+}
+
+/* ----------------------------------------
+   Responsive
+   ---------------------------------------- */
+@media (max-width: 921.6px) {
+  .pageWrapper {
+    flex-direction: column;
+  }
+
+  .leftPanel {
+    width: 100%;
+    min-height: 180px;
+  }
+
+  .decorCircle1,
+  .decorCircle2,
+  .decorCircle3,
+  .decorGradient,
+  .polygonGrid,
+  .verticalLines {
+    display: none;
+  }
+
+  .rightPanel {
+    width: 100%;
+    padding: 36px 21.6px 45px;
+  }
+
+  .logo {
+    margin-bottom: 28.8px;
+  }
+
+  .card {
+    padding: 28.8px 21.6px 36px;
+  }
+}
+
+@media (max-width: 540px) {
+  .rightPanel {
+    padding: 21.6px 14.4px 36px;
+  }
+
+  .card {
+    padding: 21.6px 18px 28.8px;
+  }
+
+  .title {
+    font-size: 21.6px;
+    line-height: 25.2px;
+  }
+}

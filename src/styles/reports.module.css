@@ -1,0 +1,725 @@
+.container {
+    background: #F4F7FE;
+    min-height: 100vh;
+    padding-bottom: 40px;
+}
+
+.programBar {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 0 40px;
+    height: 68px;
+    background: #FCE8E2;
+    border-bottom: 1px solid rgba(238, 70, 33, 0.1);
+    font-size: 14px;
+    color: #1E1E1E;
+}
+
+.programName {
+    font-weight: 590;
+}
+
+.programDate,
+.programType {
+    color: #4B5563;
+}
+
+.programDate span,
+.programType span {
+    color: #1E1E1E;
+    font-weight: 600;
+}
+
+.separator {
+    color: rgba(0, 0, 0, 0.1);
+}
+
+.contentWrapper {
+    padding: 24px 40px;
+}
+
+/* Tab Switcher */
+.tabContainer {
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding: 8px;
+    display: flex;
+    width: fit-content;
+    gap: 8px;
+    margin-bottom: 24px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.tab {
+    padding: 10px 32px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    background: transparent;
+    color: #4B5563;
+}
+
+.activeTab {
+    background: #EE4621;
+    color: #FFFFFF;
+}
+
+/* Action Row */
+.actionRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.searchSection {
+    display: flex;
+    width: 480px;
+}
+
+.searchInput {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px 0 0 8px;
+    font-size: 14px;
+    outline: none;
+}
+
+.searchBtn {
+    padding: 0 24px;
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-left: none;
+    border-radius: 0 8px 8px 0;
+    color: #EE4621;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.rightActions {
+    display: flex;
+    gap: 12px;
+}
+
+.modifyBtn,
+.criteriaBtn {
+    padding: 10px 24px;
+    background: #FFFFFF;
+    border: 1px solid #EE4621;
+    border-radius: 8px;
+    color: #EE4621;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.exportBtn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 24px;
+    background: #FFFFFF;
+    border: 1px solid #22C55E;
+    border-radius: 8px;
+    color: #22C55E;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Table Card */
+.tableCard {
+    background: #FFFFFF;
+    border-radius: 12px;
+    border: 1px solid #F3F4F6;
+    overflow-x: auto;
+    overflow-y: hidden;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    min-width: 1100px;
+}
+
+.table th {
+    background: #FFFFFF;
+    padding: 18px 24px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 600;
+    color: #4B5563;
+    border-bottom: 2px solid #F9FAFB;
+}
+
+.nestedHeader {
+    text-align: center !important;
+    border-left: 1px solid #F3F4F6;
+}
+
+/* Sticky first two columns for Assessment Report */
+.stickyCol1,
+.stickyCol2 {
+    position: sticky;
+    z-index: 10;
+    background: #ffffff;
+}
+
+.stickyCol1 {
+    left: 0;
+    /* enforce exact width so stickyCol2 left offset is reliable */
+    width: 80px;
+    min-width: 80px;
+    max-width: 80px;
+    /* extend white cover slightly to the right to seal any sub-pixel gap */
+    box-shadow: 2px 0 0 0 #ffffff;
+}
+
+.stickyCol2 {
+    left: 80px;
+    /* right separator line + left white cover to hide any gap */
+    box-shadow: -2px 0 0 0 #ffffff, inset -1px 0 0 #E5E7EB;
+}
+
+/* Sticky header cells sit above sticky body cells */
+.table th.stickyCol1,
+.table th.stickyCol2 {
+    z-index: 11;
+}
+
+/* Ensure row background never bleeds through sticky columns */
+.table tbody tr {
+    background: #ffffff;
+}
+
+.subHeaderRow th {
+    font-size: 11px;
+    padding: 8px 4px;
+    text-align: center;
+    color: #10B981;
+    white-space: nowrap;
+}
+
+.subHeaderRow th span {
+    color: #6B7280;
+    font-weight: 400;
+}
+
+.table td {
+    padding: 18px 24px;
+    font-size: 14px;
+    color: #1E1E1E;
+    border-bottom: 1px solid #F3F4F6;
+}
+
+.emptyStateCell {
+    text-align: center;
+    color: #6B7280;
+    padding: 28px 24px !important;
+}
+
+/* Assessment Status Icons */
+.statusCell {
+    text-align: center !important;
+    border-left: 1px solid #F9FAFB;
+}
+
+.checkIcon {
+    width: 20px;
+    height: 20px;
+    background: #DCFCE7;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #10B981;
+}
+
+.bIcon {
+    width: 20px;
+    height: 20px;
+    background: #374151;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.emptyIcon {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #E5E7EB;
+    border-radius: 4px;
+    display: inline-flex;
+}
+
+/* Task Report Specifics */
+.notificationCell {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.whatsappBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #4B5563;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.whatsappBtn:hover {
+    border-color: #25D366;
+    color: #25D366;
+}
+
+.whatsappBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    border-color: #E5E7EB;
+    color: #4B5563;
+}
+
+.emailBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #4B5563;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.emailBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.checkboxInput {
+    width: 16px;
+    height: 16px;
+    accent-color: #EE4621;
+    cursor: pointer;
+}
+
+.table td.statusPending {
+    color: #EE4621;
+    font-weight: 600;
+}
+
+.table td.statusCompleted {
+    color: #10B981;
+    font-weight: 600;
+}
+
+.taskSelectedHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 20px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    border: 1px solid #F3F4F6;
+    padding: 12px 16px;
+    flex-wrap: wrap;
+}
+
+.taskSelectedText {
+    font-size: 14px;
+    color: #1F2937;
+    font-weight: 500;
+}
+
+.taskSelectedCount {
+    color: #EE4621;
+    font-weight: 700;
+}
+
+.taskSelectedActions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* Modal and Headers Selection */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.modalContainer {
+    background: #FFFFFF;
+    border-radius: 16px;
+    width: 800px;
+    max-width: min(800px, calc(100vw - 32px));
+    padding: 40px;
+    box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.modalHeader {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.modalTitle {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1E1E1E;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+}
+
+.modalCloseBtn {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin: -8px -8px 0 0;
+    padding: 0;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: #6B7280;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.modalCloseBtn:hover {
+    background: #F3F4F6;
+    color: #1E1E1E;
+}
+
+.modalCloseBtn:focus-visible {
+    outline: 2px solid #EE4621;
+    outline-offset: 2px;
+}
+
+.selectionGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px 32px;
+    margin-bottom: 40px;
+}
+
+.checkboxItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #1E1E1E;
+}
+
+.checkbox {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #D1D5DB;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+/* Fixed physical size — does not shrink/grow with grid or viewport */
+.checkboxFixed {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    min-height: 20px;
+    max-width: 20px;
+    max-height: 20px;
+    flex: none;
+    box-sizing: border-box;
+}
+
+.checked {
+    background: #EE4621;
+    border-color: #EE4621;
+}
+
+.modalFooter {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+}
+
+.unselectBtn {
+    background: #C2C2C2;
+    color: white;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.generateBtn {
+    background: var(--color-primary);
+    color: white;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.generateBtn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+/* Inline Header & Criteria Section */
+.inlineHeaderSection {
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 32px;
+    border: 1px solid #F3F4F6;
+    margin-top: 24px;
+}
+
+.sectionTitle {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: #1E1E1E;
+}
+
+.sectionTitle span {
+    color: #4B5563;
+    font-weight: 400;
+}
+
+.criteriaGrid {
+    display: flex;
+    gap: 32px;
+    align-items: flex-end;
+}
+
+.criteriaItem {
+    flex: 1;
+}
+
+.inputLabel {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1E1E1E;
+    margin-bottom: 10px;
+}
+
+.selectWrapper,
+.dateWrapper {
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+}
+
+.select,
+.dateInput {
+    width: 100%;
+    padding: 12px 42px 12px 16px;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #4B5563;
+    background: #fff;
+    outline: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.dateInput::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+.calendarIcon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    color: #9CA3AF;
+}
+
+/* ── CheckboxMultiSelect ─────────────────────────────────────────────────── */
+
+.msContainer {
+    position: relative;
+    width: 100%;
+}
+
+.msTrigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    background: #fff;
+    font-size: 14px;
+    color: #4B5563;
+    cursor: pointer;
+    text-align: left;
+    gap: 8px;
+}
+
+.msTrigger:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+.msDisabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.msTriggerLabel {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.msPlaceholder {
+    color: #9CA3AF;
+}
+
+.msDropdown {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(30, 30, 30, 0.1);
+    z-index: 200;
+    max-height: 260px;
+    overflow-y: auto;
+}
+
+.msItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #1E1E1E;
+    border-bottom: 1px solid rgba(111, 111, 111, 0.08);
+}
+
+.msItem:last-child {
+    border-bottom: none;
+}
+
+.msItem:hover {
+    background: rgba(111, 111, 111, 0.04);
+}
+
+.msHidden {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+.msBox {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    border: 1.5px solid #D1D5DB;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+}
+
+.msBoxChecked {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.msDateLabel {
+    color: #374151;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.msNoDate {
+    color: #9CA3AF;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.msDash {
+    color: #9CA3AF;
+    flex-shrink: 0;
+}
+
+.msLabel {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.msTooltip {
+    position: fixed;
+    background: #1E1E1E;
+    color: #ffffff;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 9999;
+    pointer-events: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}

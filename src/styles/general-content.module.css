@@ -1,0 +1,1217 @@
+.container {
+    background: #F4F7FE;
+    min-height: 100vh;
+    padding-bottom: 40px;
+}
+
+.programBar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0 19.8px;
+    height: 68px;
+    background: #FCE8E2;
+    border-bottom: 1px solid rgba(238, 70, 33, 0.1);
+    font-family: var(--font-sf-pro);
+    font-size: 14px;
+    color: #1E1E1E;
+}
+
+.programName {
+    font-weight: 590;
+    font-size: 14px;
+}
+
+.separator {
+    color: rgba(30, 30, 30, 0.1);
+    margin: 0 4px;
+}
+
+.contentWrapper {
+    padding: 24px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Tabs Navigation */
+.tabsContainer {
+    display: flex;
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding: 12px;
+    gap: 12px;
+    width: 100%;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.tabItem {
+    padding: 12px 0;
+    flex: 1;
+    text-align: center;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1E1E1E;
+    background: #F8F9FA;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.tabItem:hover:not(.activeTab) {
+    background: #F3F4F6;
+    color: #EE4621;
+}
+
+.activeTab {
+    background: #EE4621 !important;
+    color: #FFFFFF !important;
+}
+
+.activeTab:hover {
+    background: #D93D1A !important;
+}
+
+.tabMissingTranslationBadge {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+    margin-left: 6px;
+}
+
+/* Page Header with Button */
+.topNavigationRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.createButton {
+    background: #EE4621;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 24px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.createButton:hover {
+    background: #D93D1A;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(238, 70, 33, 0.2);
+}
+
+.createButton:active {
+    transform: translateY(0);
+}
+
+.createButton:disabled {
+    background: #F39A86;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Knowledge Card Grid */
+.cardsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* Force 4 cards in a row */
+    gap: 20px;
+}
+
+.knowledgeCard {
+    background: #FFFFFF;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.04);
+    border: 1px solid #F3F4F6;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    height: 100%;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.knowledgeCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.cardImageContainer {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    height: auto;
+    min-height: 0;
+    flex-shrink: 0;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background: #E5E7EB;
+    position: relative;
+}
+
+.cardImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.cardImagePlaceholder {
+    width: 100%;
+    height: 100%;
+    background: #E5E7EB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardContent {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 0;
+    /* Removing inner padding since card has it */
+}
+
+.cardTitle {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1E1E1E;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 42px;
+}
+
+.cardDescription {
+    font-size: 13px;
+    color: #6B7280;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    white-space: pre-line;
+}
+
+.cardFooter {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 8px;
+    margin-top: auto;
+}
+
+.chevronIcon {
+    color: #9CA3AF;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+/* Modal Styles */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.modalContainer {
+    background: #FFFFFF;
+    border-radius: 12px;
+    width: 600px;
+    max-width: 95vw;
+    box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.modalHeader {
+    padding: 20px 32px;
+    color: #EE4621;
+    font-weight: 600;
+    font-size: 18px;
+    border-bottom: 1px solid #F3F4F6;
+}
+
+.modalBody {
+    padding: 20px 32px;
+}
+
+.formGroup {
+    margin-bottom: 16px;
+}
+
+.label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1E1E1E;
+    margin-bottom: 6px;
+}
+
+.label span {
+    color: #EE4621;
+}
+
+.input,
+.textarea {
+    width: 100%;
+    padding: 10px 16px;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+
+.input::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+.input:focus,
+.textarea:focus {
+    border-color: #EE4621;
+}
+
+.textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    background: #fff;
+    color: #6B7280;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%239CA3AF'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 16px;
+}
+
+/* Custom File Upload */
+.fileUploadWrapper {
+    display: flex;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.fileInputDisplay {
+    flex: 1;
+    padding: 12px 16px;
+    font-size: 14px;
+    color: #9CA3AF;
+    background: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
+}
+
+.browseBtn {
+    padding: 12px 24px;
+    background: #fff;
+    border-left: 1px solid #E5E7EB;
+    color: #EE4621;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.browseBtn:hover {
+    color: #D93D1A;
+    background: #F9FAFB;
+}
+
+.uploadBrowseBtn {
+    padding: 12px 28px;
+    background: #EE4621;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.uploadBrowseBtn:hover {
+    background: #D93D1A;
+}
+
+.uploadBrowseBtn:disabled {
+    background: #F39A86;
+    cursor: not-allowed;
+}
+
+.helpModalContainer {
+    width: 680px;
+    margin: 40px auto;
+}
+
+.scrollableOverlay {
+    align-items: flex-start;
+    overflow-y: auto;
+}
+
+.helpEditorWrapper {
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+}
+
+.fileUploadHint {
+    margin-top: 6px;
+    margin-bottom: 0;
+    font-size: 12px;
+    color: #6B7280;
+}
+
+.modalFooter {
+    padding: 24px 32px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    background: #fff;
+    border-top: 1px solid #F3F4F6;
+}
+
+.modalFooterRight {
+    justify-content: flex-end;
+}
+
+.modalFooterRight .closeBtn,
+.modalFooterRight .saveBtn {
+    width: auto;
+    padding: 10px 28px;
+    font-size: 14px;
+}
+
+.closeBtn {
+    background: #C4C4C4;
+    color: white;
+    padding: 14px 0;
+    width: 200px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.closeBtn:hover {
+    background: #9A9A9A;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.closeBtn:active {
+    transform: translateY(0);
+}
+
+.closeBtn:disabled {
+    background: #D1D5DB;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.saveBtn {
+    background: #EE4621;
+    color: white;
+    padding: 14px 0;
+    width: 250px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.saveBtn:hover {
+    background: #D93D1A;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(238, 70, 33, 0.25);
+}
+
+.saveBtn:active {
+    transform: translateY(0);
+}
+
+.saveBtn:disabled {
+    background: #F39A86;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Empty State centering */
+.emptyStateView {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 540px;
+    text-align: center;
+    background: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.02);
+    padding: 40px;
+}
+
+.emptyStateMsg {
+    font-size: 15px;
+    color: #6B7281;
+    margin-bottom: 24px;
+}
+
+.largeCreateButton {
+    background: #EE4621;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    padding: 14px 110px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.largeCreateButton:hover {
+    background: #D93D1A;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(238, 70, 33, 0.2);
+}
+
+.largeCreateButton:active {
+    transform: translateY(0);
+}
+
+.largeCreateButton:disabled {
+    background: #F39A86;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.actionRow {
+    display: flex;
+    justify-content: flex-end;
+    margin: 24px 0;
+}
+
+/* Goals Grid (4 columns as per latest design) */
+.goalsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.goalCard {
+    background: #FFFFFF;
+    border: 1px solid #F3F4F6;
+    border-radius: 8px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.03);
+    min-height: 380px;
+    overflow: hidden;
+}
+
+.goalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.goalTitle {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1E1E1E;
+    max-width: 85%;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 42px;
+}
+
+.moreMenu {
+    cursor: pointer;
+    color: #9CA3AF;
+    padding: 0;
+    font-size: 18px;
+    position: relative;
+    background: transparent;
+    border: none;
+}
+
+.goalTarget {
+    font-size: 13px;
+    color: #1E1E1E;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.goalTarget span {
+    color: #4B5563;
+    font-weight: 400;
+    margin-left: 4px;
+}
+
+.goalDesc {
+    font-size: 13px;
+    color: #6B7280;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    white-space: pre-line;
+}
+
+.goalEditBtn {
+    width: 100%;
+    margin-top: auto;
+    padding: 12px;
+    background: #FFFFFF;
+    border: 1px solid #EE4621;
+    color: #EE4621;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+}
+
+.goalEditBtn:hover {
+    background: #FCE8E2;
+}
+
+/* Help Content Footer Section */
+.helpSection {
+    margin-top: 48px;
+    background: #FFFFFF;
+    border: 1px solid #F3F4F6;
+    border-radius: 8px;
+    padding: 24px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.helpText {
+    font-size: 14px;
+    color: #4B5563;
+    max-width: 600px;
+    line-height: 1.5;
+}
+
+.addHelpBtn {
+    padding: 10px 24px;
+    border: 1px solid #EE4621;
+    border-radius: 6px;
+    background: transparent;
+    color: #EE4621;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.addHelpBtn:hover {
+    background: rgba(238, 70, 33, 0.05);
+}
+
+/* Delete Menu Overlay (Pill/Bubble style like Image) */
+.deleteMenu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 4px;
+    background: #FFFFFF;
+    border-radius: 6px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    z-index: 20;
+    padding: 12px 24px;
+    border: 1px solid #F3F4F6;
+}
+
+.deleteItem {
+    font-size: 13px;
+    color: #6B7280;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.deleteItem:hover {
+    color: #DC2626;
+}
+
+.deleteItemDisabled {
+    font-size: 13px;
+    color: #D1D5DB;
+    cursor: not-allowed;
+    font-weight: 500;
+}
+
+/* CSS-only tooltip for the disabled Delete item — relies on :hover rather than
+   the native title attribute, which is inconsistent about actually appearing. */
+.deleteItemDisabledWrapper {
+    position: relative;
+}
+
+.deleteItemDisabledWrapper .tooltipBubble {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    margin-bottom: 6px;
+    width: 200px;
+    background: #111827;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.4;
+    padding: 8px 10px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: opacity 0.15s ease;
+    z-index: 30;
+    pointer-events: none;
+}
+
+.deleteItemDisabledWrapper:hover .tooltipBubble {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Frequency Selection in Modal */
+.frequencyGrid {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    padding: 16px 20px;
+    background: #fff;
+}
+
+.frequencyCircle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #4B5563;
+    cursor: pointer;
+    user-select: none;
+}
+
+.frequencyCircle::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid #D1D5DB;
+    border-radius: 4px;
+    background: #fff;
+    transition: all 0.2s;
+}
+
+.frequencyCircle:hover::after {
+    border-color: #EE4621;
+}
+
+.frequencyActive {
+    color: #EE4621;
+}
+
+.frequencyActive::after {
+    background: #EE4621;
+    border-color: #EE4621;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    background-size: 14px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Habit Card Adjustments */
+.habitField {
+    font-size: 13px;
+    color: #1E1E1E;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.habitField span {
+    color: #4B5563;
+    font-weight: 400;
+    margin-left: 4px;
+}
+
+/* Workbook Table Styles */
+.workbookTableContainer {
+    background: #FFFFFF;
+    border-radius: 8px;
+    border: 1px solid #F3F4F6;
+    overflow: visible;
+    margin-bottom: 40px;
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.02);
+}
+
+.workbookTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-sf-pro);
+}
+
+.workbookTable th {
+    background: #F9FAFB;
+    padding: 18px 24px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 600;
+    color: #1E1E1E;
+    border-bottom: 1px solid #F3F4F6;
+}
+
+.workbookTable td {
+    padding: 18px 24px;
+    font-size: 14px;
+    color: #4B5563;
+    border-bottom: 1px solid #F3F4F6;
+}
+
+.workbookTable tr:last-child td {
+    border-bottom: none;
+}
+
+.slNo {
+    color: #1E1E1E;
+    width: 80px;
+    font-weight: 590;
+}
+
+.resType {
+    width: 140px;
+}
+
+.downloadable {
+    width: 140px;
+}
+
+.availableFrom {
+    width: 180px;
+}
+
+.translationsCol {
+    width: 160px;
+}
+
+/* Dropzone style from Designer image */
+.dropzone {
+    border: 1px dashed #D1D5DB;
+    border-radius: 8px;
+    padding: 24px 40px;
+    text-align: center;
+    background: #fff;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.dropzoneText {
+    font-size: 14px;
+    color: #6B7280;
+    margin: 0;
+}
+
+.dropzoneBtn {
+    background: #EE4621;
+    color: white;
+    padding: 10px 48px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+.dropzoneBtn:hover {
+    background: #D93D1A;
+}
+
+/* Modal row for side-by-side inputs (Date & Downloadable) */
+.modalRow {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.modalRow .formGroup {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.dateInputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.dateInputWrapper input {
+    width: 100%;
+}
+
+.calendarIcon {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #EE4621;
+    display: flex;
+    align-items: center;
+}
+
+/* Resource Table specific widths */
+.addedOn {
+    width: 140px;
+    color: #4B5563;
+}
+
+.resTitle {
+    color: #1E1E1E;
+    font-weight: 500;
+}
+
+.resourceLinkColumn {
+    width: 160px;
+}
+
+.resourceViewLink {
+    color: #EE4621;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.resourceViewLink:hover {
+    color: #D93D1A;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+/* Quotes Page Styles */
+.quotesList {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: #FFFFFF;
+    padding: 32px;
+    border-radius: 8px;
+    border: 1px solid #F3F4F6;
+}
+
+.quoteRow {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.quoteItemWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.quoteLangPreviewRow {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-left: 54px;
+}
+
+.quoteTranslationPreview {
+    padding: 10px 16px;
+    background: var(--color-toggle-bg);
+    border: 1px solid var(--color-divider);
+    border-radius: 6px;
+    font-size: 13px;
+    color: var(--color-foreground);
+    line-height: 1.5;
+}
+
+.quoteSlNo {
+    font-size: 14px;
+    color: #1E1E1E;
+    font-weight: 500;
+    width: 30px;
+}
+
+.quoteInputContainer {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 6px;
+    padding: 2px 16px;
+    min-height: 48px;
+    transition: border-color 0.2s;
+}
+
+.quoteInputContainer:focus-within {
+    border-color: #EE4621;
+}
+
+.quoteInput {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    color: #4B5563;
+    background: transparent;
+    padding: 10px 0;
+}
+
+.quoteSaveBtn {
+    background: transparent;
+    border: none;
+    color: #EE4621;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 0 8px 0 16px;
+    border-left: 1px solid #E5E7EB;
+    height: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.quoteSaveBtn:hover {
+    text-decoration: underline;
+}
+
+/* Single fixed-size control regardless of how many languages a program has
+   configured — a per-language badge row would overflow/wrap unpredictably
+   once a program supports more than a couple of translation languages. */
+.quoteTranslateBtn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+    margin-left: 12px;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 20px;
+    background: var(--color-toggle-bg);
+    color: var(--color-text-secondary);
+    border: 1px solid var(--color-divider);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.quoteTranslateBtn:hover {
+    border-color: var(--color-primary-border);
+}
+
+.quoteTranslateBtnFilled {
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+    border-color: var(--color-primary-border);
+}
+
+.quoteTranslateBtn:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.quoteTranslateCount {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.08);
+}
+
+.quoteTranslateBtnFilled .quoteTranslateCount {
+    background: color-mix(in srgb, var(--color-primary) 15%, transparent);
+}
+
+/* Per-card language switcher — lets a card preview its other-language
+   title/description inline, without opening the edit modal. */
+/* A card has a fixed width but an unbounded number of program languages —
+   wrapping would grow the card's height without limit and break the grid's
+   row alignment, so this scrolls horizontally as a single line instead. */
+.cardLangRow {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 6px;
+    margin-bottom: 12px;
+    padding-bottom: 4px;
+    scrollbar-width: thin;
+}
+
+.cardLangChip {
+    flex-shrink: 0;
+    white-space: nowrap;
+    padding: 3px 10px;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 12px;
+    background: var(--color-toggle-bg);
+    color: var(--color-text-secondary);
+    border: 1px solid var(--color-divider);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.cardLangChip:hover {
+    border-color: var(--color-primary-border);
+}
+
+.cardLangChipActive {
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+    border-color: var(--color-primary-border);
+}
+
+.cardLangChipMissing {
+    opacity: 0.55;
+}
+
+/* Compact language-preview dropdown — used in table listings (Resources,
+   Workbook) instead of a chip row, since a fixed-width table column can't
+   gracefully wrap a chip per language once a program has many of them. A
+   native select scales to any language count without breaking layout. */
+.langPreviewSelect {
+    width: 100%;
+    max-width: 140px;
+    padding: 5px 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    background: var(--color-toggle-bg);
+    border: 1px solid var(--color-divider);
+    border-radius: 6px;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.langPreviewSelect:hover,
+.langPreviewSelect:focus {
+    border-color: var(--color-primary-border);
+    color: var(--color-primary);
+}
+
+.cardTranslationEmpty {
+    font-style: italic;
+    color: var(--color-text-secondary);
+}
+
+/* Checkbox for Enable Download/Send via Email */
+.checkboxRow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 6px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.checkboxInput {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--color-primary);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.checkboxLabelText {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-foreground);
+    cursor: pointer;
+}
+
+/* File size warning shown above CTA in modal footer */
+.fileSizeWarning {
+    background: color-mix(in srgb, var(--color-primary) 8%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-primary) 30%, transparent);
+    border-radius: 6px;
+    padding: 10px 16px;
+    font-size: 13px;
+    color: var(--color-primary);
+    width: 100%;
+    text-align: center;
+    line-height: 1.5;
+}

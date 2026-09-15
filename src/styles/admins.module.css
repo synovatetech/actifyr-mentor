@@ -1,0 +1,669 @@
+/* ===========================================
+   Admins Management Page Styles
+   =========================================== */
+
+.pageWrapper {
+  width: 100%;
+  min-height: calc(100vh - 72px);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background: #F9FAFB;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 31.5px;
+  position: relative;
+  width: 100%;
+}
+
+.pageTitle {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 590;
+  font-size: 16.2px;
+  line-height: 18.9px;
+  color: #1E1E1E;
+  margin: 0;
+}
+
+.toolbarActions {
+  display: flex;
+  gap: 18px;
+  /* Match Programs gap */
+  margin-left: auto;
+}
+
+.addAdminButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 181.8px;
+  height: 45px;
+  background: var(--color-primary);
+  border: none;
+  border-radius: 5.4px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 14.4px;
+  line-height: 17.1px;
+  text-align: center;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.addAdminButton:hover {
+  background: color-mix(in srgb, var(--color-primary) 88%, #000);
+}
+
+/* Empty State */
+.emptyState {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-height: calc(100vh - 207px);
+}
+
+.emptyStateText {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16.2px;
+  line-height: 18.9px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.35);
+  margin: 0;
+}
+
+/* Admins Section */
+.adminsSection {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Toolbar */
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  /* Match Programs gap */
+  margin-bottom: 0;
+}
+
+.searchContainer {
+  display: flex;
+  width: 836.1px;
+  height: 45px;
+}
+
+.searchInput {
+  flex: 1;
+  width: 719.1px;
+  height: 45px;
+  padding: 0 17.1px;
+  background: #FFFFFF;
+  border: 0.9px solid rgba(0, 0, 0, 0.35);
+  border-radius: 5.4px 0 0 5.4px;
+  border-right: none;
+  box-shadow: inset 0px 0px 3.6px rgba(111, 111, 111, 0.1);
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 14.4px;
+  line-height: 17.1px;
+  color: #1E1E1E;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.searchInput::placeholder {
+  color: rgba(0, 0, 0, 0.25);
+}
+
+.searchInput:focus {
+  border-color: var(--color-primary);
+}
+
+.searchButton {
+  width: 117px;
+  height: 45px;
+  background: #FFFFFF;
+  border: 0.9px solid rgba(0, 0, 0, 0.35);
+  border-left: none;
+  border-radius: 0 5.4px 5.4px 0;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 14.4px;
+  line-height: 17.1px;
+  text-align: center;
+  color: var(--color-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.searchButton:hover {
+  background: color-mix(in srgb, var(--color-primary) 5%, transparent);
+}
+
+.adminCount {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 12.6px;
+  line-height: 15.3px;
+  color: rgba(30, 30, 30, 0.6);
+  margin: 21.6px 0 14.4px 0;
+}
+
+.adminCount strong {
+  font-weight: 590;
+  color: #1E1E1E;
+}
+
+/* Table */
+.tableContainer {
+  overflow-x: auto;
+  overflow-y: visible;
+  background: #FFFFFF;
+  border-radius: 5.4px;
+  box-shadow: 0px 1.8px 3.6px rgba(111, 111, 111, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 12.6px 10.8px;
+  text-align: left;
+  border-bottom: 0.9px solid rgba(0, 0, 0, 0.05);
+}
+
+.table th {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 11.7px;
+  line-height: 14.4px;
+  color: rgba(30, 30, 30, 0.5);
+  background: transparent;
+}
+
+.table td {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 12.6px;
+  line-height: 15.3px;
+  color: #1E1E1E;
+}
+
+.table tbody tr:hover {
+  background: rgba(0, 0, 0, 0.01);
+}
+
+/* Status */
+.status {
+  display: inline-block;
+  padding: 3.6px 10.8px;
+  border-radius: 18px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 11.7px;
+  line-height: 14.4px;
+}
+
+.statusActive {
+  background: rgba(0, 182, 37, 0.1);
+  color: #00B625;
+}
+
+.statusInactive {
+  background: color-mix(in srgb, var(--color-primary) 10%, transparent);
+  color: var(--color-primary);
+}
+
+/* Options Cell */
+.optionsCell {
+  position: relative;
+}
+
+.optionsButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 7.2px;
+  color: rgba(30, 30, 30, 0.5);
+  border-radius: 3.6px;
+  transition: all 0.2s ease;
+}
+
+.optionsButton:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #1E1E1E;
+}
+
+/* ... existing styles ... */
+
+.optionsMenu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 3.6px);
+  margin-top: 3.6px;
+  background: #FFFFFF;
+  border: 0.9px solid rgba(0, 0, 0, 0.1);
+  border-radius: 7.2px;
+  box-shadow: 0px 3.6px 10.8px rgba(0, 0, 0, 0.1);
+  z-index: 10000;
+  min-width: 162px;
+  overflow: hidden;
+}
+
+.optionsMenu button {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  padding: 10.8px 14.4px;
+  background: transparent;
+  border: none;
+  border-bottom: 0.9px solid rgba(0, 0, 0, 0.05);
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 12.6px;
+  line-height: 15.3px;
+  color: #1E1E1E;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.optionsMenu button:last-child {
+  border-bottom: none;
+}
+
+.optionsMenu button:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+/* Fixed Menu for Portal */
+.menuBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 10000;
+}
+
+.optionsMenuFixed {
+  position: fixed;
+  background: #FFFFFF;
+  border: 0.9px solid rgba(0, 0, 0, 0.1);
+  border-radius: 7.2px;
+  box-shadow: 0px 3.6px 10.8px rgba(0, 0, 0, 0.1);
+  z-index: 10001;
+  min-width: 162px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.optionsMenuFixed button {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  padding: 10.8px 14.4px;
+  background: transparent;
+  border: none;
+  border-bottom: 0.9px solid rgba(0, 0, 0, 0.05);
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 12.6px;
+  line-height: 15.3px;
+  color: #1E1E1E;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  text-align: left;
+}
+
+.optionsMenuFixed button:last-child {
+  border-bottom: none;
+}
+
+.optionsMenuFixed button:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.deleteOption {
+  color: var(--color-primary) !important;
+}
+
+/* Modal Overlay */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Add Admin Modal */
+.addAdminModal {
+  width: 432px;
+  background: #FFFFFF;
+  border-radius: 7.2px;
+  padding: 28.8px;
+  box-sizing: border-box;
+}
+
+.addAdminTitle {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 590;
+  font-size: 16.2px;
+  line-height: 18.9px;
+  color: var(--color-primary);
+  margin: 0 0 21.6px 0;
+}
+
+.addAdminBody {
+  margin-bottom: 21.6px;
+}
+
+.infoText {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 12.6px;
+  line-height: 15.3px;
+  color: rgba(0, 0, 0, 0.5);
+  margin: 7.2px 0 0 0;
+}
+
+.addAdminFooter {
+  display: flex;
+  gap: 14.4px;
+}
+
+.addAdminFooter .closeButton {
+  flex: 1;
+  height: 45px;
+  background: rgba(0, 0, 0, 0.2);
+  border: none;
+  border-radius: 5.4px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 14.4px;
+  line-height: 17.1px;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.addAdminFooter .closeButton:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.addAdminSubmitButton {
+  flex: 1;
+  height: 45px;
+  background: var(--color-primary);
+  border: none;
+  border-radius: 5.4px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 14.4px;
+  line-height: 17.1px;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.addAdminSubmitButton:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--color-primary) 88%, #000);
+}
+
+.addAdminSubmitButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Confirm Delete Modal */
+.confirmDeleteModal {
+  width: 560px;
+  background: #FFFFFF;
+  border-radius: 7.2px;
+  padding: 36px;
+  box-sizing: border-box;
+}
+
+.confirmDeleteTitle {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 590;
+  font-size: 16.2px;
+  line-height: 18.9px;
+  color: var(--color-primary);
+  margin: 0 0 21.6px 0;
+}
+
+.confirmDeleteBody {
+  margin-bottom: 21.6px;
+}
+
+.confirmDeleteText {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 12.6px;
+  line-height: 18px;
+  color: #1E1E1E;
+  margin: 0 0 14.4px 0;
+}
+
+.confirmDeleteNote {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 12.6px;
+  line-height: 18px;
+  color: #1E1E1E;
+  margin: 0 0 21.6px 0;
+  font-style: italic;
+}
+
+.confirmDeleteNote em {
+  font-style: italic;
+}
+
+.confirmDeleteFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: 14.4px;
+}
+
+.confirmDeleteFooter .closeButton {
+  flex: none;
+  width: 120px;
+  height: 45px;
+  background: rgba(0, 0, 0, 0.2);
+  border: none;
+  border-radius: 5.4px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 14.4px;
+  line-height: 17.1px;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.confirmDeleteFooter .closeButton:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.transferDeleteButton {
+  flex: none;
+  width: 200px;
+  height: 45px;
+  background: var(--color-primary);
+  border: none;
+  border-radius: 5.4px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 14.4px;
+  line-height: 17.1px;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.transferDeleteButton:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--color-primary) 88%, #000);
+}
+
+.transferDeleteButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Form Styles */
+.formGroup {
+  margin-bottom: 18px;
+}
+
+.label {
+  display: block;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 12.6px;
+  line-height: 15.3px;
+  color: #1E1E1E;
+  margin-bottom: 7.2px;
+}
+
+.input,
+.select {
+  width: 100%;
+  height: 45px;
+  padding: 0 12.6px;
+  background: #FFFFFF;
+  border: 0.9px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5.4px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 14.4px;
+  line-height: 17.1px;
+  color: #1E1E1E;
+  box-sizing: border-box;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%231E1E1E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12.6px center;
+  padding-right: 36px;
+}
+
+.input::placeholder {
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.input:focus,
+.select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.closeButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 3.6px;
+  color: rgba(30, 30, 30, 0.5);
+}
+
+.closeButton:hover {
+  color: #1E1E1E;
+}
+
+/* Responsive */
+@media (max-width: 1080px) {
+  .searchInput {
+    width: 450px;
+  }
+
+  .addAdminButton {
+    width: 144px;
+  }
+}
+
+@media (max-width: 921.6px) {
+  .pageWrapper {
+    padding: 18px;
+  }
+
+  .toolbar {
+    flex-wrap: wrap;
+    gap: 10.8px;
+  }
+
+  .searchInput {
+    width: 360px;
+  }
+}
+
+@media (max-width: 691.2px) {
+  .pageWrapper {
+    padding: 14.4px;
+  }
+
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .searchContainer {
+    width: 100%;
+  }
+
+  .searchInput {
+    width: 100%;
+    flex: 1;
+  }
+
+  .toolbarActions {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .addAdminButton {
+    flex: 1;
+    width: auto;
+    justify-content: center;
+  }
+
+  .addAdminModal {
+    width: 95%;
+    max-width: 432px;
+  }
+
+  .confirmDeleteModal {
+    width: 95%;
+    max-width: 560px;
+  }
+
+  .emptyState {
+    min-height: calc(100vh - 270px);
+  }
+}

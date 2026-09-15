@@ -1,0 +1,20 @@
+---
+description: Enforce branch, commit, and PR workflow standards
+alwaysApply: true
+---
+
+# Git Workflow Standards
+
+- Branch names must be one of:
+  - `feat/*`, `fix/*`, `chore/*`, `docs/*`, `refactor/*`, `test/*`, `ci/*`, `release/*`, `hotfix/*`
+- Do not push direct feature work to `main` or `master`.
+- Commit messages must follow Conventional Commits (`type(scope): summary`).
+- Never append `Made-with: Cursor` (or any similar Cursor/tooling attribution line) to commit messages unless the user explicitly asks.
+- Prefer `npm run commit` (Commitizen) for consistent commit metadata.
+- PRs must include summary, reason, test plan, and risk notes.
+- Keep commits scoped and atomic; avoid unrelated changes in one commit.
+- Ensure checks pass before requesting review:
+  - `npm run type-check`
+  - `npm run lint` when stable/non-interactive
+  - Run `npm run build` only when the user explicitly requests it or before a release/merge that requires it
+

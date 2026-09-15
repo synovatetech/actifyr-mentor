@@ -1,0 +1,226 @@
+/* ============================================
+   Checkout Sidebar Plan Selector
+   ============================================ */
+
+.container {
+  padding: 35px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.heading {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 590;
+  font-size: 18px;
+  line-height: 21px;
+  color: var(--color-foreground);
+  margin: 0 0 24px 0;
+}
+
+.planList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ----------------------------------------
+   Plan Card
+   ---------------------------------------- */
+.card {
+  background: color-mix(in srgb, var(--color-primary) 4%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-foreground) 20%, transparent);
+  border-radius: 10px;
+  padding: 20px 20px 20px 20px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+}
+
+.card:focus-visible {
+  box-shadow: 0 0 0 2px var(--color-primary);
+}
+
+.cardSelected {
+  border-color: var(--color-primary);
+  background: color-mix(in srgb, var(--color-primary) 5%, transparent);
+}
+
+.cardTrial {
+  cursor: default;
+  opacity: 0.65;
+}
+
+.cardTrialDisabled {
+  pointer-events: none;
+  opacity: 0.45;
+  background: color-mix(in srgb, var(--color-foreground) 5%, transparent);
+  border-color: color-mix(in srgb, var(--color-foreground) 15%, transparent);
+  cursor: not-allowed;
+}
+
+/* ----------------------------------------
+   Card Header
+   ---------------------------------------- */
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.planName {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--color-foreground);
+  margin: 0;
+}
+
+/* ----------------------------------------
+   Selection Circle
+   ---------------------------------------- */
+.selectCircle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid color-mix(in srgb, var(--color-foreground) 25%, transparent);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.selectCircleActive {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+/* ----------------------------------------
+   Description
+   ---------------------------------------- */
+.description {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  color: color-mix(in srgb, var(--color-foreground) 70%, transparent);
+  margin: 0 0 16px 0;
+}
+
+/* ----------------------------------------
+   Duration Toggle Track
+   ---------------------------------------- */
+.durations {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  height: 54px;
+  padding: 5px;
+  background: color-mix(in srgb, var(--color-primary) 6%, transparent);
+  border: 1px solid var(--color-primary-border);
+  border-radius: 38px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+.durationBtn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  border: none;
+  background: transparent;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.durationBtn:hover:not(.durationBtnActive) {
+  background: color-mix(in srgb, var(--color-primary) 10%, transparent);
+}
+
+.durationBtnActive {
+  background: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Track wrapper when there's only one option — strip chrome, align left */
+.durationsSingle {
+  background: transparent;
+  border-color: transparent;
+  padding: 0;
+  height: auto;
+  justify-content: flex-start;
+}
+
+/* Single-option pill (Corporate 12 Months) — compact, auto-width */
+.durationBtnSingle {
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  padding: 10px 28px;
+  border-radius: 32px;
+}
+
+/* Unselected state: border only, no fill */
+.durationBtnOutline {
+  background: transparent;
+  border: 1.5px solid var(--color-primary-border);
+  box-shadow: none;
+}
+
+.durationNumber {
+  font-weight: 510;
+  font-size: 15px;
+  line-height: 15px;
+  color: var(--color-foreground);
+}
+
+.durationLabel {
+  font-weight: 510;
+  font-size: 10px;
+  line-height: 12px;
+  color: color-mix(in srgb, var(--color-foreground) 75%, transparent);
+}
+
+.durationBtnActive .durationNumber,
+.durationBtnActive .durationLabel {
+  color: #ffffff;
+}
+
+/* ----------------------------------------
+   Price
+   ---------------------------------------- */
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.price {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 33px;
+  color: var(--color-primary);
+}
+
+.priceSuffix {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  color: color-mix(in srgb, var(--color-foreground) 60%, transparent);
+}
+

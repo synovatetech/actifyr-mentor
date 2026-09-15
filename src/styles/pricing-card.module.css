@@ -1,0 +1,549 @@
+/* ============================================
+   Pricing Card Styles
+   Breakpoints: Mobile (<1024px), Desktop (1024px+)
+   ============================================ */
+
+/* ----------------------------------------
+   Card Container
+   ---------------------------------------- */
+.card {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+/* Mobile */
+.card {
+  width: 100%;
+  max-width: 300px;
+  padding: 24px 20px 20px;
+}
+
+/* Desktop - Exact dimensions from Figma */
+@media (min-width: 1024px) {
+  .card {
+    width: 300px;
+    min-width: 300px;
+    max-width: 300px;
+    padding: 30px 19px 19px;
+  }
+
+  .cardRegular {
+    height: 540px;
+    min-height: 540px;
+  }
+
+  .cardCustom {
+    height: 350px;
+    min-height: 350px;
+  }
+}
+
+/* ----------------------------------------
+   Plan Name
+   ---------------------------------------- */
+.planName {
+  text-align: center;
+  font-weight: 700;
+  color: #EE4723;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'SF Pro', 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Mobile */
+.planName {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .planName {
+    width: 217px;
+    margin: 0 auto;
+    font-size: 22px;
+    line-height: 26px;
+  }
+}
+
+/* ----------------------------------------
+   Description
+   ---------------------------------------- */
+.description {
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: rgba(30, 30, 30, 0.7);
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'SF Pro', 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Mobile */
+.description {
+  margin-top: 16px;
+  font-size: 13px;
+  line-height: 18px;
+  min-height: 36px;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .description {
+    width: 263px;
+    height: 52px;
+    margin-top: 18px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+/* ----------------------------------------
+   Badge (Most Popular / Designed for Corporates)
+   ---------------------------------------- */
+.badgeContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mobile */
+.badgeContainer {
+  height: 28px;
+  margin-top: 12px;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .badgeContainer {
+    height: 34px;
+    margin-top: 14px;
+  }
+}
+
+.badge {
+  text-align: center;
+  font-family: 'Shadows Into Light', cursive;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/* Mobile */
+.badge {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .badge {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.badgeGreen {
+  color: #00B625;
+}
+
+.badgeBlue {
+  color: #00A0FF;
+}
+
+/* ----------------------------------------
+   Toggle Container
+   ---------------------------------------- */
+.toggleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mobile */
+.toggleContainer {
+  height: 44px;
+  margin-top: 12px;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .toggleContainer {
+    height: 50px;
+    margin-top: 5px;
+  }
+}
+
+/* Duration Toggle (Retail card) */
+.durationToggle {
+  display: flex;
+  align-items: center;
+  background: #FAFAFA;
+  border: 1px solid rgba(237, 237, 237, 0.1);
+  border-radius: 38px;
+}
+
+/* Mobile */
+.durationToggle {
+  width: 100%;
+  height: 44px;
+  padding: 4px;
+  box-shadow: none;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .durationToggle {
+    width: 262px;
+    height: 50px;
+    padding: 5px;
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.toggleButton {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  border-radius: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'SF Pro', 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Mobile */
+.toggleButton {
+  height: 36px;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .toggleButton {
+    height: 40px;
+    border-radius: 25px;
+  }
+}
+
+.toggleButtonActive {
+  background: #EE4723;
+  border: 1px solid #EE4621;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.toggleText {
+  font-weight: 510;
+  color: #1E1E1E;
+}
+
+/* Mobile */
+.toggleText {
+  font-size: 12px;
+  line-height: 12px;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .toggleText {
+    font-size: 14px;
+    line-height: 13px;
+  }
+}
+
+.toggleTextActive {
+  color: #FFFFFF;
+}
+
+.toggleSubText {
+  font-weight: 510;
+  color: #1E1E1E;
+}
+
+/* Mobile */
+.toggleSubText {
+  font-size: 9px;
+  line-height: 11px;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .toggleSubText {
+    font-size: 10px;
+    line-height: 13px;
+  }
+}
+
+.toggleSubTextActive {
+  color: #FFFFFF;
+}
+
+/* Label Pill (For 30 Days / Renew Yearly) */
+.labelPill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FAFAFA;
+  border: 1px solid rgba(237, 237, 237, 0.1);
+  border-radius: 38px;
+}
+
+/* Mobile */
+.labelPill {
+  width: 120px;
+  height: 36px;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .labelPill {
+    width: 134px;
+    height: 40px;
+  }
+}
+
+.labelText {
+  font-weight: 400;
+  color: #1E1E1E;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'SF Pro', 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Mobile */
+.labelText {
+  font-size: 12px;
+  line-height: 12px;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .labelText {
+    font-size: 14px;
+    line-height: 13px;
+  }
+}
+
+/* ----------------------------------------
+   Price
+   ---------------------------------------- */
+.priceContainer {
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'SF Pro', 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Mobile */
+.priceContainer {
+  margin-top: 16px;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .priceContainer {
+    margin-top: 25px;
+  }
+}
+
+.price {
+  font-weight: 700;
+  color: #EE4723;
+}
+
+/* Mobile */
+.price {
+  font-size: 26px;
+  line-height: 32px;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .price {
+    font-size: 34px;
+    line-height: 40px;
+  }
+}
+
+.priceSuffix {
+  font-weight: 400;
+  color: #EE4723;
+}
+
+/* Mobile */
+.priceSuffix {
+  font-size: 12px;
+  line-height: 32px;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .priceSuffix {
+    font-size: 14px;
+    line-height: 36px;
+  }
+}
+
+/* ----------------------------------------
+   Features Section
+   ---------------------------------------- */
+.featuresSection {
+  position: relative;
+}
+
+/* Mobile */
+.featuresSection {
+  margin-top: 16px;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .featuresSection {
+    width: 263px;
+    margin-top: 18px;
+  }
+}
+
+.featuresDivider {
+  height: 1px;
+  background: rgba(111, 111, 111, 0.1);
+}
+
+.featuresLabelContainer {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0 8px;
+  background: #FEFBFB;
+}
+
+.featuresLabel {
+  font-weight: 590;
+  color: rgba(30, 30, 30, 0.8);
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'SF Pro', 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Mobile */
+.featuresLabel {
+  font-size: 12px;
+  line-height: 15px;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .featuresLabel {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+/* ----------------------------------------
+   Features List
+   ---------------------------------------- */
+.featuresList {
+  flex-grow: 1;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'SF Pro', 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Mobile */
+.featuresList {
+  margin-top: 20px;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .featuresList {
+    width: 263px;
+    margin-top: 24px;
+  }
+}
+
+.featureItem {
+  display: flex;
+  color: rgba(30, 30, 30, 0.8);
+}
+
+/* Mobile */
+.featureItem {
+  margin-bottom: 8px;
+  font-size: 11px;
+  line-height: 14px;
+  font-weight: 274;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .featureItem {
+    margin-bottom: 8px;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 274;
+  }
+}
+
+.featureBullet {
+  flex-shrink: 0;
+  margin-right: 4px;
+}
+
+/* ----------------------------------------
+   Button
+   ---------------------------------------- */
+.button {
+  margin-top: auto;
+  background: #FFFFFF;
+  border: 1px solid rgba(238, 71, 35, 0.8);
+  border-radius: 6px;
+  font-weight: 510;
+  color: #EE4723;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'SF Pro', 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Mobile */
+.button {
+  width: 100%;
+  height: 42px;
+  font-size: 15px;
+  line-height: 19px;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .button {
+    width: 250px;
+    height: 44px;
+    font-size: 16px;
+    line-height: 19px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ----------------------------------------
+   Custom Card Specific
+   ---------------------------------------- */
+.contactSales {
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: rgba(30, 30, 30, 0.7);
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'SF Pro', 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Mobile */
+.contactSales {
+  margin-top: 32px;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .contactSales {
+    width: 263px;
+    margin-top: 66px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.contactSalesHighlight {
+  color: #EE4723;
+}

@@ -1,0 +1,2 @@
+node scripts/git/validate-branch-name.mjs
+npm run type-check

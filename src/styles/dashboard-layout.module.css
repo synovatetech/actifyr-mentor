@@ -1,0 +1,69 @@
+/* ============================================
+   Dashboard Layout - Shared Styles
+   For all dashboard pages (programs, users, admins, etc.)
+   Design specs: 1512px total width
+   Sidebar: 310px, Content starts at 361px
+   ============================================ */
+
+.container {
+  min-height: 100vh;
+  background: #F9FAFB;
+  display: flex;
+  width: 100%;
+}
+
+.mainContent {
+  position: fixed;
+  left: 279px;
+  /* Sidebar width */
+  top: 72px;
+  /* Navbar height (80px * 0.9) */
+  right: 0;
+  bottom: 0;
+  padding: 25px 25px 45px 46px;
+  /* Reduced right padding from 45px to 25px */
+  overflow-y: auto;
+  background: #F9FAFB;
+  box-sizing: border-box;
+  transition: padding-top 0.3s ease;
+}
+
+/* When banner is visible: content starts below banner with gap */
+.mainContent.withBanner {
+  padding-top: 75px;
+  /* 10px gap + 45px banner + 20px gap below */
+}
+
+/* When banner is closed: content starts with normal spacing */
+.mainContent.withoutBanner {
+  padding-top: 36px;
+}
+
+/* Overlay for mobile sidebar */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 44;
+  display: none;
+}
+
+@media (max-width: 921.6px) {
+  .overlay {
+    display: block;
+  }
+
+  .mainContent {
+    left: 0;
+    padding: 90px 18px 18px 18px;
+  }
+}
+
+@media (max-width: 691.2px) {
+  .mainContent {
+    padding: 72px 14.4px 18px 14.4px;
+  }
+}

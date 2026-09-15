@@ -1,0 +1,172 @@
+.container {
+    background: #F4F7FE;
+}
+
+.programBar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0 19.8px;
+    height: 68px;
+    background: #FCE8E2;
+    border-bottom: 1px solid rgba(238, 70, 33, 0.1);
+    font-family: var(--font-sf-pro);
+    font-size: 14px;
+    color: #1E1E1E;
+}
+
+.programName {
+    font-weight: 590;
+    font-size: 14px;
+}
+
+.contentWrapper {
+    padding: 32px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.whiteCard {
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 32px 36px 28px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.04);
+    border: 1px solid #F3F4F6;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header with Toggle */
+.headerRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.title {
+    color: #EE4621;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.toggleWrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: #4B5563;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 22px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #E5E7EB;
+    transition: .4s;
+    border-radius: 22px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: #22C55E;
+}
+
+input:checked+.slider:before {
+    transform: translateX(22px);
+}
+
+/* Editor Styles */
+.editorWrapper {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+/* Lock the editor to a fixed height — only on this page */
+.editorWrapper :global([class*="editorContent"]) {
+    height: 380px;
+    min-height: unset;
+    max-height: unset;
+}
+
+.editorWrapper :global([class*="editorContainer"]) {
+    min-height: unset;
+}
+
+/* Footer Buttons */
+.footerButtons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+
+.closeBtn {
+    background: #C2C2C2;
+    color: white;
+    width: 180px;
+    height: 48px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.saveBtn {
+    background: #EE4621;
+    color: white;
+    width: 280px;
+    height: 48px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.saveBtn:hover {
+    background: #D93D1A;
+}
+
+.closeBtn:hover {
+    background: #B0B0B0;
+}

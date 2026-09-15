@@ -1,0 +1,4 @@
+# Manual-only mode: do not auto-sync on every commit.
+# Run manually when needed:
+#   npm run sync:llj
+exit 0

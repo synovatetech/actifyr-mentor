@@ -1,0 +1,880 @@
+/* ============================================
+   Retail Plan 6 Months Page Styles - Pixel Perfect
+   New Account Retail Plan 6 Months
+   ============================================ */
+
+.pageWrapper {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  background: #F9FAFB;
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  background: #F9FAFB;
+  display: flex;
+  margin-top: 80px;
+  padding-bottom: 50px;
+}
+
+/* ----------------------------------------
+   Sidebar - Plan Selection
+   ---------------------------------------- */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 80px;
+  width: 504px;
+  height: calc(100vh - 80px);
+  background: #FCE8E2;
+  z-index: 45;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+}
+
+.sidebarToggle {
+  display: none;
+  position: fixed;
+  left: 20px;
+  top: 90px;
+  width: 40px;
+  height: 40px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  z-index: 46;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 44;
+}
+
+.sidebar::before {
+  content: '';
+  position: absolute;
+  width: 263px;
+  height: 263px;
+  left: -132px;
+  top: 492px;
+  background: #FBE0D8;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.sidebar::after {
+  content: '';
+  position: absolute;
+  width: 940px;
+  height: 940px;
+  left: -445px;
+  top: -215px;
+  background: radial-gradient(circle, rgba(238, 71, 35, 0.08) 0%, rgba(255, 167, 141, 0.08) 100%);
+  border-radius: 50%;
+  z-index: 0;
+  transform: rotate(180deg);
+}
+
+.sidebarContent {
+  padding: 0;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.planSelector {
+  position: relative;
+  z-index: 1;
+  padding: 35px 51px;
+}
+
+.planSelectedLabel {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 510;
+  font-size: 16px;
+  line-height: 19px;
+  color: #1E1E1E;
+  margin: 0 0 35px 0;
+}
+
+.planBox {
+  position: relative;
+  box-sizing: border-box;
+  width: 402px;
+  height: 71px;
+  background: #FCE8E2;
+  border: 1px solid rgba(30, 30, 30, 0.5);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  margin-bottom: 29px;
+}
+
+.planText {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 590;
+  font-size: 18px;
+  line-height: 21px;
+  color: #1E1E1E;
+  flex: 1;
+}
+
+.checkIcon {
+  width: 30px;
+  height: 30px;
+  background: rgba(238, 71, 35, 0.8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.changePlanLink {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: right;
+  text-decoration-line: underline;
+  color: #EE4723;
+  display: block;
+  width: 402px;
+  text-align: right;
+}
+
+/* ----------------------------------------
+   Main Content Area
+   ---------------------------------------- */
+.mainContent {
+  margin-left: 504px;
+  margin-top: 32px;
+  padding-right: 33px;
+  padding-left: 35px;
+  width: calc(100% - 504px);
+  flex: 1;
+  min-height: calc(100vh - 112px);
+  background: #F9FAFB;
+  overflow-x: hidden;
+}
+
+.scrollContainer {
+  width: 100%;
+  max-width: 940px;
+  min-height: calc(100vh - 112px);
+  overflow-y: auto;
+  position: relative;
+  padding-bottom: 50px;
+}
+
+.contentWrapper {
+  width: 100%;
+  max-width: 940px;
+  min-height: 2098px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+/* ----------------------------------------
+   Sections
+   ---------------------------------------- */
+.section {
+  background: #FFFFFF;
+  box-shadow: 0px 2px 4px rgba(111, 111, 111, 0.1);
+  border-radius: 6px;
+  padding: 29px;
+  margin-bottom: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.section:first-of-type {
+  min-height: 699px;
+}
+
+.section:nth-of-type(2) {
+  min-height: 596px;
+}
+
+.section:nth-of-type(3) {
+  min-height: 254px;
+}
+
+.section:nth-of-type(4) {
+  min-height: 489px;
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+.sectionTitle {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 590;
+  font-size: 18px;
+  line-height: 21px;
+  color: #EE4621;
+  margin: 0 0 29px 0;
+}
+
+/* ----------------------------------------
+   Form Elements
+   ---------------------------------------- */
+.formGroup {
+  margin-bottom: 29px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup:last-child {
+  margin-bottom: 0;
+}
+
+.formRow {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 29px;
+  align-items: flex-start;
+}
+
+.formGroupHalf {
+  flex: 1;
+  margin-bottom: 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  display: block;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 510;
+  font-size: 16px;
+  line-height: 19px;
+  color: #1E1E1E;
+  margin-bottom: 14px;
+  width: 100%;
+}
+
+.input,
+.select {
+  box-sizing: border-box;
+  width: 100%;
+  height: 50px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  padding: 0 14px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #1E1E1E;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.input:focus,
+.select:focus {
+  border-color: rgba(238, 71, 35, 0.5);
+}
+
+.input::placeholder {
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='13' height='8' viewBox='0 0 13 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6.5 6.5L12 1' stroke='rgba(0,0,0,0.35)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 40px;
+}
+
+.inputWithButton {
+  display: flex;
+  gap: 0;
+  align-items: stretch;
+  width: 100%;
+}
+
+.inputWithButton .input {
+  flex: 1;
+  border-radius: 6px 0 0 6px;
+  border-right: none;
+  min-width: 0;
+}
+
+/* Mobile Input Group with Country Code */
+.mobileInputGroup {
+  display: flex;
+  gap: 0;
+  align-items: stretch;
+  width: 100%;
+}
+
+.countryCode {
+  box-sizing: border-box;
+  width: 96px;
+  height: 50px;
+  background: #D9D9D9;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px 0 0 6px;
+  padding: 0 8px 0 14px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #1E1E1E;
+  outline: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='13' height='8' viewBox='0 0 13 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6.5 6.5L12 1' stroke='rgba(0,0,0,0.35)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-color: #D9D9D9;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.mobileInputGroup .input {
+  flex: 1;
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+  min-width: 0;
+  height: 50px;
+}
+
+.mobileInputGroup .verifyButton {
+  box-sizing: border-box;
+  width: 96px;
+  height: 50px;
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-left: none;
+  border-radius: 0 6px 6px 0;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 510;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #EE4723;
+  cursor: pointer;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.verifyButton,
+.validateButton,
+.applyButton {
+  box-sizing: border-box;
+  width: 96px;
+  height: 50px;
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-left: none;
+  border-radius: 0 6px 6px 0;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 510;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #EE4723;
+  cursor: pointer;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.validateButton,
+.applyButton {
+  margin-left: 0;
+}
+
+.applyButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+  background: #f7f7f7;
+}
+
+.promoAppliedText {
+  margin: 6px 0 0;
+  font-size: 12px;
+  color: #1f8a41;
+  line-height: 1.3;
+}
+
+.gstContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  gap: 0;
+}
+
+.gstContainer .inputWithButton {
+  flex: 1;
+  min-width: 0;
+}
+
+.gstValidation {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #00B625;
+  margin-left: 14px;
+  padding-left: 0;
+  white-space: nowrap;
+  flex-shrink: 0;
+  height: 50px;
+}
+
+.gstValidation svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ----------------------------------------
+   Checkboxes
+   ---------------------------------------- */
+.checkboxGroup {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 14px;
+  width: 100%;
+}
+
+.checkboxGroup:last-child {
+  margin-bottom: 0;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  margin-right: 8px;
+  cursor: pointer;
+  appearance: none;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.checkbox:checked {
+  background: #00B625;
+  border-color: #00B625;
+  background-image: url("data:image/svg+xml,%3Csvg width='11' height='11' viewBox='0 0 11 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 2.5L4.5 7L2 4.5' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.checkboxLabel {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #1E1E1E;
+  cursor: pointer;
+}
+
+.checkboxLabel .link {
+  color: #EE4723;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.checkboxLabel .link:hover {
+  color: #EE4621;
+}
+
+.checkboxes {
+  margin-top: 29px;
+  width: 100%;
+}
+
+/* ----------------------------------------
+   Password Section
+   ---------------------------------------- */
+.passwordHint {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.35);
+  margin-top: 15px;
+  width: 100%;
+}
+
+/* ----------------------------------------
+   Pricing Summary
+   ---------------------------------------- */
+.pricingSummary {
+  background: #FAFAFA;
+  border-radius: 6px;
+  padding: 51px 29px;
+  margin-top: 29px;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  overflow: visible;
+}
+
+.pricingRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.pricingLabel {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #1E1E1E;
+  flex: 1;
+  min-width: 215px;
+}
+
+.pricingValue {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: right;
+  color: #1E1E1E;
+  flex: 0 0 auto;
+  min-width: 216px;
+  margin-left: 20px;
+}
+
+.divider {
+  width: 100%;
+  height: 0;
+  border: 0;
+  border-top: 1px solid rgba(111, 111, 111, 0.1);
+  margin: 16px 0;
+  display: block;
+}
+
+.pricingRowTotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  width: 100%;
+}
+
+.pricingLabelTotal {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 510;
+  font-size: 16px;
+  line-height: 19px;
+  color: #1E1E1E;
+  flex: 1;
+  min-width: 215px;
+}
+
+.pricingValueTotal {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 510;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: right;
+  color: #EE4723;
+  flex: 0 0 auto;
+  min-width: 216px;
+  margin-left: 20px;
+}
+
+/* ----------------------------------------
+   Buttons
+   ---------------------------------------- */
+.buttonGroup {
+  display: flex;
+  gap: 20px;
+  margin-top: 47px;
+  justify-content: flex-end;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.closeButton {
+  width: 230px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  border: none;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 510;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.payButton {
+  width: 230px;
+  height: 50px;
+  background: #EE4621;
+  border-radius: 4px;
+  border: none;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 510;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.closeButton:hover {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.payButton:hover {
+  background: #EE4723;
+}
+
+/* ----------------------------------------
+   Responsive Design
+   ---------------------------------------- */
+@media (max-width: 1400px) {
+  .mainContent {
+    margin-left: 504px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .scrollContainer {
+    width: 100%;
+    max-width: 940px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .sidebarToggle {
+    display: flex;
+  }
+
+  .overlay {
+    display: block;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 50;
+  }
+
+  .sidebar.sidebarOpen {
+    transform: translateX(0);
+  }
+
+  .mainContent {
+    margin-left: 0;
+    padding: 20px 16px;
+    width: 100%;
+  }
+
+  .scrollContainer {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .contentWrapper {
+    width: 100%;
+    gap: 20px;
+  }
+
+  .section {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .section:first-of-type,
+  .section:nth-of-type(2),
+  .section:nth-of-type(3),
+  .section:nth-of-type(4) {
+    min-height: auto;
+    height: auto;
+  }
+
+  .formRow {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .gstContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .gstContainer .inputWithButton {
+    width: 100%;
+  }
+
+  .gstValidation {
+    margin-left: 0;
+    padding-left: 14px;
+    width: 100%;
+    height: auto;
+  }
+
+  .formGroupHalf {
+    width: 100%;
+    margin-bottom: 29px;
+  }
+
+  .formGroupHalf:last-child {
+    margin-bottom: 0;
+  }
+
+  .inputWithButton {
+    width: 100%;
+  }
+
+  .mobileInputGroup {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin-top: 80px;
+  }
+
+  .planBox {
+    width: 100%;
+    max-width: 402px;
+  }
+
+  .changePlanLink {
+    width: 100%;
+    max-width: 402px;
+  }
+
+  .inputWithButton {
+    flex-direction: column;
+  }
+
+  .inputWithButton .input {
+    border-radius: 6px;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    width: 100%;
+  }
+
+  .mobileInputGroup {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .mobileInputGroup .countryCode {
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #D9D9D9;
+  }
+
+  .mobileInputGroup .input {
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .mobileInputGroup .verifyButton {
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #E5E5E5;
+  }
+
+  .verifyButton,
+  .validateButton,
+  .applyButton {
+    width: 100%;
+    border-radius: 6px;
+    margin-left: 0;
+    margin-top: 0;
+    border-left: 1px solid #E5E5E5;
+    align-self: flex-start;
+  }
+
+  .buttonGroup {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .closeButton,
+  .payButton {
+    width: 100%;
+  }
+
+  .pricingSummary {
+    padding: 29px 16px;
+  }
+
+  .pricingLabel,
+  .pricingValue,
+  .pricingLabelTotal,
+  .pricingValueTotal {
+    min-width: auto;
+    flex: 1;
+  }
+
+  .pricingValue,
+  .pricingValueTotal {
+    margin-left: 10px;
+  }
+
+  .passwordHint {
+    font-size: 13px;
+    line-height: 20px;
+  }
+}

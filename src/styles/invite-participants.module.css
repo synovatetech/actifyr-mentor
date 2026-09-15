@@ -1,0 +1,580 @@
+/* ===========================================
+   Invite Participants Page Styles (Corporate)
+   Two options: Generate Access Code OR Select from User List
+   =========================================== */
+
+.pageWrapper {
+  width: 100%;
+  min-height: calc(100vh - 72px);
+  padding: 30px 48px;
+  /* Generous padding on left and right */
+  box-sizing: border-box;
+  background: transparent;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 25px;
+  /* Reduce large gap below title */
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28.8px;
+  height: 28.8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: #1E1E1E;
+}
+
+.backButton:hover {
+  color: #EE4723;
+}
+
+.pageTitle {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 510;
+  font-size: 16.2px;
+  line-height: 18.9px;
+  color: #EE4723;
+  margin: 0;
+}
+
+/* Main Container - Not used but keeping for layout reference */
+.container {
+  padding: 0;
+}
+
+/* Option Cards */
+.optionCards {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+}
+
+.optionCard {
+  flex: 1;
+  width: 100%;
+  height: 400px;
+  /* Mirror design height */
+  background: #FFFFFF;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.04);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  padding: 45px 40px;
+  border: 1px solid #F0F0F0;
+  box-sizing: border-box;
+}
+
+.optionIcon {
+  width: 54px;
+  /* Ensure container remains correctly sized */
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 24px;
+}
+
+.optionTitle {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 23px;
+  color: #1E1E1E;
+  margin: 0 0 10px 0;
+}
+
+.optionDescription {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: rgba(30, 30, 30, 0.4);
+  margin: 0 0 45px 0;
+  flex-grow: 1;
+}
+
+.buttonWrapper {
+  width: 100%;
+  padding-top: 20px;
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+  /* Move back to right as per design */
+}
+
+.optionButton {
+  padding: 12px 0;
+  background: #FFFFFF;
+  border: 1.5px solid #FF7A5C;
+  border-radius: 6px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 14px;
+  line-height: 17px;
+  color: #FF7A5C;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 260px;
+  /* Specific width for proper scaling */
+  text-align: center;
+}
+
+.optionButton:hover {
+  background: rgba(238, 71, 35, 0.05);
+}
+
+/* ===================================
+   Modal Overlay
+   =================================== */
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* ===================================
+   Access Code Modal
+   =================================== */
+
+.modal {
+  width: 450px;
+  background: #FFFFFF;
+  border-radius: 7.2px;
+  padding: 28.8px;
+  box-shadow: 0px 3.6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.modalTitle {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 590;
+  font-size: 16.2px;
+  line-height: 18.9px;
+  color: #EE4621;
+  margin: 0 0 14.4px 0;
+}
+
+.modalDescription {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 12.6px;
+  line-height: 18px;
+  color: rgba(30, 30, 30, 0.7);
+  margin: 0 0 21.6px 0;
+}
+
+.modalFormGroup {
+  margin-bottom: 18px;
+}
+
+.modalInput {
+  width: 100%;
+  height: 45px;
+  padding: 0 12.6px;
+  background: #FFFFFF;
+  border: 0.9px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5.4px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 14.4px;
+  line-height: 17.1px;
+  color: #1E1E1E;
+  box-sizing: border-box;
+}
+
+.modalInput::placeholder {
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.modalInput:focus {
+  outline: none;
+  border-color: #EE4723;
+}
+
+.modalInfoList {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 11.7px;
+  line-height: 18px;
+  color: rgba(30, 30, 30, 0.5);
+  margin: 0 0 21.6px 0;
+  padding-left: 18px;
+}
+
+.modalInfoList li {
+  margin-bottom: 3.6px;
+}
+
+.modalActions {
+  display: flex;
+  gap: 14.4px;
+}
+
+.modalCloseButton {
+  flex: 1;
+  height: 45px;
+  background: rgba(0, 0, 0, 0.05);
+  border: none;
+  border-radius: 5.4px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 14.4px;
+  line-height: 17.1px;
+  color: #1E1E1E;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modalCloseButton:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.modalCreateButton {
+  flex: 1;
+  height: 45px;
+  background: #EE4621;
+  border: none;
+  border-radius: 5.4px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 14.4px;
+  line-height: 17.1px;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modalCreateButton:hover:not(:disabled) {
+  background: #D63D1A;
+}
+
+.modalCreateButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ===================================
+   User List Modal
+   =================================== */
+
+.userListModal {
+  width: 810px;
+  max-height: 90vh;
+  background: #FFFFFF;
+  border-radius: 7.2px;
+  box-shadow: 0px 3.6px 18px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.userListHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 21.6px;
+  border-bottom: 0.9px solid rgba(0, 0, 0, 0.05);
+}
+
+.closeIconButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 3.6px;
+  color: rgba(30, 30, 30, 0.5);
+}
+
+.closeIconButton:hover {
+  color: #1E1E1E;
+}
+
+.userListToolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14.4px 21.6px;
+  border-bottom: 0.9px solid rgba(0, 0, 0, 0.05);
+}
+
+.userListSearch {
+  display: flex;
+  gap: 0;
+}
+
+.userListSearchInput {
+  width: 270px;
+  height: 36px;
+  padding: 0 10.8px;
+  background: #FFFFFF;
+  border: 0.9px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5.4px 0 0 5.4px;
+  border-right: none;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 12.6px;
+  line-height: 15.3px;
+  color: #1E1E1E;
+}
+
+.userListSearchInput::placeholder {
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.userListSearchInput:focus {
+  outline: none;
+  border-color: #EE4723;
+}
+
+.userListSearchButton {
+  height: 36px;
+  padding: 0 18px;
+  background: #FFFFFF;
+  border: 0.9px solid #EE4723;
+  border-radius: 0 5.4px 5.4px 0;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 12.6px;
+  line-height: 15.3px;
+  color: #EE4723;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.userListSearchButton:hover {
+  background: rgba(238, 71, 35, 0.05);
+}
+
+.userListActions {
+  display: flex;
+  align-items: center;
+  gap: 14.4px;
+}
+
+.selectedCount {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 12.6px;
+  line-height: 15.3px;
+  color: rgba(30, 30, 30, 0.5);
+}
+
+.sendInviteAllButton {
+  height: 36px;
+  padding: 0 18px;
+  background: #EE4621;
+  border: none;
+  border-radius: 5.4px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 12.6px;
+  line-height: 15.3px;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sendInviteAllButton:hover:not(:disabled) {
+  background: #D63D1A;
+}
+
+.sendInviteAllButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.userListTableWrapper {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 21.6px 21.6px 21.6px;
+}
+
+.userListTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.userListTable th,
+.userListTable td {
+  padding: 12.6px 10.8px;
+  text-align: left;
+  border-bottom: 0.9px solid rgba(0, 0, 0, 0.05);
+}
+
+.userListTable th {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 11.7px;
+  line-height: 14.4px;
+  color: rgba(30, 30, 30, 0.5);
+  background: transparent;
+}
+
+.userListTable td {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 11.7px;
+  line-height: 14.4px;
+  color: #1E1E1E;
+}
+
+.userListTable tbody tr:hover {
+  background: rgba(0, 0, 0, 0.01);
+}
+
+/* User Status */
+.userStatus {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 11.7px;
+  line-height: 14.4px;
+}
+
+.statusActive {
+  color: #00B625;
+}
+
+.statusAlreadyAdded {
+  color: #00B625;
+}
+
+.statusExpired {
+  color: #EE4621;
+}
+
+.statusExpiring {
+  color: #FEB50E;
+}
+
+/* Action Buttons in User List */
+.alreadyAddedCell {
+  display: flex;
+  align-items: center;
+  gap: 7.2px;
+}
+
+.alreadyAddedText {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 11.7px;
+  line-height: 14.4px;
+  color: #00B625;
+}
+
+.inviteButton {
+  padding: 5.4px 14.4px;
+  background: #FFFFFF;
+  border: 0.9px solid #EE4723;
+  border-radius: 3.6px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 11.7px;
+  line-height: 14.4px;
+  color: #EE4723;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.inviteButton:hover {
+  background: rgba(238, 71, 35, 0.05);
+}
+
+.inviteButtonDisabled {
+  padding: 5.4px 14.4px;
+  background: rgba(0, 0, 0, 0.05);
+  border: 0.9px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3.6px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 11.7px;
+  line-height: 14.4px;
+  color: rgba(30, 30, 30, 0.3);
+  cursor: not-allowed;
+}
+
+/* ===================================
+   Responsive Styles
+   =================================== */
+
+@media (max-width: 921.6px) {
+  .pageWrapper {
+    padding: 18px;
+  }
+
+  .optionCards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .userListModal {
+    width: 95%;
+    margin: 18px;
+  }
+
+  .userListToolbar {
+    flex-direction: column;
+    gap: 14.4px;
+    align-items: stretch;
+  }
+
+  .userListSearch {
+    width: 100%;
+  }
+
+  .userListSearchInput {
+    flex: 1;
+    width: auto;
+  }
+
+  .userListActions {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 691.2px) {
+  .pageWrapper {
+    padding: 14.4px;
+  }
+
+  .container {
+    padding: 21.6px 14.4px;
+  }
+
+  .optionCard {
+    width: 100%;
+    max-width: 288px;
+  }
+
+  .modal {
+    width: 95%;
+    margin: 18px;
+    padding: 21.6px;
+  }
+
+  .modalActions {
+    flex-direction: column;
+  }
+
+  .userListTable th,
+  .userListTable td {
+    padding: 9px 7.2px;
+    font-size: 10.8px;
+  }
+}

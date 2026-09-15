@@ -1,0 +1,532 @@
+.container {
+  background: #f4f7fe;
+  min-height: 100vh;
+  padding-bottom: 40px;
+}
+
+.programBar {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 0 40px;
+  height: 68px;
+  background: #fce8e2;
+  border-bottom: 1px solid rgba(238, 70, 33, 0.1);
+  font-size: 14px;
+  color: #1e1e1e;
+}
+
+.programName {
+  font-weight: 590;
+}
+
+.programDate,
+.programType {
+  color: #4b5563;
+}
+
+.programDate span,
+.programType span {
+  color: #1e1e1e;
+  font-weight: 600;
+}
+
+.separator {
+  color: rgba(0, 0, 0, 0.1);
+}
+
+.contentWrapper {
+  padding: 32px 40px;
+}
+
+.pageTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: #1e1e1e;
+}
+
+/* Empty State */
+.emptyStateCard {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 100px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid #f3f4f6;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.emptyStateMsg {
+  font-size: 14px;
+  color: #6b7280;
+  max-width: 480px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.createButton {
+  background: #ee4621;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 48px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Controls Row */
+.controlsRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.searchBox {
+  display: flex;
+  width: 600px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.searchInput {
+  flex: 1;
+  padding: 12px 16px;
+  border: none;
+  font-size: 14px;
+  outline: none;
+}
+
+.searchBtn {
+  padding: 0 32px;
+  background: #ffffff;
+  border: none;
+  border-left: 1px solid #e5e7eb;
+  color: #ee4621;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 12px;
+}
+
+.secondaryBtn {
+  padding: 10px 24px;
+  background: #ffffff;
+  border: 1px solid #ee4621;
+  border-radius: 8px;
+  color: #ee4621;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.exportBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 24px;
+  background: #ffffff;
+  border: 1px solid #22c55e;
+  border-radius: 8px;
+  color: #22c55e;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Table Card */
+.tableCard {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #f3f4f6;
+  overflow: visible;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  background: #ffffff;
+  padding: 18px 20px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  border-bottom: 2px solid #f9fafb;
+}
+
+.table td {
+  padding: 18px 20px;
+  font-size: 14px;
+  color: #1e1e1e;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.table tr:hover td {
+  background: #f9fafb;
+}
+
+.viewMembers {
+  color: #ee4621;
+  cursor: pointer;
+  font-weight: 500;
+  margin-right: 12px;
+}
+
+.moreBtn {
+  cursor: pointer;
+  color: #d1d5db;
+  font-size: 18px;
+  border: none;
+  background: transparent;
+  line-height: 1;
+  padding: 0 6px;
+}
+
+.actionCell {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.menuWrapper {
+  position: relative;
+}
+
+.actionDropdown {
+  position: absolute;
+  top: 24px;
+  right: 0;
+  min-width: 140px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+}
+
+.actionDropdownItem {
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: #b91c1c;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+
+.actionDropdownItem:hover {
+  background: #fef2f2;
+}
+
+/* Modal Overlay */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modalContainer {
+  background: #ffffff;
+  border-radius: 16px;
+  width: 520px;
+  padding: 0;
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.modalHeader {
+  padding: 24px 32px;
+  color: #ee4621;
+  font-weight: 600;
+  font-size: 18px;
+  border-bottom: 1px solid #f3f4f6;
+  flex-shrink: 0;
+}
+
+.modalBody {
+  padding: 32px;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+}
+
+/* Form Styles */
+.formGroup {
+  margin-bottom: 24px;
+}
+
+.label {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1e1e1e;
+  margin-bottom: 12px;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  background: #fff;
+}
+
+.infoList {
+  margin-top: 16px;
+  list-style: none;
+  padding: 0;
+}
+
+.infoItem {
+  font-size: 12px;
+  color: #4b5563;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.infoItem::before {
+  content: "•";
+  color: #1e1e1e;
+}
+
+.modalFooter {
+  padding: 24px 32px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  border-top: 1px solid #f3f4f6;
+  flex-shrink: 0;
+}
+
+.closeBtn {
+  background: #c2c2c2;
+  color: white;
+  padding: 12px 48px;
+  border: none;
+  border-radius: 2px;
+  font-weight: 600;
+  cursor: pointer;
+  flex: 1;
+}
+
+.saveBtn {
+  background: #ee4621;
+  color: white;
+  padding: 12px 48px;
+  border: none;
+  border-radius: 2px;
+  font-weight: 600;
+  cursor: pointer;
+  flex: 1;
+}
+
+/* Assign Participants modal footer alignment */
+.assignModalFooter {
+  justify-content: flex-end;
+}
+
+.assignModalActionBtn {
+  flex: 0 0 200px;
+  width: 290px;
+}
+
+/* Summary Badges */
+.badgeRow {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.summaryBadge {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: #fce8e2;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 40px;
+}
+
+.badgeLabel {
+  padding: 0 16px;
+  font-size: 13px;
+  color: #4b5563;
+}
+
+.badgeValue {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  font-weight: 700;
+  color: #1e1e1e;
+  min-width: 40px;
+}
+
+/* Two Column Layout for Assign Modal */
+.assignLayout {
+  display: grid;
+  grid-template-columns: 1fr 240px;
+  gap: 24px;
+}
+
+.mainList {
+  background: #fff;
+  border: 1px solid #f3f4f6;
+  border-radius: 12px;
+  max-height: 450px;
+  overflow-y: auto;
+}
+
+.sideSummary {
+  background: #fff;
+  border: 1px solid #f3f4f6;
+  border-radius: 12px;
+  padding: 16px;
+  height: fit-content;
+}
+
+.teamStatRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #f9fafb;
+  font-size: 13px;
+}
+
+.teamStatRow:last-child {
+  border-bottom: none;
+}
+
+/* Confirm Modal */
+.confirmBody {
+  padding: 40px;
+  text-align: center;
+}
+
+.confirmTitle {
+  color: #ee4621;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 24px;
+}
+
+.confirmText {
+  font-size: 15px;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.noteText {
+  display: block;
+  font-size: 12px;
+  color: #9ca3af;
+  font-style: italic;
+  margin-top: 24px;
+}
+
+/* Teams Participant Assignment List */
+.assignmentList {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-top: 20px;
+}
+
+.assignmentItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.participantInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.pName {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.pEmail {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.removeAction {
+  color: #ee4621;
+  font-weight: 600;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* View Members Table in Modal */
+.membersTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.membersTable th {
+  text-align: left;
+  padding: 12px 0;
+  font-size: 13px;
+  color: #6b7280;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.membersTable td {
+  padding: 12px 0;
+  font-size: 13px;
+  color: #1e1e1e;
+}
+
+/* Delete Confirmation */
+.confirmMsg {
+  text-align: center;
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.highlight {
+  color: #ee4621;
+  font-weight: 600;
+}

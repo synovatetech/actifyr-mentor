@@ -1,0 +1,45 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modalContainer {
+    background: #FFFFFF;
+    border-radius: 8.1px;
+    width: 900px;
+    max-width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0px 3.6px 14.4px rgba(0, 0, 0, 0.1);
+    padding: 31.5px;
+    position: relative;
+}
+
+.closeIcon {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #1E1E1E;
+    padding: 4px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.closeIcon:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: #EE4723;
+}

@@ -1,0 +1,399 @@
+/* ===========================================
+   Access Code Generated Page Styles
+   =========================================== */
+
+.pageWrapper {
+  width: 100%;
+  min-height: calc(100vh - 72px);
+  padding: 25.2px 45px 45px 45.9px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10.8px;
+  margin-bottom: 21.6px;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28.8px;
+  height: 28.8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: #1E1E1E;
+}
+
+.backButton:hover {
+  color: #EE4723;
+}
+
+.pageTitle {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 510;
+  font-size: 16.2px;
+  line-height: 18.9px;
+  color: #2563EB;
+  margin: 0;
+}
+
+/* Option Cards Row */
+.optionCards {
+  display: flex;
+  gap: 21.6px;
+  margin-bottom: 28.8px;
+}
+
+.optionCard {
+  flex: 1;
+  background: #FFFFFF;
+  box-shadow: 0px 1.8px 3.6px rgba(111, 111, 111, 0.1);
+  border-radius: 5.4px;
+  padding: 21.6px;
+}
+
+.optionIcon {
+  margin-bottom: 14.4px;
+}
+
+.optionTitle {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 590;
+  font-size: 14.4px;
+  line-height: 17.1px;
+  color: #1E1E1E;
+  margin: 0 0 7.2px 0;
+}
+
+.optionDescription {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 11.7px;
+  line-height: 16.2px;
+  color: rgba(30, 30, 30, 0.5);
+  margin: 0 0 18px 0;
+}
+
+/* Generated Code Box */
+.generatedCodeBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10.8px 14.4px;
+  background: #FFFFFF;
+  border: 0.9px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5.4px;
+}
+
+.codeWithCopy {
+  display: flex;
+  align-items: center;
+  gap: 7.2px;
+}
+
+.codeText {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 12.6px;
+  line-height: 15.3px;
+  color: #1E1E1E;
+}
+
+.copyIcon {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 3.6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+}
+
+.copyIcon:hover {
+  opacity: 1;
+}
+
+.deleteCodeButton {
+  background: transparent;
+  border: none;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 12.6px;
+  line-height: 15.3px;
+  color: #EE4723;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.deleteCodeButton:hover {
+  opacity: 0.8;
+}
+
+/* Select Participants Button */
+.selectParticipantsButton {
+  width: 100%;
+  padding: 10.8px 21.6px;
+  background: #FFFFFF;
+  border: 0.9px solid #EE4723;
+  border-radius: 5.4px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 12.6px;
+  line-height: 15.3px;
+  color: #EE4723;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.selectParticipantsButton:hover {
+  background: rgba(238, 71, 35, 0.05);
+}
+
+/* Participants Section */
+.participantsSection {
+  background: #FFFFFF;
+  box-shadow: 0px 1.8px 3.6px rgba(111, 111, 111, 0.1);
+  border-radius: 5.4px;
+  padding: 21.6px;
+}
+
+.sectionTitle {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 14.4px;
+  line-height: 17.1px;
+  color: #1E1E1E;
+  margin: 0 0 18px 0;
+}
+
+/* Search Bar */
+.searchBar {
+  display: flex;
+  gap: 0;
+  margin-bottom: 18px;
+}
+
+.searchInput {
+  flex: 1;
+  max-width: 450px;
+  height: 37.8px;
+  padding: 0 12.6px;
+  background: #FFFFFF;
+  border: 0.9px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5.4px 0 0 5.4px;
+  border-right: none;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 12.6px;
+  line-height: 15.3px;
+  color: #1E1E1E;
+}
+
+.searchInput::placeholder {
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #EE4723;
+}
+
+.searchButton {
+  height: 37.8px;
+  padding: 0 21.6px;
+  background: #FFFFFF;
+  border: 0.9px solid #EE4723;
+  border-radius: 0 5.4px 5.4px 0;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 12.6px;
+  line-height: 15.3px;
+  color: #EE4723;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.searchButton:hover {
+  background: rgba(238, 71, 35, 0.05);
+}
+
+/* Table */
+.tableContainer {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 12.6px 10.8px;
+  text-align: left;
+  border-bottom: 0.9px solid rgba(0, 0, 0, 0.05);
+}
+
+.table th {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 11.7px;
+  line-height: 14.4px;
+  color: rgba(30, 30, 30, 0.5);
+  background: transparent;
+}
+
+.table td {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 12.6px;
+  line-height: 15.3px;
+  color: #1E1E1E;
+}
+
+.table tbody tr:hover {
+  background: rgba(0, 0, 0, 0.01);
+}
+
+/* Status */
+.status {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 12.6px;
+  line-height: 15.3px;
+}
+
+.statusActive {
+  color: #00B625;
+}
+
+.statusExpired {
+  color: #EE4621;
+}
+
+.statusExpiring {
+  color: #FEB50E;
+}
+
+/* Remove Button */
+.removeButton {
+  background: transparent;
+  border: none;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 12.6px;
+  line-height: 15.3px;
+  color: #EE4723;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.removeButton:hover {
+  opacity: 0.8;
+}
+
+/* Modal */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.userListModal {
+  width: 540px;
+  max-height: 80vh;
+  background: #FFFFFF;
+  border-radius: 7.2px;
+  overflow: hidden;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 21.6px;
+  border-bottom: 0.9px solid rgba(0, 0, 0, 0.05);
+}
+
+.modalTitle {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 590;
+  font-size: 16.2px;
+  line-height: 18.9px;
+  color: #1E1E1E;
+  margin: 0;
+}
+
+.closeButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 3.6px;
+  color: rgba(30, 30, 30, 0.5);
+}
+
+.closeButton:hover {
+  color: #1E1E1E;
+}
+
+.modalBody {
+  padding: 21.6px;
+}
+
+/* Responsive */
+@media (max-width: 921.6px) {
+  .pageWrapper {
+    padding: 18px;
+  }
+
+  .optionCards {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 691.2px) {
+  .pageWrapper {
+    padding: 14.4px;
+  }
+
+  .searchBar {
+    flex-direction: column;
+  }
+
+  .searchInput {
+    max-width: none;
+    border-radius: 5.4px;
+    border-right: 0.9px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .searchButton {
+    border-radius: 5.4px;
+    margin-top: 7.2px;
+  }
+
+  .table th,
+  .table td {
+    padding: 9px 7.2px;
+    font-size: 10.8px;
+  }
+
+  .userListModal {
+    width: 95%;
+    margin: 18px;
+  }
+}

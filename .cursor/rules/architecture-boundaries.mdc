@@ -1,0 +1,14 @@
+---
+description: Respect app architecture boundaries and import direction.
+globs:
+  - "src/**/*.{ts,tsx,css}"
+alwaysApply: true
+---
+
+- Keep route modules in `app/` thin; compose UI from `components/` and business/data from `hooks/` and `services/`.
+- Do not move business logic into styling-only changes.
+- Keep dependency direction stable:
+  - `app/` can import from `components`, `hooks`, `services`, `context`, `lib`, `types`.
+  - `components/features/*` can import from `components/ui`, `components/common`, `hooks`, `services`, `lib`, `types`.
+  - `services/` must not import React/UI modules.
+- Do not rename public exports, route paths, or runtime import file paths for styling tasks.

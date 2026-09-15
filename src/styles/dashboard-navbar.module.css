@@ -1,0 +1,521 @@
+/* ============================================
+   Dashboard Navbar Styles
+   Based on Figma design
+   ============================================ */
+
+/* Trial Banner */
+.trialBanner {
+  position: fixed;
+  top: 82px;
+  left: 325px;
+  right: 25px;
+  height: 45px;
+  background: var(--color-trial-bg);
+  border: 1px solid var(--color-trial-border);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px 0 20px;
+  z-index: 45;
+}
+
+.trialBannerText {
+  font-family: var(--font-sf-pro);
+  font-size: 14.4px;
+  line-height: 17.1px;
+  color: #1e1e1e;
+  margin: 0;
+  flex: 1;
+}
+
+.bannerLink {
+  color: var(--color-trial-border);
+  font-weight: 510;
+}
+
+.trialBannerExpired .bannerLink {
+  color: #ee4723;
+}
+
+/* Trial Expired Banner Styles */
+.trialBannerExpired {
+  background: color-mix(in srgb, var(--color-primary) 10%, white);
+  border-bottom: 1px solid var(--color-primary);
+}
+
+.trialBannerExpired .trialBannerText {
+  color: #1e1e1e;
+}
+
+.trialBannerClose {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 3.6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 14.4px;
+}
+
+/* Main Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 72px;
+  background: #ffffff;
+  box-shadow: 0px 1.8px 3.6px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 19.8px;
+  z-index: 50;
+}
+
+/* Hamburger Menu Button - Hidden on Desktop */
+.menuButton {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 7.2px;
+  margin-right: 14.4px;
+  align-items: center;
+  justify-content: center;
+  z-index: 51;
+}
+
+@media (max-width: 921.6px) {
+  .menuButton {
+    display: flex;
+  }
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  margin-top: 9px;
+  margin-left: 0;
+  cursor: pointer;
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  cursor: pointer;
+}
+
+.userSection {
+  display: flex;
+  align-items: center;
+  gap: 14.4px;
+}
+
+/* Corporate Stats Pill */
+.statsPill {
+  display: flex;
+  align-items: center;
+  height: 42px;
+  padding: 0 20px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  /* More subtle border */
+  border-radius: 30px;
+  /* Fully rounded */
+  gap: 40px;
+  /* Increased gap from 28px for better separation */
+  margin-right: 36px;
+  background: #ffffff;
+}
+
+.statItem {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  /* Using specific margins for precise design matching */
+}
+
+.statValue {
+  font-family:
+    "SF Pro",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: normal;
+  letter-spacing: -0.02em;
+  color: #1e1e1e;
+  margin-right: 10px;
+  /* Space between number and icon */
+}
+
+.statIcon {
+  height: 20px;
+  /* Optical sizing to match text */
+  width: auto;
+  display: block;
+}
+
+.licenseIcon {
+  height: 17px;
+  width: auto;
+  display: block;
+}
+
+.statLabel {
+  font-family:
+    "SF Pro",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: normal;
+  letter-spacing: -0.01em;
+  color: #4b5563;
+  /* Grey as per Figma */
+  margin-left: 8px;
+  /* Space between icon and label */
+  margin-right: 12px;
+  /* Space between label and action link */
+}
+
+.statAction {
+  font-family:
+    "SF Pro",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: normal;
+  letter-spacing: -0.01em;
+  color: #ff5b29;
+  /* Brighter more vibrant orange from Figma */
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.statAction:hover {
+  opacity: 0.8;
+}
+
+.trialInfo {
+  display: flex;
+  align-items: center;
+  gap: 14.4px;
+  margin-right: 12px;
+}
+
+.trialText {
+  font-family: var(--font-sf-pro);
+  font-size: 14.4px;
+  line-height: 17.1px;
+  color: #1e1e1e;
+  text-align: right;
+}
+
+.trialTextExpired {
+  color: #ee4723;
+  font-weight: 510;
+}
+
+.trialDaysHighlight {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.buyLicenseButton {
+  width: 104.4px;
+  height: 36px;
+  background: #ffffff;
+  border: 0.9px solid #ee4723;
+  box-shadow: inset 0px 0px 3.6px rgba(111, 111, 111, 0.1);
+  border-radius: 5.4px;
+  font-family: var(--font-sf-pro);
+  font-size: 14.4px;
+  line-height: 17.1px;
+  font-weight: 510;
+  color: #ee4723;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.buyLicenseButton:hover {
+  background: #ee4723;
+  color: #ffffff;
+}
+
+.buyLicenseButtonExpired {
+  background: #ee4723;
+  color: #ffffff;
+  font-weight: 510;
+}
+
+.buyLicenseButtonExpired:hover {
+  background: #ee4621;
+  color: #ffffff;
+}
+
+.notificationButton {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  background: #ebebeb;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  overflow: visible !important;
+}
+
+.notificationButton:hover {
+  background: #e2e2e2;
+}
+
+.notificationButton:hover svg {
+  animation: bellSwing 0.5s ease;
+}
+
+.notificationDot {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 11px;
+  height: 11px;
+  background: #ee4621;
+  border-radius: 50%;
+  z-index: 11;
+  border: 1.5px solid #ffffff;
+}
+
+.notificationGlow {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 24px;
+  height: 24px;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #ee4621 0%,
+    rgba(238, 70, 33, 0) 100%
+  );
+  opacity: 0.4;
+  border-radius: 50%;
+  z-index: 10;
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.3;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(0.85);
+    opacity: 0.3;
+  }
+}
+
+@keyframes bellSwing {
+  0% {
+    transform: rotate(0);
+  }
+
+  25% {
+    transform: rotate(10deg);
+  }
+
+  50% {
+    transform: rotate(-10deg);
+  }
+
+  75% {
+    transform: rotate(5deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
+
+.userAvatar {
+  width: 40.5px;
+  height: 40.5px;
+  background: #5885e6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.userAvatarImage {
+  width: 40.5px;
+  height: 40.5px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.userInitial {
+  font-family: var(--font-sf-pro);
+  font-size: 18px;
+  line-height: 21.6px;
+  font-weight: 400;
+  color: #ffffff;
+  text-align: center;
+}
+
+.userName {
+  font-family: var(--font-sf-pro);
+  font-size: 14.4px;
+  line-height: 17.1px;
+  font-weight: 510;
+  color: #1e1e1e;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1152px) {
+  .statsPill {
+    gap: 14.4px;
+    padding: 0 14.4px;
+  }
+
+  .statItem {
+    gap: 3.6px;
+  }
+
+  .statLabel {
+    font-size: 12.6px;
+  }
+
+  .statAction {
+    font-size: 12.6px;
+  }
+}
+
+@media (max-width: 921.6px) {
+  .trialBanner {
+    top: 82px;
+    left: 18px;
+    right: 18px;
+  }
+
+  .navbar {
+    padding: 0 14.4px;
+  }
+
+  .logoContainer {
+    margin-left: 0;
+  }
+
+  .trialInfo {
+    display: none;
+    /* Hide on mobile */
+  }
+
+  .statsPill {
+    display: none;
+    /* Hide stats pill on tablet/mobile */
+  }
+
+  .userName {
+    display: none;
+    /* Hide user name on mobile to save space */
+  }
+}
+
+/* User Profile & Logout */
+.userProfileWrapper {
+  display: flex;
+  align-items: center;
+  gap: 14.4px;
+  cursor: pointer;
+  position: relative;
+  border-radius: 8px;
+  padding: 4px;
+  transition: background-color 0.2s;
+}
+
+.userProfileWrapper:hover {
+  background-color: #f3f4f6;
+}
+
+.logoutMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  min-width: 150px;
+  z-index: 100;
+  border: 1px solid #e5e5e5;
+  display: flex;
+  flex-direction: column;
+}
+
+.profileMenuButton {
+  width: 100%;
+  text-align: left;
+  padding: 8px 16px;
+  background: none;
+  border: none;
+  border-radius: 4px;
+  font-family: var(--font-sf-pro);
+  font-size: 14.4px;
+  color: #1e1e1e;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profileMenuButton:hover {
+  background: #f3f4f6;
+}
+
+.menuDivider {
+  height: 1px;
+  background: #e5e7eb;
+  margin: 4px 8px;
+}
+
+.logoutButton {
+  width: 100%;
+  text-align: left;
+  padding: 8px 16px;
+  background: none;
+  border: none;
+  border-radius: 4px;
+  font-family: var(--font-sf-pro);
+  font-size: 14.4px;
+  color: #dc2626;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.logoutButton:hover {
+  background: #fef2f2;
+}

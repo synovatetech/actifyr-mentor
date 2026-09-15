@@ -1,0 +1,192 @@
+/* ===========================================
+   Content Management Sidebar Styles
+   Matching admin sidebar design
+   =========================================== */
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 279px;
+  height: 100vh;
+  background: #fce8e2;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+}
+
+/* Hide sidebar on mobile/tablet by default */
+@media (max-width: 921.6px) {
+  .sidebar {
+    transform: translateX(-100%);
+    z-index: 50;
+  }
+
+  .sidebarOpen {
+    transform: translateX(0);
+  }
+}
+
+.logoTopSection {
+  height: 72px;
+  /* Same as navbar height */
+  background: #ffffff;
+  /* White background from image */
+  display: flex;
+  align-items: center;
+  padding-left: 19.8px;
+  border-right: 0.9px solid rgba(111, 111, 111, 0.1);
+  cursor: pointer;
+}
+
+.topLogo {
+  width: 100px;
+  height: 90px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.header {
+  background: #ee4621;
+  /* Solid orange background from image */
+  padding: 0 19.8px;
+  height: 68px;
+  /* Precise height from design */
+  display: flex;
+  align-items: center;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  gap: 9.9px;
+  font-family: var(--font-sf-pro);
+  font-weight: 590;
+  font-size: 16.2px;
+  line-height: 19px;
+  color: #ffffff;
+  /* White text from image */
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.backButton:hover {
+  opacity: 0.8;
+}
+
+.backButton svg {
+  flex-shrink: 0;
+}
+
+.nav {
+  flex: 1;
+  padding: 8px 0;
+  margin: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 12px 0 20px;
+  margin: 0 0 0 16px;
+  /* Space on left side only */
+  height: 56px;
+  font-family: var(--font-sf-pro);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: rgba(30, 30, 30, 0.8);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-radius: 40px 0 0 40px;
+  /* Rounded only on left side */
+}
+
+.navItem:hover:not(.active) {
+  background: rgba(238, 70, 33, 0.08);
+}
+
+.navItem:hover .icon {
+  transform: scale(1.05);
+}
+
+/* Active state with white pill background as per design */
+.navItem.active {
+  background: #ffffff;
+  color: #1e1e1e;
+  font-weight: 590;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.navItem.active:hover {
+  background: #ffffff;
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f9c8bb;
+  /* Peach-red background for icon */
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.navItem.active .icon,
+.navItem.active:hover .icon {
+  background: #f9c8bb;
+}
+
+.icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.label {
+  flex: 1;
+}
+
+.missingTranslationBadge {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.footer {
+  padding: 19.8px;
+  border-top: 0.9px solid rgba(255, 255, 255, 0.2);
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 7.2px;
+}
+
+.poweredBy {
+  font-family: var(--font-sf-pro);
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  color: #1e1e1e;
+  margin: 0;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: auto;
+  height: 30px;
+  object-fit: contain;
+}

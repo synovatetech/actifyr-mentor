@@ -1,0 +1,151 @@
+/* ============================================
+   Sidebar Navigation Styles
+   Based on Figma design
+   ============================================ */
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 72px;
+  /* Below navbar (80px * 0.9) */
+  width: 279px;
+  /* 310px * 0.9 */
+  height: calc(100vh - 72px);
+  background: #FCE8E2;
+  /* Light pink/orange background from design */
+  display: flex;
+  flex-direction: column;
+  z-index: 45;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+}
+
+/* Hide sidebar on mobile/tablet by default */
+@media (max-width: 921.6px) {
+  .sidebar {
+    transform: translateX(-100%);
+    z-index: 50;
+  }
+
+  .sidebarOpen {
+    transform: translateX(0);
+  }
+}
+
+/* Close Button - Mobile Only */
+.closeButton {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 14.4px 19.8px;
+  align-self: flex-end;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 921.6px) {
+  .closeButton {
+    display: flex;
+  }
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 0 0 0;
+  margin: 0;
+  flex: 1;
+  gap: 14px;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  padding: 0 19.8px;
+  height: 61.2px;
+  text-decoration: none;
+  color: #1E1E1E;
+  font-family: var(--font-sf-pro);
+  font-size: 16.2px;
+  line-height: 18.9px;
+  font-weight: 400;
+  transition: background-color 0.2s ease;
+  position: relative;
+}
+
+/* Active Programs item background */
+.navItemActive {
+  background: #EE4621;
+  color: #FFFFFF;
+  font-weight: 590;
+}
+
+/* Rectangle 45 - Active background for Programs */
+.navItem:nth-child(2).navItemActive {
+  background: #EE4621;
+}
+
+.navItem:hover:not(.navItemActive) {
+  background: rgba(238, 71, 35, 0.05);
+}
+
+.navItemActive .navIcon {
+  background: #FFFFFF;
+}
+
+.navIcon {
+  width: 40.5px;
+  height: 40.5px;
+  border-radius: 50%;
+  background: #F9C8BB;
+  margin-right: 9.9px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navItemActive .navIcon {
+  background: #FFB9AA;
+}
+
+.navIconSvg {
+  width: 21.6px;
+  height: 21.6px;
+  color: #FFFFFF;
+}
+
+.navLabel {
+  flex: 1;
+}
+
+.footer {
+  padding: 19.8px;
+  border-top: 0.9px solid rgba(255, 255, 255, 0.2);
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 7.2px;
+}
+
+.poweredBy {
+  font-family: var(--font-sf-pro);
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  color: #1E1E1E;
+  margin: 0;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logo {
+  width: auto;
+  height: 30px;
+  object-fit: contain;
+}

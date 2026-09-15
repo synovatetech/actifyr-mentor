@@ -1,0 +1,218 @@
+/* ============================================
+   Dashboard Page Styles
+   Based on Actifyr_Client_Dashboard
+   ============================================ */
+
+.contentWrapper {
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+
+.pageTitle {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 590;
+  font-size: 16.2px;
+  line-height: 18.9px;
+  color: #1E1E1E;
+  margin: 0 0 31.5px 0;
+}
+
+.dashboardGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24.3px;
+  align-items: flex-start;
+}
+
+.widget {
+  background: #FFFFFF;
+  border-radius: 9px;
+  overflow: hidden;
+  box-shadow: 0px 1.8px 3.6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.wideWidget {
+  flex: 1;
+  min-width: 320px;
+}
+
+.smallWidget {
+  flex: 1;
+  min-width: 130px;
+}
+
+.fullWidthWidget {
+  grid-column: span 2;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.widgetHeader {
+  background: #FCE8E2;
+  padding: 10.8px 14.4px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #EE4723;
+}
+
+.widgetTitle {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 14.4px;
+  color: #1E1E1E;
+}
+
+.widgetBody {
+  padding: 18px 14.4px;
+  display: flex;
+  justify-content: space-between;
+  gap: 18.5px;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7.2px;
+  flex: 1;
+}
+
+.statLabel {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 12.6px;
+  color: rgba(30, 30, 30, 0.6);
+  white-space: nowrap;
+}
+
+.statValue {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 590;
+  font-size: 14.4px;
+}
+
+.valActive {
+  color: #00B625;
+}
+
+.valDraft {
+  color: #EE4723;
+}
+
+.valExpired {
+  color: rgba(30, 30, 30, 0.2);
+}
+
+.valExpiring {
+  color: #EE4723;
+}
+
+.valUnread {
+  color: #1a73e8;
+}
+
+.valBlue {
+  color: #1a73e8;
+}
+
+.smallWidgetsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24.3px;
+  flex: 1;
+}
+
+.recentActivity {
+  margin-top: 24px;
+  width: 100%;
+}
+
+.activityList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.activityItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.activityItem:last-child {
+  border-bottom: none;
+}
+
+.activityInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.activityText {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14.4px;
+  color: #1E1E1E;
+}
+
+.activityTime {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 12px;
+  color: rgba(30, 30, 30, 0.4);
+}
+
+.activityStatus {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 12px;
+  font-weight: 510;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: rgba(0, 182, 37, 0.1);
+  color: #00B625;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .dashboardGrid {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 921.6px) {
+  .contentWrapper {
+    padding: 0 18px;
+  }
+}
+
+@media (max-width: 691.2px) {
+  .contentWrapper {
+    padding: 0 14.4px;
+  }
+
+  .dashboardGrid {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .smallWidget,
+  .wideWidget {
+    width: 100%;
+    flex: 1;
+  }
+
+  .smallWidgetsGrid {
+    grid-template-columns: 1fr;
+  }
+}

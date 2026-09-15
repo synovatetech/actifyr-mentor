@@ -1,0 +1,32 @@
+# Dependencies (should be installed fresh on Vercel)
+node_modules/
+
+# Build outputs
+.next/
+out/
+dist/
+
+# Environment files
+.env*.local
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Testing
+coverage/
+
+# Documentation (optional to exclude)
+DEPLOYMENT.md
+IMPLEMENTATION_STATUS.md
+TESTING_GUIDE.md
+start-server.sh

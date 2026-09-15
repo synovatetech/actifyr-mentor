@@ -1,0 +1,1309 @@
+/* ===========================================
+   Users Management Page Styles
+   =========================================== */
+
+.pageWrapper {
+  width: 100%;
+  min-height: calc(100vh - 72px);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background: #F9FAFB;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 31.5px;
+  position: relative;
+  width: 100%;
+}
+
+.pageTitle {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 590;
+  font-size: 16.2px;
+  line-height: 18.9px;
+  color: #1E1E1E;
+  margin: 0;
+}
+
+.toolbarActions {
+  display: flex;
+  gap: 18px;
+  /* Match Programs .actions gap */
+  margin-left: auto;
+}
+
+.bulkUploadButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 163px;
+  height: 45px;
+  background: #FFFFFF;
+  border: 0.9px solid #EE4723;
+  /* Match border width */
+  border-radius: 5.4px;
+  /* Match radius */
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 14.4px;
+  /* Match font size */
+  line-height: 17.1px;
+  text-align: center;
+  color: #EE4723;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.bulkUploadButton:hover {
+  background: rgba(238, 71, 35, 0.05);
+}
+
+.addUserButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 181.8px;
+  /* Match Programs createButton width */
+  height: 45px;
+  background: #EE4621;
+  border: none;
+  border-radius: 5.4px;
+  /* Match radius */
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 14.4px;
+  /* Match font size */
+  line-height: 17.1px;
+  text-align: center;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.addUserButton:hover {
+  background: #D63D1A;
+}
+
+/* Empty State */
+.emptyState {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-height: calc(100vh - 186.3px);
+}
+
+.emptyStateText {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14.4px;
+  line-height: 17.1px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.35);
+  margin: 0;
+}
+
+/* Users Section */
+.usersSection {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Toolbar */
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  /* Match Programs gap */
+  margin-bottom: 0;
+}
+
+.searchContainer {
+  display: flex;
+  width: 642.1px;
+  height: 45px;
+}
+
+.searchInput {
+  flex: 1;
+  width: 525.1px;
+  height: 45px;
+  padding: 0 17.1px;
+  background: #FFFFFF;
+  border: 0.9px solid rgba(0, 0, 0, 0.35);
+  border-radius: 5.4px 0 0 5.4px;
+  border-right: none;
+  box-shadow: inset 0px 0px 3.6px rgba(111, 111, 111, 0.1);
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 14.4px;
+  line-height: 17.1px;
+  color: #1E1E1E;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.searchInput::placeholder {
+  color: rgba(0, 0, 0, 0.25);
+}
+
+.searchInput:focus {
+  border-color: #EE4723;
+  /* Match Programs focus color */
+}
+
+.searchButton {
+  width: 117px;
+  height: 45px;
+  background: #FFFFFF;
+  border: 0.9px solid rgba(0, 0, 0, 0.35);
+  border-left: none;
+  border-radius: 0 5.4px 5.4px 0;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 14.4px;
+  line-height: 17.1px;
+  text-align: center;
+  color: #EE4621;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.searchButton:hover {
+  background: rgba(238, 71, 35, 0.05);
+}
+
+.userCount {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 11.3px;
+  line-height: 13.8px;
+  color: rgba(30, 30, 30, 0.6);
+  margin: 19.4px 0 13px 0;
+}
+
+.userCount strong {
+  font-weight: 590;
+  color: #1E1E1E;
+}
+
+/* Row selection */
+.checkboxCell {
+  width: 44px;
+  padding-right: 0 !important;
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+.checkbox:disabled {
+  cursor: not-allowed;
+  opacity: 0.35;
+}
+
+.renewSelectionBar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+  padding: 12px 18px;
+  background: var(--color-primary-light);
+  border: 0.9px solid var(--color-primary-border);
+  border-radius: 5.4px;
+}
+
+.renewSelectionText {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 13.5px;
+  color: var(--color-foreground);
+}
+
+.renewSelectionClear {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 500;
+  font-size: 13.5px;
+  color: color-mix(in srgb, var(--color-foreground) 55%, transparent);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.renewSelectedButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  padding: 0 18px;
+  margin-left: auto;
+  background: var(--color-primary);
+  border: none;
+  border-radius: 5.4px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 13.5px;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  white-space: nowrap;
+}
+
+.renewSelectedButton:hover {
+  background: color-mix(in srgb, var(--color-primary) 85%, black);
+}
+
+/* Table */
+.tableContainer {
+  overflow-x: auto;
+  overflow-y: visible;
+  background: #FFFFFF;
+  border-radius: 4.9px;
+  box-shadow: 0px 1.6px 3.2px rgba(111, 111, 111, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 24px;
+  text-align: left;
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.table th {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--color-foreground);
+  background: transparent;
+}
+
+.table td {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--color-foreground);
+  vertical-align: middle;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.table tbody tr:hover td {
+  background: color-mix(in srgb, var(--color-foreground) 2%, transparent);
+}
+
+/* Status */
+.status {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.statusActive {
+  background: rgba(0, 182, 37, 0.1);
+  color: #00B625;
+}
+
+.statusExpiring {
+  background: rgba(238, 70, 33, 0.1);
+  color: #EE4621;
+}
+
+.statusExpired {
+  background: rgba(238, 70, 33, 0.1);
+  color: #EE4621;
+}
+
+.statusInvited {
+  background: rgba(37, 99, 235, 0.1);
+  color: #2563EB;
+}
+
+.statusDeactivated {
+  background: color-mix(in srgb, var(--color-foreground) 8%, transparent);
+  color: color-mix(in srgb, var(--color-foreground) 40%, transparent);
+}
+
+.rowDeactivated td {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+/* Options Cell */
+.optionsCell {
+  position: relative;
+}
+
+.optionsButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6.5px;
+  color: rgba(30, 30, 30, 0.5);
+  border-radius: 3.2px;
+  transition: all 0.2s ease;
+}
+
+.optionsButton:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #1E1E1E;
+}
+
+/* ... existing styles ... */
+
+.optionsMenu {
+  /* Keep existing for reference or fallback, but likely unused with Portal */
+  position: absolute;
+  right: 0;
+  top: calc(100% + 3.2px);
+  margin-top: 3.2px;
+  background: #FFFFFF;
+  border: 0.8px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6.5px;
+  box-shadow: 0px 3.2px 9.7px rgba(0, 0, 0, 0.1);
+  z-index: 10000;
+  min-width: 145.8px;
+  overflow: hidden;
+}
+
+.optionsMenu button {
+  display: flex;
+  align-items: center;
+  gap: 8.1px;
+  width: 100%;
+  padding: 9.7px 13px;
+  background: transparent;
+  border: none;
+  border-bottom: 0.8px solid rgba(0, 0, 0, 0.05);
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 11.3px;
+  line-height: 13.8px;
+  color: #1E1E1E;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.optionsMenu button:last-child {
+  border-bottom: none;
+}
+
+.optionsMenu button:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+/* Fixed Menu for Portal */
+.menuBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+  /* Light black background */
+  z-index: 10000;
+}
+
+.optionsMenuFixed {
+  position: fixed;
+  background: #ffffff;
+  border: 1px solid color-mix(in srgb, var(--color-foreground) 10%, transparent);
+  border-radius: 12px;
+  box-shadow: 0px 8px 24px color-mix(in srgb, var(--color-foreground) 12%, transparent);
+  z-index: 10001;
+  min-width: 200px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.optionsMenuFixed button {
+  width: 100%;
+  padding: 11px 20px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-foreground) 7%, transparent);
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--color-foreground);
+  cursor: pointer;
+  transition: background 0.15s ease;
+  text-align: right;
+}
+
+.optionsMenuFixed button:last-child {
+  border-bottom: none;
+}
+
+.optionsMenuFixed button:hover {
+  background: color-mix(in srgb, var(--color-foreground) 3%, transparent);
+}
+
+.deleteOption {
+  color: var(--color-primary) !important;
+}
+
+/* Modal Overlay */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal */
+.modal {
+  width: 388.8px;
+  background: #FFFFFF;
+  border-radius: 6.5px;
+  overflow: hidden;
+}
+
+/* Add User Modal */
+.addUserModal {
+  width: 388.8px;
+  background: #FFFFFF;
+  border-radius: 6.5px;
+  padding: 25.9px;
+  box-sizing: border-box;
+}
+
+.addUserTitle {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 590;
+  font-size: 14.6px;
+  line-height: 17px;
+  color: #EE4621;
+  margin: 0 0 19.4px 0;
+}
+
+.addUserBody {
+  margin-bottom: 19.4px;
+}
+
+.licenseNote {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 11.3px;
+  line-height: 13.8px;
+  color: rgba(0, 0, 0, 0.5);
+  margin: 6.5px 0 0 0;
+}
+
+.addUserFooter {
+  display: flex;
+  gap: 13px;
+}
+
+.addUserFooter .closeButton {
+  flex: 1;
+  height: 40.5px;
+  background: rgba(0, 0, 0, 0.2);
+  border: none;
+  border-radius: 4.9px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 13px;
+  line-height: 15.4px;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.addUserFooter .closeButton:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.addUserSubmitButton {
+  flex: 1;
+  height: 40.5px;
+  background: #EE4621;
+  border: none;
+  border-radius: 4.9px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 13px;
+  line-height: 15.4px;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.addUserSubmitButton:hover:not(:disabled) {
+  background: #D63D1A;
+}
+
+.addUserSubmitButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Bulk Upload Modal */
+.bulkUploadModal {
+  width: 388.8px;
+  background: #FFFFFF;
+  border-radius: 6.5px;
+  padding: 25.9px;
+  box-sizing: border-box;
+}
+
+.bulkUploadTitle {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 590;
+  font-size: 14.6px;
+  line-height: 17px;
+  color: #EE4621;
+  margin: 0 0 19.4px 0;
+}
+
+.bulkUploadBody {
+  margin-bottom: 19.4px;
+}
+
+.uploadHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16.2px;
+}
+
+.uploadListHeading {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 13px;
+  line-height: 15.4px;
+  color: #1E1E1E;
+  margin: 0;
+}
+
+.downloadTemplateLink {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 11.3px;
+  line-height: 13.8px;
+  color: rgba(0, 0, 0, 0.6);
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.downloadTemplateLink:hover {
+  color: #EE4723;
+}
+
+.uploadArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 145.8px;
+  padding: 32.4px 16.2px;
+  border: 1.6px dashed rgba(0, 0, 0, 0.2);
+  border-radius: 6.5px;
+  background: rgba(0, 0, 0, 0.02);
+  margin-bottom: 13px;
+}
+
+.uploadText {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 11.3px;
+  line-height: 13.8px;
+  color: rgba(0, 0, 0, 0.6);
+  margin: 0 0 13px 0;
+}
+
+.browseFileButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 32.4px;
+  padding: 0 19.4px;
+  background: #EE4621;
+  border: none;
+  border-radius: 4.9px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 11.3px;
+  line-height: 13.8px;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.browseFileButton:hover {
+  background: #D63D1A;
+}
+
+.bulkLicenseNote {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 11.3px;
+  line-height: 13.8px;
+  color: rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
+
+.bulkUploadFooter {
+  display: flex;
+  gap: 13px;
+}
+
+.bulkCloseButton {
+  flex: 1;
+  height: 40.5px;
+  background: rgba(0, 0, 0, 0.2);
+  border: none;
+  border-radius: 4.9px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 13px;
+  line-height: 15.4px;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.bulkCloseButton:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.bulkUploadSubmitButton {
+  flex: 1;
+  height: 40.5px;
+  background: #FFFFFF;
+  border: 0.8px solid #EE4723;
+  border-radius: 4.9px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 13px;
+  line-height: 15.4px;
+  color: #EE4723;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.bulkUploadSubmitButton:hover {
+  background: rgba(238, 71, 35, 0.05);
+}
+
+.verifyModal {
+  width: 729px;
+  max-height: 90vh;
+  background: #FFFFFF;
+  border-radius: 6.5px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16.2px 19.4px;
+  border-bottom: 0.8px solid rgba(0, 0, 0, 0.05);
+}
+
+.modalTitle {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 590;
+  font-size: 14.6px;
+  line-height: 17px;
+  color: #1E1E1E;
+  margin: 0;
+}
+
+.closeButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 3.2px;
+  color: rgba(30, 30, 30, 0.5);
+}
+
+.closeButton:hover {
+  color: #1E1E1E;
+}
+
+.modalBody {
+  padding: 19.4px;
+}
+
+.modalDescription {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 11.3px;
+  line-height: 16.2px;
+  color: rgba(30, 30, 30, 0.6);
+  margin: 0 0 19.4px 0;
+}
+
+/* Form Styles */
+.formGroup {
+  margin-bottom: 16.2px;
+}
+
+.label {
+  display: block;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 11.3px;
+  line-height: 13.8px;
+  color: #1E1E1E;
+  margin-bottom: 6.5px;
+}
+
+.input,
+.select {
+  width: 100%;
+  height: 40.5px;
+  padding: 0 11.3px;
+  background: #FFFFFF;
+  border: 0.8px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4.9px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15.4px;
+  color: #1E1E1E;
+  box-sizing: border-box;
+}
+
+.input::placeholder {
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.input:focus,
+.select:focus {
+  outline: none;
+  border-color: #EE4723;
+}
+
+/* Upload Area */
+.uploadArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32.4px;
+  border: 1.6px dashed rgba(238, 71, 35, 0.3);
+  border-radius: 6.5px;
+  background: rgba(238, 71, 35, 0.02);
+  text-align: center;
+}
+
+.uploadArea p {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 11.3px;
+  line-height: 13.8px;
+  color: rgba(30, 30, 30, 0.6);
+  margin: 13px 0;
+}
+
+.browseButton {
+  padding: 8.1px 19.4px;
+  background: #EE4621;
+  border-radius: 4.9px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 11.3px;
+  line-height: 13.8px;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.browseButton:hover {
+  background: #D63D1A;
+}
+
+.templateLink {
+  margin-top: 16.2px;
+}
+
+.templateLink a {
+  display: flex;
+  align-items: center;
+  gap: 6.5px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 11.3px;
+  line-height: 13.8px;
+  color: #EE4723;
+  text-decoration: none;
+}
+
+.templateLink a:hover {
+  text-decoration: underline;
+}
+
+/* Verify Stats */
+.verifyStats {
+  display: flex;
+  gap: 13px;
+  margin-bottom: 16.2px;
+}
+
+.statItem {
+  flex: 1;
+  padding: 13px;
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 6.5px;
+  text-align: center;
+}
+
+.statValue {
+  display: block;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 700;
+  font-size: 19.4px;
+  line-height: 23.5px;
+  color: #1E1E1E;
+  margin-bottom: 3.2px;
+}
+
+.statLabel {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 10.5px;
+  line-height: 13px;
+  color: rgba(30, 30, 30, 0.6);
+}
+
+.statValid {
+  background: rgba(0, 182, 37, 0.1);
+}
+
+.statValid .statValue {
+  color: #00B625;
+}
+
+.statInvalid {
+  background: rgba(238, 70, 33, 0.1);
+}
+
+.statInvalid .statValue {
+  color: #EE4621;
+}
+
+/* Verify Table */
+.verifyTableContainer {
+  max-height: 324px;
+  overflow-y: auto;
+  border: 0.8px solid rgba(0, 0, 0, 0.05);
+  border-radius: 6.5px;
+}
+
+.verifyTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.verifyTable th,
+.verifyTable td {
+  padding: 9.7px;
+  text-align: left;
+  border-bottom: 0.8px solid rgba(0, 0, 0, 0.05);
+}
+
+.verifyTable th {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 9.7px;
+  line-height: 11.3px;
+  color: rgba(30, 30, 30, 0.5);
+  background: rgba(0, 0, 0, 0.02);
+  position: sticky;
+  top: 0;
+}
+
+.verifyTable td {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 10.5px;
+  line-height: 13px;
+  color: #1E1E1E;
+}
+
+.invalidRow {
+  background: rgba(238, 70, 33, 0.03);
+}
+
+.validBadge,
+.invalidBadge {
+  display: flex;
+  align-items: center;
+  gap: 3.2px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 9.7px;
+  line-height: 11.3px;
+}
+
+.validBadge {
+  color: #00B625;
+}
+
+.invalidBadge {
+  color: #EE4621;
+}
+
+.errorCell {
+  color: #EE4621;
+  font-size: 9.7px;
+}
+
+/* Modal Footer */
+.modalFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: 9.7px;
+  padding: 16.2px 19.4px;
+  border-top: 0.8px solid rgba(0, 0, 0, 0.05);
+}
+
+.cancelButton {
+  padding: 9.7px 19.4px;
+  background: rgba(0, 0, 0, 0.05);
+  border: none;
+  border-radius: 4.9px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 11.3px;
+  line-height: 13.8px;
+  color: #1E1E1E;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.cancelButton:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.submitButton {
+  padding: 9.7px 19.4px;
+  background: #EE4621;
+  border: none;
+  border-radius: 4.9px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 510;
+  font-size: 11.3px;
+  line-height: 13.8px;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.submitButton:hover:not(:disabled) {
+  background: #D63D1A;
+}
+
+.submitButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 972px) {
+  .searchInput {
+    width: 324px;
+  }
+
+  .bulkUploadButton {
+    width: 129.6px;
+  }
+
+  .addUserButton {
+    width: 129.6px;
+  }
+}
+
+@media (max-width: 829.4px) {
+  .pageWrapper {
+    padding: 16.2px;
+  }
+
+  .toolbar {
+    flex-wrap: wrap;
+    gap: 9.7px;
+  }
+
+  .searchInput {
+    width: 283.5px;
+  }
+
+  .verifyModal {
+    width: 95%;
+    max-width: 729px;
+  }
+}
+
+@media (max-width: 622.1px) {
+  .pageWrapper {
+    padding: 13px;
+  }
+
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .searchContainer {
+    width: 100%;
+  }
+
+  .searchInput {
+    width: 100%;
+    flex: 1;
+  }
+
+  .toolbarActions {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .bulkUploadButton,
+  .addUserButton {
+    flex: 1;
+    width: auto;
+    justify-content: center;
+  }
+
+  .modal {
+    width: 95%;
+    max-width: 388.8px;
+  }
+
+  .verifyStats {
+    flex-direction: column;
+  }
+
+  .verifyTable th,
+  .verifyTable td {
+    padding: 6.5px;
+    font-size: 8.9px;
+  }
+
+  .emptyState {
+    min-height: calc(100vh - 243px);
+  }
+}
+
+/* ============================================
+   Input Error State
+   ============================================ */
+.inputError {
+  display: block;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 10.5px;
+  line-height: 13px;
+  color: var(--color-primary);
+  margin-top: 4px;
+}
+
+.inputErrorBorder {
+  border-color: var(--color-primary) !important;
+}
+
+/* ============================================
+   Verify Modal Redesign
+   ============================================ */
+.verifyModalTitle {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 590;
+  font-size: 14.6px;
+  line-height: 17px;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.verifyStatsRow {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.verifyStatBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 10px 16px;
+  background: color-mix(in srgb, var(--color-primary) 6%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-primary) 15%, transparent);
+  border-radius: 6px;
+  min-width: 148px;
+}
+
+.verifyStatBoxLabel {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 11.3px;
+  color: var(--color-foreground);
+}
+
+.verifyStatBoxValue {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--color-foreground);
+}
+
+.verifyStatBoxValueError {
+  color: var(--color-primary);
+}
+
+.verifyList {
+  border: 1px solid color-mix(in srgb, var(--color-foreground) 10%, transparent);
+  border-radius: 6px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.verifyListRow {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  gap: 12px;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-foreground) 7%, transparent);
+}
+
+.verifyListRow:last-child {
+  border-bottom: none;
+}
+
+.verifyRowName {
+  flex: 1;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 11.3px;
+  color: var(--color-foreground);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.verifyRowEmail {
+  flex: 1.2;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 11.3px;
+  color: var(--color-foreground);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.verifyRowStatus {
+  width: 110px;
+  flex-shrink: 0;
+  font-size: 10.5px;
+  font-weight: 510;
+  text-align: right;
+}
+
+.statusAlreadyExist {
+  color: var(--color-info);
+}
+
+.statusDataMissing {
+  color: var(--color-primary);
+}
+
+.verifyDeleteBtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  flex-shrink: 0;
+  color: color-mix(in srgb, var(--color-foreground) 35%, transparent);
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.verifyDeleteBtn:hover {
+  color: var(--color-primary);
+}
+
+/* ============================================
+   Pagination
+   ============================================ */
+.paginationRow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.paginationBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid color-mix(in srgb, var(--color-foreground) 20%, transparent);
+  border-radius: 4px;
+  background: var(--color-card-bg);
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  color: var(--color-foreground);
+  transition: all 0.2s ease;
+}
+
+.paginationBtn:hover:not(:disabled) {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.paginationBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.paginationInfo {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 11.3px;
+  color: color-mix(in srgb, var(--color-foreground) 55%, transparent);
+}
+

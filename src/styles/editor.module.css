@@ -1,0 +1,426 @@
+.editorContainer {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 183px;
+  font-family: var(--font-sf-pro);
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 8px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #fff;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.toolbarGroup {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding-right: 4px;
+  margin-right: 4px;
+  border-right: 1px solid #e5e7eb;
+}
+
+.toolbarGroup:last-child {
+  border-right: none;
+  margin-right: 0;
+}
+
+.toolbarBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  border: none;
+  background: transparent;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 13px;
+}
+
+.toolbarBtn:hover {
+  background: #f3f4f6;
+  color: #1e1e1e;
+}
+
+.toolbarBtn.active {
+  background: #ee462115;
+  /* Light orange tint */
+  color: #ee4621;
+}
+
+.colorInput {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding: 0;
+}
+
+.colorPickerBtn {
+  position: relative;
+}
+
+.colorPickerActive {
+  background: #f9fafb;
+  border-color: #e5e7eb;
+}
+
+.colorPickerBtn :global(svg) {
+  display: block;
+}
+
+/* Link card — floats near the selected text in the content area, not the toolbar */
+.linkCard {
+  position: fixed;
+  width: 320px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  /* RichTextEditor is almost always used inside a modal (AddContentModal,
+     ReviewScriptModal, etc. go up to z-index: 100000) — this card portals to
+     document.body as a sibling of those, so it must sit above all of them. */
+  z-index: 1000000;
+  font-family: var(--font-sf-pro);
+}
+
+.linkCardField {
+  margin-bottom: 16px;
+}
+
+.linkCardLabel {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  color: color-mix(in srgb, var(--color-foreground) 55%, transparent);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.linkCardInput {
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--color-foreground);
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.linkCardInput:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 15%, transparent);
+}
+
+.linkCardCheckboxRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  font-size: 14px;
+  color: var(--color-foreground);
+  cursor: pointer;
+}
+
+.linkCardCheckbox {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+.linkCardDivider {
+  height: 1px;
+  background: #e5e7eb;
+  margin: 0 -20px 16px;
+}
+
+.linkCardActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.linkCardRemove {
+  margin-right: auto;
+  background: none;
+  border: none;
+  color: #6b7280;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 4px;
+}
+
+.linkCardRemove:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.linkCardBtn {
+  height: 38px;
+  padding: 0 20px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+}
+
+.linkCardCancel {
+  background: #fff;
+  border-color: #e5e7eb;
+  color: var(--color-foreground);
+}
+
+.linkCardCancel:hover {
+  background: #f9fafb;
+}
+
+.linkCardInsert {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.linkCardInsert:hover {
+  background: color-mix(in srgb, var(--color-primary) 88%, black);
+}
+
+.linkCardInsert:disabled {
+  background: color-mix(in srgb, var(--color-primary) 40%, transparent);
+  cursor: not-allowed;
+}
+
+.imageFullWidthBtn {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.imageCardDivider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 14px 0;
+  color: var(--color-text-secondary);
+  font-size: 12px;
+}
+
+.imageCardDivider::before,
+.imageCardDivider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--color-divider);
+}
+
+.imageCardDivider span {
+  padding: 0 10px;
+}
+
+.imageUploadBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 38px;
+  margin-bottom: 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--color-card-bg);
+  border: 1.5px solid var(--color-divider);
+  color: var(--color-foreground);
+}
+
+.imageUploadBtn:hover {
+  background: color-mix(in srgb, var(--color-foreground) 4%, var(--color-card-bg));
+}
+
+.editorContent {
+  flex: 1;
+  padding: 16px;
+  outline: none;
+  overflow-y: auto;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #1f2937;
+  min-height: 100px;
+}
+
+.editorContent :global(.ProseMirror) {
+  outline: none;
+  min-height: 100%;
+}
+
+/* Tailwind's preflight zeroes <p> margin, so adjacent paragraphs otherwise sit flush
+   with no visible break between them here even though they're separate <p> tags in the
+   saved HTML (and render with a gap wherever that HTML is displayed with normal margins,
+   e.g. the mobile app) — restore a paragraph gap so the break is visible in the editor too. */
+.editorContent :global(p) {
+  margin-bottom: 0.75em;
+}
+
+.editorContent :global(p:last-child) {
+  margin-bottom: 0;
+}
+
+.resizableImageWrapper {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  line-height: 0;
+}
+
+.resizableImageWrapper img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+.resizableImageSelected img {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.resizeHandle {
+  position: absolute;
+  right: -6px;
+  bottom: -6px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  border: 2px solid #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: nwse-resize;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.1s ease;
+}
+
+.resizableImageSelected .resizeHandle {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/*
+ * Note: `.editorContent` and `.ProseMirror` end up on the SAME element (Tiptap
+ * mounts its contentEditable dom node using the class passed via
+ * editorProps.attributes, not a separate wrapper) — so selectors below must not
+ * require `.ProseMirror` as a nested ancestor of `.editorContent`, or they never
+ * match. Target descendant tags/pseudo-elements directly instead.
+ */
+
+/* Ensure inline formatting marks render correctly regardless of CSS resets */
+.editorContent :global(strong) {
+  font-weight: bold;
+}
+
+.editorContent :global(em) {
+  font-style: italic;
+}
+
+.editorContent :global(u) {
+  text-decoration: underline;
+}
+
+.editorContent :global(s) {
+  text-decoration: line-through;
+}
+
+.editorContent :global(a) {
+  color: var(--color-primary);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.editorContent :global(a:hover) {
+  color: color-mix(in srgb, var(--color-primary) 80%, black);
+}
+
+.editorContent :global(p.is-editor-empty:first-child::before) {
+  color: #9ca3af;
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+/* Specific button styles */
+.addBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: auto;
+  padding: 0 8px;
+  font-weight: 500;
+}
+
+/* Font size dropdown */
+.fontSizeSelect {
+  height: 24px;
+  padding: 0 4px;
+  border-radius: 4px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #374151;
+  font-size: 12px;
+  cursor: pointer;
+  outline: none;
+  min-width: 58px;
+}
+
+.fontSizeSelect:hover {
+  border-color: #d1d5db;
+  background: #f9fafb;
+}
+
+/* Narrower than .fontSizeSelect's default (which auto-sized to fit the old
+   "Line Height" placeholder text) — but every <select> reserves 36px of right
+   padding for the global dropdown-arrow icon (see globals.css), so this still
+   needs enough room for that plus the widest value ("1.75"/"2.5"). */
+.lineHeightSelect {
+  min-width: 64px;
+  width: 64px;
+}
+
+/* Icons */
+.icon {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+/* Hide scrollbar for toolbar */
+.toolbar::-webkit-scrollbar {
+  display: none;
+}
+
+.toolbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}

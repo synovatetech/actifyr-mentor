@@ -1,0 +1,128 @@
+/* ============================================
+   Signup Specific Styles
+   ============================================ */
+
+.verifyText {
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14.4px;
+    line-height: 24px;
+    color: rgba(30, 30, 30, 0.7);
+    margin-bottom: 24px;
+}
+
+.verifyEmailText {
+    color: #EE4621;
+    font-weight: 510;
+    margin-right: 8px;
+}
+
+.changeEmailBtn {
+    background: none;
+    border: none;
+    padding: 0;
+    color: #1a73e8;
+    /* Usually blue for change links or match the design if different */
+    font-family: inherit;
+    font-size: 14.4px;
+    cursor: pointer;
+}
+
+.changeEmailBtn:hover {
+    text-decoration: underline;
+}
+
+.otpContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+    width: 100%;
+}
+
+.resendWrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 18px;
+}
+
+.resendBtn {
+    background: none;
+    border: none;
+    padding: 0;
+    color: #EE4621;
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.resendBtn:hover:enabled {
+    text-decoration: underline;
+}
+
+.resendBtn:disabled {
+    color: rgba(30, 30, 30, 0.45);
+    cursor: not-allowed;
+}
+
+.otpInput {
+    width: 45px;
+    height: 45px;
+    background: #FFFFFF;
+    border: 0.9px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5.4px;
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 510;
+    font-size: 18px;
+    text-align: center;
+    color: #1E1E1E;
+    outline: none;
+}
+
+.otpInput:focus {
+    border-color: rgba(238, 71, 35, 0.5);
+    box-shadow: 0 0 0 2px rgba(238, 71, 35, 0.1);
+}
+
+/* Adjust button placement for the OTP step */
+.submitBtn {
+    margin-top: 12px;
+}
+
+/* Compact overrides to match card height for 5 inputs */
+.title {
+    font-size: 21.6px !important;
+    margin-bottom: 14px !important;
+}
+
+.formGroup {
+    margin-bottom: 0 !important;
+}
+
+.input {
+    height: 40px !important;
+    font-size: 13.5px !important;
+    font-weight: 400 !important;
+    margin-bottom: 12px !important;
+}
+
+.passwordWrapper {
+    margin-bottom: 12px !important;
+}
+
+.passwordWrapper .input {
+    margin-bottom: 0 !important;
+}
+
+.label {
+    font-size: 13.5px !important;
+    font-weight: 510 !important;
+    margin-bottom: 6px !important;
+}
+
+.signupRow {
+    margin-top: 24px !important;
+}

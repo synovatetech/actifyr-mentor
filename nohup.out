@@ -1,0 +1,226 @@
+
+> actifyr_client@1.0.0 dev
+> next dev
+
+ ⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /Users/abhijith/Downloads/Actifyr_Client_ty/package-lock.json as the root directory.
+ To silence this warning, set `outputFileTracingRoot` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/output#caveats for more information.
+ Detected additional lockfiles: 
+   * /Users/abhijith/Downloads/Actifyr_Client_ty/actifyr_client/package-lock.json
+
+   ▲ Next.js 15.5.9
+   - Local:        http://localhost:3000
+   - Network:      http://10.222.171.98:3000
+   - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 2.3s
+(node:85649) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Failed to proxy https://www.api.actifyr.com/auth/unified-client/login [Error: socket hang up] { code: 'ECONNRESET' }
+[Error: socket hang up] { code: 'ECONNRESET' }
+ ✓ Compiled /_error in 387ms (376 modules)
+ ✓ Compiled /middleware in 125ms (114 modules)
+ ○ Compiling /contentManagement/scheduledLearning/aiContent ...
+ ✓ Compiled /contentManagement/scheduledLearning/aiContent in 987ms (993 modules)
+ GET /contentManagement/scheduledLearning/aiContent?programId=24 200 in 1321ms
+ GET /contentManagement/scheduledLearning/aiContent?programId=24 200 in 249ms
+ GET /contentManagement/scheduledLearning/aiContent?programId=24 200 in 202ms
+ ○ Compiling /contentManagement/scheduledLearning/planner ...
+ ✓ Compiled /contentManagement/scheduledLearning/planner in 1797ms (1121 modules)
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 2024ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 49ms
+ ✓ Compiled /programs in 388ms (1155 modules)
+ GET /programs 200 in 475ms
+ ✓ Compiled /contentManagement/scheduledLearning in 283ms (1165 modules)
+ GET /contentManagement/scheduledLearning?programId=24 200 in 346ms
+ GET /contentManagement/scheduledLearning/aiContent?programId=24 200 in 521ms
+ ✓ Compiled in 707ms (1164 modules)
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 91ms
+ ✓ Compiled in 425ms (1155 modules)
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 83ms
+ ✓ Compiled in 340ms (1164 modules)
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 58ms
+ ✓ Compiled in 532ms (1155 modules)
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 88ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 340ms
+ GET /contentManagement/scheduledLearning/aiContent?programId=24 200 in 216ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 50ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 157ms
+ ○ Compiling /contentManagement/scheduledLearning ...
+ ✓ Compiled /contentManagement/scheduledLearning in 632ms (603 modules)
+ GET /contentManagement/scheduledLearning?programId=24 200 in 1594ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 100ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 288ms
+ GET /contentManagement/scheduledLearning/aiContent?programId=24 200 in 285ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 64ms
+ GET /contentManagement/scheduledLearning?programId=24 200 in 584ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 527ms
+ GET /contentManagement/scheduledLearning?programId=24 200 in 329ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 448ms
+ GET /contentManagement/scheduledLearning?programId=24 200 in 210ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 97ms
+ GET /contentManagement/scheduledLearning?programId=24 200 in 205ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 1627ms
+ GET /contentManagement/scheduledLearning?programId=24 200 in 210ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 301ms
+ GET /contentManagement/scheduledLearning?programId=24 200 in 1127ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 707ms
+ GET /contentManagement/scheduledLearning?programId=24 200 in 1003ms
+ ○ Compiling /dashboard ...
+ ✓ Compiled /dashboard in 5.1s (1171 modules)
+ GET /dashboard 200 in 7219ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 1123ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 5131ms
+ GET /contentManagement/scheduledLearning?programId=24 200 in 920ms
+ ✓ Compiled in 364ms (567 modules)
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 69ms
+ GET /contentManagement/scheduledLearning?programId=24 200 in 70ms
+ ✓ Compiled in 1128ms (1185 modules)
+ GET /contentManagement/scheduledLearning?programId=24 200 in 237ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 240ms
+ ✓ Compiled in 255ms (567 modules)
+ GET /contentManagement/scheduledLearning?programId=24 200 in 765ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 799ms
+ ✓ Compiled in 277ms (567 modules)
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 80ms
+ GET /contentManagement/scheduledLearning?programId=24 200 in 81ms
+ ✓ Compiled in 328ms (567 modules)
+ GET /contentManagement/scheduledLearning?programId=24 200 in 91ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 100ms
+ ✓ Compiled in 2.9s (1185 modules)
+ GET /contentManagement/scheduledLearning?programId=24 200 in 698ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 695ms
+ ✓ Compiled in 980ms (1185 modules)
+ GET /contentManagement/scheduledLearning?programId=24 200 in 288ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 288ms
+ ✓ Compiled in 645ms (1185 modules)
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 192ms
+ GET /contentManagement/scheduledLearning?programId=24 200 in 194ms
+ ✓ Compiled in 906ms (1185 modules)
+ GET /contentManagement/scheduledLearning?programId=24 200 in 213ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 220ms
+ ✓ Compiled in 775ms (1185 modules)
+ GET /contentManagement/scheduledLearning?programId=24 200 in 233ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 234ms
+ ✓ Compiled in 842ms (1185 modules)
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 427ms
+ GET /contentManagement/scheduledLearning?programId=24 200 in 467ms
+ ○ Compiling / ...
+ ✓ Compiled / in 668ms (1184 modules)
+ GET / 307 in 1113ms
+ ○ Compiling /plans ...
+ ✓ Compiled /plans in 744ms (1220 modules)
+ GET /plans 200 in 1083ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 2171ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 796ms
+ GET /contentManagement/scheduledLearning/aiContent?programId=24 200 in 843ms
+ GET /contentManagement/scheduledLearning/aiContent?programId=24 200 in 2390ms
+ GET /contentManagement/scheduledLearning 200 in 1240ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 1098ms
+ GET /contentManagement/scheduledLearning?programId=24 200 in 921ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 360ms
+ GET /contentManagement/scheduledLearning?programId=24 200 in 799ms
+ GET /contentManagement/scheduledLearning/aiContent?programId=24 200 in 256ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 810ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 1268ms
+ ○ Compiling /contentManagement/generalContent ...
+ ✓ Compiled /contentManagement/generalContent in 6.8s (1201 modules)
+ GET /contentManagement/generalContent?programId=24 200 in 22244ms
+ ○ Compiling /contentManagement/generalContent/knowledgeCards ...
+ ✓ Compiled /contentManagement/generalContent/knowledgeCards in 6.6s (1216 modules)
+ GET /contentManagement/generalContent/knowledgeCards 200 in 8932ms
+ GET /contentManagement/scheduledLearning?programId=24 200 in 9212ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 1439ms
+ GET /contentManagement/scheduledLearning/aiContent?programId=24 200 in 787ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 8229ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 1464ms
+ ✓ Compiled in 1137ms (1209 modules)
+ GET /contentManagement/scheduledLearning/aiContent?programId=24 200 in 375ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 388ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 91ms
+ ✓ Compiled in 344ms (1209 modules)
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 130ms
+ GET /contentManagement/scheduledLearning/aiContent?programId=24 200 in 137ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 62ms
+ ✓ Compiled in 766ms (1209 modules)
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 150ms
+ GET /contentManagement/scheduledLearning/aiContent?programId=24 200 in 164ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 112ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 298ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 105ms
+ GET /contentManagement/scheduledLearning?programId=24 200 in 143ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 127ms
+ ○ Compiling /programs ...
+ ✓ Compiled /programs in 648ms (642 modules)
+ GET /programs 200 in 1003ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 292ms
+ GET /contentManagement/scheduledLearning?programId=24 200 in 143ms
+ GET /contentManagement/scheduledLearning/aiContent?programId=24 200 in 63ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 45ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 131ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 134ms
+ GET /contentManagement/scheduledLearning?programId=24 200 in 190ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 499ms
+ GET /contentManagement/scheduledLearning?programId=24 200 in 412ms
+ GET /contentManagement/scheduledLearning/aiContent?programId=24 200 in 63ms
+ GET /contentManagement/scheduledLearning?programId=24 200 in 120ms
+ GET /contentManagement/scheduledLearning/aiContent?programId=24 200 in 34ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 32ms
+ GET /contentManagement/scheduledLearning?programId=24 200 in 32ms
+ GET /programs 200 in 33ms
+ ○ Compiling /programs/create ...
+ ✓ Compiled /programs/create in 845ms (1218 modules)
+ GET /programs/create 200 in 958ms
+ ✓ Compiled /dashboard in 118ms (648 modules)
+ GET /dashboard 200 in 205ms
+ GET /programs 200 in 45ms
+ GET /contentManagement/scheduledLearning?programId=24 200 in 48ms
+ GET /contentManagement/scheduledLearning/aiContent?programId=24 200 in 42ms
+ GET /programs 200 in 44ms
+ GET /contentManagement/scheduledLearning?programId=24 200 in 30ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 82ms
+ GET /programs 200 in 45ms
+ GET /contentManagement/scheduledLearning?programId=24 200 in 63ms
+ GET /contentManagement/scheduledLearning/aiContent?programId=24 200 in 35ms
+ GET /contentManagement/scheduledLearning/planner?programId=24 200 in 39ms
+ GET /programs 200 in 36ms
+Failed to proxy https://www.api.actifyr.com/client/program/list?page=1&page_size=6 [Error: getaddrinfo ENOTFOUND www.api.actifyr.com] {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'www.api.actifyr.com'
+}
+[Error: getaddrinfo ENOTFOUND www.api.actifyr.com] {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'www.api.actifyr.com'
+}
+Failed to proxy https://www.api.actifyr.com/client/program/list?page=1&page_size=6 [Error: getaddrinfo ENOTFOUND www.api.actifyr.com] {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'www.api.actifyr.com'
+}
+[Error: getaddrinfo ENOTFOUND www.api.actifyr.com] {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'www.api.actifyr.com'
+}
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 711ms (1292 modules)
+Failed to proxy https://www.api.actifyr.com/client/program/list?page=1&page_size=6 [Error: getaddrinfo ENOTFOUND www.api.actifyr.com] {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'www.api.actifyr.com'
+}
+[Error: getaddrinfo ENOTFOUND www.api.actifyr.com] {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'www.api.actifyr.com'
+}

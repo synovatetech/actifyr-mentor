@@ -1,0 +1,205 @@
+/* ============================================
+   Duplicate Program - Additional Section Styles
+   Extends create-program.module.css patterns
+   ============================================ */
+
+/* ── Day chips — square cards with floating top badge ─── */
+
+.daysRow {
+  display: flex;
+  gap: 10px;
+  /* extra top padding so the floating badge isn't clipped */
+  margin-top: 18px;
+  padding-top: 12px;
+}
+
+.dayChip {
+  position: relative;
+  flex: 1;
+  min-width: 56px;
+  height: 66px;
+  border: 1.5px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background: #ffffff;
+  font-family: var(--font-sf-pro);
+  font-size: 14.4px;
+  font-weight: 400;
+  color: #1e1e1e;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* push label down slightly so it stays visually centred when badge is above */
+  padding-top: 6px;
+  transition: border-color 0.15s ease;
+}
+
+.dayChip:hover {
+  border-color: rgba(238, 71, 35, 0.35);
+}
+
+.dayChipSelected {
+  border-color: #ee4723;
+  border-width: 1.5px;
+}
+
+/* Orange circle badge sitting on top-centre of the card border */
+.dayChipBadge {
+  position: absolute;
+  top: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #ee4723;
+  /* white ring separates badge from card border */
+  box-shadow: 0 0 0 2px #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* ── Exclude Dates ────────────────────────────────── */
+
+/* reuse create-program's dateInputWrapper — only need to constrain max-width here */
+.excludeDateWrapper {
+  position: relative;
+  /* match the create-program dateInputWrapper width pattern */
+  width: 100%;
+  max-width: 340px;
+}
+
+.excludeDateWrapper input[type="date"] {
+  padding-right: 45px;
+}
+
+.excludeDateWrapper input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
+.excludeDateIcon {
+  position: absolute;
+  right: 7.2px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  pointer-events: none;
+}
+
+/* Chips row */
+.excludedDatesRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.excludedLabel {
+  font-family: var(--font-sf-pro);
+  font-size: 13.5px;
+  font-weight: 510;
+  color: rgba(30, 30, 30, 0.55);
+  white-space: nowrap;
+}
+
+.excludedChips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.excludedChip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-width: 139px;
+  height: 32px;
+  padding: 0 12px 0 16px;
+  background: rgba(238, 71, 35, 0.07);
+  border: 1.5px solid #ee4723;
+  border-radius: 10px;
+  font-family: var(--font-sf-pro);
+  font-size: 16px;
+  color: #1e1e1e;
+  font-weight: 400;
+  box-sizing: border-box;
+}
+
+.excludedChipRemove {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: #ee4723;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  font-size: 18px;
+  font-weight: 400;
+  transition: opacity 0.15s;
+}
+
+.excludedChipRemove:hover {
+  opacity: 0.65;
+}
+
+/* ── Copy Program Content Cards ───────────────────── */
+
+.contentCardsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 14px;
+}
+
+.contentCard {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  border: 0.9px solid rgba(0, 0, 0, 0.12);
+  border-radius: 5.4px;
+  background: #ffffff;
+  font-family: var(--font-sf-pro);
+  font-size: 13.5px;
+  font-weight: 400;
+  color: #1e1e1e;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+  white-space: nowrap;
+  box-shadow: 0px 0.9px 1.8px rgba(111, 111, 111, 0.08);
+}
+
+.contentCard:hover {
+  border-color: rgba(238, 71, 35, 0.4);
+  background: rgba(238, 71, 35, 0.02);
+}
+
+.contentCardSelected {
+  border-color: #ee4723;
+  background: rgba(238, 71, 35, 0.05);
+}
+
+.contentCardCheckbox {
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: #ffffff;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.contentCardSelected .contentCardCheckbox {
+  background: #ee4723;
+  border-color: #ee4723;
+}

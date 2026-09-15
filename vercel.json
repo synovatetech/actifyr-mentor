@@ -1,0 +1,8 @@
+{
+  "ignoreCommand": "[ \"$VERCEL_GIT_COMMIT_REF\" = \"vizz-dev\" ]",
+  "git": {
+    "deploymentEnabled": {
+      "vizz-dev": false
+    }
+  }
+}

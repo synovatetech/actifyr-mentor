@@ -1,0 +1,314 @@
+@import "tailwindcss";
+
+@theme {
+  /* Breakpoints */
+  --breakpoint-xs: 375px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1512px;
+
+  /* Colors */
+  --color-primary: #ee4723;
+  --color-primary-light: rgba(238, 71, 35, 0.25);
+  --color-primary-border: rgba(238, 71, 35, 0.8);
+  --color-background: #f9fafb;
+  --color-foreground: #1e1e1e;
+  --color-text-secondary: rgba(30, 30, 30, 0.7);
+  --color-text-muted: #a8a8a8b3;
+  --color-text-feature: rgba(30, 30, 30, 0.8);
+  --color-success: #00b625;
+  --color-error: #ef4444;
+  --color-info: #00a0ff;
+  --color-card-bg: rgba(255, 255, 255, 0.8);
+  --color-toggle-bg: #fafafa;
+  --color-feature-bg: #fefbfb;
+  --color-divider: rgba(111, 111, 111, 0.1);
+  --color-toggle-border: rgba(237, 237, 237, 0.1);
+  --color-trial-bg: #e5f4fd;
+  --color-trial-border: #007ac3;
+
+  /* Engagement progress bucket colors: 0-20% / 21-50% / 51-80% / 81-100% */
+  --color-progress-red: var(--color-error);
+  --color-progress-orange: #f59d0b;
+  --color-progress-yellow: #22c55d;
+  --color-progress-green: #16a34a;
+
+  /* Font families */
+  --font-sf-pro: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "SF Pro", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-shadows: "Shadows Into Light", cursive;
+
+  /* Typography */
+  --text-title: 34px;
+  --text-title--line-height: 41px;
+  --text-title--font-weight: 700;
+  --text-title-mobile: 24px;
+  --text-title-mobile--line-height: 32px;
+  --text-title-mobile--font-weight: 700;
+  --text-subtitle: 16px;
+  --text-subtitle--line-height: 26px;
+  --text-subtitle--font-weight: 400;
+  --text-subtitle--letter-spacing: 0.02em;
+  --text-subtitle-mobile: 14px;
+  --text-subtitle-mobile--line-height: 22px;
+  --text-subtitle-mobile--font-weight: 400;
+  --text-subtitle-mobile--letter-spacing: 0.02em;
+  --text-plan-name: 22px;
+  --text-plan-name--line-height: 26px;
+  --text-plan-name--font-weight: 700;
+  --text-plan-name-mobile: 20px;
+  --text-plan-name-mobile--line-height: 24px;
+  --text-plan-name-mobile--font-weight: 700;
+  --text-plan-desc: 14px;
+  --text-plan-desc--line-height: 20px;
+  --text-plan-desc--font-weight: 400;
+  --text-plan-desc--letter-spacing: 0.02em;
+  --text-plan-desc-mobile: 13px;
+  --text-plan-desc-mobile--line-height: 18px;
+  --text-plan-desc-mobile--font-weight: 400;
+  --text-plan-desc-mobile--letter-spacing: 0.02em;
+  --text-badge: 16px;
+  --text-badge--line-height: 20px;
+  --text-badge--font-weight: 400;
+  --text-badge--letter-spacing: 0.02em;
+  --text-badge-mobile: 14px;
+  --text-badge-mobile--line-height: 18px;
+  --text-badge-mobile--font-weight: 400;
+  --text-toggle: 14px;
+  --text-toggle--line-height: 13px;
+  --text-toggle--font-weight: 510;
+  --text-toggle-sub: 10px;
+  --text-toggle-sub--line-height: 13px;
+  --text-toggle-sub--font-weight: 510;
+  --text-toggle-mobile: 12px;
+  --text-toggle-mobile--line-height: 12px;
+  --text-toggle-mobile--font-weight: 510;
+  --text-toggle-sub-mobile: 9px;
+  --text-toggle-sub-mobile--line-height: 11px;
+  --text-toggle-sub-mobile--font-weight: 510;
+  --text-price: 30px;
+  --text-price--line-height: 36px;
+  --text-price--font-weight: 700;
+  --text-price-mobile: 26px;
+  --text-price-mobile--line-height: 32px;
+  --text-price-mobile--font-weight: 700;
+  --text-price-suffix: 14px;
+  --text-price-suffix--line-height: 36px;
+  --text-price-suffix--font-weight: 400;
+  --text-price-suffix-mobile: 12px;
+  --text-price-suffix-mobile--line-height: 32px;
+  --text-price-suffix-mobile--font-weight: 400;
+  --text-feature-label: 14px;
+  --text-feature-label--line-height: 17px;
+  --text-feature-label--font-weight: 590;
+  --text-feature-label-mobile: 12px;
+  --text-feature-label-mobile--line-height: 15px;
+  --text-feature-label-mobile--font-weight: 590;
+  --text-feature-item: 12px;
+  --text-feature-item--line-height: 15px;
+  --text-feature-item--font-weight: 274;
+  --text-feature-item-mobile: 11px;
+  --text-feature-item-mobile--line-height: 14px;
+  --text-feature-item-mobile--font-weight: 274;
+  --text-button: 16px;
+  --text-button--line-height: 19px;
+  --text-button--font-weight: 510;
+  --text-button-mobile: 15px;
+  --text-button-mobile--line-height: 19px;
+  --text-button-mobile--font-weight: 510;
+  --text-cta-text: 18px;
+  --text-cta-text--line-height: 26px;
+  --text-cta-text--font-weight: 700;
+  --text-cta-text--letter-spacing: 0.02em;
+  --text-cta-text-mobile: 15px;
+  --text-cta-text-mobile--line-height: 22px;
+  --text-cta-text-mobile--font-weight: 700;
+  --text-cta-text-mobile--letter-spacing: 0.02em;
+
+  /* Spacing tokens */
+  --spacing-13: 52px;
+  --spacing-15: 60px;
+  --spacing-17: 68px;
+  --spacing-18: 72px;
+  --spacing-19: 76px;
+  --spacing-25: 100px;
+  --spacing-27: 108px;
+
+  /* Shadows */
+  --shadow-navbar: 0px 2px 4px rgba(0, 0, 0, 0.15);
+  --shadow-card: 0px 0px 10px rgba(0, 0, 0, 0.15);
+  --shadow-toggle: 0px 0px 1px rgba(0, 0, 0, 0.25);
+  --shadow-toggle-active: 0px 1px 4px rgba(0, 0, 0, 0.25);
+
+  /* Radius */
+  --radius-card: 12px;
+  --radius-toggle: 38px;
+  --radius-toggle-btn: 25px;
+  --radius-button: 6px;
+}
+
+/* ============================================
+   CSS Variables
+   ============================================ */
+:root {
+  --font-sf-pro: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "SF Pro", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-shadows: "Shadows Into Light", cursive;
+  --color-trial-bg: #e5f4fd;
+  --color-trial-border: #007ac3;
+}
+
+/* ============================================
+   Base Styles
+   ============================================ */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sf-pro);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+}
+
+/* Global select dropdown arrow */
+select:not([multiple]):not([size]) {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M6 9L12 15L18 9' stroke='%239CA3AF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 14px;
+  padding-right: 36px;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+/* Global number input spinner removal */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* Font utility */
+.font-shadows {
+  font-family: var(--font-shadows);
+}
+
+/* ============================================
+   Hide All Scrollbars
+   ============================================ */
+* {
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+}
+
+*::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera */
+  width: 0;
+  height: 0;
+}
+/* ============================================
+   Tiptap Editor & Rendered Content List Fix
+   ============================================ */
+.tiptap-editor-prose ul,
+.taskDesc ul,
+.questionTitle ul {
+  list-style-type: disc !important;
+  padding-left: 1.5rem !important;
+  margin: 1rem 0 !important;
+  display: block !important;
+}
+
+.tiptap-editor-prose ol,
+.taskDesc ol,
+.questionTitle ol {
+  list-style-type: decimal !important;
+  padding-left: 1.5rem !important;
+  margin: 1rem 0 !important;
+  display: block !important;
+}
+
+.tiptap-editor-prose li,
+.taskDesc li,
+.questionTitle li {
+  display: list-item !important;
+  margin-bottom: 0.25rem !important;
+  list-style-position: outside !important;
+}
+
+.tiptap-editor-prose li > p,
+.taskDesc li > p,
+.questionTitle li > p {
+  margin: 0 !important;
+  display: inline !important;
+}
+
+.tiptap-editor-prose h2 {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1rem 0 0.5rem 0 !important;
+}
+
+/* Additional mapping for rendered content */
+.tiptap-rendered-content ul {
+  list-style-type: disc !important;
+  padding-left: 1.5rem !important;
+  margin: 0.5rem 0 !important;
+  display: block !important;
+}
+
+.tiptap-rendered-content ol {
+  list-style-type: decimal !important;
+  padding-left: 1.5rem !important;
+  margin: 0.5rem 0 !important;
+  display: block !important;
+}
+
+.tiptap-rendered-content li {
+  display: list-item !important;
+  margin-bottom: 0.25rem !important;
+  list-style-position: outside !important;
+}
+
+.tiptap-rendered-content li > p {
+  margin: 0 !important;
+  display: inline !important;
+}
+
+/* Same paragraph-gap restoration as .editorContent in editor.module.css — Tailwind
+   preflight zeroes <p> margin, so separate paragraphs would otherwise render with no
+   visible break here even though they're distinct <p> tags in the saved HTML. */
+.tiptap-rendered-content p {
+  margin-bottom: 0.75em;
+}
+
+.tiptap-rendered-content p:last-child {
+  margin-bottom: 0;
+}

@@ -1,0 +1,1093 @@
+/* ... existing styles ... */
+
+.container {
+  background: #f4f7fe;
+  min-height: 100vh;
+  padding-bottom: 40px;
+}
+
+/* Program info bar styling matches content-home.module.css */
+.programBar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 19.8px;
+  height: 68px;
+  background: #fce8e2;
+  border-bottom: 1px solid rgba(238, 70, 33, 0.1);
+  font-family: var(--font-sf-pro);
+  font-size: 14px;
+  color: #1e1e1e;
+}
+
+.programName {
+  font-weight: 500;
+}
+
+.separator {
+  color: rgba(30, 30, 30, 0.3);
+}
+
+.programDates,
+.programType {
+  font-weight: 400;
+}
+
+.programDates strong,
+.programType strong {
+  font-weight: 500;
+}
+
+/* Calendar Layout */
+.calendarWrapper {
+  padding: 12px 30px;
+  max-width: 1260px;
+  margin: 0 auto;
+}
+
+.calendarHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  padding: 12px 0;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.monthNav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--font-sf-pro);
+  font-weight: 700;
+  font-size: 16px;
+  color: #ee4621;
+}
+
+.navArrow {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ee4621;
+  transition: opacity 0.2s;
+}
+
+.navArrow:hover {
+  opacity: 0.7;
+}
+
+.calendarHeaderActions {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rescheduleButton {
+  background: #ffffff;
+  border: 1px solid #ee4621;
+  border-radius: 4px;
+  /* Slightly rounded */
+  color: #ee4621;
+  font-family: var(--font-sf-pro);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.rescheduleButton:hover {
+  background: #fff5f2;
+}
+
+/* Calendar Grid */
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 0px;
+  /* Sharp corners in image */
+}
+
+.dayHeader {
+  padding: 12px;
+  text-align: center;
+  font-family: var(--font-sf-pro);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: #1e1e1e;
+  text-transform: uppercase;
+  background: #ffffff;
+  /* Optional: border-bottom? Image doesn't show clearly, but often used */
+}
+
+/* Calendar Cells */
+.dayCell {
+  min-height: 85px;
+  border-top: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+  padding: 10px 4px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: var(--font-sf-pro);
+  background: #f3f4f6;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+/* Legend */
+.calendarLegend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 4px 4px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sf-pro);
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.legendSwatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.legendSwatchNoContent {
+  background: #edeff9;
+  border: 1px solid #e0e0e0;
+}
+
+.legendSwatchDraft {
+  background: #fbf2e0;
+}
+
+.legendSwatchFinalized {
+  background: #e6f7ee;
+}
+
+.legendSwatchBeforeProgram {
+  background: #f1f0ed;
+  border: 1px solid #e0e0e0;
+}
+
+/* Previous/next month overflow day, outside the program's active range */
+.otherMonthCell {
+  background: #f5f3ed;
+}
+
+/* Program day with no content yet */
+.programEmptyCell {
+  background: #edeff9 !important;
+}
+
+/* Program day whose content exists but isn't finalized yet */
+.draftCell {
+  background: #fbf2e0 !important;
+}
+
+/* Program day whose content is finalized */
+.finalizedCell {
+  background: #e6f7ee !important;
+}
+
+.dayCell:hover:not(.disabledCell) {
+  background: #eeeeee;
+}
+
+.otherMonthCell:hover:not(.disabledCell) {
+  background: #e9e7e1;
+}
+
+.programEmptyCell:hover:not(.disabledCell) {
+  background: #dce0f0 !important;
+}
+
+.draftCell:hover:not(.disabledCell) {
+  background: #f3e6c9 !important;
+}
+
+.finalizedCell:hover:not(.disabledCell) {
+  background: #d3f0de !important;
+}
+
+.disabledCell {
+  cursor: not-allowed !important;
+}
+
+.dayCell:nth-child(7n) {
+  border-right: none;
+}
+
+.translationMissingIcon {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+.dateNumberRow {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-bottom: 4px;
+}
+
+.dayNumber {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1e1e1e;
+}
+
+.dateStatusIcon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Program day, no content — date number/icon color */
+.programEmptyDate {
+  color: #3b4fa6 !important;
+}
+
+/* Program day, draft/needs content — date number/icon color */
+.draftDate {
+  color: #a1762b !important;
+}
+
+/* Program day, finalized content — date number/icon color */
+.finalizedDate {
+  color: #2ba156 !important;
+}
+
+/* Overflow day outside the program's active range (prev/next month) */
+.overflowDate {
+  color: #8a8880 !important;
+  font-weight: 400 !important;
+}
+
+.outsideRangeDate {
+  color: #9ca3af !important;
+  /* Lighter grey for outside ranges */
+  font-weight: 400 !important;
+  /* Lighter weight for outside ranges */
+}
+
+/* Today's date — background badge behind the date number text only, using a
+   darker shade of that cell's own state color rather than the brand color */
+.todayDateNumber {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 24px;
+  background-color: color-mix(in srgb, #6f6f6f 85%, black) !important;
+  color: #ffffff !important;
+  border-radius: 999px;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+.programEmptyDate.todayDateNumber {
+  background-color: color-mix(in srgb, #3b4fa6 85%, black) !important;
+}
+
+.draftDate.todayDateNumber {
+  background-color: color-mix(in srgb, #a1762b 85%, black) !important;
+}
+
+.finalizedDate.todayDateNumber {
+  background-color: color-mix(in srgb, #2ba156 85%, black) !important;
+}
+
+.overflowDate.todayDateNumber,
+.outsideRangeDate.todayDateNumber {
+  background-color: color-mix(in srgb, #9ca3af 85%, black) !important;
+}
+
+/* Active Highlight (Program duration) */
+.activeCell {
+  background: #1a3d86 !important;
+  /* Dark Blue */
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.activeCell:hover {
+  background: #143066 !important;
+}
+
+.activeCell .dayNumber {
+  /* Base color in range is white/inherited from activeCell */
+  font-weight: 600;
+}
+
+.greenText {
+  color: #4ade80 !important;
+  /* Bright Green for content dates */
+}
+
+.hasContent {
+  background-color: #f0f4ff;
+  /* Subtle light blue for content dates */
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  font-size: 12px;
+  color: #1a1a1a;
+  margin-top: 1px;
+}
+
+.ratingButton {
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  padding: 1px 10px;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.ratingButton:hover,
+.ratingButton:focus-visible {
+  border-color: #bfe9e1;
+  background: rgba(191, 233, 225, 0.08);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.ratingButton:hover .rating,
+.ratingButton:focus-visible .rating {
+  color: #000000;
+}
+
+.star {
+  color: #ffc107;
+  font-size: 14px;
+}
+
+.grayStar {
+  color: #94a3b8;
+}
+
+.ratingCount {
+  opacity: 0.8;
+  margin-left: 2px;
+}
+
+.cellContentInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.statusLabel {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 10px;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.noContentLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 22px;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  padding: 1px 10px;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+/* Title text for finalized content — darker than the finalized cell's date/icon color */
+.confirmedStatus {
+  color: #1f7a40;
+}
+
+.pendingStatus {
+  color: #a1762b;
+}
+
+/* Regenerating State */
+.regeneratingWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.miniSpinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  color: #1e1e1e;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 11px;
+  width: 140px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  font-weight: 500;
+  line-height: 1.4;
+  pointer-events: none;
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #ffffff;
+}
+
+/* ================== MODAL STYLES ================== */
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  backdrop-filter: blur(2px);
+}
+
+/* Common Modal Container to shared styles */
+.modalContainer {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.15);
+  width: 700px;
+  max-width: 95vw;
+  max-height: 90vh;
+  /* Allow max height */
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-sf-pro);
+  position: relative;
+  /* Removed overflow: hidden to allow popups */
+}
+
+/* Specific Container for Reschedule to allow DatePicker overflow explicitly if needed */
+.rescheduleContainer {
+  overflow: visible !important;
+  height: auto !important;
+}
+
+.addContentModal {
+  width: 950px;
+  /* Wider for the Add Content modal */
+  overflow: hidden;
+  /* Add Content modal SHOULD clip to radius */
+}
+
+/* Header */
+.modalHeader {
+  padding: 24px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.modalTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ee4621;
+  /* Orange title */
+  line-height: 1.2;
+}
+
+.modalTitle span {
+  color: #ee4621;
+  /* Keep entire title orange as per image */
+}
+
+.closeIcon {
+  cursor: pointer;
+  color: #9ca3af;
+  font-size: 20px;
+  line-height: 1;
+  padding: 4px;
+}
+
+.closeIcon:hover {
+  color: #1e1e1e;
+}
+
+/* Content Body */
+.modalBody {
+  padding: 0 32px 32px 32px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* Reschedule Specifics */
+.rescheduleContainer {
+  background: #f9fafb !important;
+  /* light grey body */
+  width: 800px !important;
+  max-width: 95vw;
+}
+
+.rescheduleHeader {
+  padding: 24px 32px;
+  padding-bottom: 16px;
+}
+
+.rescheduleInnerCard {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 24px;
+  margin: 0 32px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  border: 1px solid #f3f4f6;
+  position: relative;
+  overflow: visible;
+}
+
+.rescheduleFooter {
+  padding: 24px 32px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.rescheduleCancelBtn {
+  background: #b0b0b0;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 12px 0;
+  width: 160px;
+  text-align: center;
+  transition: background 0.2s;
+}
+
+.rescheduleCancelBtn:hover {
+  background: #9ca3af;
+}
+
+.rescheduleSaveBtn {
+  background: #ee4621;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 12px 0;
+  width: 160px;
+  text-align: center;
+  transition: background 0.2s;
+}
+
+.rescheduleSaveBtn:hover {
+  background: #d93d1a;
+}
+
+.sectionTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: #ee4621;
+  margin-bottom: 8px;
+}
+
+.sectionDescription {
+  font-size: 13px;
+  color: #9ca3af;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.weekDaysGrid {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.dayPill {
+  width: auto;
+  min-width: 64px;
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+  font-weight: 400;
+  color: #1e1e1e;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: #fff;
+}
+
+.dayPill:hover {
+  border-color: #ee4621;
+  color: #ee4621;
+}
+
+.dayPill.selected {
+  background: #ffffff;
+  color: #ee4621;
+  /* Orange text */
+  border: 1px solid #ee4621;
+  /* Orange border */
+  font-weight: 600;
+}
+
+.dateInputContainer {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+}
+
+.dateInput {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-family: var(--font-sf-pro);
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+  background: #fff;
+}
+
+.dateInput::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
+.dateInput:focus {
+  border-color: #ee4621;
+}
+
+/* Mini Calendar Popup */
+.datePickerPopup {
+  position: absolute;
+  top: calc(100% + 8px);
+  /* Slight gap */
+  left: 0;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  /* Stronger shadow */
+  padding: 20px;
+  z-index: 10001;
+  /* Above everything */
+  width: 300px;
+}
+
+.miniCalendarHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #1e1e1e;
+}
+
+.miniNavArrow {
+  cursor: pointer;
+  padding: 4px;
+  color: #ee4621;
+  user-select: none;
+}
+
+.miniCalendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  text-align: center;
+}
+
+.miniDayHeader {
+  font-size: 10px;
+  color: #9ca3af;
+  margin-bottom: 4px;
+}
+
+.miniDayCell {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  color: #1e1e1e;
+}
+
+.miniDayCell:hover {
+  background: #f3f4f6;
+}
+
+.miniDayCell.selected {
+  background: #ee4621;
+  color: #fff;
+}
+
+.miniDayCell.empty {
+  pointer-events: none;
+}
+
+.calendarIconOverlay {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ee4621;
+  pointer-events: none;
+  font-size: 18px;
+}
+
+/* Add Content Specifics */
+.configRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  gap: 40px;
+}
+
+.configCol {
+  flex: 1;
+}
+
+.timeInputs {
+  display: flex;
+  gap: 12px;
+}
+
+.selectInput {
+  padding: 10px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  background: #fff;
+  min-width: 80px;
+  appearance: none;
+  /* Custom arrow ideally */
+  cursor: pointer;
+}
+
+/* Toggle Switch Redesign to match image */
+.toggleContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.toggleSwitch {
+  position: relative;
+  width: 48px;
+  height: 26px;
+  background: #e5e7eb;
+  border-radius: 13px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.toggleSwitch.active {
+  background: #22c55e;
+  /* Green active */
+}
+
+.toggleKnob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.toggleSwitch.active .toggleKnob {
+  transform: translateX(22px);
+}
+
+.inputGroup {
+  margin-bottom: 24px;
+}
+
+.inputLabel {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e1e1e;
+  margin-bottom: 8px;
+}
+
+.inputLabel span {
+  color: #dc2626;
+  /* Red asterisk */
+  margin-left: 2px;
+}
+
+.textInput {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+}
+
+.textInput:focus {
+  border-color: #ee4621;
+}
+
+.richTextEditor {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.editorToolbar {
+  padding: 10px 16px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f9fafb;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.editorContent {
+  flex: 1;
+  padding: 16px;
+  background: #fff;
+  outline: none;
+}
+
+/* Footer */
+.modalFooter {
+  padding: 24px 32px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  align-items: center;
+  background: #fff;
+  /* Ensure generic background */
+}
+
+.modalFooter.spaceBetween {
+  justify-content: space-between;
+}
+
+/* Buttons */
+.cancelButton {
+  padding: 10px 32px;
+  background: #b0b0b0;
+  /* Grey/Silver matches image */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.cancelButton:hover {
+  opacity: 0.9;
+}
+
+.primaryButton {
+  padding: 10px 32px;
+  background: #ee4621;
+  /* Orange */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.primaryButton:hover {
+  background: #d93d1a;
+}
+
+.outlineButton {
+  padding: 10px 24px;
+  background: #ffffff;
+  color: #ee4621;
+  border: 1px solid #ee4621;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.deleteLink {
+  color: #6b7280;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+  margin-right: auto;
+}
+
+.deleteLink:hover {
+  text-decoration: underline;
+  color: #1e1e1e;
+}
+
+.infoLink {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #ee4621;
+  font-weight: 500;
+  margin-left: auto;
+  /* Push to right before close icon */
+  margin-right: 24px;
+}
+
+/* Loading Overlay Styles for Planner */
+.loadingOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.7);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  backdrop-filter: blur(2px);
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ee4621;
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #f3f4f6;
+  border-top: 3px solid #ee4621;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.btnLoading {
+  opacity: 0.8;
+  cursor: not-allowed !important;
+  position: relative;
+  padding-left: 36px !important;
+}
+
+.btnLoading::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  margin-top: -7px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+/* Multiple Items Styles */
+.cellContentWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.multipleBadge {
+  font-size: 10px;
+  font-weight: 700;
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-top: 4px;
+}

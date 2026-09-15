@@ -1,0 +1,16 @@
+---
+description: PR safety checklist for non-breaking UI/style changes.
+globs:
+  - "src/**/*.{ts,tsx,css}"
+  - "tailwind.config.ts"
+alwaysApply: true
+---
+
+- Do not change API calls, route behavior, validation rules, event handlers, or state transitions in styling PRs.
+- Do not rename public props, exports, or runtime import paths.
+- Preserve spacing, typography, colors, shadows, radii, breakpoints, and interaction states unless explicitly requested.
+- Run and pass:
+  - `npm run type-check`
+  - `npm run lint` only if non-interactive and already stable in repo
+  - Do **not** run `npm run build` unless the user explicitly asks; they rely on type-check for routine validation
+- Confirm no broken imports, unresolved Tailwind classes introduced by the PR, and no runtime route errors.
