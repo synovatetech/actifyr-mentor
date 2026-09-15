@@ -512,15 +512,19 @@
 }
 
 .programAdminButton {
-  width: 100%;
-  padding: 10px 14px;
+  position: absolute;
+  bottom: 17.1px;
+  right: 17.1px;
+  z-index: 100;
+  padding: 8px 16px;
   border-radius: 8px;
   border: none;
   background: var(--color-primary);
   color: #ffffff;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   cursor: pointer;
+  white-space: nowrap;
   transition: opacity 0.15s ease;
 }
 
