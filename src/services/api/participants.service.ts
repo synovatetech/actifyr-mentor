@@ -1,15 +1,30 @@
 import { apiClient } from './client';
 import type { ApiResponse } from '@/types';
 
+export interface ParticipantsListOptions {
+    /** `true` = "My Mentees" tab, `false`/omitted = "All Participants" tab. */
+    menteesOnly?: boolean;
+    search?: string;
+    page?: number;
+    pageSize?: number;
+}
+
 export const participantsService = {
     list: async (
         programId: string | number,
-        search?: string,
-    ): Promise<ApiResponse<any[]> & { programStats?: Record<string, number> }> => {
-        const query = search?.trim()
-            ? `?search=${encodeURIComponent(search.trim())}`
-            : '';
-        const response = await apiClient.get<any>(`/client/programs/${programId}/participants/participants${query}`);
+        options?: ParticipantsListOptions,
+    ): Promise<ApiResponse<any[]> & { programStats?: Record<string, number>; total?: number }> => {
+        const { menteesOnly, search, page = 1, pageSize = 100 } = options ?? {};
+
+        const query = new URLSearchParams();
+        if (menteesOnly != null) query.append('mentees_only', String(menteesOnly));
+        if (search?.trim()) query.append('search_text', search.trim());
+        query.append('page', String(page));
+        query.append('page_size', String(pageSize));
+
+        const response = await apiClient.get<any>(
+            `/client/programs/${programId}/participants/participants?${query.toString()}`,
+        );
         if (response.success && response.data) {
             const data = response.data.items || response.data.participants || response.data;
             const programStats: Record<string, number> = {
@@ -22,7 +37,12 @@ export const participantsService = {
                 total_poa_tasks: response.data.total_poa_tasks ?? 0,
                 total_pow_tasks: response.data.total_pow_tasks ?? 0,
             };
-            return { ...response, data: Array.isArray(data) ? data : [], programStats };
+            return {
+                ...response,
+                data: Array.isArray(data) ? data : [],
+                programStats,
+                total: response.data.total,
+            };
         }
         return { ...response, data: [] };
     },

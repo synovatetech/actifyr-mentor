@@ -113,8 +113,8 @@ function GoalsHabitsContent() {
     queryKey: ["participant-goals", programId, debouncedSearch],
     queryFn: async () => {
       const res = await goalsService.listParticipant(programId!, debouncedSearch);
-      if (res.success && Array.isArray(res.data)) return res.data.map(mapGoal);
-      return [];
+      if (!res.success) throw new Error(res.error || "Failed to fetch goals");
+      return Array.isArray(res.data) ? res.data.map(mapGoal) : [];
     },
     enabled: !!programId && activeTab === "Goals",
   });
@@ -123,8 +123,8 @@ function GoalsHabitsContent() {
     queryKey: ["participant-habits", programId, debouncedSearch],
     queryFn: async () => {
       const res = await habitsService.listParticipant(programId!, debouncedSearch);
-      if (res.success && Array.isArray(res.data)) return res.data.map(mapHabit);
-      return [];
+      if (!res.success) throw new Error(res.error || "Failed to fetch habits");
+      return Array.isArray(res.data) ? res.data.map(mapHabit) : [];
     },
     enabled: !!programId && activeTab === "Habits",
   });
@@ -138,7 +138,8 @@ function GoalsHabitsContent() {
     queryKey: ["goal-detail", selectedGoalId],
     queryFn: async () => {
       const res = await goalsService.getParticipantGoal(selectedGoalId!);
-      return res.success ? res.data : null;
+      if (!res.success) throw new Error(res.error || "Failed to fetch goal details");
+      return res.data;
     },
     enabled: !!selectedGoalId,
     staleTime: 0,
@@ -148,7 +149,8 @@ function GoalsHabitsContent() {
     queryKey: ["habit-detail", selectedHabitId],
     queryFn: async () => {
       const res = await habitsService.getParticipantHabit(selectedHabitId!);
-      return res.success ? res.data : null;
+      if (!res.success) throw new Error(res.error || "Failed to fetch habit details");
+      return res.data;
     },
     enabled: !!selectedHabitId,
     staleTime: 0,
@@ -158,7 +160,8 @@ function GoalsHabitsContent() {
     queryKey: ["habit-progress", selectedProgressId],
     queryFn: async () => {
       const res = await habitsService.getProgress(selectedProgressId!);
-      return res.success ? res.data : null;
+      if (!res.success) throw new Error(res.error || "Failed to fetch habit progress");
+      return res.data;
     },
     enabled: !!selectedProgressId,
     staleTime: 0,

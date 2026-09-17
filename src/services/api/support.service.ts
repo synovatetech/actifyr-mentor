@@ -10,7 +10,6 @@ export const supportService = {
         return apiClient.get(`/client/support-ticket/${id}`);
     },
 
-    respond: async (id: string | number, data: any): Promise<ApiResponse<any>> => {
-        return apiClient.post(`/client/support-ticket/${id}/respond`, data);
-    },
+    // POST /client/support-ticket/{id}/respond is client-only (403 for a mentor
+    // token) — this portal is mentor-only, so no respond method is exposed here.
 };

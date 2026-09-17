@@ -127,7 +127,7 @@ export async function listUserNotifications(): Promise<NotificationsListResult> 
   const response = await apiClient.get<unknown>("/client/notification");
 
   if (!response.success) {
-    return { notifications: [], readStatus: false };
+    throw new Error(response.error || "Failed to fetch notifications");
   }
 
   return {
@@ -155,6 +155,10 @@ export async function markNotificationsAsRead(
     notification_ids: notificationIds.map(toNotificationId),
   });
 
-  return response.success;
+  if (!response.success) {
+    throw new Error(response.error || "Failed to mark notifications as read");
+  }
+
+  return true;
 }
 

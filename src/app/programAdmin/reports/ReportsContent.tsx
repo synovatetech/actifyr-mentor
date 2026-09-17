@@ -1,17 +1,12 @@
 "use client";
 
 import React, { Suspense, useEffect, useState } from "react";
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import styles from "@/styles/reports.module.css";
 import { ProgramInfoBar } from "@/components/features/program-admin/ProgramInfoBar";
 import { PageLoader } from "@/components/ui/Loader";
 import ModifyHeadersModal from "@/components/features/program-admin/ModifyHeadersModal";
 import ModifyCriteriaModal from "@/components/features/program-admin/ModifyCriteriaModal";
-import SendEmailModal, {
-  EmailRecipient,
-} from "@/components/features/program-admin/SendEmailModal";
-import SendWhatsappModal from "@/components/features/program-admin/SendWhatsappModal";
-import { useClientAdmin } from "@/hooks/useClientAdmin";
 import PerformanceReportTab from "@/components/features/program-admin/reports/PerformanceReportTab";
 import AssessmentReportTab from "@/components/features/program-admin/reports/AssessmentReportTab";
 import TaskReportTab from "@/components/features/program-admin/reports/TaskReportTab";
@@ -27,12 +22,7 @@ import type {
 } from "@/components/features/program-admin/reports/reportTabs.types";
 import { useProgramId } from "@/hooks/useProgramId";
 import { useProgramDetails } from "@/hooks/useProgramDetails";
-import { participantsService } from "@/services/api/participants.service";
 import { reportsService } from "@/services/api/reports.service";
-import {
-  whatsappMessageService,
-  type WhatsappTemplate,
-} from "@/services/api/whatsappMessage.service";
 import { useToast } from "@/context/ToastContext";
 import * as XLSX from "xlsx";
 
@@ -141,39 +131,13 @@ export default function ReportsContent() {
   const { programId, isReady } = useProgramId();
   const { showToast } = useToast();
   const { programDetails } = useProgramDetails();
-  const { isTrial } = useClientAdmin();
   const toYMD = (d?: string) => (d ? d.split("T")[0] : undefined);
   const programStartDate = toYMD(programDetails?.startDate);
   const programEndDate = toYMD(programDetails?.endDate);
 
   const [activeTab, setActiveTab] = useState<ReportTabId>("performance");
   const [modals, setModals] = useState({ headers: false, criteria: false });
-  const [loading, setLoading] = useState({
-    performance: false,
-    assessment: false,
-    task: false,
-  });
 
-  const [participantOptions, setParticipantOptions] = useState<
-    ParticipantOption[]
-  >([]);
-
-  const [performanceColumns, setPerformanceColumns] = useState<string[]>([]);
-  const [performanceRows, setPerformanceRows] = useState<Record<string, any>[]>(
-    [],
-  );
-
-  const [assessmentDates, setAssessmentDates] = useState<AssessmentDateBlock[]>(
-    [],
-  );
-  const [assessmentParticipants, setAssessmentParticipants] = useState<
-    AssessmentParticipantRow[]
-  >([]);
-
-  const [taskRows, setTaskRows] = useState<TaskReportRow[]>([]);
-  const [selectedParticipantIds, setSelectedParticipantIds] = useState<
-    number[]
-  >([]);
   const [firstLoadFilterVisible, setFirstLoadFilterVisible] = useState({
     performance: true,
     assessment: true,
@@ -225,144 +189,78 @@ export default function ReportsContent() {
   });
 
   const contentOptions = reportContentsData ?? [];
+  // Per the mentor API guide (§6), the participant filter for every report tab
+  // — assessment and task alike — is built from GET /client/report/{id}/participants,
+  // which is already narrowed to the caller's mentees for a mentor token.
   const taskParticipantOptions = reportParticipantsData ?? [];
+  const participantOptions = taskParticipantOptions;
 
-  const [isEmailModalOpen, setIsEmailModalOpen] = useState(false);
-  const [emailRecipients, setEmailRecipients] = useState<EmailRecipient[]>([]);
-  const [isSendingEmail, setIsSendingEmail] = useState(false);
-
-  const [isWhatsappModalOpen, setIsWhatsappModalOpen] = useState(false);
-  const [whatsappRecipients, setWhatsappRecipients] = useState<
-    EmailRecipient[]
-  >([]);
-  const [isSendingWhatsapp, setIsSendingWhatsapp] = useState(false);
-  const [whatsappTemplates, setWhatsappTemplates] = useState<
-    WhatsappTemplate[]
-  >([]);
-  const [isLoadingWhatsappTemplates, setIsLoadingWhatsappTemplates] =
-    useState(false);
-
-  const fetchParticipants = async () => {
-    if (!programId) return;
-
-    const response = await participantsService.list(programId);
-    if (!response.success) return;
-
-    const rows = Array.isArray(response.data) ? response.data : [];
-    const normalized = rows
-      .map((item: any) => {
-        const candidateId = Number(
-          item.participant_id ??
-            item.participantId ??
-            item.id ??
-            item.user_id ??
-            item.userId,
-        );
-
-        if (!Number.isFinite(candidateId) || candidateId <= 0) return null;
-
-        return {
-          id: candidateId,
-          name: item.participant_name || item.name || "Participant",
-          email: item.email || "",
-        };
-      })
-      .filter(Boolean) as ParticipantOption[];
-
-    setParticipantOptions(normalized);
-  };
-
-  const fetchPerformanceReport = async (
-    fields: string[] = PERFORMANCE_FIELDS,
-  ) => {
-    if (!programId) return;
-
-    setLoading((prev) => ({ ...prev, performance: true }));
-    try {
-      const response = await reportsService.getPerformanceReport(programId, {
+  // Report generation is an explicit, filter-driven POST action (not a passive
+  // read keyed by params), so each report tab is a useMutation rather than a
+  // useQuery — "Generate Report" calls `.mutate()`, and a thrown error is
+  // picked up by the global MutationCache handler (see QueryProvider) which
+  // shows the error toast automatically.
+  const performanceReportMutation = useMutation({
+    mutationFn: async (fields: string[]) => {
+      const response = await reportsService.getPerformanceReport(programId!, {
         participants: ["all"],
         fields: fields.length > 0 ? fields : PERFORMANCE_FIELDS,
       });
-
       if (!response.success) {
-        showToast(
-          response.error || "Failed to fetch performance report",
-          "error",
-        );
-        return;
+        throw new Error(response.error || "Failed to fetch performance report");
       }
-
       const payload = response.data?.columns
         ? response.data
         : response.data?.data?.columns
         ? response.data.data
         : {};
-      setPerformanceColumns(payload.columns || []);
-      setPerformanceRows(Array.isArray(payload.data) ? payload.data : []);
-    } catch (error) {
-      showToast("An error occurred while fetching performance report", "error");
-    } finally {
-      setLoading((prev) => ({ ...prev, performance: false }));
-    }
-  };
+      return {
+        columns: (payload.columns || []) as string[],
+        rows: (Array.isArray(payload.data) ? payload.data : []) as Record<string, any>[],
+      };
+    },
+  });
+  const performanceColumns = performanceReportMutation.data?.columns ?? [];
+  const performanceRows = performanceReportMutation.data?.rows ?? [];
 
-  const fetchAssessmentReport = async (
-    filters: {
+  const assessmentReportMutation = useMutation({
+    mutationFn: async (filters: {
       participantId: string;
       startDate: string;
       endDate: string;
-    } = assessmentFilters,
-  ) => {
-    if (!programId) return;
-
-    setLoading((prev) => ({ ...prev, assessment: true }));
-    try {
-      const response = await reportsService.getAssessmentReport(programId, {
+    }) => {
+      const response = await reportsService.getAssessmentReport(programId!, {
         participants: buildParticipantsPayload(filters.participantId),
         start_date: filters.startDate,
         end_date: filters.endDate,
       });
-
       if (!response.success) {
-        showToast(
-          response.error || "Failed to fetch assessment report",
-          "error",
-        );
-        return;
+        throw new Error(response.error || "Failed to fetch assessment report");
       }
-
       const payload = response.data?.dates
         ? response.data
         : response.data?.data?.dates
         ? response.data.data
         : {};
-      setAssessmentDates(Array.isArray(payload?.dates) ? payload.dates : []);
-      setAssessmentParticipants(
-        Array.isArray(payload?.participants) ? payload.participants : [],
-      );
-    } catch (error) {
-      showToast("An error occurred while fetching assessment report", "error");
-    } finally {
-      setLoading((prev) => ({ ...prev, assessment: false }));
-    }
-  };
+      return {
+        dates: (Array.isArray(payload?.dates) ? payload.dates : []) as AssessmentDateBlock[],
+        participants: (Array.isArray(payload?.participants) ? payload.participants : []) as AssessmentParticipantRow[],
+      };
+    },
+  });
+  const assessmentDates = assessmentReportMutation.data?.dates ?? [];
+  const assessmentParticipants = assessmentReportMutation.data?.participants ?? [];
 
-  const fetchTaskReport = async (filters: TaskFilters = taskFilters) => {
-    if (!programId) return;
-
-    setLoading((prev) => ({ ...prev, task: true }));
-    try {
-      const response = await reportsService.getTaskReport(programId, {
+  const taskReportMutation = useMutation({
+    mutationFn: async (filters: TaskFilters) => {
+      const response = await reportsService.getTaskReport(programId!, {
         content_ids: filters.contentIds.length > 0 ? filters.contentIds : ["all"],
         participant_ids: filters.participantIds.length > 0 ? filters.participantIds : ["all"],
         status: filters.status,
       });
-
       if (!response.success) {
-        showToast(response.error || "Failed to fetch task report", "error");
-        return;
+        throw new Error(response.error || "Failed to fetch task report");
       }
-
       const raw: any[] = Array.isArray(response.data?.records)
         ? response.data.records
         : Array.isArray(response.data?.data)
@@ -370,7 +268,7 @@ export default function ReportsContent() {
         : Array.isArray(response.data)
         ? response.data
         : [];
-      const payload = raw.map((item: any, index: number) => {
+      return raw.map((item: any, index: number): TaskReportRow => {
         const name = item.participant?.name ?? item.participant_name ?? "";
         const matchedParticipant = taskParticipantOptions.find(
           (p) => p.name.trim().toLowerCase() === name.trim().toLowerCase(),
@@ -384,161 +282,9 @@ export default function ReportsContent() {
           content_title: item.content?.title ?? item.content_title ?? undefined,
         };
       });
-      setTaskRows(payload);
-      setSelectedParticipantIds([]);
-    } catch (error) {
-      showToast("An error occurred while fetching task report", "error");
-    } finally {
-      setLoading((prev) => ({ ...prev, task: false }));
-    }
-  };
-
-  const openEmailModalForParticipants = (participantIds: number[]) => {
-    const uniqueIds = Array.from(new Set(participantIds));
-    const recipients = uniqueIds
-      .map((participantId) => {
-        const taskRow = taskRows.find(
-          (item) => item.participant_id === participantId,
-        );
-        if (!taskRow) return null;
-        const participantInfo = participantOptions.find(
-          (participant) => participant.id === participantId,
-        );
-        return {
-          id: participantId,
-          name: taskRow.participant_name,
-          email: participantInfo?.email || "",
-        };
-      })
-      .filter(Boolean) as EmailRecipient[];
-
-    if (recipients.length === 0) {
-      showToast("Please select at least one participant", "error");
-      return;
-    }
-
-    setEmailRecipients(recipients);
-    setIsEmailModalOpen(true);
-  };
-
-  const handleSendTaskEmail = async (data: {
-    participants: number[];
-    subject: string;
-    content: string;
-  }) => {
-    if (!programId) return;
-    setIsSendingEmail(true);
-    try {
-      const response = await reportsService.sendTaskEmail(programId, {
-        participants: data.participants,
-        subject: data.subject,
-        content: data.content,
-      });
-
-      if (response.success) {
-        showToast("Email sent successfully", "success");
-        setIsEmailModalOpen(false);
-      } else {
-        showToast(response.error || "Failed to send email", "error");
-      }
-    } catch (error) {
-      showToast("An error occurred while sending email", "error");
-    } finally {
-      setIsSendingEmail(false);
-    }
-  };
-
-  const openWhatsappModalForParticipants = async (participantIds: number[]) => {
-    const uniqueIds = Array.from(new Set(participantIds));
-
-    const recipients = uniqueIds
-      .map((participantId) => {
-        const taskRow = taskRows.find(
-          (item) => item.participant_id === participantId,
-        );
-        if (!taskRow) return null;
-
-        const participantInfo = participantOptions.find(
-          (participant) => participant.id === participantId,
-        );
-
-        return {
-          id: participantId,
-          name: taskRow.participant_name,
-          email: participantInfo?.email || "",
-        };
-      })
-      .filter(Boolean) as EmailRecipient[];
-
-    if (recipients.length === 0) {
-      showToast("Please select at least one participant", "error");
-      return;
-    }
-
-    setWhatsappRecipients(recipients);
-    setIsWhatsappModalOpen(true);
-
-    if (whatsappTemplates.length > 0) return;
-    setIsLoadingWhatsappTemplates(true);
-    try {
-      const res = await whatsappMessageService.listTemplates();
-      if (res.success) {
-        setWhatsappTemplates(res.data || []);
-      } else {
-        showToast(res.error || "Failed to fetch WhatsApp templates", "error");
-      }
-    } catch (error) {
-      showToast("An error occurred while fetching WhatsApp templates", "error");
-    } finally {
-      setIsLoadingWhatsappTemplates(false);
-    }
-  };
-
-  const handleSendTaskWhatsapp = async (data: {
-    recipients: EmailRecipient[];
-    participant_ids: number[];
-    template_name: string;
-  }) => {
-    if (!programId) return;
-    setIsSendingWhatsapp(true);
-
-    try {
-      const res = await whatsappMessageService.sendMessage({
-        template_name: data.template_name,
-        program_id: Number(programId),
-        participant_ids: data.participant_ids,
-      });
-
-      if (res.success) {
-        showToast("WhatsApp message sent successfully", "success");
-        setIsWhatsappModalOpen(false);
-      } else {
-        showToast(res.error || "Failed to send WhatsApp message", "error");
-      }
-    } catch (error) {
-      showToast("An error occurred while sending WhatsApp message", "error");
-    } finally {
-      setIsSendingWhatsapp(false);
-    }
-  };
-
-  const handleToggleAllTaskParticipants = (checked: boolean) => {
-    if (checked) {
-      setSelectedParticipantIds(taskRows.map((row) => row.participant_id));
-      return;
-    }
-    setSelectedParticipantIds([]);
-  };
-
-  const handleToggleTaskParticipant = (
-    participantId: number,
-    checked: boolean,
-  ) => {
-    setSelectedParticipantIds((previous) => {
-      if (checked) return Array.from(new Set([...previous, participantId]));
-      return previous.filter((id) => id !== participantId);
-    });
-  };
+    },
+  });
+  const taskRows = taskReportMutation.data ?? [];
 
   const handleExportPerformance = () => {
     if (!performanceRows || performanceRows.length === 0) {
@@ -650,11 +396,6 @@ export default function ReportsContent() {
   };
 
   useEffect(() => {
-    if (!isReady || !programId) return;
-    fetchParticipants();
-  }, [isReady, programId]);
-
-  useEffect(() => {
     if (!programStartDate && !programEndDate) return;
     setAssessmentFilters((prev) => ({
       ...prev,
@@ -681,7 +422,7 @@ export default function ReportsContent() {
       ...previous,
       performance: false,
     }));
-    fetchPerformanceReport(selectedFields);
+    performanceReportMutation.mutate(selectedFields);
   };
 
   const applyAssessmentFilters = () => {
@@ -689,12 +430,12 @@ export default function ReportsContent() {
       ...previous,
       assessment: false,
     }));
-    fetchAssessmentReport(assessmentFilters);
+    assessmentReportMutation.mutate(assessmentFilters);
   };
 
   const applyTaskFilters = () => {
     setFirstLoadFilterVisible((previous) => ({ ...previous, task: false }));
-    fetchTaskReport(taskFilters);
+    taskReportMutation.mutate(taskFilters);
   };
 
   return (
@@ -780,7 +521,7 @@ export default function ReportsContent() {
           <PerformanceReportTab
             columns={performanceColumns}
             rows={performanceRows}
-            loading={loading.performance}
+            loading={performanceReportMutation.isPending}
             onOpenHeaders={() =>
               setModals((previous) => ({ ...previous, headers: true }))
             }
@@ -915,7 +656,7 @@ export default function ReportsContent() {
           <AssessmentReportTab
             dates={assessmentDates}
             participants={assessmentParticipants}
-            loading={loading.assessment}
+            loading={assessmentReportMutation.isPending}
             onOpenCriteria={() =>
               setModals((previous) => ({ ...previous, criteria: true }))
             }
@@ -947,24 +688,9 @@ export default function ReportsContent() {
         {activeTab === "task" && !firstLoadFilterVisible.task && (
           <TaskReportTab
             rows={taskRows}
-            selectedParticipantIds={selectedParticipantIds}
-            loading={loading.task}
-            onToggleAll={handleToggleAllTaskParticipants}
-            onToggleParticipant={handleToggleTaskParticipant}
+            loading={taskReportMutation.isPending}
             onOpenCriteria={() =>
               setModals((previous) => ({ ...previous, criteria: true }))
-            }
-            onSendEmailAll={() =>
-              openEmailModalForParticipants(selectedParticipantIds)
-            }
-            onSendEmailSingle={(participantId) =>
-              openEmailModalForParticipants([participantId])
-            }
-            onSendWhatsappAll={() =>
-              void openWhatsappModalForParticipants(selectedParticipantIds)
-            }
-            onSendWhatsappSingle={(participantId) =>
-              void openWhatsappModalForParticipants([participantId])
             }
             onExport={handleExportTask}
           />
@@ -1004,27 +730,6 @@ export default function ReportsContent() {
           if (activeTab === "assessment") applyAssessmentFilters();
           if (activeTab === "task") applyTaskFilters();
         }}
-      />
-
-      <SendEmailModal
-        isOpen={isEmailModalOpen}
-        onClose={() => setIsEmailModalOpen(false)}
-        recipients={emailRecipients}
-        allowMultipleRecipients
-        isSending={isSendingEmail}
-        onSend={handleSendTaskEmail}
-      />
-
-      <SendWhatsappModal
-        isOpen={isWhatsappModalOpen}
-        onClose={() => setIsWhatsappModalOpen(false)}
-        recipients={whatsappRecipients}
-        allowMultipleRecipients
-        templates={whatsappTemplates}
-        isLoadingTemplates={isLoadingWhatsappTemplates}
-        isSending={isSendingWhatsapp}
-        isTrial={isTrial}
-        onSend={handleSendTaskWhatsapp}
       />
     </div>
   );

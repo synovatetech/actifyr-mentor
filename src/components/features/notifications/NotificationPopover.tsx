@@ -64,17 +64,21 @@ export function NotificationPopover({
 
   const handleMarkAllAsRead = async () => {
     if (!unreadIds.length || markNotificationsRead.isPending) return;
-    const success = await markNotificationsRead.mutateAsync(unreadIds);
-    if (success) {
+    try {
+      await markNotificationsRead.mutateAsync(unreadIds);
       onNotificationsUpdated?.();
+    } catch {
+      // Error toast is shown by the global MutationCache handler.
     }
   };
 
   const handleMarkOneAsRead = async (notificationId: string) => {
     if (markNotificationsRead.isPending) return;
-    const success = await markNotificationsRead.mutateAsync([notificationId]);
-    if (success) {
+    try {
+      await markNotificationsRead.mutateAsync([notificationId]);
       onNotificationsUpdated?.();
+    } catch {
+      // Error toast is shown by the global MutationCache handler.
     }
   };
 

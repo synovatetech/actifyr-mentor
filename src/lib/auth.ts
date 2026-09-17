@@ -33,3 +33,39 @@ export const removeToken = () => {
         document.cookie = 'refresh_token=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT';
     }
 };
+
+export interface MentorProfile {
+    mentorId: number;
+    name: string;
+    email: string;
+    role?: string;
+}
+
+// There is no `/auth/mentor/me` endpoint — the login response is the only place
+// mentor_id/name/email come from, so we cache them here (mirroring the token
+// cookies) instead of re-deriving them from a client-only endpoint.
+export const setMentorProfile = (profile: MentorProfile) => {
+    if (typeof document !== 'undefined') {
+        document.cookie = `mentor_profile=${encodeURIComponent(JSON.stringify(profile))}; path=/; max-age=604800; SameSite=Strict`;
+    }
+};
+
+export const getMentorProfile = (): MentorProfile | null => {
+    if (typeof document !== 'undefined') {
+        const match = document.cookie.match(new RegExp('(^| )mentor_profile=([^;]+)'));
+        if (match) {
+            try {
+                return JSON.parse(decodeURIComponent(match[2]));
+            } catch {
+                return null;
+            }
+        }
+    }
+    return null;
+};
+
+export const removeMentorProfile = () => {
+    if (typeof document !== 'undefined') {
+        document.cookie = 'mentor_profile=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT';
+    }
+};

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, Suspense } from 'react';
-import { useQueryClient } from '@tanstack/react-query';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useProgramId } from '@/hooks/useProgramId';
 import { useProgramStore } from '@/store/programStore';
 import styles from '@/styles/submissions.module.css';
@@ -30,8 +30,6 @@ function SubmissionsInner() {
     const [searchTerm, setSearchTerm] = useState('');
 
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [modalLoading, setModalLoading] = useState(false);
-    const [selectedDetails, setSelectedDetails] = useState<SubmissionDetails | null>(null);
 
     const formatDateTime = (value?: string) => {
         if (!value) return '-';
@@ -48,17 +46,14 @@ function SubmissionsInner() {
         });
     };
 
-    const openDetailsModal = async (submissionId: number) => {
-        setIsModalOpen(true);
-        setModalLoading(true);
-        try {
+    const detailsMutation = useMutation({
+        mutationFn: async (submissionId: number): Promise<SubmissionDetails> => {
             const response = await submissionsService.getDetails(submissionId);
             if (!response.success || !response.data) {
-                setSelectedDetails(null);
-                return;
+                throw new Error(response.error || 'Failed to fetch submission details');
             }
             const d = response.data;
-            setSelectedDetails({
+            return {
                 id: d.id,
                 participant: d.participant_name || '-',
                 subject: d.subject || '-',
@@ -72,12 +67,13 @@ function SubmissionsInner() {
                           path: f.path || '',
                       }))
                     : [],
-            });
-        } catch {
-            setSelectedDetails(null);
-        } finally {
-            setModalLoading(false);
-        }
+            };
+        },
+    });
+
+    const openDetailsModal = (submissionId: number) => {
+        setIsModalOpen(true);
+        detailsMutation.mutate(submissionId);
     };
 
     if (!programId) {
@@ -141,11 +137,11 @@ function SubmissionsInner() {
 
             <SubmissionDetailsModal
                 isOpen={isModalOpen}
-                loading={modalLoading}
-                details={selectedDetails}
+                loading={detailsMutation.isPending}
+                details={detailsMutation.data ?? null}
                 onClose={() => {
                     setIsModalOpen(false);
-                    setSelectedDetails(null);
+                    detailsMutation.reset();
                     if (activeTab === 'General') {
                         queryClient.invalidateQueries({ queryKey: ['general-submissions'] });
                     }

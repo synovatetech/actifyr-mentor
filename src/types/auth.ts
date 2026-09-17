@@ -8,6 +8,21 @@ export interface LoginResponse {
   token_type: string;
 }
 
+export interface MentorLoginRequest {
+  email: string;
+  password: string;
+}
+
+export interface MentorLoginResponse {
+  access_token: string;
+  refresh_token: string;
+  token_type: string;
+  role: string;
+  mentor_id: number;
+  name: string;
+  email: string;
+}
+
 export interface MeResponse {
   // Existing fields (kept as-is)
   user_id: number;
