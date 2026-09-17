@@ -17,7 +17,8 @@ interface TeamMembersModalProps {
     totalParticipants: number;
     teamSize: number;
     members: TeamMember[];
-    onRemove: (participantId: number, participantName: string) => void;
+    onRemove?: (participantId: number, participantName: string) => void;
+    loading?: boolean;
 }
 
 export default function TeamMembersModal({
@@ -28,6 +29,7 @@ export default function TeamMembersModal({
     teamSize,
     members,
     onRemove,
+    loading = false,
 }: TeamMembersModalProps) {
     const [mounted, setMounted] = useState(false);
 
@@ -55,17 +57,22 @@ export default function TeamMembersModal({
                     </div>
 
                     <div className={styles.assignmentList} style={{ maxHeight: '400px', paddingRight: '12px' }}>
-                        {members.map((member) => (
+                        {loading && (
+                            <div className={styles.pName} style={{ color: '#1E1E1E' }}>Loading members...</div>
+                        )}
+                        {!loading && members.map((member) => (
                             <div key={member.participant_id} className={styles.assignmentItem}>
                                 <div className={styles.pName} style={{ color: '#1E1E1E' }}>
                                     {member.participant_ref_id || member.participant_id} - {member.name}
                                 </div>
-                                <span
-                                    className={styles.removeAction}
-                                    onClick={() => onRemove(member.participant_id, member.name)}
-                                >
-                                    Remove
-                                </span>
+                                {onRemove && (
+                                    <span
+                                        className={styles.removeAction}
+                                        onClick={() => onRemove(member.participant_id, member.name)}
+                                    >
+                                        Remove
+                                    </span>
+                                )}
                             </div>
                         ))}
                     </div>
