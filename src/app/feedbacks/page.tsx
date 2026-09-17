@@ -6,6 +6,7 @@ import { DashboardLayout } from '@/components/layout/DashboardLayout';
 import styles from '@/styles/feedbacks.module.css';
 import { feedbackService, FeedbackItem, FeedbackDetail } from '@/services/api/feedback.service';
 import { PageLoader } from '@/components/ui/Loader';
+import { errorToast } from '@/utils/toast';
 
 function FeedbacksContent() {
   const [feedbacks, setFeedbacks] = useState<FeedbackItem[]>([]);
@@ -30,9 +31,11 @@ function FeedbacksContent() {
       const res = await feedbackService.list();
       if (res.success && res.data) {
         setFeedbacks(res.data);
+      } else {
+        errorToast(res.error || 'Failed to fetch feedbacks');
       }
     } catch (err) {
-      console.error('Failed to fetch feedbacks', err);
+      errorToast('An error occurred while fetching feedbacks');
     } finally {
       setLoading(false);
     }
@@ -57,9 +60,11 @@ function FeedbacksContent() {
         setFeedbacks(prev =>
           prev.map(f => f.id === feedback.id ? { ...f, status: 'read' } : f)
         );
+      } else {
+        errorToast(res.error || 'Failed to fetch feedback details');
       }
     } catch (err) {
-      console.error('Failed to fetch feedback detail', err);
+      errorToast('An error occurred while fetching feedback details');
     } finally {
       setDetailLoading(false);
     }
@@ -247,18 +252,24 @@ function FeedbacksContent() {
               />
             </div>
 
-            <div className={styles.feedbackSection}>
-              <div className={styles.sectionHeader}>
-                <h3 className={styles.sectionTitle}>Feedback on Trainer</h3>
-                {renderStars(selectedFeedback.rating_for_trainer || 0)}
+            {/* Feedback about the trainer personally is withheld from mentors —
+                the API returns rating_for_trainer/feedback_for_trainer as null,
+                so this block only renders when that data is actually present. */}
+            {(selectedFeedback.rating_for_trainer != null ||
+              selectedFeedback.feedback_for_trainer != null) && (
+              <div className={styles.feedbackSection}>
+                <div className={styles.sectionHeader}>
+                  <h3 className={styles.sectionTitle}>Feedback on Trainer</h3>
+                  {renderStars(selectedFeedback.rating_for_trainer || 0)}
+                </div>
+                <textarea
+                  readOnly
+                  className={styles.feedbackBox}
+                  value={selectedFeedback.feedback_for_trainer || ""}
+                  placeholder="No feedback provided"
+                />
               </div>
-              <textarea
-                readOnly
-                className={styles.feedbackBox}
-                value={selectedFeedback.feedback_for_trainer || ""}
-                placeholder="No feedback provided"
-              />
-            </div>
+            )}
 
             <div className={styles.modalFooter}>
               <button className={styles.closeButton} onClick={closeModal}>

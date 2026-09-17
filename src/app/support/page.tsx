@@ -6,7 +6,7 @@ import { DashboardLayout } from '@/components/layout/DashboardLayout';
 import styles from '@/styles/support.module.css';
 import { supportService } from '@/services/api/support.service';
 import { PageLoader } from '@/components/ui/Loader';
-import { useToast } from '@/context/ToastContext';
+import { errorToast } from '@/utils/toast';
 
 interface SupportTicket {
     id: string | number;
@@ -34,7 +34,6 @@ interface SupportTicket {
 }
 
 function SupportContent() {
-    const { showToast } = useToast();
     const [tickets, setTickets] = useState<SupportTicket[]>([]);
     const [totalTickets, setTotalTickets] = useState(0);
     const [resolvedTickets, setResolvedTickets] = useState(0);
@@ -42,8 +41,6 @@ function SupportContent() {
     const [filterStatus, setFilterStatus] = useState<string>('All Status');
     const [selectedTicket, setSelectedTicket] = useState<SupportTicket | null>(null);
     const [detailLoading, setDetailLoading] = useState(false);
-    const [replyText, setReplyText] = useState('');
-    const [sending, setSending] = useState(false);
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
@@ -70,9 +67,11 @@ function SupportContent() {
                 setTickets(items);
                 setTotalTickets(res.data.total ?? 0);
                 setResolvedTickets(res.data.resolved_tickets ?? 0);
+            } else {
+                errorToast(res.error || 'Failed to fetch support tickets');
             }
         } catch (err) {
-            console.error('Failed to fetch support tickets', err);
+            errorToast('An error occurred while fetching support tickets');
         } finally {
             setLoading(false);
         }
@@ -87,7 +86,6 @@ function SupportContent() {
 
     const handleRowClick = async (ticket: SupportTicket) => {
         setDetailLoading(true);
-        setReplyText('');
         try {
             const res = await supportService.get(ticket.id);
             if (res.success && res.data) {
@@ -95,9 +93,11 @@ function SupportContent() {
                 setSelectedTicket(detail);
             } else {
                 // fallback to list data
+                errorToast(res.error || 'Failed to fetch full ticket details — showing summary data');
                 setSelectedTicket(ticket);
             }
         } catch (err) {
+            errorToast('An error occurred while fetching ticket details — showing summary data');
             setSelectedTicket(ticket);
         } finally {
             setDetailLoading(false);
@@ -106,29 +106,6 @@ function SupportContent() {
 
     const closeModal = () => {
         setSelectedTicket(null);
-        setReplyText('');
-    };
-
-    const handleSendReply = async () => {
-        if (!selectedTicket || !replyText.trim()) return;
-        setSending(true);
-        try {
-            const res = await supportService.respond(selectedTicket.id, { response_body: replyText });
-            if (res.success) {
-                showToast('Reply sent successfully', 'success');
-                // Update local ticket status to Closed after reply
-                setTickets(prev =>
-                    prev.map(t => t.id === selectedTicket.id ? { ...t, status: 'closed' } : t)
-                );
-                closeModal();
-            } else {
-                showToast(res.error || 'Failed to send reply', 'error');
-            }
-        } catch (err) {
-            showToast('An error occurred while sending reply', 'error');
-        } finally {
-            setSending(false);
-        }
     };
 
     const formatDate = (dateStr?: string) => {
@@ -320,32 +297,10 @@ function SupportContent() {
                             </div>
                         )}
 
-                        {/* Reply box — only show if ticket is open */}
-                        {isOpen(selectedTicket) && (
-                            <div className={styles.responseSection}>
-                                <label className={styles.responseLabel}>Response</label>
-                                <textarea
-                                    className={styles.messageBox}
-                                    placeholder="Type your reply here..."
-                                    value={replyText}
-                                    onChange={(e) => setReplyText(e.target.value)}
-                                />
-                            </div>
-                        )}
-
                         <div className={styles.modalFooter}>
                             <button className={styles.closeButton} onClick={closeModal}>
                                 Close
                             </button>
-                            {isOpen(selectedTicket) && (
-                                <button
-                                    className={styles.replyButton}
-                                    onClick={handleSendReply}
-                                    disabled={sending || !replyText.trim()}
-                                >
-                                    {sending ? 'Sending...' : 'Send Reply'}
-                                </button>
-                            )}
                         </div>
                     </div>
                 </div>,
