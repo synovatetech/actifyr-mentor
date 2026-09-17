@@ -1,66 +1,48 @@
 import { apiClient } from './client';
-import { setToken, setRefreshToken, removeToken } from '@/lib/auth';
+import { setToken, setRefreshToken, removeToken, setMentorProfile, removeMentorProfile } from '@/lib/auth';
 import type { ApiResponse } from '@/types';
+import type { MentorLoginRequest, MentorLoginResponse } from '@/types/auth';
 import { useClientStore } from '@/store/clientStore';
 import { useAuthStore } from '@/store/authStore';
 
 export const authService = {
-    login: async (credentials: any): Promise<ApiResponse<any>> => {
-        const response = await apiClient.post<any>('/auth/unified-client/login', credentials);
+    login: async (credentials: MentorLoginRequest): Promise<ApiResponse<MentorLoginResponse>> => {
+        const response = await apiClient.post<MentorLoginResponse>('/auth/mentor/login', credentials);
 
-        // Check for access_token in the response (as per user's curl response)
         if (response.success && response.data) {
-            const newAccessToken = response.data.access_token || response.data?.data?.access_token;
-            const newRefreshToken = response.data.refresh_token || response.data?.data?.refresh_token;
+            const { access_token, refresh_token, mentor_id, name, email, role } = response.data;
 
-            if (newAccessToken) {
-                setToken(newAccessToken);
+            if (access_token) {
+                setToken(access_token);
             }
-            if (newRefreshToken) {
-                setRefreshToken(newRefreshToken);
+            if (refresh_token) {
+                setRefreshToken(refresh_token);
+            }
+            if (mentor_id != null) {
+                setMentorProfile({ mentorId: mentor_id, name, email, role: role || 'mentor' });
             }
         }
         return response;
     },
 
-    register: async (data: any): Promise<ApiResponse<any>> => {
-        return apiClient.post('/client/register', data);
-    },
-
-    verifyOtp: async (data: { email: string; otp: string }): Promise<ApiResponse<any>> => {
-        return apiClient.post('/client/verify-email', data);
-    },
-
-    resendOtp: async (data: { email: string }): Promise<ApiResponse<any>> => {
-        return apiClient.post('/client/resend-otp', data);
+    changePassword: async (data: {
+        current_password: string;
+        new_password: string;
+    }): Promise<ApiResponse<{ message: string }>> => {
+        return apiClient.post('/auth/mentor/change-password', data);
     },
 
     requestPasswordReset: async (data: { email: string }): Promise<ApiResponse<any>> => {
-        return apiClient.post('/auth/unified-client/request-password-reset', data);
+        return apiClient.post('/auth/mentor/request-password-reset', data);
     },
 
     resetPassword: async (data: { token: string; new_password: string }): Promise<ApiResponse<any>> => {
-        return apiClient.post('/auth/unified-client/reset-password', data);
-    },
-
-    me: async (): Promise<ApiResponse<any>> => {
-        return apiClient.get('/client/me');
-    },
-
-    uploadLogo: async (clientId: string | number, formData: FormData): Promise<ApiResponse<any>> => {
-        return apiClient.post(`/client/${clientId}/logo`, formData);
-    },
-
-    updateProfile: async (formData: FormData): Promise<ApiResponse<any>> => {
-        return apiClient.post('/client/me/update', formData);
-    },
-
-    updateProfileImage: async (formData: FormData): Promise<ApiResponse<any>> => {
-        return apiClient.post('/client/me/profile-image', formData);
+        return apiClient.post('/auth/mentor/reset-password', data);
     },
 
     logout: () => {
         removeToken();
+        removeMentorProfile();
         useAuthStore.getState().logout();
         useClientStore.getState().reset();
         if (typeof window !== 'undefined') {

@@ -2,7 +2,7 @@
 // API Client - Base HTTP Client
 // ============================================
 
-import { getToken, getRefreshToken, setToken, setRefreshToken, removeToken } from '@/lib/auth';
+import { getToken, getRefreshToken, setToken, setRefreshToken, removeToken, removeMentorProfile } from '@/lib/auth';
 import { API_BASE_URL, API_TIMEOUT } from '@/constants';
 import type { ApiResponse } from '@/types';
 import NProgress from 'nprogress';
@@ -52,8 +52,14 @@ class ApiClient {
       const obj = body as Record<string, any>;
       if (obj.message) return obj.message;
       if (obj.error && typeof obj.error === 'string') return obj.error;
-      if (Array.isArray(obj.errors) && obj.errors[0]?.message) {
-        return obj.errors[0].message;
+      // `{ errors: [{ code, message }, ...] }` — the shape returned by, e.g.,
+      // G2P-AUT-403 ("not assigned to any program"). Join every message so
+      // nothing is silently dropped if the backend ever returns more than one.
+      if (Array.isArray(obj.errors) && obj.errors.length > 0) {
+        const messages = obj.errors
+          .map((e: any) => e?.message)
+          .filter((m: unknown): m is string => typeof m === 'string' && m.trim().length > 0);
+        if (messages.length > 0) return messages.join(' ');
       }
       // FastAPI-style `{ detail: ... }` — either a plain string, or a structured
       // `{ message, errors: [{ row, column, message }] }` (e.g. CSV import validation).
@@ -89,7 +95,7 @@ class ApiClient {
       ...(config.headers as Record<string, string>),
     };
 
-    const isAuthEndpoint = endpoint.includes('/auth/unified-client/login');
+    const isAuthEndpoint = endpoint.includes('/auth/mentor/login');
 
     if (token && !headers['Authorization'] && !isAuthEndpoint) {
       headers['Authorization'] = `Bearer ${token}`;
@@ -126,7 +132,7 @@ class ApiClient {
           const refreshToken = getRefreshToken();
           if (refreshToken) {
             try {
-              const refreshRes = await fetch(`${this.baseUrl}/auth/unified-client/refresh`, {
+              const refreshRes = await fetch(`${this.baseUrl}/auth/mentor/refresh`, {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
@@ -169,6 +175,7 @@ class ApiClient {
 
           if (typeof window !== 'undefined') {
             removeToken();
+            removeMentorProfile();
             window.location.href = '/login';
           }
         }
@@ -180,13 +187,14 @@ class ApiClient {
           // Response wasn't JSON — errorBody stays null
         }
 
-        if (response.status === 403) {
-          const errorCode = (errorBody as any)?.errors?.[0]?.code;
-          if (errorCode === 'G2P-AUT-403' && typeof window !== 'undefined') {
-            removeToken();
-            window.location.href = '/login';
-          }
-        }
+        // Per the mentor API guide (§9.1), 403 always means "this mentor may
+        // not use this screen/endpoint" — a per-endpoint permission error, not
+        // an invalidated session. The backend reuses the same `G2P-AUT-403`
+        // code for every 403 it returns (not just an expired/invalidated
+        // token), so treating it as a forced-logout signal here logged the
+        // mentor out and redirected to /login on ANY 403, even a harmless one.
+        // Session expiry is already handled above via 401 + refresh token —
+        // a 403 should just surface as a normal error toast.
 
         throw new Error(this.parseErrorMessage(errorBody, response.status));
       }
