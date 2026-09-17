@@ -258,6 +258,7 @@
     overflow-x: auto;
     width: 100%;
     max-width: 100%;
+    min-height: 460px;
     box-sizing: border-box;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.02);
 }
@@ -420,4 +421,18 @@
     background-color: #EE4621;
     border-radius: 50%;
     display: inline-block;
+}
+
+.emptyState {
+    padding: 0;
+}
+
+.emptyStateInner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-size: 14px;
 }
