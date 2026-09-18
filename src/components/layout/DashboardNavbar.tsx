@@ -141,10 +141,10 @@ export function DashboardNavbar({
           }}
         >
           <img
-            src="/logo.svg"
-            alt="Actifyr"
-            width={58}
-            height={60}
+            src="/logo-mentor.png"
+            alt="Actifyr Mentor"
+            width={100}
+            height={46}
             className={styles.logo}
           />
         </Link>

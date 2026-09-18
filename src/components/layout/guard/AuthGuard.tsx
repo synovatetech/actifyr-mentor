@@ -48,7 +48,7 @@ export default function AuthGuard({ children }: AuthGuardProps) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center flex items-center animate-pulse">
-          <Image src="/logo.svg" alt="logo" width={180} height={83} />
+          <Image src="/logo-mentor.png" alt="Actifyr Mentor" width={195} height={89} />
         </div>
       </div>
     );

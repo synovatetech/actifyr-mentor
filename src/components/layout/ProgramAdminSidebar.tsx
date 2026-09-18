@@ -96,9 +96,9 @@ export function ProgramAdminSidebar() {
                 <p className={styles.poweredBy}>Powered by</p>
                 <div className={styles.logoContainer}>
                     <Image
-                        src="/logo.svg"
-                        alt="Actifyr"
-                        width={180}
+                        src="/logo-mentor.png"
+                        alt="Actifyr Mentor"
+                        width={175}
                         height={80}
                         className={styles.logo}
                     />
