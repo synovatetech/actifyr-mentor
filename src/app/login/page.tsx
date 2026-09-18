@@ -96,7 +96,7 @@ export default function LoginPage() {
 
   return (
     <AuthLayout>
-      <h1 className={styles.title}>Login to your account</h1>
+      <h1 className={styles.title}>Login to your mentor account</h1>
 
       <form onSubmit={handleLogin}>
         <div className={styles.formGroup}>
