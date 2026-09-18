@@ -27,7 +27,7 @@ export function AuthLayout({ children, showBackToLogin = false, isCompact = fals
       {/* Right Panel - White with logo and card */}
       <div className={`${styles.rightPanel} ${isCompact ? styles.rightPanelCompact : ''}`}>
         <Link href="/" className={`${styles.logo} ${isCompact ? styles.logoCompact : ''}`}>
-          <Image src="/logo-mentor.png" alt="Actifyr Mentor" width={180} height={82} priority />
+          <Image src="/logo-mentor.png" alt="Actifyr Mentor" width={195} height={89} priority />
         </Link>
         <div className={`${styles.card} ${isCompact ? styles.cardCompact : ''}`}>{children}</div>
         {showBackToLogin && (
