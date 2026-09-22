@@ -86,56 +86,151 @@
 }
 
 .statCard {
-    background: #FFFFFF;
-    border-radius: 8px;
-    padding: 16px 24px;
+    flex: 1 1 200px;
     display: flex;
     flex-direction: column;
-    gap: 4px;
-    min-width: 140px;
+    background: #FFFFFF;
+    border-radius: 14px;
+    padding: 20px;
     border: 1px solid #F3F4F6;
+    box-shadow: 0px 2px 8px rgba(17, 24, 39, 0.03);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.statCard:hover {
+    box-shadow: 0px 10px 24px rgba(17, 24, 39, 0.07);
+    transform: translateY(-2px);
+}
+
+.breakdownCard {
+    flex: 2 1 320px;
+}
+
+.statCardHeader {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.statCardBody {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.statCardBodyCentered {
+    align-items: center;
+    text-align: center;
+}
+
+.statIcon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.statIconPrimary {
+    background: color-mix(in srgb, var(--color-primary) 12%, transparent);
+    color: var(--color-primary);
+}
+
+.statIconGreen {
+    background: color-mix(in srgb, var(--color-success) 12%, transparent);
+    color: var(--color-success);
+}
+
+.statIconAmber {
+    background: color-mix(in srgb, var(--color-progress-orange) 15%, transparent);
+    color: var(--color-progress-orange);
+}
+
+.statIconGold {
+    /* Badge gold has no token — same category as this file's other
+       non-tokenizable status colors (bronze/silver below). */
+    background: rgba(234, 179, 8, 0.14);
+    color: #EAB308;
 }
 
 .statLabel {
     font-size: 13px;
     color: #6B7280;
+    font-weight: 600;
 }
 
 .statValue {
-    font-size: 18px;
+    font-size: 26px;
     font-weight: 700;
     color: #1E1E1E;
-}
-
-.participantsCount .statValue {
-    color: #EE4621;
-}
-
-.tasksCount .statValue {
-    color: #EE4621;
+    line-height: 1;
 }
 
 .multiStats {
     display: flex;
-    gap: 20px;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: 0;
 }
 
 .subStat {
+    flex: 1;
+    min-width: 70px;
     display: flex;
-    align-items: center;
-    gap: 8px;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0 16px;
+    border-left: 1px solid #F3F4F6;
+}
+
+.subStat:first-child {
+    border-left: none;
+    padding-left: 0;
 }
 
 .subStatLabel {
-    font-size: 13px;
-    color: #6B7280;
+    font-size: 12px;
+    color: #9CA3AF;
+    font-weight: 500;
 }
 
 .subStatValue {
-    font-size: 16px;
-    font-weight: 600;
-    color: #EE4621;
+    font-size: 19px;
+    font-weight: 700;
+    color: #1E1E1E;
+}
+
+.accentRed {
+    color: var(--color-progress-red);
+}
+
+.accentOrange {
+    color: var(--color-progress-orange);
+}
+
+.accentYellow {
+    color: var(--color-progress-yellow);
+}
+
+.accentGreen {
+    color: var(--color-progress-green);
+}
+
+.bronze {
+    /* Badge tier colors have no tokens — non-tokenizable status colors,
+       same category as gold above. */
+    color: #B87333;
+}
+
+.silver {
+    color: #94A3B8;
+}
+
+.gold {
+    color: #EAB308;
 }
 
 /* Controls Row */
@@ -427,12 +522,27 @@
     padding: 0;
 }
 
-.emptyStateInner {
+.emptyStateRow {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 400px;
+    gap: 10px;
+    min-height: 340px;
     text-align: center;
-    color: var(--color-text-secondary);
-    font-size: 14px;
+}
+
+.emptyStateIcon {
+    color: #D1D5DB;
+}
+
+.emptyStateTitle {
+    font-size: 15px;
+    font-weight: 600;
+    color: #6B7280;
+}
+
+.emptyStateSubtitle {
+    font-size: 13px;
+    color: #9CA3AF;
 }
