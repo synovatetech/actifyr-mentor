@@ -30,16 +30,26 @@ const EyeIcon = ({ crossedOut }: { crossedOut: boolean }) =>
   );
 
 interface ChangePasswordModalProps {
+  // Passed in when the caller already knows it (the login form) so the
+  // mentor isn't asked to retype a password they just typed. When omitted
+  // (AuthGuard's fallback gate on direct navigation with an already-valid
+  // session, where no plaintext password is available), the field is shown.
+  currentPassword?: string;
   // Called after a successful password change so the caller can re-verify
   // (AuthGuard re-fetches /mentor/me) before revealing the app.
   onDone: () => void;
 }
 
-// Mandatory gate — rendered by AuthGuard in place of the app whenever
-// /mentor/me reports password_changed: false. It can't be skipped into the
-// app; the close button only logs the mentor out back to /login.
-export default function ChangePasswordModal({ onDone }: ChangePasswordModalProps) {
-  const [currentPassword, setCurrentPassword] = useState("");
+// Mandatory gate — shown by the login page as soon as the login response
+// reports password_changed: false, and by AuthGuard for any other path that
+// reaches the app with that still unset. It can't be skipped into the app;
+// the close button only logs the mentor out back to /login.
+export default function ChangePasswordModal({
+  currentPassword: knownCurrentPassword,
+  onDone,
+}: ChangePasswordModalProps) {
+  const needsCurrentPasswordInput = !knownCurrentPassword;
+  const [currentPassword, setCurrentPassword] = useState(knownCurrentPassword ?? "");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showCurrentPassword, setShowCurrentPassword] = useState(false);
@@ -80,7 +90,8 @@ export default function ChangePasswordModal({ onDone }: ChangePasswordModalProps
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
-    const currentError = currentPassword ? "" : "Current password is required.";
+    const currentError =
+      needsCurrentPasswordInput && !currentPassword ? "Current password is required." : "";
     const newError = validateNewPassword(newPassword);
     const confirmError = validateConfirmPassword(newPassword, confirmPassword);
 
@@ -131,37 +142,39 @@ export default function ChangePasswordModal({ onDone }: ChangePasswordModalProps
       </p>
 
       <form onSubmit={handleSubmit}>
-        <div className={styles.formGroup}>
-          <label className={styles.label} htmlFor="current-password">
-            Current Password
-          </label>
-          <div className={styles.passwordWrapper}>
-            <input
-              id="current-password"
-              type={showCurrentPassword ? "text" : "password"}
-              className={styles.input}
-              placeholder="******"
-              value={currentPassword}
-              onChange={(event) => {
-                setCurrentPassword(event.target.value);
-                if (currentPasswordError) setCurrentPasswordError("");
-              }}
-              required
-              disabled={loading}
-              aria-invalid={Boolean(currentPasswordError)}
-            />
-            <button
-              type="button"
-              className={styles.passwordToggle}
-              onClick={() => setShowCurrentPassword(!showCurrentPassword)}
-              aria-label={showCurrentPassword ? "Hide password" : "Show password"}
-              disabled={loading}
-            >
-              <EyeIcon crossedOut={showCurrentPassword} />
-            </button>
+        {needsCurrentPasswordInput && (
+          <div className={styles.formGroup}>
+            <label className={styles.label} htmlFor="current-password">
+              Current Password
+            </label>
+            <div className={styles.passwordWrapper}>
+              <input
+                id="current-password"
+                type={showCurrentPassword ? "text" : "password"}
+                className={styles.input}
+                placeholder="******"
+                value={currentPassword}
+                onChange={(event) => {
+                  setCurrentPassword(event.target.value);
+                  if (currentPasswordError) setCurrentPasswordError("");
+                }}
+                required
+                disabled={loading}
+                aria-invalid={Boolean(currentPasswordError)}
+              />
+              <button
+                type="button"
+                className={styles.passwordToggle}
+                onClick={() => setShowCurrentPassword(!showCurrentPassword)}
+                aria-label={showCurrentPassword ? "Hide password" : "Show password"}
+                disabled={loading}
+              >
+                <EyeIcon crossedOut={showCurrentPassword} />
+              </button>
+            </div>
+            {currentPasswordError && <p className={styles.errorText}>{currentPasswordError}</p>}
           </div>
-          {currentPasswordError && <p className={styles.errorText}>{currentPasswordError}</p>}
-        </div>
+        )}
 
         <div className={styles.formGroup}>
           <label className={styles.label} htmlFor="new-password">
