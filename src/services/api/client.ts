@@ -2,7 +2,6 @@
 // API Client - Base HTTP Client
 // ============================================
 
-import { getToken, getRefreshToken, setToken, setRefreshToken, removeToken, removeMentorProfile } from '@/lib/auth';
 import { API_BASE_URL, API_TIMEOUT } from '@/constants';
 import type { ApiResponse } from '@/types';
 import NProgress from 'nprogress';
@@ -90,26 +89,27 @@ class ApiClient {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), timeout);
 
-    const token = getToken();
     const headers: Record<string, string> = {
       ...(config.headers as Record<string, string>),
     };
-
-    const isAuthEndpoint = endpoint.includes('/auth/mentor/login');
-
-    if (token && !headers['Authorization'] && !isAuthEndpoint) {
-      headers['Authorization'] = `Bearer ${token}`;
-    }
 
     if (!config.skipLoader) {
       startLoader();
     }
 
     try {
+      // Auth is entirely cookie-based now (httpOnly `token`/`refresh_token`,
+      // set server-side — see src/app/api/auth/mentor/login/route.ts). This
+      // client never reads or attaches a token itself; every request here
+      // goes to this app's own same-origin /api/* routes, which forward to
+      // the real backend and attach Authorization from the cookie. The
+      // browser includes same-origin cookies by default, but `credentials`
+      // is set explicitly since that default can vary by fetch polyfill.
       const response = await fetch(`${this.baseUrl}${endpoint}`, {
         ...fetchConfig,
         signal: controller.signal,
         headers,
+        credentials: 'same-origin',
       });
 
       clearTimeout(timeoutId);
@@ -123,61 +123,14 @@ class ApiClient {
           }
         }
 
-        const isPublicEndpoint =
-          endpoint.includes('/auth/') ||
-          endpoint.includes('/client/register') ||
-          endpoint.includes('/client/verify-email');
-
-        if (response.status === 401 && !isPublicEndpoint) {
-          const refreshToken = getRefreshToken();
-          if (refreshToken) {
-            try {
-              const refreshRes = await fetch(`${this.baseUrl}/auth/mentor/refresh`, {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json',
-                  ...(token ? { 'Authorization': `Bearer ${token}` } : {})
-                },
-                body: JSON.stringify({ refresh_token: refreshToken })
-              });
-
-              if (refreshRes.ok) {
-                const refreshData = await refreshRes.json();
-                const newAccessToken = refreshData.access_token || refreshData?.data?.access_token;
-                const newRefreshToken = refreshData.refresh_token || refreshData?.data?.refresh_token;
-
-                if (newAccessToken) {
-                  setToken(newAccessToken);
-                  if (newRefreshToken) {
-                    setRefreshToken(newRefreshToken);
-                  }
-
-                  const newHeaders = {
-                    ...headers,
-                    'Authorization': `Bearer ${newAccessToken}`
-                  };
-
-                  const retryRes = await fetch(`${this.baseUrl}${endpoint}`, {
-                    ...fetchConfig,
-                    headers: newHeaders,
-                  });
-
-                  if (retryRes.ok) {
-                    const data = await retryRes.json();
-                    return { success: true, data };
-                  }
-                }
-              }
-            } catch (refreshErr) {
-              console.error('Failed to refresh token:', refreshErr);
-            }
-          }
-
-          if (typeof window !== 'undefined') {
-            removeToken();
-            removeMentorProfile();
-            window.location.href = '/login';
-          }
+        // A 401 from the login call itself just means wrong credentials —
+        // show that as a normal error, don't redirect (we're already there).
+        // Every other 401 means our own /api proxy already tried refreshing
+        // the httpOnly token server-side and it still failed, so the session
+        // is genuinely over.
+        const isLoginEndpoint = endpoint === '/auth/mentor/login';
+        if (response.status === 401 && !isLoginEndpoint && typeof window !== 'undefined') {
+          window.location.href = '/login';
         }
 
         let errorBody: unknown = null;

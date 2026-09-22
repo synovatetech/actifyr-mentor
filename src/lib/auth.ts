@@ -27,45 +27,16 @@ export const getRefreshToken = (): string | null => {
     return null;
 };
 
+// NOTE: `token`/`refresh_token` are httpOnly cookies as of the /mentor/me
+// integration (set server-side in src/app/api/auth/mentor/login/route.ts),
+// so these getters/setters can no longer actually read or write them from
+// client JS — that's the point of httpOnly. They're left in place only
+// because a few unrelated, unreachable content-management services still
+// import getToken(); the live auth flow (client.ts, AuthGuard, auth.service)
+// no longer calls any of these.
 export const removeToken = () => {
     if (typeof document !== 'undefined') {
         document.cookie = 'token=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT';
         document.cookie = 'refresh_token=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT';
-    }
-};
-
-export interface MentorProfile {
-    mentorId: number;
-    name: string;
-    email: string;
-    role?: string;
-}
-
-// There is no `/auth/mentor/me` endpoint — the login response is the only place
-// mentor_id/name/email come from, so we cache them here (mirroring the token
-// cookies) instead of re-deriving them from a client-only endpoint.
-export const setMentorProfile = (profile: MentorProfile) => {
-    if (typeof document !== 'undefined') {
-        document.cookie = `mentor_profile=${encodeURIComponent(JSON.stringify(profile))}; path=/; max-age=604800; SameSite=Strict`;
-    }
-};
-
-export const getMentorProfile = (): MentorProfile | null => {
-    if (typeof document !== 'undefined') {
-        const match = document.cookie.match(new RegExp('(^| )mentor_profile=([^;]+)'));
-        if (match) {
-            try {
-                return JSON.parse(decodeURIComponent(match[2]));
-            } catch {
-                return null;
-            }
-        }
-    }
-    return null;
-};
-
-export const removeMentorProfile = () => {
-    if (typeof document !== 'undefined') {
-        document.cookie = 'mentor_profile=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT';
     }
 };

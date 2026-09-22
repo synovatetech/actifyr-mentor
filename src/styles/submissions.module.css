@@ -156,6 +156,7 @@
 /* Task Based Submissions Split View */
 .taskSplitLayout {
   display: block;
+  padding: 16px;
 }
 
 .taskSplitLayoutWithDetails {
@@ -188,10 +189,6 @@
   flex-direction: column;
   gap: 12px;
   cursor: pointer;
-}
-
-.taskListItem:hover {
-  background: #f9fafb;
 }
 
 .taskListItemSelected {

@@ -83,7 +83,12 @@ export const LAYOUT = {
 } as const;
 
 // API Configuration
-export const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || '/api';
+// Always same-origin now: the browser only ever talks to this app's own
+// /api/* routes (src/app/api/**/route.ts), which attach the Authorization
+// header server-side from the httpOnly auth cookie and forward to the real
+// backend (see src/lib/server/apiProxy.ts, which reads NEXT_PUBLIC_API_BASE_URL
+// for that real host).
+export const API_BASE_URL = '/api';
 export const API_TIMEOUT = 1200000; // 20 minutes
 
 // Shown wherever an audio media item has no uploaded thumbnail.
