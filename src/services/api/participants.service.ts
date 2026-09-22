@@ -2,8 +2,6 @@ import { apiClient } from './client';
 import type { ApiResponse } from '@/types';
 
 export interface ParticipantsListOptions {
-    /** `true` = "My Mentees" tab, `false`/omitted = "All Participants" tab. */
-    menteesOnly?: boolean;
     search?: string;
     page?: number;
     pageSize?: number;
@@ -14,10 +12,9 @@ export const participantsService = {
         programId: string | number,
         options?: ParticipantsListOptions,
     ): Promise<ApiResponse<any[]> & { programStats?: Record<string, number>; total?: number }> => {
-        const { menteesOnly, search, page = 1, pageSize = 100 } = options ?? {};
+        const { search, page = 1, pageSize = 100 } = options ?? {};
 
         const query = new URLSearchParams();
-        if (menteesOnly != null) query.append('mentees_only', String(menteesOnly));
         if (search?.trim()) query.append('search_text', search.trim());
         query.append('page', String(page));
         query.append('page_size', String(pageSize));

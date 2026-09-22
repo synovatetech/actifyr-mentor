@@ -71,7 +71,6 @@ const computeStats = (items: any[]) => {
 export default function MenteesContent() {
   const { programId, isReady } = useProgramId();
   const { showToast } = useToast();
-  const [activeTab, setActiveTab] = useState<"my" | "all">("my");
   const [searchTerm, setSearchTerm] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState("");
   const tableCardRef = React.useRef<HTMLDivElement>(null);
@@ -82,11 +81,10 @@ export default function MenteesContent() {
   }, [searchTerm]);
 
   const { data: queryData, isLoading: loading } = useQuery({
-    queryKey: ["program-participants", programId, activeTab, debouncedSearch],
+    queryKey: ["program-participants", programId, debouncedSearch],
     queryFn: async () => {
       const res = await participantsService.list(programId!, {
         search: debouncedSearch,
-        menteesOnly: activeTab === "my",
       });
       if (!res.success) throw new Error(res.error || "Failed to fetch participants");
       return {
@@ -103,7 +101,7 @@ export default function MenteesContent() {
 
   const handleExport = () => {
     if (!participants || participants.length === 0) {
-      showToast("No participants available to export", "info");
+      showToast("No mentees available to export", "info");
       return;
     }
 
@@ -127,16 +125,16 @@ export default function MenteesContent() {
 
       const worksheet = XLSX.utils.json_to_sheet(exportData);
       const workbook = XLSX.utils.book_new();
-      XLSX.utils.book_append_sheet(workbook, worksheet, "Participants");
+      XLSX.utils.book_append_sheet(workbook, worksheet, "Mentees");
 
       XLSX.writeFile(
         workbook,
-        `Participants_Program_${programId || "Export"}.xlsx`,
+        `Mentees_Program_${programId || "Export"}.xlsx`,
       );
-      showToast("Participants exported successfully!", "success");
+      showToast("Mentees exported successfully!", "success");
     } catch (error) {
       console.error("Export Error:", error);
-      showToast("Failed to export participants to Excel", "error");
+      showToast("Failed to export mentees to Excel", "error");
     }
   };
 
@@ -157,88 +155,124 @@ export default function MenteesContent() {
         <>
           {/* Stats Grid */}
           <div className={styles.statsGrid}>
-            <div className={`${styles.statCard} ${styles.participantsCount}`}>
-              <span className={styles.statLabel}>Participants</span>
-              <span className={styles.statValue}>
-                {stats.totalParticipants}
-              </span>
-            </div>
-            <div className={`${styles.statCard} ${styles.tasksCount}`}>
-              <span className={styles.statLabel}>Total Tasks</span>
-              <span className={styles.statValue}>{programStats.total_tasks || stats.totalTasks}</span>
-            </div>
-
             <div className={styles.statCard}>
-              <div className={styles.multiStats}>
-                <div className={styles.subStat}>
-                  <span className={styles.subStatLabel}>PoW</span>
-                  <span className={styles.subStatValue}>{programStats.total_pow_tasks || stats.pow}</span>
-                </div>
-                <div className={styles.subStat}>
-                  <span className={styles.subStatLabel}>PoI</span>
-                  <span className={styles.subStatValue}>{programStats.total_poi_tasks || stats.pol}</span>
-                </div>
-                <div className={styles.subStat}>
-                  <span className={styles.subStatLabel}>PoA</span>
-                  <span className={styles.subStatValue}>{programStats.total_poa_tasks || stats.poa}</span>
-                </div>
-                <div className={styles.subStat}>
-                  <span className={styles.subStatLabel}>General</span>
-                  <span className={styles.subStatValue}>{programStats.total_general_tasks || stats.general}</span>
-                </div>
+              <div className={styles.statCardHeader}>
+                <span className={`${styles.statIcon} ${styles.statIconPrimary}`}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2" />
+                    <circle cx="10" cy="7" r="4" />
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                  </svg>
+                </span>
+                <span className={styles.statLabel}>Mentees</span>
+              </div>
+              <div className={`${styles.statCardBody} ${styles.statCardBodyCentered}`}>
+                <span className={styles.statValue}>{stats.totalParticipants}</span>
               </div>
             </div>
 
             <div className={styles.statCard}>
-              <div className={styles.multiStats}>
-                <div className={styles.subStat}>
-                  <span className={styles.subStatLabel}>Leaderboard Pts</span>
-                  <span className={styles.subStatValue}>{programStats.max_leaderboard_points}</span>
-                </div>
-                <div className={styles.subStat}>
-                  <span className={styles.subStatLabel}>Engagement Pts</span>
-                  <span className={styles.subStatValue}>{programStats.max_engagement_points}</span>
-                </div>
-                <div className={styles.subStat}>
-                  <span className={styles.subStatLabel}>Effectiveness Pts</span>
-                  <span className={styles.subStatValue}>{programStats.max_effectiveness_points}</span>
+              <div className={styles.statCardHeader}>
+                <span className={`${styles.statIcon} ${styles.statIconGreen}`}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M9 11l3 3L22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                </span>
+                <span className={styles.statLabel}>Total Tasks</span>
+              </div>
+              <div className={`${styles.statCardBody} ${styles.statCardBodyCentered}`}>
+                <span className={styles.statValue}>{programStats.total_tasks || stats.totalTasks}</span>
+              </div>
+            </div>
+
+            <div className={`${styles.statCard} ${styles.breakdownCard}`}>
+              <div className={styles.statCardHeader}>
+                <span className={`${styles.statIcon} ${styles.statIconAmber}`}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M9 6h11M9 12h11M9 18h11" />
+                    <path d="M4 6h1M4 12h1M4 18h1" />
+                  </svg>
+                </span>
+                <span className={styles.statLabel}>Task Breakdown</span>
+              </div>
+              <div className={styles.statCardBody}>
+                <div className={styles.multiStats}>
+                  <div className={styles.subStat}>
+                    <span className={styles.subStatLabel}>PoW</span>
+                    <span className={`${styles.subStatValue} ${styles.accentRed}`}>{programStats.total_pow_tasks || stats.pow}</span>
+                  </div>
+                  <div className={styles.subStat}>
+                    <span className={styles.subStatLabel}>PoI</span>
+                    <span className={`${styles.subStatValue} ${styles.accentOrange}`}>{programStats.total_poi_tasks || stats.pol}</span>
+                  </div>
+                  <div className={styles.subStat}>
+                    <span className={styles.subStatLabel}>PoA</span>
+                    <span className={`${styles.subStatValue} ${styles.accentYellow}`}>{programStats.total_poa_tasks || stats.poa}</span>
+                  </div>
+                  <div className={styles.subStat}>
+                    <span className={styles.subStatLabel}>General</span>
+                    <span className={`${styles.subStatValue} ${styles.accentGreen}`}>{programStats.total_general_tasks || stats.general}</span>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className={styles.statCard}>
-              <div className={styles.multiStats}>
-                <div className={styles.subStat}>
-                  <span className={styles.subStatLabel}>Bronze</span>
-                  <span className={styles.subStatValue}>{stats.bronze}</span>
-                </div>
-                <div className={styles.subStat}>
-                  <span className={styles.subStatLabel}>Silver</span>
-                  <span className={styles.subStatValue}>{stats.silver}</span>
-                </div>
-                <div className={styles.subStat}>
-                  <span className={styles.subStatLabel}>Gold</span>
-                  <span className={styles.subStatValue}>{stats.gold}</span>
+            <div className={`${styles.statCard} ${styles.breakdownCard}`}>
+              <div className={styles.statCardHeader}>
+                <span className={`${styles.statIcon} ${styles.statIconPrimary}`}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77l-6.18 3.23L7 14.14 2 9.27l7.1-1.01L12 2z" />
+                  </svg>
+                </span>
+                <span className={styles.statLabel}>Points Breakdown</span>
+              </div>
+              <div className={styles.statCardBody}>
+                <div className={styles.multiStats}>
+                  <div className={styles.subStat}>
+                    <span className={styles.subStatLabel}>Leaderboard</span>
+                    <span className={styles.subStatValue}>{programStats.max_leaderboard_points}</span>
+                  </div>
+                  <div className={styles.subStat}>
+                    <span className={styles.subStatLabel}>Engagement</span>
+                    <span className={styles.subStatValue}>{programStats.max_engagement_points}</span>
+                  </div>
+                  <div className={styles.subStat}>
+                    <span className={styles.subStatLabel}>Effectiveness</span>
+                    <span className={styles.subStatValue}>{programStats.max_effectiveness_points}</span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div className={styles.tabContainer}>
-            <button
-              type="button"
-              className={`${styles.tab} ${activeTab === "my" ? styles.activeTab : ""}`}
-              onClick={() => setActiveTab("my")}
-            >
-              My Mentees
-            </button>
-            <button
-              type="button"
-              className={`${styles.tab} ${activeTab === "all" ? styles.activeTab : ""}`}
-              onClick={() => setActiveTab("all")}
-            >
-              All Participants
-            </button>
+            <div className={`${styles.statCard} ${styles.breakdownCard}`}>
+              <div className={styles.statCardHeader}>
+                <span className={`${styles.statIcon} ${styles.statIconGold}`}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="14" r="7" />
+                    <path d="M8.5 7.5L7 2h10l-1.5 5.5" />
+                  </svg>
+                </span>
+                <span className={styles.statLabel}>Badges Earned</span>
+              </div>
+              <div className={styles.statCardBody}>
+                <div className={styles.multiStats}>
+                  <div className={styles.subStat}>
+                    <span className={styles.subStatLabel}>Bronze</span>
+                    <span className={`${styles.subStatValue} ${styles.bronze}`}>{stats.bronze}</span>
+                  </div>
+                  <div className={styles.subStat}>
+                    <span className={styles.subStatLabel}>Silver</span>
+                    <span className={`${styles.subStatValue} ${styles.silver}`}>{stats.silver}</span>
+                  </div>
+                  <div className={styles.subStat}>
+                    <span className={styles.subStatLabel}>Gold</span>
+                    <span className={`${styles.subStatValue} ${styles.gold}`}>{stats.gold}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className={styles.controlsRow}>
@@ -259,7 +293,7 @@ export default function MenteesContent() {
             </button>
           </div>
 
-          {/* Participants Table */}
+          {/* Mentees Table */}
           <style
             dangerouslySetInnerHTML={{
               __html: `
@@ -304,10 +338,29 @@ export default function MenteesContent() {
                 ) : participants.length === 0 ? (
                   <tr>
                     <td colSpan={14} className={styles.emptyState}>
-                      <div className={styles.emptyStateInner}>
-                        {activeTab === "my"
-                          ? "No mentees assigned yet — ask your program administrator."
-                          : "No participants found."}
+                      <div className={styles.emptyStateRow}>
+                        <svg
+                          className={styles.emptyStateIcon}
+                          width="40"
+                          height="40"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2" />
+                          <circle cx="10" cy="7" r="4" />
+                          <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                          <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
+                        <span className={styles.emptyStateTitle}>No mentees found</span>
+                        <span className={styles.emptyStateSubtitle}>
+                          {searchTerm
+                            ? "Try adjusting your search terms."
+                            : "Mentees will appear here once added to this program."}
+                        </span>
                       </div>
                     </td>
                   </tr>

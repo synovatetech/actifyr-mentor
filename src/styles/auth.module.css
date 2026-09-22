@@ -45,8 +45,8 @@
 /* Logo in right panel */
 .logo {
   display: block;
-  width: 162px;
-  height: 74.7px;
+  width: 195px;
+  height: 89px;
   margin-bottom: 50.4px;
   flex-shrink: 0;
 }
@@ -67,6 +67,7 @@
    Card
    ---------------------------------------- */
 .card {
+  position: relative;
   box-sizing: border-box;
   width: 100%;
   max-width: 486px;
@@ -74,6 +75,32 @@
   border: 0.9px solid rgba(0, 0, 0, 0.1);
   border-radius: 20.7px;
   padding: 36px 63px 45px;
+}
+
+/* ----------------------------------------
+   Close button (top-right of card)
+   ---------------------------------------- */
+.closeButton {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: none;
+  border: none;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-text-secondary);
+}
+
+.closeButton:hover {
+  color: var(--color-foreground);
+}
+
+.closeButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .cardCompact {

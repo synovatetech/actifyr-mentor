@@ -1,34 +1,21 @@
 import { apiClient } from './client';
-import { setToken, setRefreshToken, removeToken, setMentorProfile, removeMentorProfile } from '@/lib/auth';
 import type { ApiResponse } from '@/types';
 import type { MentorLoginRequest, MentorLoginResponse } from '@/types/auth';
 import { useClientStore } from '@/store/clientStore';
 import { useAuthStore } from '@/store/authStore';
+import { useMentorStore } from '@/store/mentorStore';
 
 export const authService = {
+    // Tokens are set as httpOnly cookies by src/app/api/auth/mentor/login/route.ts —
+    // this response never contains them, so there's nothing to store client-side.
     login: async (credentials: MentorLoginRequest): Promise<ApiResponse<MentorLoginResponse>> => {
-        const response = await apiClient.post<MentorLoginResponse>('/auth/mentor/login', credentials);
-
-        if (response.success && response.data) {
-            const { access_token, refresh_token, mentor_id, name, email, role } = response.data;
-
-            if (access_token) {
-                setToken(access_token);
-            }
-            if (refresh_token) {
-                setRefreshToken(refresh_token);
-            }
-            if (mentor_id != null) {
-                setMentorProfile({ mentorId: mentor_id, name, email, role: role || 'mentor' });
-            }
-        }
-        return response;
+        return apiClient.post<MentorLoginResponse>('/auth/mentor/login', credentials);
     },
 
     changePassword: async (data: {
         current_password: string;
         new_password: string;
-    }): Promise<ApiResponse<{ message: string }>> => {
+    }): Promise<ApiResponse<{ message: string; password_changed: boolean; password_changed_at: string }>> => {
         return apiClient.post('/auth/mentor/change-password', data);
     },
 
@@ -40,13 +27,18 @@ export const authService = {
         return apiClient.post('/auth/mentor/reset-password', data);
     },
 
-    logout: () => {
-        removeToken();
-        removeMentorProfile();
-        useAuthStore.getState().logout();
-        useClientStore.getState().reset();
-        if (typeof window !== 'undefined') {
-            window.location.href = '/login';
+    // Purely local: no backend logout endpoint exists. The httpOnly cookies
+    // can only be cleared server-side, hence the call to our own route.
+    logout: async () => {
+        try {
+            await apiClient.post('/auth/mentor/logout');
+        } finally {
+            useAuthStore.getState().logout();
+            useClientStore.getState().reset();
+            useMentorStore.getState().reset();
+            if (typeof window !== 'undefined') {
+                window.location.href = '/login';
+            }
         }
     },
 };

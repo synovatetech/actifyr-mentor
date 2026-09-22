@@ -12,8 +12,6 @@ import styles from "@/styles/auth.module.css";
 const INVALID_CREDENTIALS_MESSAGE =
   "The username or password you entered is incorrect. Please try again";
 
-const passwordPromptKey = (mentorId: number) => `mentor_pwd_prompted:${mentorId}`;
-
 export default function LoginPage() {
   const router = useRouter();
   const [email, setEmail] = useState("");
@@ -21,7 +19,6 @@ export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [passwordPromptState, setPasswordPromptState] = useState<{
-    mentorId: number;
     currentPassword: string;
   } | null>(null);
 
@@ -38,14 +35,13 @@ export default function LoginPage() {
     try {
       const response = await authService.login({ email, password });
       if (response.success) {
-        const mentorId = response.data?.mentor_id;
-        const alreadyPrompted =
-          mentorId != null &&
-          typeof window !== "undefined" &&
-          window.localStorage.getItem(passwordPromptKey(mentorId)) === "1";
-
-        if (mentorId != null && !alreadyPrompted) {
-          setPasswordPromptState({ mentorId, currentPassword: password });
+        // The login response itself tells us whether the mentor still needs
+        // to change their temporary password, so gate right here — no need
+        // to route into the app first and let AuthGuard find out via
+        // /mentor/me (that check remains as a fallback for direct navigation
+        // with an already-valid session).
+        if (response.data?.password_changed === false) {
+          setPasswordPromptState({ currentPassword: password });
           return;
         }
 
@@ -74,29 +70,18 @@ export default function LoginPage() {
     }
   };
 
-  const handlePasswordPromptDone = () => {
-    if (typeof window !== "undefined") {
-      window.localStorage.setItem(
-        passwordPromptKey(passwordPromptState!.mentorId),
-        "1",
-      );
-    }
-    setPasswordPromptState(null);
-    goToPrograms();
-  };
-
   if (passwordPromptState) {
     return (
       <ChangePasswordModal
         currentPassword={passwordPromptState.currentPassword}
-        onDone={handlePasswordPromptDone}
+        onDone={goToPrograms}
       />
     );
   }
 
   return (
     <AuthLayout>
-      <h1 className={styles.title}>Login to your account</h1>
+      <h1 className={styles.title}>Login to your mentor account</h1>
 
       <form onSubmit={handleLogin}>
         <div className={styles.formGroup}>

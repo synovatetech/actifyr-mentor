@@ -1,16 +1,17 @@
 "use client";
 
-import { getMentorProfile } from "@/lib/auth";
 import { useClientStore } from "@/store/clientStore";
+import { useMentorStore } from "@/store/mentorStore";
 
 // Mentors have no `/client/me`-equivalent endpoint (that route is client-only
 // and 403s for a mentor token), so this no longer fetches anything — name/email
-// come from the mentor_profile cookie set at login (see auth.service.ts), and
-// everything else here is a harmless default until this hook is repointed at
-// real mentor-scoped data (plan/license concepts don't apply to mentors).
+// come from the mentor store, populated by AuthGuard's GET /mentor/me call,
+// and everything else here is a harmless default until this hook is
+// repointed at real mentor-scoped data (plan/license concepts don't apply to
+// mentors).
 export function useClientAdmin() {
   const { clientData, loading, error } = useClientStore();
-  const mentorProfile = getMentorProfile();
+  const mentorProfile = useMentorStore((s) => s.mentor);
 
   const availableAiTokenCount =
     clientData?.available_ai_token_count ?? clientData?.tokens ?? 0;
