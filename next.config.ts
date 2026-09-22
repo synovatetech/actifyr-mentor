@@ -16,10 +16,9 @@ const nextConfig: NextConfig = {
   },
   async rewrites() {
     return [
-      {
-        source: '/api/:path*',
-        destination: 'https://www.api.actifyr.com/:path*',
-      },
+      // /api/:path* is now handled by src/app/api/[...path]/route.ts (needed
+      // to attach the Authorization header from the httpOnly token cookie),
+      // which takes precedence over this rewrite anyway.
       {
         source: '/program_logo/:path*',
         destination: 'https://www.api.actifyr.com/program_logo/:path*',

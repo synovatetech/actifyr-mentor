@@ -13,14 +13,15 @@ export interface MentorLoginRequest {
   password: string;
 }
 
+// Tokens never reach client JS — src/app/api/auth/mentor/login/route.ts sets
+// them as httpOnly cookies server-side and returns only this sanitized shape.
 export interface MentorLoginResponse {
-  access_token: string;
-  refresh_token: string;
-  token_type: string;
   role: string;
   mentor_id: number;
   name: string;
   email: string;
+  password_changed: boolean;
+  password_changed_at: string | null;
 }
 
 export interface MeResponse {

@@ -93,9 +93,9 @@ export function DashboardNavbar({
     setIsNotificationsOpen(false);
   };
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
     setShowLogoutModal(false);
-    authService.logout();
+    await authService.logout();
   };
 
   return (

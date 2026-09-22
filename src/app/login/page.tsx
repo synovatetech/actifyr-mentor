@@ -4,7 +4,6 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { AuthLayout } from "@/components/features/auth/AuthLayout";
-import ChangePasswordModal from "@/components/features/auth/ChangePasswordModal";
 import { authService } from "@/services/api/auth.service";
 import { errorToast } from "@/utils/toast";
 import styles from "@/styles/auth.module.css";
@@ -12,24 +11,12 @@ import styles from "@/styles/auth.module.css";
 const INVALID_CREDENTIALS_MESSAGE =
   "The username or password you entered is incorrect. Please try again";
 
-const passwordPromptKey = (mentorId: number) => `mentor_pwd_prompted:${mentorId}`;
-
 export default function LoginPage() {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [passwordPromptState, setPasswordPromptState] = useState<{
-    mentorId: number;
-    currentPassword: string;
-  } | null>(null);
-
-  const goToPrograms = () => {
-    // Redirect is handled by middleware but we force it here for better UX
-    router.push("/programs");
-    router.refresh(); // Refresh to update server components/middleware state
-  };
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -38,18 +25,12 @@ export default function LoginPage() {
     try {
       const response = await authService.login({ email, password });
       if (response.success) {
-        const mentorId = response.data?.mentor_id;
-        const alreadyPrompted =
-          mentorId != null &&
-          typeof window !== "undefined" &&
-          window.localStorage.getItem(passwordPromptKey(mentorId)) === "1";
-
-        if (mentorId != null && !alreadyPrompted) {
-          setPasswordPromptState({ mentorId, currentPassword: password });
-          return;
-        }
-
-        goToPrograms();
+        // AuthGuard (wrapping every protected route) checks GET /mentor/me
+        // and gates on password_changed itself, so login just needs to get
+        // the mentor past the auth cookie check — no local first-login logic
+        // here at all.
+        router.push("/programs");
+        router.refresh(); // Refresh to update server components/middleware state
       } else {
         const loginError =
           response.error || "Login failed. Please check your credentials.";
@@ -73,26 +54,6 @@ export default function LoginPage() {
       setLoading(false);
     }
   };
-
-  const handlePasswordPromptDone = () => {
-    if (typeof window !== "undefined") {
-      window.localStorage.setItem(
-        passwordPromptKey(passwordPromptState!.mentorId),
-        "1",
-      );
-    }
-    setPasswordPromptState(null);
-    goToPrograms();
-  };
-
-  if (passwordPromptState) {
-    return (
-      <ChangePasswordModal
-        currentPassword={passwordPromptState.currentPassword}
-        onDone={handlePasswordPromptDone}
-      />
-    );
-  }
 
   return (
     <AuthLayout>
