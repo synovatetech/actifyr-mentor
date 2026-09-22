@@ -71,7 +71,6 @@ const computeStats = (items: any[]) => {
 export default function MenteesContent() {
   const { programId, isReady } = useProgramId();
   const { showToast } = useToast();
-  const [activeTab, setActiveTab] = useState<"my" | "all">("my");
   const [searchTerm, setSearchTerm] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState("");
   const tableCardRef = React.useRef<HTMLDivElement>(null);
@@ -82,11 +81,10 @@ export default function MenteesContent() {
   }, [searchTerm]);
 
   const { data: queryData, isLoading: loading } = useQuery({
-    queryKey: ["program-participants", programId, activeTab, debouncedSearch],
+    queryKey: ["program-participants", programId, debouncedSearch],
     queryFn: async () => {
       const res = await participantsService.list(programId!, {
         search: debouncedSearch,
-        menteesOnly: activeTab === "my",
       });
       if (!res.success) throw new Error(res.error || "Failed to fetch participants");
       return {
@@ -277,23 +275,6 @@ export default function MenteesContent() {
             </div>
           </div>
 
-          <div className={styles.tabContainer}>
-            <button
-              type="button"
-              className={`${styles.tab} ${activeTab === "my" ? styles.activeTab : ""}`}
-              onClick={() => setActiveTab("my")}
-            >
-              My Mentees
-            </button>
-            <button
-              type="button"
-              className={`${styles.tab} ${activeTab === "all" ? styles.activeTab : ""}`}
-              onClick={() => setActiveTab("all")}
-            >
-              All Mentees
-            </button>
-          </div>
-
           <div className={styles.controlsRow}>
             <div className={styles.searchBox}>
               <input
@@ -376,11 +357,9 @@ export default function MenteesContent() {
                         </svg>
                         <span className={styles.emptyStateTitle}>No mentees found</span>
                         <span className={styles.emptyStateSubtitle}>
-                          {activeTab === "my"
-                            ? "No mentees assigned yet — ask your program administrator."
-                            : searchTerm
-                              ? "Try adjusting your search terms."
-                              : "Mentees will appear here once added to this program."}
+                          {searchTerm
+                            ? "Try adjusting your search terms."
+                            : "Mentees will appear here once added to this program."}
                         </span>
                       </div>
                     </td>

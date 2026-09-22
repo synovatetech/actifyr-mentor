@@ -8,35 +8,6 @@
     box-sizing: border-box;
 }
 
-/* Mentees tab switcher */
-.tabContainer {
-    background: var(--color-card-bg);
-    border-radius: 8px;
-    padding: 8px;
-    display: flex;
-    width: fit-content;
-    gap: 8px;
-    margin-bottom: 24px;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.02);
-}
-
-.tab {
-    padding: 10px 40px;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    border: none;
-    background: transparent;
-    color: var(--color-text-secondary);
-}
-
-.activeTab {
-    background: var(--color-primary);
-    color: #ffffff;
-}
-
 .programBar {
     display: flex;
     align-items: center;
